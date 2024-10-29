@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rodigal - Compra en línea</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+	<!-- Font Awesome Icon -->
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="promo-banner">¡Hasta 12 meses TASA CERO BAC!</div>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <!-- Logo en la izquierda -->
+        <a class="navbar-brand" href="#">
+        <img src="./imagenes/iphone.png" width="30" height="30" alt="Logo"> Rodigal
+        </a>
+
+        <!-- Botón de menú hamburguesa para pantallas pequeñas -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Contenido de la barra de navegación -->
+        <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+        <!-- Menú central -->
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+            <a class="nav-link me-4" href="#">Inicio<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link me-4" href="productos.html">Productos</a>
+            </li>
+            <a class="nav-link me-4" href="#">Información</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="#">Preguntas Frecuentes</a>
+            </li>
+        </ul>
+        </div>
+
+        <!-- Botón de búsqueda oculto y carrito de compras a la derecha -->
+        <div class="d-flex align-items-center">
+        <!-- Botón de búsqueda desplegable -->
+        <button class="btn btn-outline-secondary me-3" id="searchButton" onclick="toggleSearch()">
+            <i class="fas fa-search"></i>
+        </button>
+        <form class="form-inline d-none" id="searchForm">
+            <input class="form-control me-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Buscar</button>
+        </form>
+
+        <!-- Carrito de compras -->
+        <a href="#" class="btn btn-outline-primary">
+            <i class="fas fa-shopping-cart"></i>
+        </a>
+        </div>
+    </nav>
+
+
+    <!-- Carrusel Inicio -->
+    <section class="hero d-flex flex-column flex-md-row align-items-center text-center text-md-start p-4 p-md-5">
+        <div class="hero-text col-md-6">
+            <h1 id="hero-title" class="display-4">Auriculares<br>Westmire A56</h1>
+            <div class="mt-4" id="hero-buttons">
+                <button class="btn btn-primary me-2">Comprar ahora</button>
+                <button class="btn btn-outline-secondary">Comprar todo</button>
+            </div>
+        </div>
+        <div class="hero-image col-md-6 text-center">
+            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active" data-title="Auriculares Westmire A56 - Blanco" data-button1="Comprar ahora" data-button2="Ver características">
+                        <img src="./imagenes/Audifonos.png" alt="Auriculares Westmire A56" class="img-fluid">
+                    </div>
+                    <div class="carousel-item" data-title="Celular iPhone 14 Pro Max 256 GB" data-button1="Comprar ahora" data-button2="Ver características">
+                        <img src="./imagenes/iphone.png" alt="Iphone 12 Pro Max" class="img-fluid">
+                    </div>
+                    <div class="carousel-item" data-title="Televisor Samsung Tizen™ Smart TV LED 65''" LED"" data-button1="Comprar ahora" data-button2="Ver características">
+                        <img src="./imagenes/pantalla.png" alt="Pantalla Smart TV 65"" class="img-fluid">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- /Slider -->
+    <div class="tf-marquee bg_yellow-2">
+        <div class="wrap-marquee">
+            <div class="marquee-item">
+                <div class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="20" viewBox="0 0 15 20">
+                        <path d="M14.5833 8H8.61742L9.94318 0L0 12H5.96591L4.64015 20L14.5833 8"></path>
+                    </svg>
+                </div>
+                <p class="text">¡Línea blanca siempre en descuento!</p>
+            </div>
+            <div class="marquee-item">
+                <div class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="20" viewBox="0 0 15 20">
+                        <path d="M14.5833 8H8.61742L9.94318 0L0 12H5.96591L4.64015 20L14.5833 8"></path>
+                    </svg>
+                </div>
+                <p class="text">¡Entretenimiento a otro nivel!</p>
+            </div>
+            <div class="marquee-item">
+                <div class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="20" viewBox="0 0 15 20">
+                        <path d="M14.5833 8H8.61742L9.94318 0L0 12H5.96591L4.64015 20L14.5833 8"></path>
+                    </svg>
+                </div>
+                <p class="text">¡No te perdás las marcas destacadas!</p>
+            </div>
+            <div class="marquee-item">
+                <div class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="20" viewBox="0 0 15 20">
+                        <path d="M14.5833 8H8.61742L9.94318 0L0 12H5.96591L4.64015 20L14.5833 8"></path>
+                    </svg>
+                </div>
+                <p class="text">¡Ofertas imperdibles!</p>
+            </div>
+            <div class="marquee-item">
+                <div class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="20" viewBox="0 0 15 20">
+                        <path d="M14.5833 8H8.61742L9.94318 0L0 12H5.96591L4.64015 20L14.5833 8"></path>
+                    </svg>
+                </div>
+                <p class="text">¡Descuentos!</p>
+            </div>
+            <!-- Duplicado para el efecto continuo -->
+            <div class="marquee-item">
+                <div class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="20" viewBox="0 0 15 20">
+                        <path d="M14.5833 8H8.61742L9.94318 0L0 12H5.96591L4.64015 20L14.5833 8"></path>
+                    </svg>
+                </div>
+                <p class="text">¡Línea blanca siempre en descuento!</p>
+            </div>
+            <div class="marquee-item">
+                <div class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="20" viewBox="0 0 15 20">
+                        <path d="M14.5833 8H8.61742L9.94318 0L0 12H5.96591L4.64015 20L14.5833 8"></path>
+                    </svg>
+                </div>
+                <p class="text">¡Entretenimiento a otro nivel!</p>
+            </div>
+            <div class="marquee-item">
+                <div class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="20" viewBox="0 0 15 20">
+                        <path d="M14.5833 8H8.61742L9.94318 0L0 12H5.96591L4.64015 20L14.5833 8"></path>
+                    </svg>
+                </div>
+                <p class="text">¡No te perdás las marcas destacadas!</p>
+            </div>
+            <div class="marquee-item">
+                <div class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="20" viewBox="0 0 15 20">
+                        <path d="M14.5833 8H8.61742L9.94318 0L0 12H5.96591L4.64015 20L14.5833 8"></path>
+                    </svg>
+                </div>
+                <p class="text">¡Ofertas imperdibles!</p>
+            </div>
+            <div class="marquee-item">
+                <div class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="20" viewBox="0 0 15 20">
+                        <path d="M14.5833 8H8.61742L9.94318 0L0 12H5.96591L4.64015 20L14.5833 8"></path>
+                    </svg>
+                </div>
+                <p class="text">¡Descuentos!</p>
+            </div>
+        </div>
+    </div>
+    
+
+
+    <!-- Categorias -->
+    <section>
+        <h2 class="text-center mb-4">Categorias</h2>
+        <div class="categories">
+            <a href="#" class="category me-3">
+                <img src="./imagenes/categoriaCocina.png" alt="Cocinas">
+                <p>Cocina</p>
+            </a>
+            <a href="#" class="category me-3">
+                <img src="./imagenes/categoriaTelefono.png" alt="Honor">
+                <p>Celulares</p>
+            </a>
+            <a href="#" class="category me-3">
+                <img src="./imagenes/categoriaMicrofono.png" alt="Black and Decker">
+                <p>Microfonos</p>
+            </a>
+            <a href="#" class="category me-3">
+                <img src="./imagenes/Audifonos.png" alt="Audifonos">
+                <p>Audifonos</p>
+            </a>
+            <a href="#" class="category me-3">
+                <img src="./imagenes/categoriaPantalla.png" alt="Pantallas">
+                <p>Pantallas</p>
+            </a>
+            <a href="#" class="category me-3">
+                <img src="./imagenes/categoriaSecadora.png" alt="Secadoras">
+                <p>Secadoras</p>
+            </a>
+            <a href="#" class="category me-3">
+                <img src="./imagenes/categoriaGaming.png" alt="Gaming">
+                <p>Gaming</p>
+            </a>
+            <a href="#" class="category me-3">
+                <img src="./imagenes/categoriaMueble.png" alt="Muebles">
+                <p>Muebles</p>
+            </a>
+        </div>
+    </section>
+
+    <!-- Prodcutos en Tendencia -->
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Productos en Tendencia</h2>
+        <div id="productCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="row">
+                        <div class="col-md-3 text-center">
+                            <div class="card">
+                                <div class="imgBox">
+                                    <img src="./imagenes/Audifonos.png" class="d-block w-100" alt="Producto 1">
+                                </div>
+                                <div class="contentBox">
+                                    <h3>Auriculares Westmire A56</h3>
+                                    <p class="price">₡32,995</p> 
+                                    <a href="#" class="buy">Comprar</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 text-center">
+                            <div class="card">
+                                <div class="imgBox">
+                                    <img src="./imagenes/iphone.png" class="d-block w-100" alt="Producto 2">
+                                </div>
+                                <div class="contentBox">
+                                    <h3>Teclado Mecánico XYZ</h3>
+                                    <p class="price">₡43,995</p> 
+                                    <a href="#" class="buy">Comprar</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 text-center">
+                            <div class="card">
+                                <div class="imgBox">
+                                    <img src="./imagenes/pantalla.png" class="d-block w-100" alt="Producto 3">
+                                </div>
+                                <div class="contentBox">
+                                    <h3>Ratón Inalámbrico Pro</h3>
+                                    <p class="price">₡27,495</p> 
+                                    <a href="#" class="buy">Comprar</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 text-center">
+                            <div class="card">
+                                <div class="imgBox">
+                                    <img src="./imagenes/iphone.png" class="d-block w-100" alt="Producto 4">
+                                </div>
+                                <div class="contentBox">
+                                    <h3>Monitor 24 pulgadas</h3>
+                                    <p class="price">₡109,995</p> 
+                                    <a href="#" class="buy">Comprar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col-md-3 text-center">
+                            <div class="card">
+                                <div class="imgBox">
+                                    <img src="./imagenes/iphone.png" class="d-block w-100" alt="Producto 5">
+                                </div>
+                                <div class="contentBox">
+                                    <h3>Laptop Gamer Xtreme</h3>
+                                    <p class="price">₡714,995</p>
+                                    <a href="#" class="buy">Comprar</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 text-center">
+                            <div class="card">
+                                <div class="imgBox">
+                                    <img src="./imagenes/iphone.png" class="d-block w-100" alt="Producto 6">
+                                </div>
+                                <div class="contentBox">
+                                    <h3>Smartphone ABC</h3>
+                                    <p class="price">₡384,995</p> 
+                                    <a href="#" class="buy">Comprar</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 text-center">
+                            <div class="card">
+                                <div class="imgBox">
+                                    <img src="./imagenes/iphone.png" class="d-block w-100" alt="Producto 7">
+                                </div>
+                                <div class="contentBox">
+                                    <h3>Tablet 10 pulgadas</h3>
+                                    <p class="price">₡192,495</p> 
+                                    <a href="#" class="buy">Comprar</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 text-center">
+                            <div class="card">
+                                <div class="imgBox">
+                                    <img src="./imagenes/iphone.png" class="d-block w-100" alt="Producto 8">
+                                </div>
+                                <div class="contentBox">
+                                    <h3>Cámara Digital 4K</h3>
+                                    <p class="price">₡274,995</p> 
+                                    <a href="#" class="buy">Comprar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#productCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Siguiente</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Beneficios -->
+    <section>
+        <div class="container">
+            <h2 class="text-center mb-4">Beneficios de Comprar en </h2>
+            <hr>
+            <div class="benefits">
+                <div class="benefit-item">
+                    <i class="fas fa-comments"></i>
+                    <p>Atención personalizada vía WA 7050-5100</p>
+                </div>
+                <div class="benefit-item">
+                    <i class="fas fa-lock"></i>
+                    <p>Comprá fácil y 100% seguro 24/7</p>
+                </div>
+                <div class="benefit-item">
+                    <i class="fas fa-credit-card"></i>
+                    <p>Pagá con tarjeta de crédito o débito</p>
+                </div>
+                <div class="benefit-item">
+                    <i class="fas fa-exchange-alt"></i>
+                    <p>Cambios y devoluciones fáciles en todas las tiendas del país</p>
+                </div>
+                <div class="benefit-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <p>Protegé tus compras</p>
+                </div>
+                <div class="benefit-item">
+                    <i class="fas fa-tags"></i>
+                    <p>Los mejores precios, promociones y cupones</p>
+                </div>
+            </div>    
+        </div> 
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="footer bg-light py-4">
+        <div class="container">
+            <div class="row text-center text-md-start">
+                <div class="col-6 col-md-3 footer-col mb-4">
+                    <h4>Nosotros</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Quiénes somos</a></li>
+                        <li><a href="#">Nuestros servicios</a></li>
+                        <li><a href="#">Política de privacidad</a></li>
+                        <li><a href="#">Programa de afiliados</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-3 footer-col mb-4">
+                    <h4>Información</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Preguntas frecuentes</a></li>
+                        <li><a href="#">Envíos</a></li>
+                        <li><a href="#">Devoluciones</a></li>
+                        <li><a href="#">Estado del pedido</a></li>
+                        <li><a href="#">Opciones de pago</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-3 footer-col mb-4">
+                    <h4>Categorías</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Electronica</a></li>
+                        <li><a href="#">Muebles</a></li>
+                        <li><a href="#">Tecnlogia</a></li>
+                        <li><a href="#">Varios</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-3 footer-col mb-4">
+                    <h4>Síguenos</h4>
+                    <div class="social-links d-flex justify-content-center justify-content-md-start">
+                        <a href="#" class="me-2"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="me-2"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="me-2"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+            <!-- Métodos de Pago -->
+            <div class="text-center my-4">
+                <h4>Métodos de Pago</h4>
+                <div class="d-flex justify-content-center">
+                    <a href="#" class="me-5 payment-icon"><i class="fab fa-cc-visa fa-2x"></i></a>
+                    <a href="#" class="me-5 payment-icon"><i class="fab fa-cc-mastercard fa-2x"></i></a>
+                    <a href="#" class="me-5 payment-icon"><i class="fab fa-cc-paypal fa-2x"></i></a>
+                    <a href="#" class="payment-icon"><i class="fab fa-apple-pay fa-2x"></i></a>
+                </div>
+            </div>
+            <p>&copy; Derechos Reservados</p>
+            <a href="#" class="btn-flotante"><i class="fa fa-arrow-up"></i></a>
+        </div>
+    </footer>
+
+    <!-- Enlazar el archivo script.js -->
+	<script src="js/main.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
