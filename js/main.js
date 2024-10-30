@@ -32,3 +32,18 @@ document.getElementById('searchButton').addEventListener('click', function() {
 });
 
 
+
+// ----------------------------------------------------------------
+// Que aparezca el boton de subir al hacer scroll
+// ----------------------------------------------------------------
+const btnFlotante = document.querySelector('.btn-flotante');
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 100) { // Cambia 100 a la cantidad de píxeles que desees
+        btnFlotante.classList.remove('hidden');
+    } else {
+        btnFlotante.classList.add('hidden');
+    }
+});
+
+
+
