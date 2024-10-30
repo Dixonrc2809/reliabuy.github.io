@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reliabuy - Compra en línea</title>
+    <title>Realibuy - Compra en Línea</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Colocar logo en la Pestaña -->
+    <link rel="icon" href="./imagenes/logoNav.png" type="image/png">
 
 	<!-- Font Awesome Icon -->
 	<link rel="stylesheet" href="css/font-awesome.min.css">
@@ -235,25 +238,28 @@
 
     <div id="customCarousel" class="carousel slide">
         <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="./imagenes/banner1.png" class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item">
-            <img src="./imagenes/banner1.png" class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item">
-            <img src="./imagenes/banner1.png" class="d-block w-100" alt="...">
-          </div>
+            <div class="carousel-item active">
+                <img src="./imagenes/banner1.png" class="d-block w-100" alt="banner1">
+            </div>
+            <div class="carousel-item">
+                <img src="./imagenes/banner2.png" class="d-block w-100" alt="banner2">
+            </div>
+            <div class="carousel-item">
+                <!-- Envolver el tercer banner en un enlace -->
+                <a href="productos.html">
+                    <img src="./imagenes/banner3.png" class="d-block w-100" alt="banner3">
+                </a>
+            </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#customCarousel" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
         </button>
         <button class="carousel-control-next" type="button" data-bs-target="#customCarousel" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
         </button>
-      </div>      
+    </div>        
 
     <!-- Prodcutos en Tendencia -->
     <div class="container mt-5">
@@ -277,10 +283,10 @@
                         <div class="col-md-3 text-center">
                             <div class="card">
                                 <div class="imgBox">
-                                    <img src="./imagenes/iphone.png" class="d-block w-100" alt="Producto 2">
+                                    <img src="./imagenes/teclado2.png" class="d-block w-100" alt="Producto 2">
                                 </div>
                                 <div class="contentBox">
-                                    <h3>Teclado Mecánico XYZ</h3>
+                                    <h3>Teclado Mecánico Xpert-k9</h3>
                                     <p class="price">₡43,995</p> 
                                     <a href="#" class="buy">Comprar</a>
                                 </div>
@@ -289,10 +295,10 @@
                         <div class="col-md-3 text-center">
                             <div class="card">
                                 <div class="imgBox">
-                                    <img src="./imagenes/pantalla.png" class="d-block w-100" alt="Producto 3">
+                                    <img src="./imagenes/mouse.png" class="d-block w-100" alt="Producto 3">
                                 </div>
                                 <div class="contentBox">
-                                    <h3>Ratón Inalámbrico Pro</h3>
+                                    <h3>Mouse Gamer</h3>
                                     <p class="price">₡27,495</p> 
                                     <a href="#" class="buy">Comprar</a>
                                 </div>
@@ -301,10 +307,10 @@
                         <div class="col-md-3 text-center">
                             <div class="card">
                                 <div class="imgBox">
-                                    <img src="./imagenes/iphone.png" class="d-block w-100" alt="Producto 4">
+                                    <img src="./imagenes/monitor.png" class="d-block w-100" alt="Producto 4">
                                 </div>
                                 <div class="contentBox">
-                                    <h3>Monitor 24 pulgadas</h3>
+                                    <h3>Monitor curvo 27 pulgadas</h3>
                                     <p class="price">₡109,995</p> 
                                     <a href="#" class="buy">Comprar</a>
                                 </div>
@@ -317,7 +323,7 @@
                         <div class="col-md-3 text-center">
                             <div class="card">
                                 <div class="imgBox">
-                                    <img src="./imagenes/iphone.png" class="d-block w-100" alt="Producto 5">
+                                    <img src="./imagenes/laptopgamer2.png" class="d-block w-100" alt="Producto 5">
                                 </div>
                                 <div class="contentBox">
                                     <h3>Laptop Gamer Xtreme</h3>
@@ -332,8 +338,8 @@
                                     <img src="./imagenes/iphone.png" class="d-block w-100" alt="Producto 6">
                                 </div>
                                 <div class="contentBox">
-                                    <h3>Smartphone ABC</h3>
-                                    <p class="price">₡384,995</p> 
+                                    <h3>Iphone 14 Pro Max 256GB</h3>
+                                    <p class="price">₡469,995</p> 
                                     <a href="#" class="buy">Comprar</a>
                                 </div>
                             </div>
@@ -341,11 +347,11 @@
                         <div class="col-md-3 text-center">
                             <div class="card">
                                 <div class="imgBox">
-                                    <img src="./imagenes/iphone.png" class="d-block w-100" alt="Producto 7">
+                                    <img src="./imagenes/tablet2.png" class="d-block w-100" alt="Producto 7">
                                 </div>
                                 <div class="contentBox">
-                                    <h3>Tablet 10 pulgadas</h3>
-                                    <p class="price">₡192,495</p> 
+                                    <h3>Tablet Samsung 10 pulgadas</h3>
+                                    <p class="price">₡69,495</p> 
                                     <a href="#" class="buy">Comprar</a>
                                 </div>
                             </div>
@@ -353,11 +359,11 @@
                         <div class="col-md-3 text-center">
                             <div class="card">
                                 <div class="imgBox">
-                                    <img src="./imagenes/iphone.png" class="d-block w-100" alt="Producto 8">
+                                    <img src="./imagenes/camara.png" class="d-block w-100" alt="Producto 8">
                                 </div>
                                 <div class="contentBox">
-                                    <h3>Cámara Digital 4K</h3>
-                                    <p class="price">₡274,995</p> 
+                                    <h3>Cámara de Vigilancia</h3>
+                                    <p class="price">₡54,995</p> 
                                     <a href="#" class="buy">Comprar</a>
                                 </div>
                             </div>
