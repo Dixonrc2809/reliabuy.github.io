@@ -482,7 +482,6 @@ body {
 
 
 
-
 /*============================*/
 /* Beneficios */
 /*============================*/
@@ -541,6 +540,104 @@ hr {
     }
 }
 
+
+
+/*============================*/
+/* Preguntas Frecuentes */
+/*============================*/
+#faq-section {
+    padding: 10px 0;
+    overflow: hidden;
+}
+
+#faq-section .faq-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#faq-section .accordion-style .faq-item:last-child {
+    margin-bottom: 0;
+}
+
+/* Estilo para el encabezado de cada ítem */
+#faq-section .accordion-style .faq-header {
+    border: 0;
+    background: none;
+    padding: 0;
+    border-bottom: none;
+}
+
+/* Estilo del botón cuando está abierto */
+#faq-section .accordion-style .faq-btn {
+    color: #ffffff; /* Letra en gris */
+    background: #007bff; /* Fondo blanco */
+    border: 1px solid #007bff; /* Borde azul */
+    display: block;
+    width: 100%;
+    font-size: 18px;
+    border-radius: 3px;
+    text-align: left;
+    padding: 15px 55px;
+    position: relative;
+    text-decoration: none; /* Quitar subrayado */
+}
+
+#faq-section .accordion-style .faq-btn.collapsed {
+    color: #333; /* Letra gris cuando está cerrado */
+    background: #fff; /* Fondo blanco */
+}
+
+#faq-section .accordion-style .faq-btn.collapsed::after {
+    content: "+";
+    font-size: 20px;
+    font-weight: 600;
+    background-color: #007bff; /* Fondo del icono azul */
+    color: #fff; /* Icono blanco */
+    width: 26px;
+    height: 26px;
+    position: absolute;
+    left: 16px;
+    top: 15px;
+    text-align: center;
+    border-radius: 50%;
+}
+
+#faq-section .accordion-style .faq-btn::after {
+    content: "⬏";
+    font-size: 20px;
+    font-weight: 600;
+    background-color: #007bff; /* Fondo del icono azul cuando está abierto */
+    color: #fff; /* Icono blanco */
+    width: 26px;
+    height: 26px;
+    position: absolute;
+    left: 16px;
+    top: 15px;
+    text-align: center;
+    border-radius: 50%;
+}
+
+/* Estilo del cuerpo del ítem cuando está expandido */
+#faq-section .accordion-style .faq-body {
+    padding: 20px;
+    color: #000000; 
+    background-color: #ffffff; 
+    border: 1px solid #007bff;
+    border-radius: 0 0 3px 3px;
+}
+
+
+@media screen and (max-width: 767px) {
+    #faq-section .accordion-style .faq-btn {
+        padding: 15px 40px 15px 55px;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    #faq-section .accordion-style .faq-btn {
+        padding: 15px 20px 15px 55px;
+    }
+}
 
 
 /*============================*/
