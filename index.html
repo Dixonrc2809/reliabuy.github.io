@@ -9,23 +9,26 @@
     <!-- Colocar logo en la Pestaña -->
     <link rel="icon" href="./imagenes/logoNav.png" type="image/png">
 
+    <!-- SweetAlert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 	<!-- Font Awesome Icon -->
 	<link rel="stylesheet" href="css/font-awesome.min.css">
-
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 
+    <!-- CSS-->
     <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
 
     <header class="header">
-        <div class="promo-banner">¡Hasta 12 meses TASA CERO BAC!</div>
+        
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <!-- Logo en la izquierda -->
 
         <!-- ***** Logo ***** -->
-        <a href="index.html" class="logo"><img src="./imagenes/logoNav.png" alt="Logo"></a>
+        <a href="index.html" class="logo"><img src="./imagenes/logoNavBlanco.png" alt="Logo"></a>
 
         <!-- Botón de menú hamburguesa para pantallas pequeñas -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -37,15 +40,22 @@
         <!-- Menú central -->
         <ul class="navbar-nav">
             <li class="nav-item active">
-            <a class="nav-link me-4" href="#">Inicio<span class="sr-only">(current)</span></a>
+            <a class="nav-link me-4" href="index.html">Inicio<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
             <a class="nav-link me-4" href="productos.html">Productos</a>
             </li>
-            <a class="nav-link me-4" href="#">Información</a>
+            <li class="nav-item">
+            <a class="nav-link me-4" href="#">Contacto</a>
             </li>
             <li class="nav-item">
-            <a class="nav-link" href="FAQs.html">Preguntas Frecuentes</a>
+            <a class="nav-link me-4" href="#">Blog</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link me-4" href="FAQs.html">Preguntas Frecuentes</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link me-4" href="#">Acerca De</a>
             </li>
         </ul>
         </div>
@@ -64,6 +74,9 @@
         <!-- Carrito de compras -->
         <a href="carritoCompra.html" class="btn btn-outline-primary">
             <i class="fas fa-shopping-cart"></i>
+        </a>
+        <a class="nav-link" href="#" id="view-cart">
+            <span class="badge badge-pill badge-danger" id="cart-indicator" style="display: none;">¡Pagar!</span>
         </a>
         </div>
     </nav>
@@ -236,6 +249,7 @@
         </div>
     </section>
 
+    <!-- Carrusel Imagenes -->
     <div id="customCarousel" class="carousel slide">
         <div class="carousel-inner">
             <div class="carousel-item active">
@@ -261,7 +275,7 @@
         </button>
     </div>        
 
-    <!-- Prodcutos en Tendencia -->
+    <!-- Productos en Tendencia -->
     <div class="container mt-5">
         <h2 class="text-center mb-4">Productos en Tendencia</h2>
         <div id="productCarousel" class="carousel slide" data-bs-ride="carousel">
@@ -276,7 +290,7 @@
                                 <div class="contentBox">
                                     <h3>Auriculares Westmire A56</h3>
                                     <p class="price">₡32,995</p> 
-                                    <a href="#" class="buy">Comprar</a>
+                                    <a href="#" class="buy">Añadir al Carrito</a>
                                 </div>
                             </div>
                         </div>
@@ -288,7 +302,7 @@
                                 <div class="contentBox">
                                     <h3>Teclado Mecánico Xpert-k9</h3>
                                     <p class="price">₡43,995</p> 
-                                    <a href="#" class="buy">Comprar</a>
+                                    <a href="#" class="buy">Añadir al Carrito</a>
                                 </div>
                             </div>
                         </div>
@@ -300,7 +314,7 @@
                                 <div class="contentBox">
                                     <h3>Mouse Gamer</h3>
                                     <p class="price">₡27,495</p> 
-                                    <a href="#" class="buy">Comprar</a>
+                                    <a href="#" class="buy">Añadir al Carrito</a>
                                 </div>
                             </div>
                         </div>
@@ -312,7 +326,7 @@
                                 <div class="contentBox">
                                     <h3>Monitor curvo 27 pulgadas</h3>
                                     <p class="price">₡109,995</p> 
-                                    <a href="#" class="buy">Comprar</a>
+                                    <a href="#" class="buy">Añadir al Carrito</a>
                                 </div>
                             </div>
                         </div>
@@ -328,7 +342,7 @@
                                 <div class="contentBox">
                                     <h3>Laptop Gamer Xtreme</h3>
                                     <p class="price">₡714,995</p>
-                                    <a href="#" class="buy">Comprar</a>
+                                    <a href="#" class="buy">Añadir al Carrito</a>
                                 </div>
                             </div>
                         </div>
@@ -340,7 +354,7 @@
                                 <div class="contentBox">
                                     <h3>Iphone 14 Pro Max 256GB</h3>
                                     <p class="price">₡469,995</p> 
-                                    <a href="#" class="buy">Comprar</a>
+                                    <a href="#" class="buy">Añadir al Carrito</a>
                                 </div>
                             </div>
                         </div>
@@ -352,7 +366,7 @@
                                 <div class="contentBox">
                                     <h3>Tablet Samsung 10 pulgadas</h3>
                                     <p class="price">₡69,495</p> 
-                                    <a href="#" class="buy">Comprar</a>
+                                    <a href="#" class="buy">Añadir al Carrito</a>
                                 </div>
                             </div>
                         </div>
@@ -364,7 +378,7 @@
                                 <div class="contentBox">
                                     <h3>Cámara de Vigilancia</h3>
                                     <p class="price">₡54,995</p> 
-                                    <a href="#" class="buy">Comprar</a>
+                                    <a href="#" class="buy">Añadir al Carrito</a>
                                 </div>
                             </div>
                         </div>
@@ -474,8 +488,13 @@
         </div>
     </footer>
 
+    <!-- jQuery, Popper.js y JavaScript de Bootstrap -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
     <!-- Enlazar el archivo script.js -->
 	<script src="js/main.js"></script>
+    <script src="js/carritoCompra.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>

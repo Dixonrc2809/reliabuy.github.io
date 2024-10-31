@@ -29,16 +29,12 @@ body {
     display: block; /* Asegura que se muestre como bloque */
 }
 
-.header .promo-banner {
-    background-color: #007bff;
-    color: #fff;
-    text-align: center;
-    padding: 8px;
-    font-size: 15px;
-}
+
 
 .navbar {
-    background: conic-gradient(from 0deg, #ebf9ff9a, #ffaba04b, #ebf9ff9a);
+    background-image: url('../imagenes/bannerCeleste2.png'); /* Cambia la ruta por la de tu imagen */
+    background-size: cover; /* Ajusta la imagen para cubrir todo el área */
+    background-position: center; /* Centra la imagen */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 0.8rem 1.5rem;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
@@ -56,7 +52,7 @@ body {
 
 /* Estilos de los enlaces del Navbar */
 .navbar-nav .nav-link {
-    color: #333333;
+    color: #ffffff;
     font-weight: 500;
     padding: 0.5rem 1rem;
     position: relative;
@@ -64,7 +60,7 @@ body {
 }
 
 .navbar-nav .nav-link:hover {
-    color: #007bff;
+    color: #000000;
 }
 
 /* Efecto de subrayado animado */
@@ -75,7 +71,24 @@ body {
     bottom: -3px;
     width: 0;
     height: 2px;
-    background-color: #007bff;
+    background-color: #000000;
+    transition: width 0.3s ease;
+}
+
+
+.navbar-nav .nav-link:hover::after {
+    width: 100%;
+}
+
+/* Efecto de subrayado animado para los enlaces de la barra de navegación */
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0;
+    height: 2px;
+    background-color: #000000;
     transition: width 0.3s ease;
 }
 
@@ -83,16 +96,61 @@ body {
     width: 100%;
 }
 
+/* Efecto de subrayado animado para el enlace activo */
+.navbar-nav .nav-item.active .nav-link {
+    color: #000000; /* Cambia el color del enlace activo */
+}
+
+.navbar-nav .nav-item.active .nav-link::after {
+    width: 100%; /* Asegura que el subrayado esté visible */
+}
+
+/* Mantiene el subrayado negro en el enlace activo */
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-item.active .nav-link:hover {
+    color: #000000; /* Color en hover */
+}
+
+/* Efecto de subrayado para el enlace activo */
+.navbar-nav .nav-item.active .nav-link::after {
+    background-color: #000000; /* Color de subrayado */
+}
+
+
+/* Ajustes básicos de los botones */
+#searchButton,
+a.btn.btn-outline-primary {
+    position: relative;
+    padding: 0.5rem 1rem; 
+    color: #ffffff; /* Color inicial de los iconos */
+}
+
+/* Efecto de subrayado animado para los iconos de búsqueda y carrito de compras */
+#searchButton::after,
+a.btn.btn-outline-primary::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -3px; 
+    width: 0;
+    height: 2px;
+    background-color: #000000; /* Color de la línea */
+    transition: width 0.3s ease;
+}
+
+/* Subrayado en hover para ambos botones */
+#searchButton:hover::after,
+a.btn.btn-outline-primary:hover::after {
+    width: 100%; 
+}
+
+
 /* Botón de búsqueda */
 #searchButton {
     background-color: transparent;
     border: none;
-    color: #333333;
+    color: #ffffff; /* Color inicial blanco */
     transition: color 0.3s ease;
-}
-
-#searchButton:hover {
-    color: #007bff;
 }
 
 /* Formulario de búsqueda desplegable */
@@ -113,19 +171,32 @@ body {
     box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
 }
 
+/* Cambia el color de los íconos de búsqueda y carrito de compras a blanco */
+#searchButton .fas,
+#cart-indicator,
+a.btn.btn-outline-primary .fas {
+    color: #ffffff;
+}
+
+/* Asegura que el color de los íconos sea negro en hover */
+#searchButton:hover .fas,
+a.btn.btn-outline-primary:hover .fas {
+    color: #000000; 
+}
+
+/* Estilo para el botón de búsqueda en el formulario */
 #searchForm button {
-    background-color: #007bff;
+    background-color: #000000;
     border: none;
     color: #ffffff;
     border-radius: 20px;
     padding: 0.4rem 1rem;
     margin-left: 0.5rem;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-#searchForm button:hover {
-    background-color: #0056b3;
-}
+
+
 
 /* Carrito de compras */
 .navbar .btn-outline-primary {
@@ -136,7 +207,7 @@ body {
 }
 
 .navbar .btn-outline-primary:hover {
-    color: #007bff;
+    color: #000000;
 }
 
 /* Ocultar bordes y sombras en dispositivos pequeños */
@@ -403,6 +474,7 @@ body {
 }
 
 .card .contentBox .buy {
+    font-size: 14px; /* Tamaño de fuente */
     opacity: 0;
     padding: 8px 15px; /* Ajustes en padding */
     margin-top: auto; /* Mantiene en la parte inferior */
@@ -413,6 +485,7 @@ body {
     transition: 0.5s;
     width: 100%; /* Ancho completo */
     text-align: center; /* Centra el texto */
+    text-decoration: none;
 }
 
 .card:hover .contentBox .buy {
@@ -450,33 +523,30 @@ body {
     background-color: rgba(48, 138, 255, 0.8); /* Efecto hover más claro */
 }
 
+
+
 /* Responsividad */
 @media (max-width: 768px) {
     .card {
-        max-width: 90%; /* Ajuste para pantallas pequeñas */
-        height: auto; /* Altura automática */
+        max-width: 100%; /* Ajuste para pantallas pequeñas */
+        height: 450px; /* Altura automática */
         margin: 5px; /* Espaciado más pequeño */
-    }
-
-    .card .contentBox h3 {
-        font-size: 12px; /* Tamaño de fuente */
-        white-space: nowrap; /* Evita saltos de línea */
-        overflow: hidden; /* Oculta el texto desbordado */
-        text-overflow: ellipsis; /* Puntos suspensivos */
-    }
-
-    .card .contentBox .price {
-        font-size: 16px; /* Tamaño de fuente */
-    }
-
-    .card .contentBox .buy {
-        font-size: 0.9rem; /* Tamaño del botón */
     }
 
     /* Asegura que las flechas se vean bien en móviles */
     .carousel-control-prev, .carousel-control-next {
         width: 10%; /* Aumentar tamaño para mejor toque */
         margin: 0; /* Sin margen en móviles */
+    }
+
+    .carousel-item .row {
+        display: flex; /* Asegurar que los productos se muestren en fila */
+        flex-wrap: nowrap; /* Evitar que se envuelvan */  
+    }
+
+    .carousel-item {
+        flex-direction: column; /* Coloca los elementos uno encima del otro */
+        align-items: center; /* Centra el contenido */
     }
 }
 
