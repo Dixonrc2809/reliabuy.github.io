@@ -14,7 +14,6 @@
 
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 
-    <link rel="stylesheet" href="./css/carritoCompra.css">
     <link rel="stylesheet" href="./css/styles.css">
 
 </head>
@@ -47,7 +46,7 @@
                 <li class="nav-item">
                 <a class="nav-link me-4" href="#">Contacto</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item active">
                 <a class="nav-link me-4" href="#">Blog</a>
                 </li>
                 <li class="nav-item">
@@ -71,126 +70,139 @@
         </form>
 
         <!-- Carrito de compras -->
-        <a href="#" class="btn btn-outline-primary">
+        <a href="carritoCompra.html" class="btn btn-outline-primary">
             <i class="fas fa-shopping-cart"></i>
         </a>
         </div>
     </nav>
 
 
-
-<!-- CARRITO DE COMPRA MENU -->
-<div class="container pb-5 mb-2">
-    <!-- Alerta-->
-    <div class="alert alert-info alert-dismissible fade show text-center mb-30"><span class="alert-close" data-dismiss="alert"></span><i class="fe-icon-award"></i>&nbsp;&nbsp;Con esta compra ganarás <strong>2,549</strong> puntos de recompensa.</div>
-    <!-- Artículo en el carrito-->
-    <div class="cart-item d-md-flex justify-content-between"><span class="remove-item"><i class="fa fa-times"></i></span>
-        <div class="px-3 my-3">
-            <a class="cart-item-product" href="#">
-                <div class="cart-item-product-thumb"><img src="./imagenes/iphone.png" alt="Producto"></div>
-                <div class="cart-item-product-info">
-                    <h4 class="cart-item-product-title">iPhone 14 Pro Max</h4><span><strong>Memoria:</strong> 256GB</span><span><strong>Color:</strong> Gris Espacial</span>
+<!-- Blog Secciones Start -->
+<section class="section gray-bg" id="blog">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-7 text-center">
+                <div class="section-title">
+                    <h2>Últimas Noticias</h2>
+                    <p>Conoce nuestras últimas recomendaciones y novedades en productos</p>
                 </div>
-            </a>
-        </div>
-        <div class="px-3 my-3 text-center">
-            <div class="cart-item-label">Cantidad</div>
-            <div class="count-input">
-                <select class="form-control">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                    <option>6</option>
-                </select>
             </div>
         </div>
-        <div class="px-3 my-3 text-center">
-            <div class="cart-item-label">Subtotal</div><span class="text-xl font-weight-medium">$1,450.00</span>
-        </div>
-        <div class="px-3 my-3 text-center">
-            <div class="cart-item-label">Descuento</div><span class="text-xl font-weight-medium">—</span>
-        </div>
-    </div>
-    <!-- Artículo en el carrito-->
-    <div class="cart-item d-md-flex justify-content-between"><span class="remove-item"><i class="fa fa-times"></i></span>
-        <div class="px-3 my-3">
-            <a class="cart-item-product" href="#">
-                <div class="cart-item-product-thumb"><img src="./imagenes/teclado2.png" alt="Producto"></div>
-                <div class="cart-item-product-info">
-                    <h4 class="cart-item-product-title">Teclado Gamer Mecánico</h4><span><strong>Tipo:</strong> Mecánico</span><span><strong>Color:</strong> Negro</span>
+        <div class="row">
+            <!-- Primer artículo -->
+            <div class="col-lg-4">
+                <div class="blog-grid">
+                    <div class="blog-img">
+                        <a href="#"><img src="./imagenes/articulo1.png" title="Producto 1" alt=""></a>
+                    </div>
+                    <div class="blog-info">
+                        <h5><a href="./html/tendenciasTecnologicas.html" target="_blank">Las Últimas Tendencias en Tecnología</a></h5>
+                        <p>Descubre los gadgets y dispositivos que están revolucionando el mercado.</p>
+                        <div class="btn-bar">
+                            <a href="./html/tendenciasTecnologicas.html" target="_blank" class="px-btn-arrow">
+                                <span>Leer Más</span>
+                                <i class="arrow"></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
-            </a>
-        </div>
-        <div class="px-3 my-3 text-center">
-            <div class="cart-item-label">Cantidad</div>
-            <div class="count-input">
-                <select class="form-control">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                    <option>6</option>
-                </select>
+            </div>
+            <!-- Segundo artículo -->
+            <div class="col-lg-4">
+                <div class="blog-grid">
+                    <div class="blog-img">
+                        <a href="#"><img src="./imagenes/articulo2.png" title="Producto 2" alt=""></a>
+                    </div>
+                    <div class="blog-info">
+                        <h5><a href="./html/tendenciaMuebles.html" target="_blank">Muebles Que Marcan Tendencia</a></h5>
+                        <p>Renueva tus espacios con los muebles más modernos del mercado.</p>
+                        <div class="btn-bar">
+                            <a href="./html/tendenciaMuebles.html" target="_blank" class="px-btn-arrow">
+                                <span>Leer Más</span>
+                                <i class="arrow"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Tercer artículo -->
+            <div class="col-lg-4">
+                <div class="blog-grid">
+                    <div class="blog-img">
+                        <a href="#"><img src="./imagenes/articulo3.png" title="Producto 3" alt=""></a>
+                    </div>
+                    <div class="blog-info">
+                        <h5><a href="./html/tipsHogar.html" target="_blank">Tips para Organizar tu Hogar</a></h5>
+                        <p>Ideas y soluciones prácticas para maximizar tus espacios.</p>
+                        <div class="btn-bar">
+                            <a href="./html/tipsHogar.html" target="_blank" class="px-btn-arrow">
+                                <span>Leer Más</span>
+                                <i class="arrow"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="px-3 my-3 text-center">
-            <div class="cart-item-label">Subtotal</div><span class="text-xl font-weight-medium">$75.00</span>
-        </div>
-        <div class="px-3 my-3 text-center">
-            <div class="cart-item-label">Descuento</div><span class="text-xl font-weight-medium">—</span>
-        </div>
-    </div>
-    <!-- Artículo en el carrito-->
-    <div class="cart-item d-md-flex justify-content-between"><span class="remove-item"><i class="fa fa-times"></i></span>
-        <div class="px-3 my-3">
-            <a class="cart-item-product" href="#">
-                <div class="cart-item-product-thumb"><img src="./imagenes/Audifonos.png" alt="Producto"></div>
-                <div class="cart-item-product-info">
-                    <h4 class="cart-item-product-title">Auriculares Westmire A56</h4><span><strong>Color:</strong> Blanco</span>
+        <div class="row mt-4">
+            <!-- Cuarto artículo -->
+            <div class="col-lg-4">
+                <div class="blog-grid">
+                    <div class="blog-img">
+                        <a href="#"><img src="./imagenes/articulo4.png" title="Producto 4" alt=""></a>
+                    </div>
+                    <div class="blog-info">
+                        <h5><a href="./html/seguroComprar.html" target="_blank">¿Es seguro comprar en línea?</a></h5>
+                        <p>Conoce la información necesaria para comprar en línea.</p>
+                        <div class="btn-bar">
+                            <a href="./html/seguroComprar.html" target="_blank" class="px-btn-arrow">
+                                <span>Leer Más</span>
+                                <i class="arrow"></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
-            </a>
-        </div>
-        <div class="px-3 my-3 text-center">
-            <div class="cart-item-label">Cantidad</div>
-            <div class="count-input">
-                <select class="form-control">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                    <option>6</option>
-                </select>
+            </div>
+            <!-- Quinto artículo -->
+            <div class="col-lg-4">
+                <div class="blog-grid">
+                    <div class="blog-img">
+                        <a href="#"><img src="./imagenes/articulo5.png" title="Producto 5" alt=""></a>
+                    </div>
+                    <div class="blog-info">
+                        <h5><a href="./html/decoracionModerna.html" target="_blank">Decoración Moderna en Tendencia</a></h5>
+                        <p>Actualiza tu espacio con los estilos decorativos más modernos.</p>
+                        <div class="btn-bar">
+                            <a href="./html/decoracionModerna.html" target="_blank" class="px-btn-arrow">
+                                <span>Leer Más</span>
+                                <i class="arrow"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Sexto artículo -->
+            <div class="col-lg-4">
+                <div class="blog-grid">
+                    <div class="blog-img">
+                        <a href="#"><img src="./imagenes/articulo6.png" title="Producto 6" alt=""></a>
+                    </div>
+                    <div class="blog-info">
+                        <h5><a href="./html/beneficiosOnline.html" target="_blank">Los Beneficios de Compras Online</a></h5>
+                        <p>Aprovecha las ventajas de comprar desde la comodidad de tu hogar.</p>
+                        <div class="btn-bar">
+                            <a href="./html/beneficiosOnline.html" target="_blank" class="px-btn-arrow">
+                                <span>Leer Más</span>
+                                <i class="arrow"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="px-3 my-3 text-center">
-            <div class="cart-item-label">Subtotal</div><span class="text-xl font-weight-medium">$50.00</span>
-        </div>
-        <div class="px-3 my-3 text-center">
-            <div class="cart-item-label">Descuento</div><span class="text-xl font-weight-medium">—</span>
-        </div>
     </div>
-    <!-- Cupón + Subtotal-->
-    <div class="d-sm-flex justify-content-between align-items-center text-center text-sm-left">
-        <form class="form-inline py-2">
-            <label class="sr-only">Código de cupón</label>
-            <input class="form-control form-control-sm my-2 mr-3" type="text" placeholder="Código de descuento" required="">
-            <button class="btn btn-style-1 btn-secondary btn-sm my-2 mx-auto mx-sm-0" type="submit">Aplicar cupón</button>
-        </form>
-        <div class="py-2"><span class="d-inline-block align-middle text-sm text-muted font-weight-medium text-uppercase mr-2">Subtotal:</span><span class="d-inline-block align-middle text-xl font-weight-medium">$1,575.00</span></div>
-    </div>
-    <!-- Botones-->
-    <hr class="my-2">
-    <div class="row pt-3 pb-5 mb-2">
-        <div class="col-sm-6 mb-3"><a class="btn btn-style-1 btn-secondary btn-block btn-actualizar-carrito" href="#"><i class="fe-icon-refresh-ccw"></i>&nbsp;Actualizar carrito</a></div>
-        <div class="col-sm-6 mb-3"><a class="btn btn-style-1 btn-secondary btn-block btn-finalizar-compra" href="#"><i class="fe-icon-credit-card"></i>&nbsp;Finalizar Compra</a></div>
-    </div>
-</div>
-
-
+</section>
+<!-- Blog Secciones END -->
 
     <!-- Footer -->
     <footer class="footer bg-light py-4">

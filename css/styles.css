@@ -707,23 +707,82 @@ hr {
     }
 }
 
+/* ---------------------------------------------- */
+/* Blog Inicio */
+/* ---------------------------------------------- */
+.blog-grid {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    transform: translateY(20px); /* Desplazado hacia abajo */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Transiciones suaves */
+}
+
+.blog-grid:hover {
+    transform: translateY(0); /* Regresa a su posición original */
+}
+
+.blog-grid .blog-img {
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.blog-grid .blog-info {
+    box-shadow: 0 0 30px rgba(31, 45, 61, 0.125);
+    border-radius: 5px;
+    background: #ffffff;
+    padding: 20px;
+    margin: -30px 20px 0;
+    position: relative;
+}
+
+.blog-grid .blog-info h5 {
+    font-size: 22px;
+    font-weight: 500;
+    margin: 0 0 10px;
+}
+
+.blog-grid .blog-info h5 a {
+    color: #007bff;
+}
+
+.blog-grid .blog-info p {
+    margin: 0;
+}
+
+.blog-grid .blog-info .btn-bar {
+    margin-top: 20px;
+}
+
+.px-btn-arrow {
+    color: #ffc107;
+}
+
+.section.gray-bg {
+    margin-bottom: 40px; /* Espacio entre el blog y el footer */
+}
+/* ---------------------------------------------- */
+/* Blog Fin */
+/* ---------------------------------------------- */
+
 
 /*============================*/
 /* Estilos para el footer */
 /*============================*/
 .footer {
-    /*background: linear-gradient(90deg, #A2CDF6, #ffd1c49c);*/
-    background: linear-gradient(90deg, #e1f0ff, #ffe3db9c);
-    padding: 2.5rem 1rem; /* Aumenta el padding para más espacio */
-    color: #333;
-    border-top: 0.1px solid #007bff5b; /* Agrega un borde superior para más definición */
+    background-image: url('../imagenes/bannerCeleste2.png'); 
+    background-size: cover; /* Ajusta la imagen para cubrir todo el área */
+    background-position: center; 
+    color: #ffffff ;
+    padding: 2.5rem 1rem; 
+    border-top: 0.1px solid #0000005b; /* Agrega un borde superior */
 }
 
 .footer h4 {
-    font-size: 1.5rem; /* Aumenta el tamaño del encabezado */
+    font-size: 1.5rem; 
     margin-bottom: 1rem;
-    font-weight: bold; /* Agrega negrita para destacar */
-    color: #007bff; /* Cambia el color a azul para mayor contraste */
+    font-weight: bold; 
+    color: #ffc107;
 }
 
 .footer ul {
@@ -731,23 +790,18 @@ hr {
 }
 
 .footer ul li {
-    margin-bottom: 0.5rem; /* Espacio entre los elementos de la lista */
+    color: #ffffff;
+    margin-bottom: 0.5rem; 
 }
 
 .footer ul li a {
-    color: #333;
+    color: #ffffff;
     text-decoration: none;
-    transition: color 0.3s, padding-left 0.3s; /* Añade transición para el padding */
-}
-
-.footer ul li a:hover {
-    color: #007bff;
-    padding-left: 5px; /* Efecto de desplazamiento al hacer hover */
+    transition: color 0.3s, padding-left 0.3s; 
 }
 
 .social-links a {
     font-size: 1.5rem;
-    color: #333;
     margin-right: 1rem;
     transition: color 0.3s, transform 0.3s; /* Añade transformación al hover */
 }
@@ -758,56 +812,162 @@ hr {
 }
 
 .footer-col ul li a:hover {
-    color: #1f5588;
+    color: #000000;
     padding-left: 8px;
 }
 
 .footer-col .social-links a {
     display: inline-block;
-    height: 45px; /* Aumenta el tamaño de los botones de redes sociales */
-    width: 45px; /* Aumenta el tamaño de los botones de redes sociales */
-    background-color: rgba(93, 182, 255, 0.589);
+    height: 45px; 
+    width: 45px; 
+    background-color: #ffffff;
     margin: 0 10px 10px 0;
     text-align: center;
-    line-height: 45px; /* Centra el texto en el botón */
+    line-height: 45px; 
     border-radius: 100%;
     color: #000000;
     transition: all 0.5s ease;
 }
 
 .footer-col .social-links a:hover {
-    color: #24262b;
-    background-color: #ffffff;
+    color: #ffffff;
+    background-color: #000000;
     transform: rotate(360deg); /* Rota el ícono al hacer hover */
 }
 
 .payment-icon i {
-    color: rgba(0, 0, 0, 0.466); /* Cambia el color a negro */
+    color: #ffffff; 
     transition: color 0.3s; /* Transición suave al cambiar el color */
 }
 
 .payment-icon:hover i {
-    color: #007bff; /* Color al pasar el ratón sobre el icono */
+    color: #000000; 
 }
 
-/* Ajustes responsivos */
-@media (max-width: 768px) {
+
+/* Pantallas medianas */
+@media (max-width: 992px) { 
     .footer h4 {
-        font-size: 1.25rem; /* Reduce el tamaño del encabezado en pantallas pequeñas */
+        font-size: 1.25rem; 
     }
 
     .footer-col {
-        text-align: center; /* Centra el texto en pantallas pequeñas */
+        text-align: center; 
     }
 
     .footer ul li {
-        text-align: center; /* Centra los enlaces en pantallas pequeñas */
+        text-align: center; 
     }
 
     .social-links {
-        justify-content: center; /* Centra los íconos de redes sociales en pantallas pequeñas */
+        justify-content: center; 
+    }
+
+    .social-links a {
+        height: 40px; 
+        width: 40px; 
+        border-radius: 100%; 
+    }
+
+    .footer ul li a {
+        transition: color 0.3s; /* Transición para el hover */
+    }
+
+    .footer ul li a:hover {
+        color: #ffc107; 
+    }
+
+    .payment-icon i {
+        color: #ffffff; 
+    }
+
+    .payment-icon:hover i {
+        color: #000000; 
     }
 }
+
+/* Pantallas pequeñas */
+@media (max-width: 768px) { 
+    .footer h4 {
+        font-size: 1.1rem; 
+    }
+
+    .footer-col {
+        text-align: center; 
+    }
+
+    .footer ul li {
+        text-align: center; 
+    }
+
+    .social-links {
+        justify-content: center; 
+    }
+
+    .social-links a {
+        height: 35px; 
+        width: 35px; 
+        border-radius: 100%; 
+    }
+
+    .footer ul li a {
+        transition: color 0.3s; 
+    }
+
+    .footer ul li a:hover {
+        color: #ffc107; 
+    }
+
+    .payment-icon i {
+        color: #ffffff; 
+    }
+
+    .payment-icon:hover i {
+        color: #000000; 
+    }
+}
+
+/* Pantallas ultra pequeñas */
+@media (max-width: 576px) { 
+    .footer h4 {
+        font-size: 1rem; 
+    }
+
+    .footer-col {
+        text-align: center; 
+    }
+
+    .footer ul li {
+        text-align: center; 
+    }
+
+    .social-links {
+        justify-content: center; 
+    }
+
+    .social-links a {
+        height: 30px; 
+        width: 30px; 
+        border-radius: 100%; 
+    }
+
+    .footer ul li a {
+        transition: color 0.3s; 
+    }
+
+    .footer ul li a:hover {
+        color: #ffc107; 
+    }
+
+    .payment-icon i {
+        color: #ffffff; 
+    }
+
+    .payment-icon:hover i {
+        color: #000000; 
+    }
+}
+
 
 
 /*============================*/
