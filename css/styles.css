@@ -227,6 +227,7 @@ a.btn.btn-outline-primary:hover .fas {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: 60px;
 }
 
 .hero h1 {
