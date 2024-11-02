@@ -67,40 +67,48 @@ body {
     position: absolute;
     left: 0;
     bottom: -3px;
-    width: 0;
-    height: 2px;
-    background-color: #000000;
-    transition: width 0.3s ease;
-}
-
-
-.navbar-nav .nav-link:hover::after {
-    width: 100%;
-}
-
-/* Efecto de subrayado animado para los enlaces de la barra de navegación */
-.navbar-nav .nav-link::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -3px;
-    width: 0;
+    width: 0; /* Ancho inicial es 0 */
     height: 2px;
     background-color: #ffc107;
-    transition: width 0.3s ease;
+    transition: width 0.3s ease, opacity 0.3s ease; /* Transiciones para width y opacity */
+    opacity: 0; /* Oculta inicialmente la línea */
 }
 
+/* Al hacer hover, expande el subrayado */
 .navbar-nav .nav-link:hover::after {
-    width: 100%;
+    width: 100%; /* Expande el ancho al 100% */
+    opacity: 1; /* Muestra la línea al hacer hover */
+}
+
+/* Muestra el subrayado para el enlace activo */
+.navbar-nav .nav-item.active .nav-link::after {
+    background-color: #ffc107; /* Color de subrayado */
+    width: 100%; /* Asegura que el subrayado esté visible en el enlace activo */
+    opacity: 1; /* Muestra la línea si está activo */
+}
+
+/* Asegura que la línea subrayada no se vea cuando no se interactúa y no está activa */
+.navbar-nav .nav-link:not(:hover)::after {
+    transition: width 0.3s ease, opacity 0.3s ease; /* Aplica la misma transición */
+    width: 0; /* Reduce el ancho al salir */
+    opacity: 0; /* Oculta la línea */
+}
+
+/* Mantiene el subrayado visible cuando el enlace está activo y no está en hover */
+.navbar-nav .nav-item.active .nav-link:not(:hover)::after {
+    width: 100%; /* Mantiene el ancho al 100% */
+    opacity: 1; /* Mantiene la opacidad visible */
+}
+
+/* Si el enlace está activo, asegura que la línea no se oculte al pasar el mouse */
+.navbar-nav .nav-item.active .nav-link:hover::after {
+    width: 100%; /* Mantiene el ancho al 100% */
+    opacity: 1; /* Mantiene la opacidad visible */
 }
 
 /* Efecto de subrayado animado para el enlace activo */
 .navbar-nav .nav-item.active .nav-link {
     color: #ffc107; /* Cambia el color del enlace activo */
-}
-
-.navbar-nav .nav-item.active .nav-link::after {
-    width: 100%; /* Asegura que el subrayado esté visible */
 }
 
 /* Mantiene el subrayado negro en el enlace activo */
@@ -109,11 +117,22 @@ body {
     color: #ffc107; /* Color en hover */
 }
 
-/* Efecto de subrayado para el enlace activo */
-.navbar-nav .nav-item.active .nav-link::after {
-    background-color: #ffc107; /* Color de subrayado */
+  /* Cambia el color de fondo al pasar el cursor */
+.dropdown-item:hover {
+    color: #007bff;
 }
 
+/* Ajustes para el ícono de tres rayas */
+.small-icon {
+    font-size: 0.8rem; /* Tamaño más pequeño */
+    margin-right: 0.4rem; /* Espacio a la derecha para separarlo del texto */
+    vertical-align: middle;
+}
+
+/* Estilo adicional para asegurar que no haya línea residual */
+.navbar-nav .nav-item.active .nav-link::after {
+    width: 0; /* Inicia en 0 para evitar subrayado visible */
+}
 
 /* Ajustes básicos de los botones */
 #searchButton,
@@ -194,8 +213,6 @@ a.btn.btn-outline-primary:hover .fas {
 }
 
 
-
-
 /* Carrito de compras */
 .navbar .btn-outline-primary {
     border: none;
@@ -227,7 +244,7 @@ a.btn.btn-outline-primary:hover .fas {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 60px;
+    margin-top: 100px;
 }
 
 .hero h1 {
@@ -708,9 +725,98 @@ hr {
     }
 }
 
-/* ---------------------------------------------- */
+/*============================*/
+/*======= Contact ======*/
+/*============================*/
+
+    .container.bootstrap.snippets.bootdeys {
+        margin-top: 100px; /* Ajusta el valor según tus necesidades */
+    }
+    .form-control {
+    box-shadow: none !important;
+    outline: none !important;
+    border: 2px solid #007bff2c;
+    }
+
+    .form-control:hover ,.form-control:focus{
+    border-color: #ffc10733;
+    }
+
+    .contact-map {
+    background-color: #ededed;
+    border-radius: 10px;
+    }
+
+    /* Color del icono */
+    .icon-background {
+        background-image: url('../imagenes/bannerCeleste2.png');
+        background-size: cover; 
+        background-position: center; 
+    }
+    
+
+    /*======= Responsive ======*/
+    @media (min-width: 768px) {
+        .nav-custom-left {
+            margin-left: 5%;
+        }
+    .navbar-nav>li>a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .contact-page .col-sm-6 {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    }
+
+    @media (max-width: 768px) {
+    .navbar-custom {
+            -moz-box-shadow: 0 2px 2px rgba(0,0,0,.1);
+        -webkit-box-shadow: 0 2px 2px rgba(0,0,0,.1);
+        box-shadow: 0 2px 2px rgba(0,0,0,.1);
+    }
+    .screen-space {
+        margin: 0px auto 50px auto;
+    }
+    .feature-detail {
+        padding: 0px 0px 50px 30px !important;
+    }
+    .footer h5 {
+        margin-top: 30px;
+    }
+    }
+
+
+    @media only screen and (min-width: 768px) and (max-width: 991px){
+    .blog-wrapper .blog-item {
+        width: 50%;
+    }
+    .navbar-custom .navbar-nav li a {
+        font-size: 12px;
+    }
+    .blog-detail-box {
+    padding-right: 0px;
+    }
+    }
+    @media only screen and (min-width: 767px) and (max-width: 991px){
+    
+    }
+    @media (max-width: 767px) {
+    .blog-wrapper .blog-item {
+        width: 100%;
+    }
+    .logo {
+        margin-top: 7px;
+    }
+    .blog-detail-box {
+    padding-right: 0px;
+    }
+    }
+
+/*============================*/
 /* Blog Inicio */
-/* ---------------------------------------------- */
+/*============================*/
 .blog-grid {
     margin-top: 15px;
     margin-bottom: 15px;
@@ -760,11 +866,12 @@ hr {
 }
 
 .section.gray-bg {
-    margin-bottom: 40px; /* Espacio entre el blog y el footer */
+    margin-bottom: 60px; /* Espacio entre el blog y el footer */
+    margin-top: 60px;
 }
-/* ---------------------------------------------- */
+/*============================*/
 /* Blog Fin */
-/* ---------------------------------------------- */
+/*============================*/
 
 
 /*============================*/
@@ -837,7 +944,7 @@ hr {
 }
 
 .payment-icon i {
-    color: #ffffff; 
+    color: #ffffffd3; 
     transition: color 0.3s; /* Transición suave al cambiar el color */
 }
 
