@@ -873,6 +873,137 @@ hr {
 /* Blog Fin */
 /*============================*/
 
+/* ---------------------------------------------- */
+/* Nosotros Inicio */
+/* ---------------------------------------------- */
+.custom-card {
+    border: none;
+    border-radius: 15px;
+    background: linear-gradient(145deg, #333232, #000000);
+    padding: 20px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    margin: 10px; /* Espacio entre las tarjetas */
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap; /* Permitir que las tarjetas se ajusten en la fila */
+    justify-content: space-between; /* Espacio entre tarjetas */
+}
+
+.custom-card:hover {
+    transform: translateY(-10px); /*se eleva ligeramente */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Decoración esquinera */
+.custom-card::before {
+    content: ''; /*para que el pseudo-elemento exista*/
+    position: absolute; /*su posición se basará en el contenedor más cercano que tenga*/
+    width: 150px;
+    height: 150px;
+    background: rgba(112, 176, 32, 0.2);
+    border-radius: 50%;
+    top: -50px;
+    right: -50px; /*Posiciona el círculo hacia afuera de la parte superior derecha del contenedor.*/
+    z-index: 1; /*sobre el fondo de la tarjeta*/
+}
+
+.custom-card::after {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: rgba(112, 176, 32, 0.2);
+    border-radius: 50%;
+    bottom: -30px;
+    left: -30px; /*se coloca en la esquina inferior izquierda de la tarjeta*/
+    z-index: 1;
+}
+
+.card-title {
+    font-size: 1.75rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 15px;
+    position: relative;
+    color: #8A70B0;
+    text-transform: uppercase;
+}
+
+.card-text {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #ffffff;
+    z-index: 2;
+    position: relative;
+    text-align: justify;
+}
+
+/* Separación de la primera tarjeta del navbar */
+.card-container .custom-card:first-child {
+    margin-top: 100px; /* Ajusta el valor según la altura del navbar */
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .custom-card {
+        margin: 10px 0; 
+        width: calc(100% - 20px); 
+        margin-left: 10px;
+    }
+}
+@media (min-width: 769px) and (max-width: 992px) {
+    .custom-card {
+        margin-bottom: 20px; 
+        flex: 0 0 48%; 
+        max-width: 48%; 
+        margin-left: 200px;
+    }
+}
+
+/* Video */
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* Proporción de 16:9 */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background-color: #000;
+    margin-bottom: 30px; /* Espacio entre el video y el footer */
+}
+
+/* Estilos para el iframe */
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* Pantallas pequeñas y medianas */
+@media (max-width: 992px) {
+    .video-container {
+        margin-bottom: 20px; /* Agrega espacio debajo del video */
+    }
+}
+
+/* Pantallas grandes */
+@media (min-width: 993px) {
+    .video-container {
+        max-width: 70%; /* Reduce el tamaño en pantallas grandes */
+        margin: 0 auto; /* Centrar el video */
+    }
+}
+/* ---------------------------------------------- */
+/* Nosotros Fin */
+/* ---------------------------------------------- */
+
 
 /*============================*/
 /* Estilos para el footer */
