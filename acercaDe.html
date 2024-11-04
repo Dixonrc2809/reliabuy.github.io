@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reliabuy</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Colocar logo en la Pestaña -->
+    <link rel="icon" href="./imagenes/logoNav.png" type="image/png">
+
+    <!-- SweetAlert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+	<!-- Font Awesome Icon -->
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+    <!-- CSS-->
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+
+    <header class="header">
+        
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <!-- Logo en la izquierda -->
+
+        <!-- ***** Logo ***** -->
+        <a href="index.html" class="logo"><img src="./imagenes/logoNavBlanco.png" alt="Logo"></a>
+
+        <!-- Botón de menú hamburguesa para pantallas pequeñas -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Contenido de la barra de navegación -->
+        <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+        <!-- Menú central -->
+        <ul class="navbar-nav">
+            <li class="nav-item">
+            <a class="nav-link me-4" href="index.html">Inicio<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link me-4" href="productos.html">Productos</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link me-4" href="contactanos.html">Contáctanos</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link me-4" href="FAQs.html">Preguntas Frecuentes</a>
+            </li>
+            <!-- Dropdown para Productos -->
+            <li class="nav-item dropdown active">
+                <a class="nav-link dropdown-toggle me-4" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fas fa-bars me-2 small-icon"></i> Información
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="blog.html">Blog</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="nosotros.html">Nosotros</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item active" href="acercaDe.html">Acerca De</a></li>
+                </ul>
+            </li>
+            
+        </ul>
+        </div>
+
+        <!-- Botón de búsqueda oculto y carrito de compras a la derecha -->
+        <div class="d-flex align-items-center">
+        <!-- Botón de búsqueda desplegable -->
+        <button class="btn btn-outline-secondary me-3" id="searchButton" onclick="toggleSearch()">
+            <i class="fas fa-search"></i>
+        </button>
+        <form class="form-inline d-none" id="searchForm">
+            <input class="form-control me-sm-2" type="search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Buscar</button>
+        </form>
+
+        <!-- Carrito de compras -->
+        <a href="carritoCompra.html" class="btn btn-outline-primary">
+            <i class="fas fa-shopping-cart"></i>
+        </a>
+        <a class="nav-link" href="#" id="view-cart">
+            <span class="badge badge-pill badge-danger" id="cart-indicator" style="display: none;">¡Pagar!</span>
+        </a>
+        </div>
+    </nav>
+    </header>
+
+    <!--  Participantes Inicio  --> 
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6 mt-5">
+            <div class="card custom-card">
+                <img src="./imagenes/joseph.jpg" class="card-img-top" alt="Participante 2">
+                <div class="card-body text-center">
+                    <h5 class="card-title h5-responsive">Joseph Morales Madrigal</h5>
+                    <p class="card-text text-center">
+                    2-0870-0336 <br>
+                    <span class="email-text">joseph30092005@gmail.com</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 mt-5">
+            <div class="card custom-card">
+                <img src="./imagenes/dixon.jpg" class="card-img-top" alt="Participante 1">
+                <div class="card-body text-center">
+                    <h5 class="card-title h5-responsive">Dixon Rodríguez Cubero</h5>
+                    <p class="card-text text-center">
+                    2-0857-0791 <br>
+                    <span class="email-text">andreyrc28.cr@gmail.com</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--  Participantes Fin  -->
+
+
+    <!-- Footer -->
+    <footer class="footer bg-light py-4">
+        <div class="container">
+            <div class="row text-center text-md-start">
+                <div class="col-6 col-md-3 footer-col mb-4">
+                    <h4>Horario</h4>
+                    <ul class="list-unstyled">
+                        <li>De lunes a viernes</a></li>
+                        <li>8 a.m. - 5 p.m.</a></li>
+                        <hr>
+                        <li>Sábados y domingos</a></li>
+                        <li>9 a.m. - 6 p.m.</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-3 footer-col mb-4">
+                    <h4>Información</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Nuestros Inicios</a></li>
+                        <li><a href="FAQs.html">Preguntas frecuentes</a></li>
+                        <li><a href="#">Contacto</a></li>
+                        <li><a href="#productosTendencia">Productos en Tendencia</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-3 footer-col mb-4">
+                    <h4>Categorías</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Cocina</a></li>
+                        <li><a href="#">Celulares</a></li>
+                        <li><a href="#">Micrófonos</a></li>
+                        <li><a href="#">Audífonos</a></li>
+                        <li><a href="#">Pantallas</a></li>
+                        <li><a href="#">Gaming</a></li>
+                        <li><a href="#">Muebles</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-3 footer-col mb-4">
+                    <h4>Síguenos</h4>
+                    <div class="social-links d-flex justify-content-center justify-content-md-start">
+                        <a href="#" class="me-2"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="me-2"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="me-2"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            <!-- Métodos de Pago -->
+            <div class="text-center my-4">
+                <h4>Métodos de Pago</h4>
+                <div class="d-flex justify-content-center">
+                    <a class="me-5 payment-icon"><i class="fab fa-cc-visa fa-2x"></i></a>
+                    <a class="me-5 payment-icon"><i class="fab fa-cc-mastercard fa-2x"></i></a>
+                    <a class="me-5 payment-icon"><i class="fab fa-cc-paypal fa-2x"></i></a>
+                    <a class="payment-icon"><i class="fab fa-apple-pay fa-2x"></i></a>
+                </div>
+            </div>
+            <p>&copy; 2024 Copyright. Todos los derechos reservados</p>
+            <a href="#" class="btn-flotante"><i class="fa fa-arrow-up"></i></a>
+        </div>
+    </footer>
+
+    <!-- jQuery, Popper.js y JavaScript de Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+    <!-- Enlazar el archivo script.js -->
+	<script src="js/main.js"></script>
+    <script src="js/carritoCompra.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

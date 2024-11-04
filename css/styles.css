@@ -1006,6 +1006,40 @@ hr {
 /* Nosotros Fin */
 /* ---------------------------------------------- */
 
+/* ---------------------------------------------- */
+/* Acerca De Inicio */
+/* ---------------------------------------------- */
+.card {
+    height: 500px; /* Ajusta la altura mínima de la tarjeta */
+    border-radius: 5px; /* Ajusta el borde si es necesario */
+    margin-left: 50px; /* Margen izquierdo */
+    padding: 20px; /* Aumenta el padding interno */
+    background-color: #f8f9fa; /* Color de fondo opcional para mayor contraste */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para mayor profundidad */
+}
+
+.card-img-top {
+    height: 200px; 
+    object-fit: cover;
+    border-bottom: 2px solid #70b020;
+}
+
+.email-text {
+    font-size: 0.85rem; 
+}
+
+/*pantallas medianas*/
+@media (max-width: 768px) {
+    .email-text {
+        font-size: 0.75rem; 
+    }
+}
+
+/* ---------------------------------------------- */
+/* Acerca De Fin */
+/* ---------------------------------------------- */
+
+
 
 
 /*============================*/
