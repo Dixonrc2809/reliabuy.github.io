@@ -46,3 +46,18 @@ window.addEventListener('scroll', () => {
 });
 
 
+
+
+
+// ----------------------------------------------------------------
+// Caracteristicas de los productos
+// ----------------------------------------------------------------
+function openProductPage(title, price, image) {
+    // Guarda los datos del producto en sessionStorage
+    sessionStorage.setItem("productTitle", title);
+    sessionStorage.setItem("productPrice", price);
+    sessionStorage.setItem("productImage", image);
+
+    // Redirige a la página de detalles del producto
+    window.location.href = "detalleProducto.html";
+}

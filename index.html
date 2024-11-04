@@ -287,7 +287,7 @@
                 <div class="carousel-item active">
                     <div class="row">
                         <div class="col-md-3 text-center">
-                            <div class="card">
+                            <div class="card" onclick="openProductPage('Auriculares Westmire A56', '32,995', './imagenes/Audifonos.png')">
                                 <div class="imgBox">
                                     <img src="./imagenes/Audifonos.png" class="d-block w-100" alt="Producto 1">
                                 </div>
@@ -298,6 +298,7 @@
                                 </div>
                             </div>
                         </div>
+                        
                         <div class="col-md-3 text-center">
                             <div class="card">
                                 <div class="imgBox">
@@ -400,6 +401,16 @@
         </div>
     </div>
 
+    <div id="productModal" class="modal" onclick="closeModal()">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <span onclick="closeModal()" style="cursor: pointer;">&times;</span>
+            <h2 id="modalTitle"></h2>
+            <img id="modalImage" src="" alt="Imagen del producto" style="width: 100%; height: auto;">
+            <p id="modalPrice" class="price"></p>
+        </div>
+    </div>
+    
+
     <!-- Beneficios -->
     <section>
         <div class="container">
@@ -452,10 +463,10 @@
                 <div class="col-6 col-md-3 footer-col mb-4">
                     <h4>Información</h4>
                     <ul class="list-unstyled">
-                        <li><a href="#">Nuestros Inicios</a></li>
-                        <li><a href="FAQs.html">Preguntas frecuentes</a></li>
-                        <li><a href="#">Contacto</a></li>
                         <li><a href="#productosTendencia">Productos en Tendencia</a></li>
+                        <li><a href="contactanos.html">Contáctanos</a></li>
+                        <li><a href="FAQs.html">Preguntas frecuentes</a></li>
+                        <li><a href="nosotros.html">Nosotros</a></li>
                     </ul>
                 </div>
                 <div class="col-6 col-md-3 footer-col mb-4">
@@ -473,10 +484,10 @@
                 <div class="col-6 col-md-3 footer-col mb-4">
                     <h4>Síguenos</h4>
                     <div class="social-links d-flex justify-content-center justify-content-md-start">
-                        <a href="#" class="me-2"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="me-2"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="me-2"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://www.facebook.com/" class="me-2"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.x.com/" class="me-2"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/" class="me-2"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/"><i class="fab fa-tiktok"></i></a>
                         
                     </div>
                     

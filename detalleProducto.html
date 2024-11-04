@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles del Producto</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Colocar logo en la Pestaña -->
+    <link rel="icon" href="./imagenes/logoNav.png" type="image/png">
+
+    <!-- Font Awesome Icon -->
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+    <link rel="stylesheet" href="css/estilos.css"> <!-- Vincula tu archivo CSS aquí -->
+    <link rel="stylesheet" href="css/styles.css"> <!-- Vincula tu archivo CSS aquí -->
+</head>
+<body>
+    <section class="product">
+        <div class="product__photo">
+            <div class="photo-container">
+                <div class="photo-main">
+                    <div class="controls">
+                        <i class="fa fa-share" aria-hidden="true"></i>
+                        <i class="fa fa-heart" aria-hidden="true"></i>
+                    </div>
+                    <img id="productImage" src="" alt="Imagen del producto">
+                </div>
+                <div class="photo-album">
+                    <ul>
+                        <!-- Imágenes adicionales del producto si es necesario -->
+                        <li><img src="" id="productImageThumb" alt="Miniatura del producto"></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="product__info">
+            <div class="title">
+                <h1 id="productTitle"></h1>
+                <span>Código: 45999</span>
+            </div>
+            <div class="price">
+                ₡ <span id="productPrice"></span>
+            </div>
+            <div class="description">
+                <h3>Descripción</h3>
+                <ul>
+                    <li>Características del producto</li>
+                    <li>Especificaciones técnicas</li>
+                    <li>Beneficios adicionales</li>
+                </ul>
+            </div>
+            <button class="buy--btn">Añadir al Carrito</button>
+        </div>
+    </section>
+
+    <script>
+        // Cargar los datos del producto desde sessionStorage
+        const title = sessionStorage.getItem("productTitle");
+        const price = sessionStorage.getItem("productPrice");
+        const image = sessionStorage.getItem("productImage");
+
+        // Asigna los datos a los elementos HTML
+        document.getElementById("productTitle").innerText = title;
+        document.getElementById("productPrice").innerText = price;
+        document.getElementById("productImage").src = image;
+        document.getElementById("productImageThumb").src = image;  // Miniatura
+    </script>
+
+        <!-- Enlazar el archivo script.js -->
+	<script src="js/main.js"></script>
+    <script src="js/carritoCompra.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+</body>
+</html>

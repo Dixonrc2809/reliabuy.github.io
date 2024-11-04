@@ -292,7 +292,27 @@ a.btn.btn-outline-primary:hover .fas {
     color: #fff;
 }
 
+/* Media Query para pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+    .btn-outline-secondary {
+        margin-top: 10px; /* Puedes ajustar este margen según sea necesario */
+    }
 
+    .btn-primary {
+        margin-top: 10px;
+    }
+}
+
+/* Media Query para pantallas medianas */
+@media (min-width: 769px) and (max-width: 992px) {
+    .btn-outline-secondary {
+        margin-top: 15px; /* Ajusta según sea necesario */
+    }
+
+    .btn-primary {
+        margin-top: 15px;
+    }
+}
 
 /*============================*/
 /* Barra Deslizadora */
@@ -375,51 +395,59 @@ a.btn.btn-outline-primary:hover .fas {
     font-size: 1em;
 }
 
+/* Media Query para pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+    .category img {
+        background-color: white; 
+    }
+}
+
+
     /*============================*/
-    /* Carrusel de banners */
-    /*============================*/
+/* Carrusel de banners */
+/*============================*/
+#customCarousel {
+    width: 100%;
+    max-width: 1146px; /* Ancho máximo del carrusel */
+    height: 300px; /* Altura inicial para pantallas grandes */
+    margin: 0 auto; /* Centra el carrusel */
+    border-radius: 15px; /* Bordes redondeados */
+    overflow: hidden; /* Asegura que las imágenes no sobresalgan */
+    margin-top: 60px; /* Agrega espacio debajo de la barra deslizadora */
+}
+
+#customCarousel .carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Escala las imágenes para llenar el espacio sin distorsionarlas */
+    border-radius: 15px; /* Aplica bordes redondeados a las imágenes también */
+}
+
+/* Media queries para adaptabilidad */
+@media (max-width: 1200px) {
     #customCarousel {
-        width: 100%;
-        max-width: 1146px;
-        height: 229px;
-        margin: 0 auto; /* Centra el carrusel */
-        border-radius: 15px; /* Bordes redondeados */
-        overflow: hidden; /* Asegura que las imágenes no sobresalgan */
-        margin-top: 60px; /* Agrega espacio debajo de la barra deslizadora */
+        height: 250px; /* Ajusta la altura para pantallas grandes, pero más pequeñas que 1200px */
     }
-    
-    #customCarousel .carousel-item img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover; /* Escala las imágenes para llenar el espacio sin distorsionarlas */
-        border-radius: 15px; /* Aplica bordes redondeados a las imágenes también */
+}
+
+@media (max-width: 992px) {
+    #customCarousel {
+        height: 220px; /* Ajusta la altura para pantallas medianas */
     }
-    
-    /* Media queries para adaptabilidad */
-    @media (max-width: 1200px) {
-        #customCarousel {
-        height: 200px;
-        }
+}
+
+@media (max-width: 768px) {
+    #customCarousel {
+        height: 200px; /* Ajusta la altura para pantallas pequeñas */
     }
-    
-    @media (max-width: 992px) {
-        #customCarousel {
-        height: 180px;
-        }
+}
+
+@media (max-width: 576px) {
+    #customCarousel {
+        height: 180px; /* Ajusta la altura para pantallas muy pequeñas */
+        border-radius: 10px; /* Bordes redondeados un poco más pequeños */
     }
-    
-    @media (max-width: 768px) {
-        #customCarousel {
-        height: 160px;
-        }
-    }
-    
-    @media (max-width: 576px) {
-        #customCarousel {
-        height: 140px;
-        border-radius: 10px;
-        }
-    }
+}
 
 /*============================*/
 /* Estilos para Productos */
@@ -876,13 +904,13 @@ hr {
 /* ---------------------------------------------- */
 /* Nosotros Inicio */
 /* ---------------------------------------------- */
+/* Estilos generales de la tarjeta */
 .custom-card {
     border: none;
     border-radius: 15px;
-    
     background-image: url('../imagenes/bannerCeleste2.png'); /* Cambia la ruta por la de tu imagen */
-    background-size: cover; /* Ajusta la imagen para cubrir todo el área */
-    background-position: center; /* Centra la imagen */
+    background-size: cover;
+    background-position: center;
     padding: 20px;
     transition: all 0.3s ease-in-out;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
@@ -891,44 +919,20 @@ hr {
     margin: 17px; /* Espacio entre las tarjetas */
 }
 
-
-.row {
-    display: flex;
-    flex-wrap: wrap; /* Permitir que las tarjetas se ajusten en la fila */
-    justify-content: space-between; /* Espacio entre tarjetas */
-}
-
+/* Efecto hover */
 .custom-card:hover {
-    transform: translateY(-10px); /*se eleva ligeramente */
+    transform: translateY(-10px);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
 }
 
-/* Decoración esquinera */
-.custom-card::before {
-    content: ''; /*para que el pseudo-elemento exista*/
-    position: absolute; /*su posición se basará en el contenedor más cercano que tenga*/
-    width: 150px;
-    height: 150px;
-    background: linear-gradient(145deg, #ffc107, #e0a800, #c69500); /* Degradado de amarillo claro a amarillo oscuro */
-    border-radius: 50%;
-    top: -50px;
-    right: -50px; /* Posiciona el círculo hacia afuera de la parte superior derecha del contenedor. */
-    z-index: 1; /* sobre el fondo de la tarjeta */
+/* Estilos de la fila */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
-.custom-card::after {
-    content: '';
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    background: linear-gradient(145deg, #ffc107, #e0a800, #c69500); /* Degradado de amarillo claro a amarillo oscuro */
-    border-radius: 50%;
-    bottom: -30px;
-    left: -30px; /* se coloca en la esquina inferior izquierda de la tarjeta */
-    z-index: 1;
-}
-
-
+/* Estilos del título de la tarjeta */
 .card-title {
     font-size: 1.75rem;
     font-weight: bold;
@@ -939,6 +943,7 @@ hr {
     text-transform: uppercase;
 }
 
+/* Estilos del texto de la tarjeta */
 .card-text {
     font-size: 1rem;
     line-height: 1.8;
@@ -953,22 +958,24 @@ hr {
     margin-top: 130px; /* Ajusta el valor según la altura del navbar */
 }
 
-/* Media Queries */
+/* Media Queries para pantallas medianas y pequeñas */
 @media (max-width: 768px) {
     .custom-card {
-        margin: 10px 0; 
-        width: calc(100% - 20px); 
+        margin: 10px 0;
+        width: calc(100% - 20px);
         margin-left: 10px;
     }
 }
+
 @media (min-width: 769px) and (max-width: 992px) {
     .custom-card {
-        margin-bottom: 20px; 
-        flex: 0 0 48%; 
-        max-width: 48%; 
+        margin-bottom: 20px;
+        flex: 0 0 48%;
+        max-width: 48%;
         margin-left: 200px;
     }
 }
+
 
 /* Video */
 /* Estilo general para el contenedor */
@@ -1009,15 +1016,33 @@ hr {
 /* Media Query para pantallas pequeñas (móviles) */
 @media (max-width: 768px) {
     .video-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+    
+    /* Estilo para la caja flotante */
+    .ibox {
+        background-color: #f5f5f5;
+        border-radius: 5px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        max-width: 100%;
+    }
+    
+    /* Contenido del video */
+    .ibox-content {
         padding: 10px;
     }
     
-    .ibox {
-        width: 100%;
-    }
-
-    .ibox-content {
-        padding: 15px;
+    /* Estilo para el iframe del video */
+    .ibox-content iframe {
+        max-width: 100%;
+        border-radius: 10px;
+        border: none;
     }
 }
 /* ---------------------------------------------- */
@@ -1179,7 +1204,7 @@ hr {
     }
 
     .footer ul li a:hover {
-        color: #ffc107; 
+        color: #000000; 
     }
 
     .payment-icon i {
@@ -1220,7 +1245,7 @@ hr {
     }
 
     .footer ul li a:hover {
-        color: #ffc107; 
+        color: #000000; 
     }
 
     .payment-icon i {
@@ -1261,7 +1286,7 @@ hr {
     }
 
     .footer ul li a:hover {
-        color: #ffc107; 
+        color: #000000; 
     }
 
     .payment-icon i {
@@ -1302,6 +1327,10 @@ hr {
     box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.3);
     transform: translateY(-7px);
 }
+
+
+
+
 
 
 
