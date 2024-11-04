@@ -1009,31 +1009,45 @@ hr {
 /* ---------------------------------------------- */
 /* Acerca De Inicio */
 /* ---------------------------------------------- */
-.card {
-    height: 500px; /* Ajusta la altura mínima de la tarjeta */
-    border-radius: 5px; /* Ajusta el borde si es necesario */
-    margin-left: 50px; /* Margen izquierdo */
-    padding: 20px; /* Aumenta el padding interno */
-    background-color: #f8f9fa; /* Color de fondo opcional para mayor contraste */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para mayor profundidad */
+.card-participante {
+    border: 2px solid #007bff; /* Borde azul */
+    border-radius: 10px; /* Bordes redondeados */
+    transition: transform 0.2s; /* Animación de transformación */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para un efecto de profundidad */
 }
 
-.card-img-top {
-    height: 200px; 
-    object-fit: cover;
-    border-bottom: 2px solid #70b020;
+.card-participante:hover {
+    transform: scale(1.05); /* Efecto de zoom al pasar el mouse */
+}
+
+.card-img-participante {
+    width: 100%; /* Ocupa todo el ancho del contenedor */
+    height: 363px; /* Ajusta la altura a 250px para que sea menos larga */
+    object-fit: cover; /* Ajusta la imagen, cubriendo el contenedor */
+    border-top-left-radius: 10px; /* Bordes redondeados en la parte superior */
+    border-top-right-radius: 10px;
+}
+
+.card-body-participante {
+    padding: 20px; /* Espaciado interno */
+}
+
+.card-title-participante {
+    font-weight: bold; /* Negrita para el título */
+    color: #343a40; /* Color del texto */
+}
+
+.card-text-participante {
+    color: #6c757d; /* Color gris para el texto */
 }
 
 .email-text {
-    font-size: 0.85rem; 
+    color: #007bff; /* Color azul para el email */
+    text-decoration: none; /* Sin subrayado */
 }
 
-/*pantallas medianas*/
-@media (max-width: 768px) {
-    .email-text {
-        font-size: 0.75rem; 
-    }
-}
+
+
 
 /* ---------------------------------------------- */
 /* Acerca De Fin */
