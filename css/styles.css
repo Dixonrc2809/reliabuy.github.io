@@ -634,6 +634,7 @@ hr {
 #faq-section {
     padding: 10px 0;
     overflow: hidden;
+    margin-top: 80px;
 }
 
 #faq-section .faq-container {
