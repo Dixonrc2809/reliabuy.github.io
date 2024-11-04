@@ -726,11 +726,11 @@ hr {
 }
 
 /*============================*/
-/*======= Contact ======*/
+/*======= Contactos ======*/
 /*============================*/
 
     .container.bootstrap.snippets.bootdeys {
-        margin-top: 100px; /* Ajusta el valor según tus necesidades */
+    margin-top: 100px; /* Ajusta el valor según tus necesidades */
     }
     .form-control {
     box-shadow: none !important;
@@ -753,7 +753,6 @@ hr {
         background-size: cover; 
         background-position: center; 
     }
-    
 
     /*======= Responsive ======*/
     @media (min-width: 768px) {
@@ -1064,10 +1063,6 @@ hr {
     color: #007bff; /* Color azul para el email */
     text-decoration: none; /* Sin subrayado */
 }
-
-
-
-
 /* ---------------------------------------------- */
 /* Acerca De Fin */
 /* ---------------------------------------------- */
