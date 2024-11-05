@@ -1190,13 +1190,21 @@ hr {
     }
 
     .social-links {
+        display: flex; /* Asegúrate de que sea un flex container */
         justify-content: center; 
+        gap: 10px; /* Espacio entre iconos */
     }
 
-    .social-links a {
+    .footer-col .social-links a {
+        display: flex; /* Flex para centrar contenido */
+        justify-content: center; 
+        align-items: center; 
         height: 40px; 
         width: 40px; 
-        border-radius: 100%; 
+        border-radius: 100%; /* Redondeo completo para un círculo */
+        background-color: #007bff; /* Color de fondo de los íconos */
+        transition: background-color 0.3s; /* Transición suave al hacer hover */
+        text-decoration: none; /* Elimina el subrayado */
     }
 
     .footer ul li a {
@@ -1231,13 +1239,21 @@ hr {
     }
 
     .social-links {
+        display: flex; /* Asegúrate de que sea un flex container */
         justify-content: center; 
+        gap: 10px; /* Espacio entre iconos */
     }
 
-    .social-links a {
+    .footer-col .social-links a {
+        display: flex; /* Flex para centrar contenido */
+        justify-content: center; 
+        align-items: center; 
         height: 35px; 
         width: 35px; 
-        border-radius: 100%; 
+        border-radius: 100%; /* Redondeo completo para un círculo */
+        background-color: #007bff; /* Color de fondo de los íconos */
+        transition: background-color 0.3s; /* Transición suave al hacer hover */
+        text-decoration: none; /* Elimina el subrayado */
     }
 
     .footer ul li a {
@@ -1272,13 +1288,21 @@ hr {
     }
 
     .social-links {
+        display: flex; /* Asegúrate de que sea un flex container */
         justify-content: center; 
+        gap: 10px; /* Espacio entre iconos */
     }
 
-    .social-links a {
+    .footer-col .social-links a {
+        display: flex; /* Flex para centrar contenido */
+        justify-content: center; 
+        align-items: center; 
         height: 30px; 
         width: 30px; 
-        border-radius: 100%; 
+        border-radius: 100%; /* Redondeo completo para un círculo */
+        background-color: #007bff; /* Color de fondo de los íconos */
+        transition: background-color 0.3s; /* Transición suave al hacer hover */
+        text-decoration: none; /* Elimina el subrayado */
     }
 
     .footer ul li a {
@@ -1297,6 +1321,7 @@ hr {
         color: #000000; 
     }
 }
+
 
 
 
