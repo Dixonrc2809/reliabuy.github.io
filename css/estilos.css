@@ -23,9 +23,9 @@ h3 {
 }
 
 img {
-			max-width: 100%;
-			filter: drop-shadow(1px 1px 3px #00000057);
-		}
+	max-width: 100%;
+	filter: drop-shadow(1px 1px 3px #00000057);
+}
 
 /* ----- Product Section ----- */
 .product {
@@ -36,6 +36,8 @@ img {
 	min-width: 600px;
 	background-color: white;
 	border-radius: 5px;
+	margin-bottom: 100px;
+	margin-top: 150px;
 }
 
 /* ----- Photo Section ----- */
@@ -72,9 +74,9 @@ img {
 
 	img {
 		position: absolute;
-		left: -3.5em;
+		left: 0em;
 		top: 2em;
-		max-width: 110%;
+		max-width: 90%;
 		filter: saturate(150%) contrast(120%) hue-rotate(10deg)
 			drop-shadow(1px 20px 10px rgba(0, 0, 0, 0.3));
 	}
@@ -98,6 +100,17 @@ img {
 		border: 1px solid #007bff;
 		border-radius: 3px;
 	}
+
+	.no-bullets {
+		list-style-type: none; /* Elimina las viñetas */
+		padding: 0; /* Elimina el padding */
+		margin: 0; /* Elimina el margen */
+	}
+}
+
+/* ----- Tamaño del Modal de la Miniatura ----- */
+.modal-dialog {
+	max-width: 450px; /* Ajusta este valor a tu preferencia */
 }
 
 /* ----- Informations Section ----- */
@@ -166,33 +179,46 @@ img {
 	}
 
 	ul {
-		font-size: 0.8em;
+		font-size: 0.9em;
 		list-style: disc;
-		margin-left: 1em;
+		margin-left: -1em;
 	}
 
 	li {
-		text-indent: -0.6em;
+		text-indent: -0.4em;
 		margin-bottom: 0.5em;
+	}
+
+	.no-bullets {
+		list-style-type: none; /* Elimina las viñetas */
+		padding: 0; /* Elimina el padding */
+		margin: 0; /* Elimina el margen */
 	}
 }
 
 .buy--btn {
-	padding: 1.5em 3.1em;
-	border: none;
-	border-radius: 7px;
-	font-size: 0.8em;
-	font-weight: 700;
-	letter-spacing: 1.3px;
-	color: #fff;
-	background-color: #007bff;
-	box-shadow: 2px 2px 25px -7px #ffc107;
-	cursor: pointer;
-
-	&:active {
-		transform: scale(0.97);
-	}
+    padding: 1.5em 3.1em;
+    border: none;
+    border-radius: 7px;
+    font-size: 0.8em;
+    font-weight: 700;
+    letter-spacing: 1.3px;
+    color: #fff;
+    background-color: #007bff;
+    box-shadow: 2px 2px 25px -7px #ffc107;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transiciones suaves */
 }
+
+.buy--btn:hover {
+    background-color: #0056b3; /* Cambia el color de fondo al hacer hover */
+    box-shadow: 4px 4px 30px -7px #ffc107; /* Aumenta el tamaño de la sombra al hacer hover */
+}
+
+.buy--btn:active {
+    transform: scale(0.97); /* Efecto de pulsar el botón */
+}
+
 
 /* ----- Footer Section ----- */
 footer {

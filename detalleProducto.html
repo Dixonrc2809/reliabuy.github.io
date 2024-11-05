@@ -17,6 +17,77 @@
     <link rel="stylesheet" href="css/styles.css"> <!-- Vincula tu archivo CSS aquí -->
 </head>
 <body>
+
+    <header class="header">
+        
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <!-- Logo en la izquierda -->
+
+        <!-- ***** Logo ***** -->
+        <a href="index.html" class="logo"><img src="./imagenes/logoNavBlanco.png" alt="Logo"></a>
+
+        <!-- Botón de menú hamburguesa para pantallas pequeñas -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Contenido de la barra de navegación -->
+        <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+        <!-- Menú central -->
+        <ul class="navbar-nav">
+            <li class="nav-item">
+            <a class="nav-link me-4" href="index.html">Inicio<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+            <a class="nav-link me-4" href="productos.html">Productos</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link me-4" href="contactanos.html">Contáctanos</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link me-4" href="FAQs.html">Preguntas Frecuentes</a>
+            </li>
+            <!-- Dropdown para Productos -->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle me-4" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fas fa-bars me-2 small-icon"></i> Información
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="blog.html">Blog</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="nosotros.html">Nosotros</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="acercaDe.html">Acerca De</a></li>
+                </ul>
+            </li>
+            
+        </ul>
+        </div>
+
+        <!-- Botón de búsqueda oculto y carrito de compras a la derecha -->
+        <div class="d-flex align-items-center">
+        <!-- Botón de búsqueda desplegable -->
+        <button class="btn btn-outline-secondary me-3" id="searchButton" onclick="toggleSearch()">
+            <i class="fas fa-search"></i>
+        </button>
+        <form class="form-inline d-none" id="searchForm">
+            <input class="form-control me-sm-2" type="search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Buscar</button>
+        </form>
+
+        <!-- Carrito de compras -->
+        <a href="carritoCompra.html" class="btn btn-outline-primary">
+            <i class="fas fa-shopping-cart"></i>
+        </a>
+        <a class="nav-link" href="#" id="view-cart">
+            <span class="badge badge-pill badge-danger" id="cart-indicator" style="display: none;">¡Pagar!</span>
+        </a>
+        </div>
+    </nav>
+    </header>
+
+    <!-- Productos -->
     <section class="product">
         <div class="product__photo">
             <div class="photo-container">
@@ -28,10 +99,9 @@
                     <img id="productImage" src="" alt="Imagen del producto">
                 </div>
                 <div class="photo-album">
-                    <ul>
+                    <ul class="no-bullets">
                         <!-- Imágenes adicionales del producto si es necesario -->
-                        <li><img src="" id="productImageThumb" alt="Miniatura del producto"></li>
-                    </ul>
+                        <li><img src="" id="productImageThumb" alt="Miniatura del producto" onclick="showModal()" style="cursor: pointer;"></li></ul>
                 </div>
             </div>
         </div>
@@ -45,7 +115,7 @@
             </div>
             <div class="description">
                 <h3>Descripción</h3>
-                <ul>
+                <ul class="no-bullets">
                     <li>Características del producto</li>
                     <li>Especificaciones técnicas</li>
                     <li>Beneficios adicionales</li>
@@ -57,16 +127,100 @@
 
     <script>
         // Cargar los datos del producto desde sessionStorage
-        const title = sessionStorage.getItem("productTitle");
-        const price = sessionStorage.getItem("productPrice");
-        const image = sessionStorage.getItem("productImage");
+        const title = sessionStorage.getItem("productTitle") || "Título no disponible";
+        const price = sessionStorage.getItem("productPrice") || "Precio no disponible";
+        const image = sessionStorage.getItem("productImage") || "ruta/a/imagen-predeterminada.png";
+        const code = sessionStorage.getItem("productCode") || "Código no disponible";
+        const description = sessionStorage.getItem("productDescription") || "Descripción no disponible";
 
         // Asigna los datos a los elementos HTML
         document.getElementById("productTitle").innerText = title;
         document.getElementById("productPrice").innerText = price;
         document.getElementById("productImage").src = image;
         document.getElementById("productImageThumb").src = image;  // Miniatura
+        document.querySelector(".title span").innerText = `Código: ${code}`;
+        document.querySelector(".description ul").innerHTML = `<li>${description}</li>`;
     </script>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="imageModalLabel">Vista Previa del Producto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img id="modalImage" src="" class="img-fluid" alt="Imagen del producto">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+        <!-- Footer -->
+        <footer class="footer bg-light py-4">
+            <div class="container">
+                <div class="row text-center text-md-start">
+                    <div class="col-6 col-md-3 footer-col mb-4">
+                        <h4>Horario</h4>
+                        <ul class="list-unstyled">
+                            <li>De lunes a viernes</a></li>
+                            <li>8 a.m. - 5 p.m.</a></li>
+                            <hr>
+                            <li>Sábados y domingos</a></li>
+                            <li>9 a.m. - 6 p.m.</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-6 col-md-3 footer-col mb-4">
+                        <h4>Información</h4>
+                        <ul class="list-unstyled">
+                            <li><a href="#productosTendencia">Productos en Tendencia</a></li>
+                            <li><a href="contactanos.html">Contáctanos</a></li>
+                            <li><a href="FAQs.html">Preguntas frecuentes</a></li>
+                            <li><a href="nosotros.html">Nosotros</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-6 col-md-3 footer-col mb-4">
+                        <h4>Categorías</h4>
+                        <ul class="list-unstyled">
+                            <li><a href="#">Cocina</a></li>
+                            <li><a href="#">Celulares</a></li>
+                            <li><a href="#">Micrófonos</a></li>
+                            <li><a href="#">Audífonos</a></li>
+                            <li><a href="#">Pantallas</a></li>
+                            <li><a href="#">Gaming</a></li>
+                            <li><a href="#">Muebles</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-6 col-md-3 footer-col mb-4">
+                        <h4>Síguenos</h4>
+                        <div class="social-links d-flex justify-content-center justify-content-md-start">
+                            <a href="https://www.facebook.com/" class="me-2"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://www.x.com/" class="me-2"><i class="fab fa-twitter"></i></a>
+                            <a href="https://www.instagram.com/" class="me-2"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.tiktok.com/"><i class="fab fa-tiktok"></i></a>
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+                <!-- Métodos de Pago -->
+                <div class="text-center my-4">
+                    <h4>Métodos de Pago</h4>
+                    <div class="d-flex justify-content-center">
+                        <a class="me-5 payment-icon"><i class="fab fa-cc-visa fa-2x"></i></a>
+                        <a class="me-5 payment-icon"><i class="fab fa-cc-mastercard fa-2x"></i></a>
+                        <a class="me-5 payment-icon"><i class="fab fa-cc-paypal fa-2x"></i></a>
+                        <a class="payment-icon"><i class="fab fa-apple-pay fa-2x"></i></a>
+                    </div>
+                </div>
+                <p>&copy; 2024 Copyright. Todos los derechos reservados</p>
+                <a href="#" class="btn-flotante"><i class="fa fa-arrow-up"></i></a>
+            </div>
+        </footer>
 
         <!-- Enlazar el archivo script.js -->
 	<script src="js/main.js"></script>

@@ -46,18 +46,25 @@ window.addEventListener('scroll', () => {
 });
 
 
-
-
-
 // ----------------------------------------------------------------
 // Caracteristicas de los productos
 // ----------------------------------------------------------------
-function openProductPage(title, price, image) {
-    // Guarda los datos del producto en sessionStorage
-    sessionStorage.setItem("productTitle", title);
-    sessionStorage.setItem("productPrice", price);
-    sessionStorage.setItem("productImage", image);
+function openProductPage(nombre, precio, imagen, codigo, descripcion) {
+    sessionStorage.setItem("productTitle", nombre);
+    sessionStorage.setItem("productPrice", precio);
+    sessionStorage.setItem("productImage", imagen);
+    sessionStorage.setItem("productCode", codigo);
+    sessionStorage.setItem("productDescription", descripcion);
 
-    // Redirige a la página de detalles del producto
-    window.location.href = "detalleProducto.html";
+    window.location.href = "detalleProducto.html"; 
 }
+
+function showModal() {
+    const productImageSrc = document.getElementById("productImage").src; // Obtiene la fuente de la imagen del producto
+    document.getElementById("modalImage").src = productImageSrc; // Asigna la fuente de la imagen al modal
+    const modal = new bootstrap.Modal(document.getElementById('imageModal')); // Inicializa el modal de Bootstrap
+    modal.show(); // Muestra el modal
+}
+
+
+
