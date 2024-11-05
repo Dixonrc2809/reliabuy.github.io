@@ -12,14 +12,13 @@ body {
 body {
 	display: grid;
 	grid-template-rows: 1fr;
-	font-family: "Raleway", sans-serif;
 	background-color: #007bff;
 }
 
 h3 {
-	font-size: 0.7em;
+	font-size: 1.3em;
 	letter-spacing: 1.2px;
-	color: #ffc107;
+	color: #e6ad05;
 }
 
 img {
@@ -28,17 +27,22 @@ img {
 }
 
 /* ----- Product Section ----- */
+
+
 .product {
-	display: grid;
-	grid-template-columns: 0.9fr 1fr;
-	margin: auto;
-	padding: 2.5em 0;
-	min-width: 600px;
-	background-color: white;
-	border-radius: 5px;
-	margin-bottom: 100px;
-	margin-top: 150px;
+    display: grid;
+    grid-template-columns: 0.9fr 1fr;
+    margin: auto;
+    padding: 2.5em 1em; /* Ajusta el padding para dispositivos más pequeños */
+    max-width: 1200px; /* Ancho máximo */
+    width: 90%; /* Ajuste para que sea más flexible */
+    background-color: white;
+    border-radius: 5px;
+    margin-bottom: 100px;
+    margin-top: 150px;
+    box-shadow: 4px 4px 25px -2px rgba(0, 0, 0, 0.3);
 }
+
 
 /* ----- Photo Section ----- */
 .product__photo {
@@ -74,9 +78,9 @@ img {
 
 	img {
 		position: absolute;
-		left: 0em;
-		top: 2em;
-		max-width: 90%;
+		left: 7em;
+		top: 1em;
+		max-width: 55%;
 		filter: saturate(150%) contrast(120%) hue-rotate(10deg)
 			drop-shadow(1px 20px 10px rgba(0, 0, 0, 0.3));
 	}
@@ -122,13 +126,13 @@ img {
 	h1 {
 		margin-bottom: 0.1em;
 		color: #007bff;
-		font-size: 1.5em;
+		font-size: 1.8em;
 		font-weight: 900;
 	}
 
 	span {
-		font-size: 0.7em;
-		color: #ffc107;
+		font-size: 0.9em;
+		color: #e6ad05;
 	}
 }
 
@@ -220,17 +224,67 @@ img {
 }
 
 
-/* ----- Footer Section ----- */
-footer {
-	padding: 1em;
-	text-align: center;
-	color: #fff;
+/* ----- Media Queries ----- */
+@media (max-width: 768px) {
+	.product {
+		grid-template-columns: 1fr;
+		padding: 1.5em;
+		margin-top: 100px;
+	}
 
-	a {
-		color: #007bff;
+	.photo-container {
+		position: relative;
+		width: 100%;
+		left: 0;
+	}
 
-		&:hover {
-			color: #01e37f;
-		}
+	.photo-main img {
+		left: 0;
+		top: 0;
+		width: 100%;
+		position: static;
+	}
+
+	.photo-album ul {
+		justify-content: center;
+	}
+
+	.product__info {
+		padding: 1em;
+	}
+
+	.price span {
+		font-size: 2.2em;
+	}
+
+	.title h1 {
+		font-size: 1.3em;
 	}
 }
+
+@media (max-width: 480px) {
+	.price span {
+		font-size: 1.8em;
+	}
+
+	.title h1 {
+		font-size: 1.2em;
+	}
+
+	.buy--btn {
+		padding: 1em 2em;
+		font-size: 0.7em;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
