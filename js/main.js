@@ -59,12 +59,14 @@ function openProductPage(nombre, precio, imagen, codigo, descripcion) {
     window.location.href = "detalleProducto.html"; 
 }
 
+// ----------------------------------------------------------------
+// Modal para los productos
+// ----------------------------------------------------------------
 function showModal() {
     const productImageSrc = document.getElementById("productImage").src; // Obtiene la fuente de la imagen del producto
     document.getElementById("modalImage").src = productImageSrc; // Asigna la fuente de la imagen al modal
     const modal = new bootstrap.Modal(document.getElementById('imageModal')); // Inicializa el modal de Bootstrap
     modal.show(); // Muestra el modal
 }
-
 
 

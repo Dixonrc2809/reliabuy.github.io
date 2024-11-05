@@ -13,8 +13,11 @@
 	<link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 
+    <link rel="stylesheet" type="text/css"  href="https://cdnjs.cloudflare.com/ajax/libs/lightslider/1.1.6/css/lightslider.min.css">
+
     <link rel="stylesheet" href="css/estilosProductos.css"> <!-- Vincula tu archivo CSS aquí -->
     <link rel="stylesheet" href="css/styles.css"> <!-- Vincula tu archivo CSS aquí -->
+    <link rel="stylesheet" href="css/prueba.css"> <!-- Vincula tu archivo CSS aquí -->
 </head>
 <body>
 
@@ -158,6 +161,86 @@
         </div>
     </div>
 
+        <!-- Rest of your HTML -->
+
+        <section class="products-slider">
+            <div class="product-container">
+                <!-- Slider -->
+                <ul id="lightSlider" class="autoWidth">
+                    <li class="item-a">
+                        <!-- Primer producto -->
+                        <div class="product-box">
+                            <a href="#">
+                                <strong>iPhone 12 Pro</strong>
+                                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhgavdrpTRowMSXzNENhCX9vOMRViT_2oZv3YXT4eL1Nyx8tQrisiVllb2BtX5VoB2u6TiE0FU-Q74DfQ0CKQ8jLLEcWXHMz0yqVyDnNVqIUFApKXH3uNofjjG27KTZjR09K-fjQxrRzefo/s400/iphone.png" alt="iPhone 12 Pro">
+                                <!--colors------>
+                                <div class="available-colors">
+                                    <div class="product-color" style="background-color: #5c5b58;"></div>
+                                    <div class="product-color" style="background-color: #e5e6e2;"></div>
+                                    <div class="product-color" style="background-color: #fcebd5;"></div>
+                                    <div class="product-color" style="background-color: #3f5d6a;"></div>
+                                </div>
+                                <!--buy & price-->
+                                <div class="buy-price">
+                                    <!--price-->
+                                    <p>From $999or $41.62/mo. for 24 mo.before trade-in*</p>
+                                    <!--btn---->
+                                    <a href="#" class="buy-btn">Buy</a>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                    <li class="item-a">
+                        <!-- Segundo producto -->
+                        <div class="product-box">
+                            <a href="#">
+                                <strong>iPhone 12</strong>
+                                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjPOv8AoaMnQMlBwBBj66bpNoVUfM8TuICMVYHHzkKMSXA6R2B_zZ3uPnXZ_5_AXjcwwBJjpj2XhzpeG8M_-xg-MKHLtMdTJ4vaQLI3ZpKW0A4XeFtr3d9wKqrGAQ6nYj-RNda34lwTWd_J/s320/2.png" alt="iPhone 12">
+                                                            <!--colors------>
+                                <div class="available-colors">
+                                    <div class="product-color" style="background-color: #5c5b58;"></div>
+                                    <div class="product-color" style="background-color: #e5e6e2;"></div>
+                                    <div class="product-color" style="background-color: #fcebd5;"></div>
+                                    <div class="product-color" style="background-color: #3f5d6a;"></div>
+                                </div>
+                                <!--buy & price-->
+                                <div class="buy-price">
+                                    <!--price-->
+                                    <p>From $999or $41.62/mo. for 24 mo.before trade-in*</p>
+                                    <!--btn---->
+                                    <a href="#" class="buy-btn">Buy</a>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                    <li class="item-a">
+                        <!-- Tercer producto -->
+                        <div class="product-box">
+                            <a href="#">
+                                <strong>iPhone SE</strong>
+                                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiBpynnfmR9JN1gBxbSGmBYOaZsMvS0tioODtfGahyphenhyphennUvrPpg3DmSaIszYBku8i4P7W8BqDgOWpjuE1Uzx6qqHk-Odgv3T31pFD1Hq8u_SOGVFR-qJ3IWze-lOqppmd_-kvsFYZ_-jkqr4H/s320/3.png" alt="iPhone SE">
+                                                            <!--colors------>
+                                <div class="available-colors">
+                                    <div class="product-color" style="background-color: #5c5b58;"></div>
+                                    <div class="product-color" style="background-color: #e5e6e2;"></div>
+                                    <div class="product-color" style="background-color: #fcebd5;"></div>
+                                    <div class="product-color" style="background-color: #3f5d6a;"></div>
+                                </div>
+                                <!--buy & price-->
+                                <div class="buy-price">
+                                    <!--price-->
+                                    <p>From $999or $41.62/mo. for 24 mo.before trade-in*</p>
+                                    <!--btn---->
+                                    <a href="#" class="buy-btn">Buy</a>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                    
+                </ul>
+                
+            </div>
+        </section>
 
 
         <!-- Footer -->
@@ -222,7 +305,32 @@
             </div>
         </footer>
 
-        <!-- Enlazar el archivo script.js -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightslider/1.1.6/js/lightslider.min.js"></script>
+
+        
+    <!--===JavaScript=======================================================-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lightslider/1.1.6/js/lightslider.min.js"></script>
+
+    <script type="text/javascript">
+    
+        $(document).ready(function() {
+        $('.autoWidth').lightSlider({
+            autoWidth:true,
+            onSliderLoad: function() {
+                $('.autoWidth').removeClass('cS-hidden');
+            } 
+        });  
+        });
+        
+        </script>
+        
+
+    <!-- jQuery, Popper.js y JavaScript de Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+    <!-- Enlazar el archivo script.js -->
 	<script src="js/main.js"></script>
     <script src="js/carritoCompra.js"></script>
 

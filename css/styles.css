@@ -1251,7 +1251,9 @@ hr {
         height: 35px; 
         width: 35px; 
         border-radius: 100%; /* Redondeo completo para un círculo */
-        background-color: #007bff; /* Color de fondo de los íconos */
+        background-image: url('../imagenes/bannerCeleste2.png'); 
+        background-size: cover; /* Ajusta la imagen para cubrir todo el área */
+        background-position: center;
         transition: background-color 0.3s; /* Transición suave al hacer hover */
         text-decoration: none; /* Elimina el subrayado */
     }
