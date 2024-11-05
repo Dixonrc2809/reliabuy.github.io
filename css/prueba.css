@@ -1,224 +1,174 @@
-
-.products-slider{
-    padding: 0px 20px;
+/* ----- Global Styles ----- */
+* {
     box-sizing: border-box;
-    margin-bottom: 8%;
 }
-.slider-heading{
-    font-family:Arial, Helvetica, sans-serif;
+
+html, body {
+    height: 100%;
+}
+
+h2 {
+    font-size: 1.5em;
+    color: #e6ad05;
+    border-bottom: 1px dotted #ffffff;
+    padding-bottom: 5px;
+    display: inline-block;
+}
+
+.container {
+    max-width: 1170px;
+    margin: auto;
+    padding: 20px;
+}
+
+.slides-wrapper {
+    overflow: hidden;
+    position: relative;
+    padding: 20px;
+}
+
+.slider-list {
     display: flex;
-    flex-wrap: wrap;
-    max-width: 1200px;
-    margin: 0px auto;
-    padding:0px 20px;
+    overflow: hidden;
+    transition: transform 0.5s ease;
+    padding: 0;
+    margin: 0;
 }
-.slider-heading h3{
-    font-size: 1.75rem;
-    color: #1d1d1f;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-    line-height:34px;
-}
-.slider-heading h3 span{
-    color: #6e6e73;
-}
-.product-box{
+
+.slider-item {
+    position: relative;
+    width: 100%;
+    max-width: 240px; /* Ancho máximo */
+    height: 320px; /* Altura */
+    background: #f5f9ff; /* Fondo azul pastel */
+    border-radius: 15px; /* Bordes redondeados */
+    margin: 10px; /* Espaciado entre tarjetas */
+    overflow: hidden;
     display: flex;
     flex-direction: column;
-    width: 400px;
-    text-decoration: none;
-    background-color: #ffffff;
-    border-radius: 20px;
-    margin: 20px;
-    padding: 25px;
-    box-sizing: border-box;
-    box-shadow: 2px 2px 8px rgba(0,0,0,0.03);
-    border: 1px solid rgba(0,0,0,0.08);
-    transition: all ease 0.3s;
-    overflow: hidden;
+    justify-content: space-between;
+    transition: transform 0.2s; /* Efecto hover */
 }
-.product-box:hover{
-    box-shadow: 2px 2px 18px rgba(0,0,0,0.10);
-    transform: scale(1.008);
-    transition: all  0.3s ease;
+
+.slider-item::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    width: 100%;
+    height: 100%;
+    background: #cff1ff; /* Azul claro */
+    transform: skewY(345deg);
+    transition: 0.5s;
 }
-.product-box strong{
-    color: #29292c;
-    font-size: 1.75rem;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 600;
-    margin-top: 24px;
+
+.slider-item:hover::before {
+    top: -70%;
+    transform: skewY(390deg);
 }
-.product-box img{
-    width: 210px;
-        height:250px;
-        padding:20px 0px;
-    object-fit: contain;
-    object-position: center;
-    margin: 20px auto;
+
+.slider-item:hover {
+    transform: scale(1.05);
+    box-shadow: 6px 6px 30px rgba(0, 0, 0, 0.2);
 }
-.available-colors{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+.slider-item img {
+    width: 60%; /* Reducimos el tamaño de la imagen */
+    margin-top: 20px; /* Añadimos espacio superior para centrar mejor */
+    border-radius: 6px 6px 0 0;
+    filter: drop-shadow(1px 1px 3px #00000057);
 }
-.available-colors .product-color{
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    display: flex;
-    border: 1px solid rgba(0,0,0,0.1);
-    box-shadow: inset 2px 2px 30px rgba(0,0,0,0.03);
-    margin: 3px;
+
+
+
+/* Estilos para los nombres de los productos */
+.product-name {
+    color: black; /* Color del texto a negro */
+    font-size: 16px; /* Tamaño de la fuente */
+    margin: 10px 0; /* Espaciado arriba y abajo */
+    text-align: center; /* Centra el texto */
 }
-.buy-price{
+
+/* Botón de compra */
+.buy-btn {
+    position: relative; /* Cambia a relativo para mantener el flujo normal */
+    margin-top: auto; /* Empuja el botón hacia el fondo */
+    padding: 12px 24px;
+    border-radius: 7px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #007bff;
+    box-shadow: 2px 2px 15px -7px #ffc107;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    border: none;
+}
+
+.buy-btn:hover {
+    background-color: #0056b3;
+    box-shadow: 4px 4px 30px -7px #ffc107;
+}
+
+.buy-btn:active {
+    transform: scale(0.97);
+}
+
+.slider-arrows {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    margin: 10px 0px 0px 0px;
-}
-.buy-price p{
-    color: #6e6e73;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 0.9rem;
-        max-width:250px;
-    line-height:20px;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-.product-box a{
-    text-decoration: none;
-    display: flex;
-    flex-direction: column;
-}
-.buy-price .buy-btn{
-    color: #ffffff;
-    background-color: #0071e3;
-    text-decoration: none;
-    width: 80px;
-    height: 40px;
-        padding:0px;
-        margin:0px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 20px;
-    font-family: Arial, Helvetica, sans-serif;
-}
-.lSPager{
-    display:none;
-}
-.lSAction > a {
-
-background-color:#00000033;
-width:50px;
-height:50px;
-border-radius:50%;
-opacity:0.8;
-background-image:none;
-display: flex;
-justify-content: center;
-    align-items: center;
-}
-.lSAction > a::after{
-position:absoult;
-content:'';
-margin:auto;
-border: solid #ffffff;
-    border-width: 0 4px 4px 0;
-    display: inline-block;
-    padding: 5px;
-}
-.lSAction > .lSPrev::after {
-    transform: rotate(135deg);
-    -webkit-transform: rotate(135deg);
+    padding: 10px 20px;
 }
 
-.lSAction > .lSNext::after {
-    transform: rotate(-45deg);
-    -webkit-transform: rotate(-45deg);
+.slider-arrow-prev,
+.slider-arrow-next {
+    border: none;
+    background-color: #007bff;
+    color: rgb(255, 255, 255); /* Color del texto de los botones de navegación */
+    font-size: 1em;
+    border-radius: 7px;
+    cursor: pointer;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
 }
-.explore-products{
-height: 530px;
-position: relative;
-box-shadow: 2px 2px 15px rgba(0,0,0,0.10);
-box-sizing:border-box;
-        }
-.explore-products strong{
-z-index: 2;
-    }
-.explore-img{
-width:100% !important;
-height: 100% !important;
-position: absolute;
-left: 0px;
-top: 0px;
-z-index: 1;
+
+.slider-arrow-prev:hover,
+.slider-arrow-next:hover {
+    background-color: #0056b3;
 }
-.explore-img img{
-width:100% !important;
-height: 100% !important;
-object-fit: cover;
-object-position: center;
-margin: 0px;
-padding: 0px;
-    }
-    
-/*making-responsive-css-------*/
-@media(max-width:600px){
-    .slider-heading h3{
-        font-size: 21px;
-    }        
-    .product-box{
-        width: 310px;
-        margin: 10px;
-        box-sizing: border-box;
-    }
-    .explore-products{
-        height: 427px;
-    }
-    .product-box img{
-            height:190px;
-            width:160px;
-    padding:0px;}
-    .product-box strong{
-        font-size: 21px;
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px; /* Menos padding en pantallas pequeñas */
     }
 
+    .slider-item {
+        max-width: 100%; /* Tarjetas ocupan todo el ancho disponible */
+        height: auto; /* Altura automática para tarjetas */
+        margin: 5px; /* Espaciado más pequeño entre tarjetas */
+    }
 
-.lSAction > a{
-    display:none;
-}
-.products-slider{
-    background-color: #f5f5f7;
-    padding: 0px;}
-}
-@media(max-width:400px){
-.product-box{
-        width: 280px;
+    .slider-list {
+        flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+        align-items: center; /* Centra los elementos */
     }
-    .buy-btn{
-        font-size: 0.8rem;
+
+    .slider-item img {
+        width: 80%; /* Aumenta el tamaño de la imagen */
+        margin-top: 10px; /* Reduce el margen superior */
     }
-}
-@media(max-width:324px){
-.product-box{
-    width: 225px;
-}
-.product-box img{
-    width: 140px;
-        height:165px;
-}
-.explore-products{
-    height: 445px;
-}
-.buy-price{
-    flex-direction: column;
-}
-.buy-price .buy-btn{
-    width: 100%;
-}
+
+    .buy-btn {
+        width: 100%; /* Botón ocupa todo el ancho disponible */
+        margin-top: 10px; /* Espacio adicional arriba */
+    }
+
+    .slider-arrows {
+        padding: 5px; /* Reduce padding en las flechas */
+    }
+
+    .slider-arrow-prev,
+    .slider-arrow-next {
+        padding: 8px 16px; /* Ajuste en el tamaño de los botones de navegación */
+        font-size: 0.9em; /* Disminuye el tamaño de fuente */
+    }
 }
