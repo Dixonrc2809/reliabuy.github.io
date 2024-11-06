@@ -241,7 +241,7 @@ img {
 	.photo-main img {
 		left: 0;
 		top: 0;
-		width: 100%;
+		max-width: 100%;
 		position: static;
 	}
 

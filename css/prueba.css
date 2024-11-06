@@ -135,10 +135,13 @@ h2 {
     background-color: #0056b3;
 }
 
+
 /* Responsividad */
 @media (max-width: 768px) {
     .container {
-        padding: 10px; /* Menos padding en pantallas pequeñas */
+        grid-template-columns: 1fr;
+		padding: 1.5em;
+		margin-top: 100px;
     }
 
     .slider-item {
@@ -148,6 +151,7 @@ h2 {
     }
 
     .slider-list {
+        max-width: 100%;
         flex-direction: column; /* Cambia a columna en pantallas pequeñas */
         align-items: center; /* Centra los elementos */
     }
