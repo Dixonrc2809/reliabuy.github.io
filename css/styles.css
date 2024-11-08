@@ -1359,7 +1359,16 @@ hr {
 
 
 
+/*============================*/
+/* Cards de Productos Principales*/
+/*============================*/
+.cardProducto {
+    margin-bottom: 1.5rem;
+    margin-top: 70px;
+    margin-bottom: 70px;
+}
 
-
-
+.table th, .table td {
+    text-align: center;
+}
 

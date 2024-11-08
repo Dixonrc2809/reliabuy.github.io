@@ -1,0 +1,31 @@
+    [
+        {
+        "id": 1,
+        "name": "Camisa Blanca",
+        "price": 25,
+        "description": "Una camisa blanca básica de alta calidad.",
+        "category": "Camisas",
+        "imageUrl": "./imagenes/airpods.png"
+        },
+        {
+        "id": 2,
+        "name": "Camisa Negra",
+        "price": 30,
+        "description": "Una camisa negra básica de alta calidad.",
+        "category": "Camisas"
+        },
+        {
+        "id": 6,
+        "name": "Camisa color azul",
+        "price": 45.6,
+        "description": "Camisa color azul",
+        "category": "Camisas"
+        },
+        {
+        "id": 7,
+        "name": "Camisa manga corta",
+        "price": 32.1,
+        "description": "Camisa manga corta",
+        "category": "Camisas"
+        }
+    ]
