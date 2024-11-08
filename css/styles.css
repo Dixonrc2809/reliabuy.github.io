@@ -1372,3 +1372,8 @@ hr {
     text-align: center;
 }
 
+/*Tabla para agregar Productos*/
+.table-responsive{
+    margin-top: 80px;
+}
+

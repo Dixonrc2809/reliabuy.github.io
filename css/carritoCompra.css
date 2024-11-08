@@ -278,7 +278,7 @@
         font-weight: bold;
     }
     .cart-item .cart-item-product:hover .cart-item-product-title {
-        color: #e45b32;
+        color: #ffc107;
     }
     .cart-item .count-input {
         display: inline-block;

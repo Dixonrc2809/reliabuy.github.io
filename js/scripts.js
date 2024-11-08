@@ -89,10 +89,10 @@ function displayProducts(products) {
     const productContainer = document.getElementById('products');
 
     products.forEach(product => {
+        indicador = product.id;
         const productCard = `
             <div class="col-md-4">
                 <div class="cardProducto">
-                    <img src="${product.image}" alt="${product.name}" class="card-img-top" style="height: 200px; object-fit: cover;">
                     <div class="cardProducto-body">
                         <h5 class="cardProducto-title">${product.name}</h5>
                         <p class="cardProducto-text">Precio: $${product.price.toFixed(2)}</p>
@@ -105,7 +105,6 @@ function displayProducts(products) {
         productContainer.insertAdjacentHTML('beforeend', productCard);
     });
 }
-
 
 // Función para mostrar el modal con los detalles del producto
 function showProductDetails(productId) {
