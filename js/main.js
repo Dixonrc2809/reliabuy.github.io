@@ -72,21 +72,24 @@ function showModal() {
 // ----------------------------------------------------------------
 // Acordion Productos
 // ----------------------------------------------------------------
-document.querySelectorAll('.accordion').forEach(button => {
-    button.addEventListener('click', function() {
-        // Alternar la clase 'active' en el botón
-        this.classList.toggle('active');
+var acc = document.getElementsByClassName("accordion");
+
+// Recorre todos los botones y agrega un evento de clic
+for (var i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+        // Alterna la clase "active" para resaltar el botón
+        this.classList.toggle("active");
         
-        // Obtener el panel siguiente al botón
-        const panel = this.nextElementSibling;
+        // Obtén el panel siguiente al botón clicado
+        var panel = this.nextElementSibling;
         
-        // Si el panel está abierto, cerrarlo
-        if (panel.style.maxHeight) {
-            panel.style.maxHeight = null;
+        // Si el panel está visible, ocultarlo. Si está oculto, mostrarlo.
+        if (panel.style.display === "block") {
+            panel.style.display = "none";
         } else {
-            // De lo contrario, abrirlo (con la altura dinámica)
-            panel.style.maxHeight = panel.scrollHeight + "px";
+            panel.style.display = "block";
         }
     });
-});
+}
+
 
