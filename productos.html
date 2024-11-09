@@ -1,5 +1,4 @@
-
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -12,8 +11,6 @@
 
     <!-- SweetAlert -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <!-- jsPDF -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
 
 	<!-- Font Awesome Icon -->
 	<link rel="stylesheet" href="css/font-awesome.min.css">
@@ -21,6 +18,7 @@
 
     <!-- CSS-->
     <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/prueba.css">
 </head>
 <body>
 
@@ -46,7 +44,7 @@
             <a class="nav-link me-4" href="index.html">Inicio<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item active">
-            <a class="nav-link me-4" href="productos.html">Productos</a>
+            <a class="nav-link me-4" href="#">Productos</a>
             </li>
             <li class="nav-item">
             <a class="nav-link me-4" href="contactanos.html">Contáctanos</a>
@@ -65,11 +63,9 @@
                     <li><a class="dropdown-item" href="nosotros.html">Nosotros</a></li>
                     <li><hr class="dropdown-divider"></li>
                     <li><a class="dropdown-item" href="acercaDe.html">Acerca De</a></li>
-                    
-                    
                 </ul>
             </li>
-            <button id="view-products" class="btn btn-primary">Ver Productos</button>
+            
         </ul>
         </div>
 
@@ -95,33 +91,90 @@
     </nav>
     </header>
 
-    <div class="container my-4" id="content">
-        <!-- Contenido dinámico: productos o carrito de compras -->
-    </div>
-
-    <!-- Modal para mostrar detalles del producto -->
-    <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="productModalLabel">Detalles del Producto</h5>
-                    <!-- Cambia el atributo a data-dismiss="modal" para Bootstrap 4 -->
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+<!-- Contenedor de productos -->
+<div class="container-fluid product-page">
+    <div class="row">
+        <!-- Filtros -->
+        <div class="col-md-3 filter-menu">
+            <h4>Filtrar productos</h4>
+            <div class="filter-category">
+                <button class="accordion">Color</button>
+                <div class="panel">
+                    <label><input type="checkbox"> Blanco</label>
+                    <label><input type="checkbox"> Negro</label>
+                    <label><input type="checkbox"> Plata</label>
                 </div>
-                <div class="modal-body" id="modalBody">
-                    <!-- Aquí se cargará la información del producto -->
+            </div>
+            <div class="filter-category">
+                <button class="accordion">Marca</button>
+                <div class="panel">
+                    <label><input type="checkbox"> Samsung</label>
+                    <label><input type="checkbox"> LG</label>
+                    <label><input type="checkbox"> Whirlpool</label>
                 </div>
-                <div class="modal-footer">
-                    <!-- Cambia el atributo a data-dismiss="modal" para Bootstrap 4 -->
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
+            <div class="filter-category">
+                <button class="accordion">Wi-Fi Integrado</button>
+                <div class="panel">
+                    <label><input type="checkbox"> Sí</label>
+                    <label><input type="checkbox"> No</label>
                 </div>
             </div>
         </div>
-    </div>
 
-        <!-- Footer -->
+        <!-- Sección de Productos -->
+        <div class="col-md-9">
+            <section class="product">
+                <div class="p-heading">
+                    <h3>Productos</h3>
+                </div>
+                
+                <div class="product-container">
+                    <!-- Ejemplo de producto -->
+                    <div class="p-box">
+                        <img alt="1" src="./imagenes/iphone.png" />
+                        <p>Black Genuine Leather Bags.</p>
+                        <a class="price" href="#">$23.3</a>
+                        <a class="buy-btn" href="#">Add To Cart</a>
+                    </div>
+                    <div class="p-box">
+                        <img alt="2" src="./imagenes/airpods.png" />
+                        <p>Black Genuine Leather Bags.</p>
+                        <a class="price" href="#">$30.3</a>
+                        <a class="buy-btn" href="#">Add To Cart</a>
+                    </div>
+                    <div class="p-box">
+                        <img alt="3" src="./imagenes/airpods.png" />
+                        <p>Black Genuine Leather Bags.</p>
+                        <a class="price" href="#">$13.3</a>
+                        <a class="buy-btn" href="#">Add To Cart</a>
+                    </div>
+                    <div class="p-box">
+                        <img alt="3" src="./imagenes/airpods.png" />
+                        <p>Black Genuine Leather Bags.</p>
+                        <a class="price" href="#">$13.3</a>
+                        <a class="buy-btn" href="#">Add To Cart</a>
+                    </div>
+                    <div class="p-box">
+                        <img alt="3" src="./imagenes/airpods.png" />
+                        <p>Black Genuine Leather Bags.</p>
+                        <a class="price" href="#">$13.3</a>
+                        <a class="buy-btn" href="#">Add To Cart</a>
+                    </div>
+                    <div class="p-box">
+                        <img alt="3" src="./imagenes/airpods.png" />
+                        <p>Black Genuine Leather Bags.</p>
+                        <a class="price" href="#">$13.3</a>
+                        <a class="buy-btn" href="#">Add To Cart</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+
+
+    <!-- Footer -->
     <footer class="footer bg-light py-4">
         <div class="container">
             <div class="row text-center text-md-start">
@@ -183,15 +236,14 @@
         </div>
     </footer>
 
-
     <!-- jQuery, Popper.js y JavaScript de Bootstrap -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-    <!-- Script personalizado -->
-    <script src="./js/scripts.js"></script>
-    <script src="js/main.js"></script>
+    <!-- Enlazar el archivo script.js -->
+	<script src="js/main.js"></script>
     <script src="js/carritoCompra.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
