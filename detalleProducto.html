@@ -15,7 +15,7 @@
 
     <link rel="stylesheet" type="text/css"  href="https://cdnjs.cloudflare.com/ajax/libs/lightslider/1.1.6/css/lightslider.min.css">
 
-    <link rel="stylesheet" href="css/estilosProductos.css"> <!-- Vincula tu archivo CSS aquí -->
+    <link rel="stylesheet" href="css/estilosDetalleProductos.css"> <!-- Vincula tu archivo CSS aquí -->
     <link rel="stylesheet" href="css/styles.css"> <!-- Vincula tu archivo CSS aquí -->
     <link rel="stylesheet" href="css/estiloCarruselProductos.css"> <!-- Vincula tu archivo CSS aquí -->
 </head>
@@ -128,12 +128,12 @@
     </section>
 
     <script>
-        // Cargar los datos del producto desde sessionStorage
-        const title = sessionStorage.getItem("productTitle") || "Título no disponible";
-        const price = sessionStorage.getItem("productPrice") || "Precio no disponible";
-        const image = sessionStorage.getItem("productImage") || "ruta/a/imagen-predeterminada.png";
-        const code = sessionStorage.getItem("productCode") || "Código no disponible";
-        const description = sessionStorage.getItem("productDescription") || "Descripción no disponible";
+        // Cargar los datos del producto desde localStorage
+        const title = localStorage.getItem("productTitle") || "Título no disponible";
+        const price = localStorage.getItem("productPrice") || "Precio no disponible";
+        const image = localStorage.getItem("productImage") || "ruta/a/imagen-predeterminada.png";
+        const code = localStorage.getItem("productCode") || "Código no disponible";
+        const description = localStorage.getItem("productDescription") || "Descripción no disponible";
 
         // Asigna los datos a los elementos HTML
         document.getElementById("productTitle").innerText = title;
@@ -160,75 +160,83 @@
         </div>
     </div>
 
-<!-- Productos Similares -->
-<!-- Productos Similares -->
-<main class="container">
-    <h2>Productos Similares</h2>
-    <!-- New product slider -->
-    <div class="product-slider" id="new-products">
-        <div class="slides-wrapper">
-            <div class="slides-container">
-                <ul class="slider-list">
-                    <li class="slider-item" onclick="openProductPage('AirPods', '29,995', './imagenes/airpods.png', '45991', '<ul><li>Sonido envolvente</li><li>Diseño ergonómico</li><li>Duración de batería prolongada</li></ul>')">
-                        <a href="#">
-                            <img src="./imagenes/airpods.png" alt="AirPods" />
-                        </a>
-                        <p class="product-name">AirPods</p>
-                        <p class="product-price">₡29,995</p> <!-- Precio añadido -->
-                        <button class="buy-btn">Comprar Ahora</button>
-                    </li>
-                    <li class="slider-item" onclick="openProductPage('Audífonos', '32,995', './imagenes/Audifonos.png', '45992', '<ul><li>Cancelación de ruido</li><li>Sonido Hi-Fi</li><li>Comodidad durante todo el día</li></ul>')">
-                        <a href="#">
-                            <img src="./imagenes/Audifonos.png" alt="Audífonos" />
-                        </a>
-                        <p class="product-name">Audífonos</p>
-                        <p class="product-price">₡32,995</p> <!-- Precio añadido -->
-                        <button class="buy-btn">Comprar Ahora</button>
-                    </li>
-                    <li class="slider-item" onclick="openProductPage('Monitor', '109,995', './imagenes/monitor.png', '45993', '<ul><li>Resolución 1440p</li><li>Tasa de refresco 144Hz</li><li>Curvatura envolvente</li></ul>')">
-                        <a href="#">
-                            <img src="./imagenes/monitor.png" alt="Monitor" />
-                        </a>
-                        <p class="product-name">Monitor</p>
-                        <p class="product-price">₡109,995</p> <!-- Precio añadido -->
-                        <button class="buy-btn">Comprar Ahora</button>
-                    </li>
-                    <li class="slider-item" onclick="openProductPage('Teclado', '43,995', './imagenes/teclado2.png', '45994', '<ul><li>Iluminación RGB</li><li>Teclas mecánicas</li><li>Diseño ergonómico</li></ul>')">
-                        <a href="#">
-                            <img src="./imagenes/teclado2.png" alt="Teclado" />
-                        </a>
-                        <p class="product-name">Teclado</p>
-                        <p class="product-price">₡43,995</p> <!-- Precio añadido -->
-                        <button class="buy-btn">Comprar Ahora</button>
-                    </li>
-                    <li class="slider-item" onclick="openProductPage('Mouse', '27,495', './imagenes/mouse.png', '45995', '<ul><li>Sensor óptico</li><li>Alta precisión</li><li>Ergonomía mejorada</li></ul>')">
-                        <a href="#">
-                            <img src="./imagenes/mouse.png" alt="Mouse" />
-                        </a>
-                        <p class="product-name">Mouse</p>
-                        <p class="product-price">₡27,495</p> <!-- Precio añadido -->
-                        <button class="buy-btn">Comprar Ahora</button>
-                    </li>
-                    <li class="slider-item" onclick="openProductPage('Refrigeradora', '299,995', './imagenes/refrigeradora.png', '45996', '<ul><li>Capacidad 400L</li><li>Frío No Frost</li><li>Energy Star</li></ul>')">
-                        <a href="#">
-                            <img src="./imagenes/refrigeradora.png" alt="Refrigeradora" />
-                        </a>
-                        <p class="product-name">Refrigeradora</p>
-                        <p class="product-price">₡299,995</p> <!-- Precio añadido -->
-                        <button class="buy-btn">Comprar Ahora</button>
-                    </li>
-                </ul>
-            </div>
+
+    <!--==Popular-product's===========================-->
+    <section id="popular-product">
+
+        <!--**heading********************-->
+        <div class="product-heading">
+            <h3>Productos Populares</h3>
         </div>
-        <div class="slider-arrows">
-            <button type="button" class="slider-arrow-prev">Anterior</button>
-            <button type="button" class="slider-arrow-next">Siguiente</button>
+
+        <!--**container*****************-->
+        <div class="popular-product-container">
+
+            <!--**AirPods***-->
+            <div class="product-box">
+                <a href="#" class="product-img" onclick="openProductPage('AirPods', '29,995', './imagenes/airpods.png', '45991', '<ul><li>Sonido envolvente</li><li>Diseño ergonómico</li><li>Duración de batería prolongada</li></ul>')">
+                    <img alt="AirPods" src="./imagenes/airpods.png">
+                </a>
+                <div class="product-text">
+                    <a href="#" class="product-box-p-name">AirPods</a>
+                    <span class="p-box-price">₡29,995</span>
+                    <button class="add-cart-btn">Añadir al carrito</button>
+                </div>
+            </div><!--box-end-->
+
+            <!--**Audífonos***-->
+            <div class="product-box">
+                <a href="#" class="product-img" onclick="openProductPage('Audífonos', '32,995', './imagenes/Audifonos.png', '45992', '<ul><li>Cancelación de ruido</li><li>Sonido Hi-Fi</li><li>Comodidad durante todo el día</li></ul>')">
+                    <img alt="Audífonos" src="./imagenes/Audifonos.png">
+                </a>
+                <div class="product-text">
+                    <a href="#" class="product-box-p-name">Audífonos</a>
+                    <span class="p-box-price">₡32,995</span>
+                    <button class="add-cart-btn">Añadir al carrito</button>
+                </div>
+            </div><!--box-end-->
+
+            <!--**Monitor***-->
+            <div class="product-box">
+                <a href="#" class="product-img" onclick="openProductPage('Monitor', '109,995', './imagenes/monitor.png', '45993', '<ul><li>Resolución 1440p</li><li>Tasa de refresco 144Hz</li><li>Curvatura envolvente</li></ul>')">
+                    <img alt="Monitor" src="./imagenes/monitor.png">
+                </a>
+                <div class="product-text">
+                    <a href="#" class="product-box-p-name">Monitor</a>
+                    <span class="p-box-price">₡109,995</span>
+                    <button class="add-cart-btn">Añadir al carrito</button>
+                </div>
+            </div><!--box-end-->
+
+            <!--**Teclado***-->
+            <div class="product-box">
+                <a href="#" class="product-img" onclick="openProductPage('Teclado', '43,995', './imagenes/teclado2.png', '45994', '<ul><li>Iluminación RGB</li><li>Teclas mecánicas</li><li>Diseño ergonómico</li></ul>')">
+                    <img alt="Teclado" src="./imagenes/teclado2.png">
+                </a>
+                <div class="product-text">
+                    <a href="#" class="product-box-p-name">Teclado</a>
+                    <span class="p-box-price">₡43,995</span>
+                    <button class="add-cart-btn">Añadir al carrito</button>
+                </div>
+            </div><!--box-end-->
+
+            <!--**Mouse***-->
+            <div class="product-box">
+                <a href="#" class="product-img" onclick="openProductPage('Mouse', '27,495', './imagenes/mouse.png', '45995', '<ul><li>Sensor óptico</li><li>Alta precisión</li><li>Ergonomía mejorada</li></ul>')">
+                    <img alt="Mouse" src="./imagenes/mouse.png">
+                </a>
+                <div class="product-text">
+                    <a href="#" class="product-box-p-name">Mouse</a>
+                    <span class="p-box-price">₡27,495</span>
+                    <button class="add-cart-btn">Añadir al carrito</button>
+                </div>
+            </div><!--box-end-->
+
         </div>
-    </div>
-</main>
+
+    </section><!--==popular-end===-->
 
 
-        
 
         <!-- Footer -->
         <footer class="footer bg-light py-4">
@@ -304,7 +312,6 @@
     <!-- Enlazar el archivo script.js -->
 	<script src="js/main.js"></script>
     <script src="js/carritoCompra.js"></script>
-    <script src="js/slider.js" defer></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     

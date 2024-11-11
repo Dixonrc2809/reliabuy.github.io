@@ -49,13 +49,15 @@ window.addEventListener('scroll', () => {
 // ----------------------------------------------------------------
 // Caracteristicas de los productos
 // ----------------------------------------------------------------
-function openProductPage(nombre, precio, imagen, codigo, descripcion) {
-    sessionStorage.setItem("productTitle", nombre);
-    sessionStorage.setItem("productPrice", precio);
-    sessionStorage.setItem("productImage", imagen);
-    sessionStorage.setItem("productCode", codigo);
-    sessionStorage.setItem("productDescription", descripcion);
+function openProductPage(title, price, image, code, description) {
+    // Almacenar los datos en localStorage
+    localStorage.setItem("productTitle", title);
+    localStorage.setItem("productPrice", price);
+    localStorage.setItem("productImage", image);
+    localStorage.setItem("productCode", code);
+    localStorage.setItem("productDescription", description);
 
+    // Redirigir a la página de detalles del producto
     window.location.href = "detalleProducto.html"; 
 }
 
@@ -67,29 +69,6 @@ function showModal() {
     document.getElementById("modalImage").src = productImageSrc; // Asigna la fuente de la imagen al modal
     const modal = new bootstrap.Modal(document.getElementById('imageModal')); // Inicializa el modal de Bootstrap
     modal.show(); // Muestra el modal
-}
-
-// ----------------------------------------------------------------
-// Acordion Productos
-// ----------------------------------------------------------------
-var acc = document.getElementsByClassName("accordion");
-
-// Recorre todos los botones y agrega un evento de clic
-for (var i = 0; i < acc.length; i++) {
-    acc[i].addEventListener("click", function() {
-        // Alterna la clase "active" para resaltar el botón
-        this.classList.toggle("active");
-        
-        // Obtén el panel siguiente al botón clicado
-        var panel = this.nextElementSibling;
-        
-        // Si el panel está visible, ocultarlo. Si está oculto, mostrarlo.
-        if (panel.style.display === "block") {
-            panel.style.display = "none";
-        } else {
-            panel.style.display = "block";
-        }
-    });
 }
 
 
