@@ -93,7 +93,7 @@
 
 <!-- Contenedor de productos -->
 <div class="container-fluid product-page">
-    <div class="row">
+    <div div class="row">
         <!-- Filtros -->
         <div class="col-md-3 filter-menu">
             <h4>Filtrar productos</h4>
@@ -116,13 +116,8 @@
                     <label><input type="checkbox" class="filter-brand-checkbox" value="LG"> LG</label>
                     <label><input type="checkbox" class="filter-brand-checkbox" value="Whirlpool"> Whirlpool</label>
                     <label><input type="checkbox" class="filter-brand-checkbox" value="Apple"> Apple</label>
-                </div>
-            </div>
-            <div class="filter-category">
-                <button class="accordion">Wi-Fi Integrado</button>
-                <div class="panel">
-                    <label><input type="checkbox" class="filter-wifi-checkbox" value="Sí"> Sí</label>
-                    <label><input type="checkbox" class="filter-wifi-checkbox" value="No"> No</label>
+                    <label><input type="checkbox" class="filter-brand-checkbox" value="Sony"> Sony</label>
+                    <label><input type="checkbox" class="filter-brand-checkbox" value="HP"> HP</label>
                 </div>
             </div>
         </div>
@@ -139,6 +134,13 @@
                         <img src="./imagenes/Audifonos.png" alt="Auriculares Westmire A56" />
                         <p>Auriculares Westmire A56</p>
                         <a class="price" href="#">₡32,995</a>
+                        <a class="buy-btn" href="#">Añadir al Carrito</a>
+                    </div>
+                    <!-- Producto 1 -->
+                    <div class="p-box" data-category="Audifonos" data-brand="Sony" onclick="openProductPage('Audifonos Sony WH-CH510', '52,400', './imagenes/audifonosSony.png', '47599', '<ul><li>Calidad de Sonido</li><li>Rendimiento de llamadas mejorado</li><li>50 horas de duración de batería</li></ul>')">
+                        <img src="./imagenes/audifonosSony.png" alt="Auriculares Westmire A56" />
+                        <p>Audifonos Sony WH-CH510</p>
+                        <a class="price" href="#">₡52,400</a>
                         <a class="buy-btn" href="#">Añadir al Carrito</a>
                     </div>
                     <!-- Producto 2 -->
@@ -185,6 +187,12 @@
                         <img src="./imagenes/sillon2.png" alt="Sofá Individual" />
                         <p>Sofá Individual</p>
                         <a class="price" href="#">₡75,995</a>
+                        <a class="buy-btn" href="#">Añadir al Carrito</a>
+                    </div>
+                    <div class="p-box" data-category="Gaming" data-brand="HP" onclick="openProductPage('Laptop HP 8GB 512GB SSD', '355.900', './imagenes/computadora.png', '25996', '<ul><li>Arranque ultrarrápido y un desempeño fluido</li><li>Pantalla de 14 pulgadas</li><li>Con 8 GB de memoria RAM y un SSD de 256 GB</li></ul>')">
+                        <img src="./imagenes/computadora.png" alt="Laptop HP" />
+                        <p>Laptop HP 8GB 512GB SSD</p>
+                        <a class="price" href="#">₡355.900</a>
                         <a class="buy-btn" href="#">Añadir al Carrito</a>
                     </div>
                 </div>
@@ -261,10 +269,7 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
 
     <!-- Enlazar el archivo script.js -->
-	<script src="js/main.js"></script>
-    <script src="js/carritoCompra.js"></script>
-
-    <!-- Enlace al archivo JavaScript -->
+	<script src="js/main.js" defer></script>
     <script src="js/Productos.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

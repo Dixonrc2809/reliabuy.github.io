@@ -33,20 +33,17 @@ checkboxes.forEach(checkbox => {
 function filterProducts() {
     const selectedCategories = Array.from(document.querySelectorAll('.filter-category-checkbox:checked')).map(checkbox => checkbox.value);
     const selectedBrands = Array.from(document.querySelectorAll('.filter-brand-checkbox:checked')).map(checkbox => checkbox.value);
-    const wifiOptions = Array.from(document.querySelectorAll('.filter-wifi-checkbox:checked')).map(checkbox => checkbox.value);
     
     const products = document.querySelectorAll('.p-box');
     
     products.forEach(product => {
         const productCategories = product.getAttribute('data-category').split(', ');
         const productBrand = product.getAttribute('data-brand');
-        const wifi = product.getAttribute('data-wifi'); // Asegúrate de agregar este dato en los productos si es necesario
 
         const categoryMatch = selectedCategories.length === 0 || selectedCategories.some(category => productCategories.includes(category));
         const brandMatch = selectedBrands.length === 0 || selectedBrands.includes(productBrand);
-        const wifiMatch = wifiOptions.length === 0 || wifiOptions.includes(wifi);
 
-        if (categoryMatch && brandMatch && wifiMatch) {
+        if (categoryMatch && brandMatch) {
             product.style.order = 1;  // Mover los productos que coinciden al principio
             product.style.visibility = 'visible';
             product.style.opacity = 1;
@@ -57,3 +54,38 @@ function filterProducts() {
         }
     });
 }
+
+// ----------------------------------------------------------------
+// Funcionn para que al cargar la pagina, los Productos Populares se cambien de orden
+// ----------------------------------------------------------------
+window.onload = function() {
+    let container = document.getElementById('cambiar-orden-productos');
+    let products = Array.from(container.getElementsByClassName('product-box'));
+    
+    // Aleatoriza los productos
+    products.sort(() => Math.random() - 0.5);
+    
+    // Vuelve a añadir los productos al contenedor en el nuevo orden
+    products.forEach(product => container.appendChild(product));
+};
+
+
+// ----------------------------------------------------------------
+// Funcionaldiad para icono de compartir
+// ----------------------------------------------------------------
+const productUrl = window.location.href; // Obtiene la URL actual de la página del producto
+
+document.getElementById('shareIcon').addEventListener('click', function() {
+    if (navigator.share) {
+        navigator.share({
+            title: document.title,
+            url: productUrl
+        }).then(() => {
+            console.log('Producto compartido con éxito!');
+        }).catch((error) => {
+            console.error('Error al compartir', error);
+        });
+    } else {
+        alert('El compartir no es compatible en este navegador.');
+    }
+});
