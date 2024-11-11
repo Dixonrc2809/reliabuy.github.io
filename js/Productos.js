@@ -22,7 +22,7 @@ for (var i = 0; i < acc.length; i++) {
 }
 
 // ----------------------------------------------------------------
-// Funcionaldiad de Categorias del Filtrado
+// Funcionaldiad de Categorias del Filtrado en Productos.html
 // ----------------------------------------------------------------
 const checkboxes = document.querySelectorAll('.filter-category-checkbox, .filter-brand-checkbox, .filter-wifi-checkbox');
     
@@ -54,6 +54,38 @@ function filterProducts() {
         }
     });
 }
+
+
+// ----------------------------------------------------------------
+// Funcionalidad de Categorias que estan en el Index.html
+// ----------------------------------------------------------------
+    // Obtener los parámetros de la URL (categoría y marca seleccionada)
+    const urlParams = new URLSearchParams(window.location.search);
+    const categoriaSeleccionada = urlParams.get('categoria');
+    const marcaSeleccionada = urlParams.get('marca');
+
+    // Filtrar los productos según la categoría y la marca seleccionada
+    const productos = document.querySelectorAll('.p-box');
+    productos.forEach(producto => {
+        const categoriaProducto = producto.getAttribute('data-category');
+        const marcaProducto = producto.getAttribute('data-brand');
+
+        const categoryMatch = categoriaSeleccionada ? categoriaProducto === categoriaSeleccionada : true;
+        const brandMatch = marcaSeleccionada ? marcaProducto === marcaSeleccionada : true;
+
+        if (categoryMatch && brandMatch) {
+            // Mover los productos que coinciden al principio
+            producto.style.order = 1;
+            producto.style.visibility = 'visible';
+            producto.style.opacity = 1;
+        } else {
+            // Mover los productos que no coinciden al final
+            producto.style.order = 2;
+            producto.style.visibility = 'hidden';
+            producto.style.opacity = 0;
+        }
+    });
+
 
 // ----------------------------------------------------------------
 // Funcionn para que al cargar la pagina, los Productos Populares se cambien de orden

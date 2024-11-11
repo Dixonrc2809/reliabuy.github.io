@@ -73,7 +73,7 @@
 	bottom: -20px;
 	transform: translateX(-50%);
 	border-radius: 15% 15% 15% 15% / 50% 50% 50% 50%;
-	background:linear-gradient(120deg,#007bff 20%,#509cff);
+	background:linear-gradient(120deg,#007bff 20%,#65a8ff);
 	color:#FFFFFF;
 	display: none;
 	animation: fade 0.2s;
@@ -107,6 +107,9 @@
 	.m-text h1,h2{
 		font-size:3.5rem;
 	}
+	.buy-btn {
+        display: flex;
+    }
 }
 @media(max-width:1045px){
 	.main{
@@ -121,6 +124,9 @@
 		transform: translate(-50%,-50%);
 		
 	}
+	.buy-btn {
+        display: flex;
+    }
 }
 @media(max-width:600px){
 	.side-box{
@@ -144,6 +150,7 @@
 	}
 	.m-btn{
 		margin:0px 20px;
+		display: none;
 	}
 	.product{
 		width:88%;
@@ -154,10 +161,13 @@
 		width:100%;
 		text-align: center;
 	}
+	.buy-btn {
+        display: flex;
+    }
 }
 
 
-/* General Styling */
+/* Estilos del Acordeon */
 .product-page {
     padding: 40px;
     display: flex;

@@ -11,6 +11,10 @@ const updateContent = (index) => {
     titleElement.innerText = item.getAttribute('data-title');
     buttonElement1.innerText = item.getAttribute('data-button1');
     buttonElement2.innerText = item.getAttribute('data-button2');
+
+    // Extraer los datos del producto y asignarlos al onclick de buttonElement2
+    const productInfo = item.getAttribute('data-product-info');
+    buttonElement2.setAttribute('onclick', `openProductPage${productInfo}`);
 };
 
 // Evento para actualizar el contenido al cambiar de diapositiva
@@ -50,16 +54,16 @@ window.addEventListener('scroll', () => {
 // Caracteristicas de los productos
 // ----------------------------------------------------------------
 function openProductPage(title, price, image, code, description) {
-    // Almacenar los datos en localStorage
     localStorage.setItem("productTitle", title);
     localStorage.setItem("productPrice", price);
     localStorage.setItem("productImage", image);
     localStorage.setItem("productCode", code);
     localStorage.setItem("productDescription", description);
-
-    // Redirigir a la página de detalles del producto
-    window.location.href = "detalleProducto.html"; 
+    
+    // Redirige a la página de detalles del producto con el código en la URL
+    window.location.href = `detalleProducto.html?Codigo=${code}`;
 }
+
 
 // ----------------------------------------------------------------
 // Modal para los productos

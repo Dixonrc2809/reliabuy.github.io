@@ -95,7 +95,7 @@
         <div class="hero-text col-md-6">
             <h1 id="hero-title" class="display-4">Auriculares<br>Westmire A56</h1>
             <div class="mt-4" id="hero-buttons">
-                <button class="btn btn-primary me-2">Comprar ahora</button>
+                <button class="btn btn-primary me-2">Añadir al carrito</button>
                 <button class="btn btn-outline-secondary">Ver características</button>
             </div>
         </div>
@@ -107,15 +107,15 @@
                     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
                 </div>
                 <div class="carousel-inner">
-                    <div class="carousel-item active" data-title="Auriculares Westmire A56 - Blanco" data-button1="Comprar ahora" data-button2="Ver características" onclick="openProductPage('Iphone 14 Pro Max 256GB', '469,995', './imagenes/iphone.png', '45994', '<ul><li>Pantalla Super Retina</li><li>256GB Almacenamiento</li><li>Cámara avanzada</li></ul>')">
+                    <div class="carousel-item active" data-title="Auriculares Westmire A56 - Blanco" data-button1="Añadir al carrito" data-button2="Ver características" data-product-info="('Auriculares Westmire A56', '32,995', './imagenes/Audifonos.png', '45999', '<ul><li>Cancelación de ruido</li><li>Sonido envolvente</li><li>Diseño ergonómico</li></ul>')">
                         <img src="./imagenes/Audifonos.png" alt="Auriculares Westmire A56" class="img-fluid">
                     </div>
-                    <div class="carousel-item" data-title="Celular iPhone 14 Pro Max 256 GB" data-button1="Comprar ahora" data-button2="Ver características">
+                    <div class="carousel-item" data-title="Celular iPhone 14 Pro Max 256 GB" data-button1="Añadir al carrito" data-button2="Ver características" data-product-info="('Celular iPhone 14 Pro Max', '469,995', './imagenes/iphone.png', '28999', '<ul><li>Pantalla Super Retina</li><li>256GB Almacenamiento</li><li>Cámara avanzada</li></ul>')">
                         <img src="./imagenes/iphone.png" alt="Iphone 12 Pro Max" class="img-fluid">
                     </div>
-                    <div class="carousel-item" data-title="Televisor Samsung Tizen™ Smart TV LED 65''" LED"" data-button1="Comprar ahora" data-button2="Ver características">
-                        <img src="./imagenes/pantalla.png" alt="Pantalla Smart TV 65"" class="img-fluid">
-                    </div>
+                    <div class="carousel-item" data-title="Televisor Samsung Tizen™ Smart TV LED 65''" data-button1="Añadir al carrito" data-button2="Ver características" data-product-info="('Televisor Samsung Tizen™ Smart TV LED 65', '479,900', './imagenes/pantalla.png', '23999', '<ul><li>Resolución 4K</li><li>HDR</li><li>Smart TV de 65 pulgadas</li></ul>')">
+                        <img src="./imagenes/pantalla.png" alt="Pantalla Smart TV 65''" class="img-fluid">
+                    </div>                    
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -218,40 +218,41 @@
     
 
 
-    <!-- Categorias -->
-    <section>
-        <h2 class="text-center mb-4">Categorias</h2>
-        <div class="categories">
-            <a href="#" class="category me-3">
-                <img src="./imagenes/categoriaCocina.png" alt="Cocinas">
-                <p>Cocina</p>
-            </a>
-            <a href="#" class="category me-3">
-                <img src="./imagenes/categoriaTelefono.png" alt="Honor">
-                <p>Celulares</p>
-            </a>
-            <a href="#" class="category me-3">
-                <img src="./imagenes/categoriaMicrofono.png" alt="Black and Decker">
-                <p>Microfonos</p>
-            </a>
-            <a href="#" class="category me-3">
-                <img src="./imagenes/Audifonos.png" alt="Audifonos">
-                <p>Audifonos</p>
-            </a>
-            <a href="#" class="category me-3">
-                <img src="./imagenes/categoriaPantalla.png" alt="Pantallas">
-                <p>Pantallas</p>
-            </a>
-            <a href="#" class="category me-3">
-                <img src="./imagenes/categoriaGaming.png" alt="Gaming">
-                <p>Gaming</p>
-            </a>
-            <a href="#" class="category me-3">
-                <img src="./imagenes/categoriaMueble.png" alt="Muebles">
-                <p>Muebles</p>
-            </a>
-        </div>
-    </section>
+<!-- Categorias -->
+<section>
+    <h2 class="text-center mb-4">Categorías</h2>
+    <div class="categories">
+        <a href="productos.html?categoria=Cocina" class="category me-3">
+            <img src="./imagenes/categoriaCocina.png" alt="Cocinas">
+            <p>Cocina</p>
+        </a>
+        <a href="productos.html?categoria=Celulares" class="category me-3">
+            <img src="./imagenes/categoriaTelefono.png" alt="Honor">
+            <p>Celulares</p>
+        </a>
+        <a href="productos.html?categoria=Microfonos" class="category me-3">
+            <img src="./imagenes/categoriaMicrofono.png" alt="Black and Decker">
+            <p>Micrófonos</p>
+        </a>
+        <a href="productos.html?categoria=Audifonos" class="category me-3">
+            <img src="./imagenes/Audifonos.png" alt="Audífonos">
+            <p>Audífonos</p>
+        </a>
+        <a href="productos.html?categoria=Pantallas" class="category me-3">
+            <img src="./imagenes/categoriaPantalla.png" alt="Pantallas">
+            <p>Pantallas</p>
+        </a>
+        <a href="productos.html?categoria=Gaming" class="category me-3">
+            <img src="./imagenes/categoriaGaming.png" alt="Gaming">
+            <p>Gaming</p>
+        </a>
+        <a href="productos.html?categoria=Muebles" class="category me-3">
+            <img src="./imagenes/categoriaMueble.png" alt="Muebles">
+            <p>Muebles</p>
+        </a>
+    </div>
+</section>
+
 
     <!-- Carrusel Imagenes -->
     <div id="customCarousel" class="carousel slide">
