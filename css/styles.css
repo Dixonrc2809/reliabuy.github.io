@@ -1093,6 +1093,62 @@ hr {
 /* Acerca De Fin */
 /* ---------------------------------------------- */
 
+/* ---------------------------------------------- */
+/* Banner Terminos y Condiciones */
+/* ---------------------------------------------- */
+.banner {
+    width: 974px; /* Ancho fijo */
+    height: 251px; /* Alto fijo */
+    margin: 0 auto; /* Centra el banner en la página */
+    overflow: hidden; /* Asegura que la imagen no sobresalga del contenedor */
+    border-radius: 20px;
+    margin-top: 130px;
+    margin-bottom: 50px;
+}
+
+.banner img {
+    width: 100%; /* Hace que la imagen ocupe todo el contenedor */
+    height: 100%; /* Ajusta la altura de la imagen para que llene el contenedor */
+    object-fit: cover; /* Ajusta la imagen para cubrir el área sin distorsionarse */
+}
+
+.terms-section {
+    margin-top: 30px;
+}
+
+.container-terminos {
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 50px;
+}
+
+.container-terminos h1 {
+    font-size: 2rem;
+    text-align: center;
+    color: #007bff;
+}
+
+.container-terminos h2 {
+    font-size: 1.6rem;
+    color: #007bff;
+    margin-top: 20px;
+}
+
+.container-terminos h3 {
+    font-size: 1.2rem;
+    color: #007bffa8;
+    margin-top: 20px;
+}
+
+.container-terminos p {
+    font-size: 1rem;
+    color: #666;
+    text-align: justify;
+    margin-bottom: 10px;
+}
 
 
 
