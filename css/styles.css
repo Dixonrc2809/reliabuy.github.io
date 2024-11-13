@@ -125,6 +125,12 @@ body {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+.navbar-nav .dropdown-item.active {
+    background-color: #ffc10794; 
+    color: #007bff;
+    font-weight: bold; 
+}
+
 .navbar-nav .dropdown-item:hover {
     background-color: #ffc107af;
     color: #007bff;
