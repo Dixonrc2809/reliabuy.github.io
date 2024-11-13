@@ -43,10 +43,10 @@ updateContent(0);
 // ----------------------------------------------------------------
 // boton de busqueda en el NAV
 // ----------------------------------------------------------------
-document.getElementById('searchButton').addEventListener('click', function() {
-    const searchForm = document.getElementById('searchForm');
-    searchForm.classList.toggle('d-none');
-});
+function toggleSearch() {
+    const searchForm = document.getElementById("searchForm");
+    searchForm.classList.toggle("d-none");
+}
 
 
 

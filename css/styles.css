@@ -25,7 +25,6 @@ body {
 /*============================*/
 /* Estilos del Navbar */
 /*============================*/
-
 .logo img {
     max-width: 100px; 
     height: 65px; 
@@ -127,7 +126,7 @@ body {
 }
 
 .navbar-nav .dropdown-item:hover {
-    background-color: #ffc107;
+    background-color: #ffc107af;
     color: #007bff;
 }
 
@@ -272,6 +271,7 @@ a.btn.btn-outline-primary:hover .fas {
         font-size: 1.1rem;
         font-weight: 500;
     }
+    
 
     #searchButton,
     a.btn.btn-outline-primary {
@@ -279,6 +279,7 @@ a.btn.btn-outline-primary:hover .fas {
         margin-bottom: 1rem;
     }
 }
+
 
 
 /*============================*/
