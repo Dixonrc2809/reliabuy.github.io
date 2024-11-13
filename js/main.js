@@ -1,4 +1,17 @@
 // ----------------------------------------------------------------
+// Detectar clics fuera del menú de hamburguesa en dispositivos móviles
+// ----------------------------------------------------------------
+document.addEventListener("click", function(event) {
+    const navbarToggler = document.querySelector(".navbar-toggler");
+    const navbarCollapse = document.querySelector(".navbar-collapse");
+
+    // Verificar si el clic es fuera del navbar y si el menú está abierto
+    if (navbarCollapse.classList.contains("show") && !navbarToggler.contains(event.target) && !navbarCollapse.contains(event.target)) {
+        navbarToggler.click(); // Simula el clic para cerrar el menú
+    }
+});
+
+// ----------------------------------------------------------------
 // Función para actualizar el texto y los botones en el carrusel
 // ----------------------------------------------------------------
 const carouselItems = document.querySelectorAll('.carousel-item');
