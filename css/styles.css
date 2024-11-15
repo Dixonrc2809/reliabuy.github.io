@@ -1282,6 +1282,10 @@ hr {
     color: #000000; 
 }
 
+.payment-icon {
+    margin-right: 20px; 
+}
+
 
 /* Pantallas medianas */
 @media (max-width: 992px) { 
