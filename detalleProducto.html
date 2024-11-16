@@ -102,31 +102,70 @@
                 </div>
                 <div class="photo-album">
                     <ul class="no-bullets">
-                        <!-- Imágenes adicionales del producto si es necesario -->
-                        <li><img src="" id="productImageThumb" alt="Miniatura del producto" onclick="showModal()" style="cursor: pointer;"></li></ul>
+                        <li><img src="" id="productImageThumb" alt="Miniatura del producto" onclick="showModal()" style="cursor: pointer;"></li>
+                    </ul>
                 </div>
             </div>
         </div>
         <div class="product__info">
             <div class="title">
                 <h1 id="productTitle"></h1>
-                <span>Código: 45999</span>
+                <span>Código: <span id="productCode"></span></span>
             </div>
             <div class="price">
                 ₡ <span id="productPrice"></span>
             </div>
             <div class="description">
                 <h3>Descripción</h3>
-                <ul class="no-bullets">
-                    <li>Características del producto</li>
-                    <li>Especificaciones técnicas</li>
-                    <li>Beneficios adicionales</li>
+                <ul class="no-bullets" id="productDetailsList">
+                    <!-- Los detalles se agregarán aquí dinámicamente -->
                 </ul>
             </div>
             <button class="buy--btn">Añadir al Carrito</button>
         </div>
     </section>
+    
+    
+    <script>
+        // Función para obtener los parámetros de la URL
+        function getURLParameter(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
 
+        // Obtener el id del producto desde la URL
+        const productId = getURLParameter('id');
+
+        // Aquí debes obtener los datos del producto desde un archivo JSON o una base de datos
+        fetch('productos.json')  // Suponiendo que productos.json está en el mismo directorio
+            .then(response => response.json())
+            .then(productos => {
+                const producto = productos.find(p => p.id === parseInt(productId));  // Buscar el producto por ID
+                if (producto) {
+                    // Asignar los datos al HTML
+                    document.getElementById("productTitle").innerText = producto.nombre;
+                    document.getElementById("productPrice").innerText = producto.precio;
+                    document.getElementById("productImage").src = producto.imagen;
+                    document.getElementById("productImageThumb").src = producto.imagen;  // Miniatura
+                    document.getElementById("productCode").innerText = producto.id;
+
+                    // Mostrar los detalles del producto como HTML
+                    const productDetailsList = document.getElementById("productDetailsList");
+                    productDetailsList.innerHTML = producto.detalles;  // Insertar directamente el HTML
+
+                } else {
+                    // Si no se encuentra el producto
+                    alert("Producto no encontrado");
+                }
+            })
+            .catch(error => {
+                console.error("Error al cargar los productos:", error);
+            });
+    </script>
+    
+
+
+<!--
     <script>
         // Cargar los datos del producto desde localStorage
         const title = localStorage.getItem("productTitle") || "Título no disponible";
@@ -144,6 +183,7 @@
         document.querySelector(".description ul").innerHTML = `<li>${description}</li>`;
     </script>
 
+-->
 
     <!-- Modal -->
     <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
@@ -161,77 +201,94 @@
     </div>
 
 
-    <!--=========== Productos Populares ===========-->
-    <section id="popular-product">
+<!--=========== Productos Populares ===========-->
+<section id="popular-product">
 
-        <div class="product-heading">
-            <h3>Productos Populares</h3>
-        </div>
+    <div class="product-heading">
+        <h3>Productos Populares</h3>
+    </div>
 
-        <!--**container*****************-->
-        <div class="popular-product-container" id="cambiar-orden-productos">
+    <!-- Contenedor de productos -->
+    <div class="popular-product-container" id="cambiar-orden-productos">
+        <!-- Los productos se cargarán aquí dinámicamente -->
+    </div>
 
-            <!--**AirPods***-->
-            <div class="product-box">
-                <a href="#" class="product-img" onclick="openProductPage('AirPods', '29,995', './imagenes/airpods.png', '45991', '<ul><li>Sonido envolvente</li><li>Diseño ergonómico</li><li>Duración de batería prolongada</li></ul>')">
-                    <img alt="AirPods" src="./imagenes/airpods.png">
-                </a>
-                <div class="product-text">
-                    <a href="#" class="product-box-p-name">AirPods</a>
-                    <span class="p-box-price">₡29,995</span>
-                    <button class="add-cart-btn">Añadir al carrito</button>
-                </div>
-            </div>
+</section>
 
-            <!--**Audífonos***-->
-            <div class="product-box">
-                <a href="#" class="product-img" onclick="openProductPage('Audífonos', '32,995', './imagenes/Audifonos.png', '45992', '<ul><li>Cancelación de ruido</li><li>Sonido Hi-Fi</li><li>Comodidad durante todo el día</li></ul>')">
-                    <img alt="Audífonos" src="./imagenes/Audifonos.png">
-                </a>
-                <div class="product-text">
-                    <a href="#" class="product-box-p-name">Audífonos</a>
-                    <span class="p-box-price">₡32,995</span>
-                    <button class="add-cart-btn">Añadir al carrito</button>
-                </div>
-            </div>
 
-            <!--**Monitor***-->
-            <div class="product-box">
-                <a href="#" class="product-img" onclick="openProductPage('Monitor', '109,995', './imagenes/monitor.png', '45993', '<ul><li>Resolución 1440p</li><li>Tasa de refresco 144Hz</li><li>Curvatura envolvente</li></ul>')">
-                    <img alt="Monitor" src="./imagenes/monitor.png">
-                </a>
-                <div class="product-text">
-                    <a href="#" class="product-box-p-name">Monitor</a>
-                    <span class="p-box-price">₡109,995</span>
-                    <button class="add-cart-btn">Añadir al carrito</button>
-                </div>
-            </div>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+    fetch('productos.json')  // Cargar el archivo JSON con los productos
+        .then(response => response.json())
+        .then(productos => {
+            // Función para obtener un número aleatorio entre min y max
+            function getRandomInt(min, max) {
+                return Math.floor(Math.random() * (max - min + 1)) + min;
+            }
 
-            <!--**Teclado***-->
-            <div class="product-box">
-                <a href="#" class="product-img" onclick="openProductPage('Teclado', '43,995', './imagenes/teclado2.png', '45994', '<ul><li>Iluminación RGB</li><li>Teclas mecánicas</li><li>Diseño ergonómico</li></ul>')">
-                    <img alt="Teclado" src="./imagenes/teclado2.png">
-                </a>
-                <div class="product-text">
-                    <a href="#" class="product-box-p-name">Teclado</a>
-                    <span class="p-box-price">₡43,995</span>
-                    <button class="add-cart-btn">Añadir al carrito</button>
-                </div>
-            </div>
+            // Crear un array con 5 productos aleatorios
+            const productosAleatorios = [];
+            while (productosAleatorios.length < 5) {
+                const randomIndex = getRandomInt(0, productos.length - 1);
+                const producto = productos[randomIndex];
 
-            <!--**Mouse***-->
-            <div class="product-box">
-                <a href="#" class="product-img" onclick="openProductPage('Mouse', '27,495', './imagenes/mouse.png', '45995', '<ul><li>Sensor óptico</li><li>Alta precisión</li><li>Ergonomía mejorada</li></ul>')">
-                    <img alt="Mouse" src="./imagenes/mouse.png">
-                </a>
-                <div class="product-text">
-                    <a href="#" class="product-box-p-name">Mouse</a>
-                    <span class="p-box-price">₡27,495</span>
-                    <button class="add-cart-btn">Añadir al carrito</button>
-                </div>
-            </div>
-        </div>
-    </section>
+                // Evitar productos duplicados
+                if (!productosAleatorios.includes(producto)) {
+                    productosAleatorios.push(producto);
+                }
+            }
+
+            const contenedorProductos = document.getElementById("cambiar-orden-productos");
+
+            // Recorrer los productos aleatorios y crear el HTML
+            productosAleatorios.forEach(producto => {
+                const productBox = document.createElement("div");
+                productBox.classList.add("product-box");
+
+                // Crear enlace para cada producto, apuntando a detalleProducto.html con el ID del producto
+                const productLink = document.createElement("a");
+                productLink.href = `detalleProducto.html?id=${producto.id}`;  // ID del producto en la URL
+                productLink.classList.add("product-img");
+
+                const productImg = document.createElement("img");
+                productImg.alt = producto.nombre;
+                productImg.src = producto.imagen;  // Imagen del producto
+
+                productLink.appendChild(productImg);
+                productBox.appendChild(productLink);
+
+                // Crear la parte de la descripción y el precio
+                const productText = document.createElement("div");
+                productText.classList.add("product-text");
+
+                const productName = document.createElement("a");
+                productName.href = `detalleProducto.html?id=${producto.id}`;  // ID del producto en la URL
+                productName.classList.add("product-box-p-name");
+                productName.innerText = producto.nombre;  // Nombre del producto
+
+                const productPrice = document.createElement("span");
+                productPrice.classList.add("p-box-price");
+                productPrice.innerText = `₡${producto.precio}`;  // Precio del producto
+
+                const addCartButton = document.createElement("button");
+                addCartButton.classList.add("add-cart-btn");
+                addCartButton.innerText = "Añadir al carrito";
+
+                // Agregar los elementos al contenedor del producto
+                productText.appendChild(productName);
+                productText.appendChild(productPrice);
+                productText.appendChild(addCartButton);
+                productBox.appendChild(productText);
+
+                // Añadir el producto al contenedor principal
+                contenedorProductos.appendChild(productBox);
+            });
+        })
+        .catch(error => {
+            console.error("Error al cargar los productos:", error);
+        });
+    });
+</script>
 
     <!-- Footer -->
     <footer class="footer bg-light py-4">

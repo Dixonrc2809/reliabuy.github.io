@@ -1,0 +1,263 @@
+[
+    {
+        "id": 1,
+        "nombre": "Auriculares Westmire A56",
+        "precio": 32995,
+        "imagen": "./imagenes/Audifonos.png",
+        "categoria": "Audifonos",
+        "marca": "Westmire",
+        "detalles": "<ul><li>Cancelación de ruido</li><li>Sonido envolvente</li><li>Diseño ergonómico</li></ul>"
+    },
+    {
+        "id": 2,
+        "nombre": "Audifonos Sony WH-CH510",
+        "precio": 52400,
+        "imagen": "./imagenes/audifonosSony.png",
+        "categoria": "Audifonos",
+        "marca": "Sony",
+        "detalles": "<ul><li>Calidad de Sonido</li><li>Rendimiento de llamadas mejorado</li><li>50 horas de duración de batería</li></ul>"
+    },
+    {
+        "id": 3,
+        "nombre": "Bose QuietComfort 45",
+        "precio": 279995,
+        "imagen": "./imagenes/bose_auriculares.png",
+        "categoria": "Audifonos",
+        "marca": "Bose",
+        "detalles": "<ul><li>Cancelación activa de ruido</li><li>Sonido claro y equilibrado</li><li>Hasta 24 horas de batería</li></ul>"
+    },
+    {
+        "id": 4,
+        "nombre": "JBL Tune 750BTNC",
+        "precio": 22995,
+        "imagen": "./imagenes/jbl_tune.webp",
+        "categoria": "Audifonos",
+        "marca": "JBL",
+        "detalles": "<ul><li>Cancelación de ruido</li><li>Sonido JBL Pure Bass</li><li>Hasta 15 horas de batería</li></ul>"
+    },
+    {
+        "id": 5,
+        "nombre": "Airpods Max",
+        "precio": 89995,
+        "imagen": "./imagenes/airpods.png",
+        "categoria": "Audifonos",
+        "marca": "Sennheiser",
+        "detalles": "<ul><li>Cancelación activa de ruido</li><li>Sonido de alta fidelidad</li><li>Conectividad Bluetooth</li></ul>"
+    },
+    {
+        "id": 6,
+        "nombre": "Teclado Mecánico Xpert-k9",
+        "precio": 43995,
+        "imagen": "./imagenes/teclado2.png",
+        "categoria": "Gaming",
+        "marca": "Xpert",
+        "detalles": "<ul><li>Iluminación RGB</li><li>Teclas mecánicas</li><li>Diseño robusto</li></ul>"
+    },
+    {
+        "id": 7,
+        "nombre": "Mouse Gamer Logitech G502",
+        "precio": 27495,
+        "imagen": "./imagenes/mouse.png",
+        "categoria": "Gaming",
+        "marca": "Logitech",
+        "detalles": "<ul><li>Sensor óptico</li><li>Alta precisión</li><li>Ergonomía mejorada</li></ul>"
+    },
+    {
+        "id": 8,
+        "nombre": "Teclado Mecánico Razer Huntsman Elite",
+        "precio": 179995,
+        "imagen": "./imagenes/teclado_razer.png",
+        "categoria": "Gaming",
+        "marca": "Razer",
+        "detalles": "<ul><li>Teclas ópticas</li><li>Iluminación RGB personalizable</li><li>Construcción de aluminio</li></ul>"
+    },
+    {
+        "id": 9,
+        "nombre": "Laptop Gaming Alienware m15",
+        "precio": 259995,
+        "imagen": "./imagenes/laptop_alienware.png",
+        "categoria": "Gaming",
+        "marca": "Alienware",
+        "detalles": "<ul><li>Procesador Intel i7</li><li>16GB RAM</li><li>RTX 3070</li></ul>"
+    },
+    {
+        "id": 10,
+        "nombre": "Samsung Galaxy S23 Ultra",
+        "precio": 979995,
+        "imagen": "./imagenes/galaxy_s23.webp",
+        "categoria": "Celulares",
+        "marca": "Samsung",
+        "detalles": "<ul><li>Cámara de 200MP</li><li>Pantalla Dynamic AMOLED 2X</li><li>5000mAh de batería</li></ul>"
+    },
+    {
+        "id": 11,
+        "nombre": "Iphone 14 Pro Max 256GB",
+        "precio": 469995,
+        "imagen": "./imagenes/iphone.png",
+        "categoria": "Celulares",
+        "marca": "Apple",
+        "detalles": "<ul><li>Pantalla Super Retina</li><li>256GB Almacenamiento</li><li>Cámara avanzada</li></ul>"
+    },
+    {
+        "id": 12,
+        "nombre": "Xiaomi Mi 11 Ultra",
+        "precio": 74995,
+        "imagen": "./imagenes/mi_11.png",
+        "categoria": "Celulares",
+        "marca": "Xiaomi",
+        "detalles": "<ul><li>Cámara de 50MP</li><li>Pantalla AMOLED</li><li>120Hz</li></ul>"
+    },
+    {
+        "id": 13,
+        "nombre": "OnePlus 10 Pro",
+        "precio": 84995,
+        "imagen": "./imagenes/oneplus_10.png",
+        "categoria": "Celulares",
+        "marca": "OnePlus",
+        "detalles": "<ul><li>Cámara Hasselblad</li><li>Pantalla Fluid AMOLED</li><li>4500mAh</li></ul>"
+    },
+    {
+        "id": 14,
+        "nombre": "Microfono Maono 192KHZ-24-BIT",
+        "precio": 30900,
+        "imagen": "./imagenes/microfono1.png",
+        "categoria": "Microfonos",
+        "marca": "",
+        "detalles": "<ul><li>Sonido cálido y suave</li><li>Frecuencia de amplio alcance</li><li>Preamplificador integrado</li></ul>"
+    },
+    {
+        "id": 15,
+        "nombre": "Blue Yeti X",
+        "precio": 19995,
+        "imagen": "./imagenes/blue_yeti.png",
+        "categoria": "Microfonos",
+        "marca": "Blue",
+        "detalles": "<ul><li>Sonido de alta calidad</li><li>Microfono USB</li><li>Control de ganancia</li></ul>"
+    },
+    {
+        "id": 16,
+        "nombre": "Audio-Technica AT2020",
+        "precio": 10995,
+        "imagen": "./imagenes/audio_technica.png",
+        "categoria": "Microfonos",
+        "marca": "Audio-Technica",
+        "detalles": "<ul><li>Cardioide</li><li>Conectividad XLR</li><li>Respuesta de frecuencia amplia</li></ul>"
+    },
+    {
+        "id": 17,
+        "nombre": "Shure SM7B",
+        "precio": 24995,
+        "imagen": "./imagenes/shure_sm7b.png",
+        "categoria": "Microfonos",
+        "marca": "Shure",
+        "detalles": "<ul><li>Micrófono dinámico</li><li>Excelente rechazo de ruido</li><li>Ideal para estudio</li></ul>"
+    },
+    {
+        "id": 18,
+        "nombre": "Microondas Whirlpool",
+        "precio": 59995,
+        "imagen": "./imagenes/microondas3.png",
+        "categoria": "Cocina",
+        "marca": "Whirlpool",
+        "detalles": "<ul><li>Calor rápido</li><li>Función de descongelado</li><li>Capacidad de 30L</li></ul>"
+    },
+    {
+        "id": 19,
+        "nombre": "Refrigeradora Samsung",
+        "precio": 299995,
+        "imagen": "./imagenes/refrigeradora.png",
+        "categoria": "Cocina",
+        "marca": "Samsung",
+        "detalles": "<ul><li>Capacidad 400L</li><li>Frío No Frost</li><li>Energy Star</li></ul>"
+    },
+    {
+        "id": 20,
+        "nombre": "Olla de Presión Philips",
+        "precio": 79995,
+        "imagen": "./imagenes/olla_philips.png",
+        "categoria": "Cocina",
+        "marca": "Philips",
+        "detalles": "<ul><li>Capacidad de 6L</li><li>Modo de cocción rápido</li><li>Función de temporizador</li></ul>"
+    },
+    {
+        "id": 21,
+        "nombre": "Batidora KitchenAid",
+        "precio": 15995,
+        "imagen": "./imagenes/batidora_kitchenaid.png",
+        "categoria": "Cocina",
+        "marca": "KitchenAid",
+        "detalles": "<ul><li>10 velocidades</li><li>Incluye varilla para batir</li><li>Motor potente</li></ul>"
+    },
+    {
+        "id": 22,
+        "nombre": "Televisor Samsung Tizen™ Smart TV LED 65",
+        "precio": 479900,
+        "imagen": "./imagenes/pantalla.png",
+        "categoria": "Pantallas",
+        "marca": "Samsung",
+        "detalles": "<ul><li>Resolución 4K</li><li>HDR</li><li>Smart TV de 65 pulgadas</li></ul>"
+    },
+    {
+        "id": 23,
+        "nombre": "Sony Bravia 55” OLED",
+        "precio": 799995,
+        "imagen": "./imagenes/sony_bravia.png",
+        "categoria": "Pantallas",
+        "marca": "Sony",
+        "detalles": "<ul><li>Pantalla OLED</li><li>Resolución 4K</li><li>Audio Dolby Atmos</li></ul>"
+    },
+    {
+        "id": 24,
+        "nombre": "LG 32UN880-B 32” 4K",
+        "precio": 55995,
+        "imagen": "./imagenes/lg_32.png",
+        "categoria": "Pantallas",
+        "marca": "LG",
+        "detalles": "<ul><li>Pantalla 4K UHD</li><li>Diseño ergonómico</li><li>Conectividad USB-C</li></ul>"
+    },
+    {
+        "id": 25,
+        "nombre": "Samsung QLED 75” 8K",
+        "precio": 1499995,
+        "imagen": "./imagenes/samsung_qled.png",
+        "categoria": "Pantallas",
+        "marca": "Samsung",
+        "detalles": "<ul><li>Resolución 8K</li><li>Panel QLED</li><li>HDR10+</li></ul>"
+    },
+    {
+        "id": 26,
+        "nombre": "Sofá Individual",
+        "precio": 75995,
+        "imagen": "./imagenes/sillon2.png",
+        "categoria": "Muebles",
+        "marca": "",
+        "detalles": "<ul><li>Comodidad garantizada</li><li>Tapizado resistente y fácil de limpiar</li><li>Base de madera robusta y durable</li></ul>"
+    },
+    {
+        "id": 27,
+        "nombre": "Sofá de 3 Plazas",
+        "precio": 169995,
+        "imagen": "./imagenes/sillon3.png",
+        "categoria": "Muebles",
+        "marca": "",
+        "detalles": "<ul><li>Tapizado de cuero sintético</li><li>Diseño moderno</li><li>Espacio amplio para 3 personas</li></ul>"
+    },
+    {
+        "id": 28,
+        "nombre": "Mesa de Centro de Madera",
+        "precio": 34995,
+        "imagen": "./imagenes/mesa.png",
+        "categoria": "Muebles",
+        "marca": "",
+        "detalles": "<ul><li>Hecha a mano</li><li>Diseño rústico</li><li>Dimensiones perfectas para el salón</li></ul>"
+    },
+    {
+        "id": 29,
+        "nombre": "Librero de 5 Niveles",
+        "precio": 22995,
+        "imagen": "./imagenes/librero.png",
+        "categoria": "Muebles",
+        "marca": "",
+        "detalles": "<ul><li>Espacio amplio para libros</li><li>Diseño vertical</li><li>Fácil de ensamblar</li></ul>"
+    }
+]

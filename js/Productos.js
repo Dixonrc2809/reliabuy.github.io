@@ -57,6 +57,52 @@ function filterProducts() {
 
 
 // ----------------------------------------------------------------
+// Funcionalidad de filtro por precios y cantidad de productos
+// ----------------------------------------------------------------
+document.addEventListener("DOMContentLoaded", () => {
+    const sortSelect = document.getElementById("sort-select");
+    const viewSelect = document.getElementById("view-select");
+    const productContainer = document.getElementById("product-container");
+
+    // Función para ordenar productos por precio
+    function sortProducts(order) {
+        let products = Array.from(productContainer.querySelectorAll(".p-box"));
+        products.sort((a, b) => {
+            const priceA = parseFloat(a.querySelector(".price").textContent.replace(/[^0-9.-]+/g, ""));
+            const priceB = parseFloat(b.querySelector(".price").textContent.replace(/[^0-9.-]+/g, ""));
+            return order === "low-to-high" ? priceA - priceB : priceB - priceA;
+        });
+
+        // Limpiar el contenedor y añadir los productos en el nuevo orden
+        productContainer.innerHTML = "";
+        products.forEach((product) => productContainer.appendChild(product));
+    }
+
+    // Función para mostrar un número específico de productos
+    function showProducts(limit) {
+        const allProducts = Array.from(productContainer.querySelectorAll(".p-box"));
+        allProducts.forEach((product, index) => {
+            product.style.display = index < limit ? "block" : "none";
+        });
+    }
+
+    // Evento para ordenar los productos cuando cambia la selección
+    sortSelect.addEventListener("change", (e) => {
+        sortProducts(e.target.value);
+    });
+
+    // Evento para mostrar la cantidad seleccionada de productos
+    viewSelect.addEventListener("change", (e) => {
+        showProducts(parseInt(e.target.value, 10));
+    });
+
+    // Inicializar la visualización predeterminada de productos
+    showProducts(parseInt(viewSelect.value, 10));
+});
+
+
+
+// ----------------------------------------------------------------
 // Funcionalidad de Categorias que estan en el Index.html
 // ----------------------------------------------------------------
     // Obtener los parámetros de la URL (categoría y marca seleccionada)

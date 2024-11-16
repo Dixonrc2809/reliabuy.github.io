@@ -91,6 +91,26 @@
     </nav>
     </header>
 
+    <!-- Filtro de Productos por precio y cantidad -->
+    <div class="options-bar">
+        <div class="sort-options">
+            <label for="sort-select">Ordenar por:</label>
+            <select id="sort-select">
+                <option value="high-to-low">Precio: de mayor a menor</option>
+                <option value="low-to-high">Precio: de menor a mayor</option>
+            </select>
+        </div>
+        <div class="view-options">
+            <label for="view-select">Mostrar:</label>
+            <select id="view-select">
+                <option value="9">9 productos</option>
+                <option value="12">12 productos</option>
+                <option value="18">18 productos</option>
+                <option value="24">24 productos</option>
+            </select>
+        </div>
+    </div>
+
 <!-- Contenedor de productos -->
 <div class="container-fluid product-page">
     <div div class="row">
@@ -125,94 +145,12 @@
         <!-- Sección de Productos -->
         <div class="col-md-9">
             <section class="product">
-                <div class="p-heading">
-                    <h3>Productos</h3>
-                </div>
-                <div class="product-container" id="product-container">
-                    <!-- Producto 1 -->
-                    <div class="p-box" data-category="Audifonos" data-brand="Westmire" onclick="openProductPage('Auriculares Westmire A56', '32,995', './imagenes/Audifonos.png', '45999', '<ul><li>Cancelación de ruido</li><li>Sonido envolvente</li><li>Diseño ergonómico</li></ul>')">
-                        <img src="./imagenes/Audifonos.png" alt="Auriculares Westmire A56" />
-                        <p>Auriculares Westmire A56</p>
-                        <a class="price" href="#">₡32,995</a>
-                        <a class="buy-btn" href="#">Añadir al Carrito</a>
-                    </div>
-                    <!-- Producto 1 -->
-                    <div class="p-box" data-category="Audifonos" data-brand="Sony" onclick="openProductPage('Audifonos Sony WH-CH510', '52,400', './imagenes/audifonosSony.png', '47599', '<ul><li>Calidad de Sonido</li><li>Rendimiento de llamadas mejorado</li><li>50 horas de duración de batería</li></ul>')">
-                        <img src="./imagenes/audifonosSony.png" alt="Auriculares Westmire A56" />
-                        <p>Audifonos Sony WH-CH510</p>
-                        <a class="price" href="#">₡52,400</a>
-                        <a class="buy-btn" href="#">Añadir al Carrito</a>
-                    </div>
-                    <!-- Producto 2 -->
-                    <div class="p-box" data-category="Gaming" data-brand="Xpert" onclick="openProductPage('Teclado Mecánico Xpert-k9', '43,995', './imagenes/teclado2.png', '45998', '<ul><li>Iluminación RGB</li><li>Teclas mecánicas</li><li>Diseño robusto</li></ul>')">
-                        <img src="./imagenes/teclado2.png" alt="Teclado Mecánico Xpert-k9" />
-                        <p>Teclado Mecánico Xpert-k9</p>
-                        <a class="price" href="#">₡43,995</a>
-                        <a class="buy-btn" href="#">Añadir al Carrito</a>
-                    </div>
-                    <!-- Producto 3 -->
-                    <div class="p-box" data-category="Gaming" data-brand="Logitech" onclick="openProductPage('Mouse Gamer', '27,495', './imagenes/mouse.png', '45997', '<ul><li>Sensor óptico</li><li>Alta precisión</li><li>Ergonomía mejorada</li></ul>')">
-                        <img src="./imagenes/mouse.png" alt="Mouse Gamer" />
-                        <p>Mouse Gamer</p>
-                        <a class="price" href="#">₡27,495</a>
-                        <a class="buy-btn" href="#">Añadir al Carrito</a>
-                    </div>
-                    <!-- Producto 4 -->
-                    <div class="p-box" data-category="Gaming" data-brand="Samsung" onclick="openProductPage('Monitor Curvo 27 Pulgadas', '109,995', './imagenes/monitor.png', '45996', '<ul><li>Resolución 1440p</li><li>Tasa de refresco 144Hz</li><li>Curvatura envolvente</li></ul>')">
-                        <img src="./imagenes/monitor.png" alt="Monitor Curvo 27 Pulgadas" />
-                        <p>Monitor Curvo 27 Pulgadas</p>
-                        <a class="price" href="#">₡109,995</a>
-                        <a class="buy-btn" href="#">Añadir al Carrito</a>
-                    </div>
-                    <!-- Más productos -->
-                    <div class="p-box" data-category="Celulares" data-brand="Apple" onclick="openProductPage('Iphone 14 Pro Max 256GB', '469,995', './imagenes/iphone.png', '45994', '<ul><li>Pantalla Super Retina</li><li>256GB Almacenamiento</li><li>Cámara avanzada</li></ul>')">
-                        <img src="./imagenes/iphone.png" alt="Iphone 14 Pro Max 256GB" />
-                        <p>Iphone 14 Pro Max 256GB</p>
-                        <a class="price" href="#">₡469,995</a>
-                        <a class="buy-btn" href="#">Añadir al Carrito</a>
-                    </div>
-                    <div class="p-box" data-category="Cocina" data-brand="Whirlpool" onclick="openProductPage('Microondas Whirlpool', '59,995', './imagenes/microondas3.png', '45991', '<ul><li>Calor rápido</li><li>Función de descongelado</li><li>Capacidad de 30L</li></ul>')">
-                        <img src="./imagenes/microondas3.png" alt="Microondas Whirlpool" />
-                        <p>Microondas Whirlpool</p>
-                        <a class="price" href="#">₡59,995</a>
-                        <a class="buy-btn" href="#">Añadir al Carrito</a>
-                    </div>
-                    <div class="p-box" data-category="Cocina" data-brand="Samsung" onclick="openProductPage('Refrigeradora', '299,995', './imagenes/refrigeradora.png', '45992', '<ul><li>Capacidad 400L</li><li>Frío No Frost</li><li>Energy Star</li></ul>')">
-                        <img src="./imagenes/refrigeradora.png" alt="Microondas Whirlpool" />
-                        <p>Refrigeradora Samsung</p>
-                        <a class="price" href="#">₡299,995</a>
-                        <a class="buy-btn" href="#">Añadir al Carrito</a>
-                    </div>
-                    <div class="p-box" data-category="Muebles" data-brand="" onclick="openProductPage('Sofá Individual', '75,995', './imagenes/sillon2.png', '35996', '<ul><li>Comodiad garantizada</li><li>Tapizado resistente y fácil de limpiar</li><li>Base de madera robusta y durable</li></ul>')">
-                        <img src="./imagenes/sillon2.png" alt="Sofá Individual" />
-                        <p>Sofá Individual</p>
-                        <a class="price" href="#">₡75,995</a>
-                        <a class="buy-btn" href="#">Añadir al Carrito</a>
-                    </div>
-                    <div class="p-box" data-category="Gaming" data-brand="HP" onclick="openProductPage('Laptop HP 8GB 512GB SSD', '355.900', './imagenes/computadora.png', '25996', '<ul><li>Arranque ultrarrápido y un desempeño fluido</li><li>Pantalla de 14 pulgadas</li><li>Con 8 GB de memoria RAM y un SSD de 256 GB</li></ul>')">
-                        <img src="./imagenes/computadora.png" alt="Laptop HP" />
-                        <p>Laptop HP 8GB 512GB SSD</p>
-                        <a class="price" href="#">₡355.900</a>
-                        <a class="buy-btn" href="#">Añadir al Carrito</a>
-                    </div>
-                    <div class="p-box" data-category="Pantallas" data-brand="Samsung" onclick="openProductPage('Televisor Samsung Tizen™ Smart TV LED 65', '479,900', './imagenes/pantalla.png', '23999', '<ul><li>Resolución 4K</li><li>HDR</li><li>Smart TV de 65 pulgadas</li></ul>')">
-                        <img src="./imagenes/pantalla.png" alt="Laptop HP" />
-                        <p>Televisor Samsung Smart TV 65''</p>
-                        <a class="price" href="#">₡479,900</a>
-                        <a class="buy-btn" href="#">Añadir al Carrito</a>
-                    </div>
-                    <div class="p-box" data-category="Microfonos" data-brand="" onclick="openProductPage('Microfono Maono 192KHZ-24-BIT', '30,900', './imagenes/microfono1.png', '23929', '<ul><li>Sonido cálido y suave</li><li>Frecuencia de amplio alcance</li><li>Preamplificador integrado</li></ul>')">
-                        <img src="./imagenes/microfono1.png" alt="Laptop HP" />
-                        <p>Microfono Maono 192KHZ-24-BIT</p>
-                        <a class="price" href="#">₡30,900</a>
-                        <a class="buy-btn" href="#">Añadir al Carrito</a>
-                    </div>
-                </div>
+                <h3>Productos</h3>
+                <div class="product-container" id="product-container"></div>
             </section>
         </div>
     </div>
 </div>
-
 
     <!-- Footer -->
     <footer class="footer bg-light py-4">
@@ -276,5 +214,35 @@
     <script src="js/Productos.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            fetch('productos.json') // Se asume que el archivo productos.json está en la misma carpeta que el HTML
+                .then(response => response.json())
+                .then(productos => {
+                    const contenedor = document.getElementById("product-container");
+                    productos.forEach(producto => {
+                        const productBox = document.createElement("div");
+                        productBox.classList.add("p-box");
+                        productBox.setAttribute("data-category", producto.categoria);
+                        productBox.setAttribute("data-brand", producto.marca);
+                        productBox.innerHTML = `
+                            <a href="detalleProducto.html?id=${producto.id}" class="product-link">
+                                <img src="${producto.imagen}" alt="${producto.nombre}" />
+                                <p>${producto.nombre}</p>
+                                <a class="price" href="#">₡${producto.precio}</a>
+                            </a>
+                            <a class="buy-btn" href="#">Añadir al Carrito</a>
+                        `;
+                        contenedor.appendChild(productBox);
+                    });
+                })
+                .catch(error => {
+                    console.error("Error al cargar los productos:", error);
+                });
+        });
+    </script>
+
 </body>
 </html>
