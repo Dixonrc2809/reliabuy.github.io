@@ -96,6 +96,17 @@
     margin-top: 5px;
 }
 
+/* Estilo para el nombre del producto */
+.product-link p {
+    font-size: 1.3em;           
+    font-weight: bold;         
+    color: #007bff;                
+    margin: 10px 0;            
+    text-align: center;        
+    text-transform: capitalize; 
+}
+
+
 .p-heading{
 	margin:20px;
 	text-shadow: 2px 2px 10px rgba(0,0,0,0.05);

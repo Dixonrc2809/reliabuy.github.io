@@ -63,20 +63,6 @@ window.addEventListener('scroll', () => {
 });
 
 
-// ----------------------------------------------------------------
-// Caracteristicas de los productos
-// ----------------------------------------------------------------
-function openProductPage(title, price, image, code, description) {
-    localStorage.setItem("productTitle", title);
-    localStorage.setItem("productPrice", price);
-    localStorage.setItem("productImage", image);
-    localStorage.setItem("productCode", code);
-    localStorage.setItem("productDescription", description);
-    
-    // Redirige a la página de detalles del producto con el código en la URL
-    window.location.href = `detalleProducto.html?Codigo=${code}`;
-}
-
 
 // ----------------------------------------------------------------
 // Modal para los productos

@@ -133,20 +133,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-// ----------------------------------------------------------------
-// Funcionn para que al cargar la pagina, los Productos Populares se cambien de orden
-// ----------------------------------------------------------------
-window.onload = function() {
-    let container = document.getElementById('cambiar-orden-productos');
-    let products = Array.from(container.getElementsByClassName('product-box'));
-    
-    // Aleatoriza los productos
-    products.sort(() => Math.random() - 0.5);
-    
-    // Vuelve a añadir los productos al contenedor en el nuevo orden
-    products.forEach(product => container.appendChild(product));
-};
-
 
 // ----------------------------------------------------------------
 // Funcionaldiad para icono de compartir
