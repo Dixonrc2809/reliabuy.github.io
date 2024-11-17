@@ -84,44 +84,63 @@
     </header>
 
 
-    <!-- Carrusel Inicio -->
-    <section class="hero d-flex flex-column flex-md-row align-items-center text-center text-md-start p-4 p-md-5">
-        <div class="hero-text col-md-6">
-            <h1 id="hero-title" class="display-4">Auriculares<br>Westmire A56</h1>
-            <div class="mt-4" id="hero-buttons">
-                <button class="btn btn-primary me-2">Añadir al carrito</button>
-                <button class="btn btn-outline-secondary">Ver características</button>
-            </div>
+<!-- Carrusel Inicio -->
+<section class="hero d-flex flex-column flex-md-row align-items-center text-center text-md-start p-4 p-md-5">
+    <div class="hero-text col-md-6">
+        <h1 id="hero-title" class="display-4">Auriculares<br>Westmire A56</h1>
+        <div class="mt-4" id="hero-buttons">
+            <button class="btn btn-primary me-2">Añadir al carrito</button>
+            <button class="btn btn-outline-secondary" data-button2="Ver características" data-product-id="1">Ver características</button>
         </div>
-        <div class="hero-image col-md-6 text-center">
-            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                </div>
-                <div class="carousel-inner">
-                    <div class="carousel-item active" data-title="Auriculares Westmire A56 - Blanco" data-button1="Añadir al carrito" data-button2="Ver características" data-product-info="('Auriculares Westmire A56', '32,995', './imagenes/Audifonos.png', '45999', '<ul><li>Cancelación de ruido</li><li>Sonido envolvente</li><li>Diseño ergonómico</li></ul>')">
-                        <img src="./imagenes/Audifonos.png" alt="Auriculares Westmire A56" class="img-fluid">
-                    </div>
-                    <div class="carousel-item" data-title="Celular iPhone 14 Pro Max 256 GB" data-button1="Añadir al carrito" data-button2="Ver características" data-product-info="('Celular iPhone 14 Pro Max', '469,995', './imagenes/iphone.png', '28999', '<ul><li>Pantalla Super Retina</li><li>256GB Almacenamiento</li><li>Cámara avanzada</li></ul>')">
-                        <img src="./imagenes/iphone.png" alt="Iphone 12 Pro Max" class="img-fluid">
-                    </div>
-                    <div class="carousel-item" data-title="Televisor Samsung Tizen™ Smart TV LED 65''" data-button1="Añadir al carrito" data-button2="Ver características" data-product-info="('Televisor Samsung Tizen™ Smart TV LED 65', '479,900', './imagenes/pantalla.png', '23999', '<ul><li>Resolución 4K</li><li>HDR</li><li>Smart TV de 65 pulgadas</li></ul>')">
-                        <img src="./imagenes/pantalla.png" alt="Pantalla Smart TV 65''" class="img-fluid">
-                    </div>                    
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
+    </div>
+    <div class="hero-image col-md-6 text-center">
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
             </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-title="Auriculares Westmire A56 - Blanco" data-button1="Añadir al carrito" data-button2="Ver características" data-product-id="1">
+                    <img src="./imagenes/Audifonos.png" alt="Auriculares Westmire A56" class="img-fluid">
+                    <button class="btn-outline-secondary" data-button2="Ver características" data-product-id="1">Ver características</button>
+                </div>
+                <div class="carousel-item" data-title="Celular iPhone 14 Pro Max 256 GB" data-button1="Añadir al carrito" data-button2="Ver características" data-product-id="4">
+                    <img src="./imagenes/iphone.png" alt="Iphone 12 Pro Max" class="img-fluid">
+                    <button class="btn-outline-secondary" data-button2="Ver características" data-product-id="4">Ver características</button>
+                </div>
+                <div class="carousel-item" data-title="Televisor Samsung Tizen™ Smart TV LED 65''" data-button1="Añadir al carrito" data-button2="Ver características" data-product-id="7">
+                    <img src="./imagenes/pantalla.png" alt="Pantalla Smart TV 65''" class="img-fluid">
+                    <button class="btn-outline-secondary" data-button2="Ver características" data-product-id="7">Ver características</button>
+                </div>                    
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
-    </section>
+    </div>
+</section>
+
+<script>
+    // Añadir un evento para manejar el clic en los botones con data-button2
+    document.querySelectorAll('.btn-outline-secondary').forEach(button => {
+        button.addEventListener('click', function() {
+            const productId = this.getAttribute('data-product-id'); // Obtener el ID del producto
+            viewDetails(productId); // Redirigir a la página de detalles
+        });
+    });
+
+    function viewDetails(productId) {
+        // Redirige a la página detalleProducto.html con el ID del producto en la URL
+        window.location.href = `detalleProducto.html?id=${productId}`;
+    }
+</script>
+
 
     <!-- /Slider -->
     <div class="tf-marquee bg_yellow-2">

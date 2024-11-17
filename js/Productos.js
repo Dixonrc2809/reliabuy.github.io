@@ -13,174 +13,124 @@ for (var i = 0; i < acc.length; i++) {
         var panel = this.nextElementSibling;
         
         // Si el panel está visible, ocultarlo. Si está oculto, mostrarlo.
-        if (panel.style.display === "block") {
-            panel.style.display = "none";
-        } else {
-            panel.style.display = "block";
-        }
+        panel.style.display = (panel.style.display === "block") ? "none" : "block";
     });
 }
 
 // ----------------------------------------------------------------
-// Funcionaldiad de Categorias del Filtrado en Productos.html
+// Función de filtrado de productos
 // ----------------------------------------------------------------
 const checkboxes = document.querySelectorAll('.filter-category-checkbox, .filter-brand-checkbox, .filter-wifi-checkbox');
-    
-checkboxes.forEach(checkbox => {
-    checkbox.addEventListener('change', filterProducts);
-});
+const sortSelect = document.getElementById("sort-select");
+const viewSelect = document.getElementById("view-select");
+const productContainer = document.getElementById("product-container");
+const loadMoreButton = document.getElementById("load-more");
 
-function filterProducts() {
-    const selectedCategories = Array.from(document.querySelectorAll('.filter-category-checkbox:checked')).map(checkbox => checkbox.value);
-    const selectedBrands = Array.from(document.querySelectorAll('.filter-brand-checkbox:checked')).map(checkbox => checkbox.value);
-    
-    const products = document.querySelectorAll('.p-box');
-    
-    products.forEach(product => {
-        const productCategories = product.getAttribute('data-category').split(', ');
-        const productBrand = product.getAttribute('data-brand');
+let currentDisplayCount = 9; // Número inicial de productos a mostrar (9 productos)
+let allProducts = []; // Variable global para almacenar todos los productos
 
-        const categoryMatch = selectedCategories.length === 0 || selectedCategories.some(category => productCategories.includes(category));
-        const brandMatch = selectedBrands.length === 0 || selectedBrands.includes(productBrand);
+// Filtros independientes para categorías, marcas y orden de precios
+function applyFilters() {
+    const selectedCategories = Array.from(document.querySelectorAll('.filter-category-checkbox:checked')).map(cb => cb.value);
+    const selectedBrands = Array.from(document.querySelectorAll('.filter-brand-checkbox:checked')).map(cb => cb.value);
+    const sortBy = sortSelect.value;
+    
+    // Filtrar los productos de acuerdo a categorías y marcas
+    let filteredProducts = allProducts.filter(product => {
+        const categoryMatch = selectedCategories.length === 0 || selectedCategories.includes(product.categoria);
+        const brandMatch = selectedBrands.length === 0 || selectedBrands.includes(product.marca);
+        return categoryMatch && brandMatch;
+    });
+    
+    // Ordenar los productos filtrados por precio
+    if (sortBy === "high-to-low") {
+        filteredProducts.sort((a, b) => b.precio - a.precio);
+    } else if (sortBy === "low-to-high") {
+        filteredProducts.sort((a, b) => a.precio - b.precio);
+    }
 
-        if (categoryMatch && brandMatch) {
-            product.style.order = 1;  // Mover los productos que coinciden al principio
-            product.style.visibility = 'visible';
-            product.style.opacity = 1;
-        } else {
-            product.style.order = 2;  // Mover los productos que no coinciden al final
-            product.style.visibility = 'hidden';
-            product.style.opacity = 0;
-        }
+    displayProducts(filteredProducts);
+}
+
+// Función para mostrar productos en el contenedor
+function displayProducts(products) {
+    productContainer.innerHTML = ""; // Limpiar productos actuales
+    const displayedProducts = products.slice(0, currentDisplayCount); // Seleccionar productos a mostrar según la cantidad
+
+    displayedProducts.forEach(product => {
+        const productBox = document.createElement("div");
+        productBox.classList.add("p-box");
+        productBox.setAttribute("data-category", product.categoria);
+        productBox.setAttribute("data-brand", product.marca);
+        productBox.innerHTML = `
+            <a href="detalleProducto.html?id=${product.id}" class="product-link">
+                <img src="${product.imagen}" alt="${product.nombre}" />
+                <p>${product.nombre}</p>
+                <a class="price" href="#">₡${product.precio}</a>
+            </a>
+            <a class="buy-btn" href="#">Añadir al Carrito</a>
+        `;
+        productContainer.appendChild(productBox);
     });
 }
 
-
 // ----------------------------------------------------------------
-// Funcionalidad de filtro por precios y cantidad de productos
-// tambien funcionaldiad del boton para ver mas prodcutos
+// Cargar productos y agregar eventos de filtro
 // ----------------------------------------------------------------
 document.addEventListener("DOMContentLoaded", () => {
-    const sortSelect = document.getElementById("sort-select");
-    const viewSelect = document.getElementById("view-select");
-    const productContainer = document.getElementById("product-container");
-    const loadMoreButton = document.getElementById("load-more");
+    fetch('productos.json')
+        .then(response => response.json())
+        .then(products => {
+            allProducts = products; // Almacenar todos los productos
 
-    let currentDisplayCount = 9; // Número inicial de productos a mostrar (9 productos)
+            // Mostrar productos iniciales
+            applyFilters();
 
-    // Función para cargar productos desde el archivo JSON
-    const loadProducts = () => {
-        fetch('productos.json')
-            .then(response => response.json())
-            .then(products => {
-                // Mostrar productos iniciales al cargar la página
-                displayProducts(products);
+            // Eventos de filtrado
+            checkboxes.forEach(checkbox => checkbox.addEventListener('change', applyFilters));
+            sortSelect.addEventListener("change", applyFilters);
 
-                // Filtros
-                sortSelect.addEventListener("change", () => {
-                    const sortBy = sortSelect.value;
-                    let sortedProducts = [...products];
-                    if (sortBy === "high-to-low") {
-                        sortedProducts.sort((a, b) => b.precio - a.precio);
-                    } else if (sortBy === "low-to-high") {
-                        sortedProducts.sort((a, b) => a.precio - b.precio);
-                    }
-                    displayProducts(sortedProducts);
-                });
-
-                viewSelect.addEventListener("change", () => {
-                    const viewCount = parseInt(viewSelect.value, 10);
-                    currentDisplayCount = viewCount; // Actualizamos el número de productos a mostrar según la selección
-                    displayProducts(products);
-                });
-
-                // Cargar más productos al presionar el botón
-                loadMoreButton.addEventListener("click", () => {
-                    currentDisplayCount += 10; // Mostrar 10 productos más
-                    displayProducts(products);
-                });
-            })
-            .catch(error => {
-                console.error("Error al cargar los productos:", error);
+            viewSelect.addEventListener("change", () => {
+                currentDisplayCount = parseInt(viewSelect.value, 10); // Actualizar la cantidad de productos a mostrar
+                applyFilters();
             });
-    };
 
-    // Función para mostrar productos en el contenedor
-    const displayProducts = (products) => {
-        productContainer.innerHTML = ""; // Limpiar productos actuales
-        const displayedProducts = products.slice(0, currentDisplayCount); // Seleccionar productos a mostrar según la cantidad
-
-        displayedProducts.forEach(product => {
-            const productBox = document.createElement("div");
-            productBox.classList.add("p-box");
-            productBox.setAttribute("data-category", product.categoria);
-            productBox.setAttribute("data-brand", product.marca);
-            productBox.innerHTML = `
-                <a href="detalleProducto.html?id=${product.id}" class="product-link">
-                    <img src="${product.imagen}" alt="${product.nombre}" />
-                    <p>${product.nombre}</p>
-                    <a class="price" href="#">₡${product.precio}</a>
-                </a>
-                <a class="buy-btn" href="#">Añadir al Carrito</a>
-            `;
-            productContainer.appendChild(productBox);
-        });
-    };
-
-    // Cargar productos al iniciar
-    loadProducts();
+            loadMoreButton.addEventListener("click", () => {
+                currentDisplayCount += 10; // Incrementar la cantidad de productos a mostrar
+                applyFilters();
+            });
+        })
+        .catch(error => console.error("Error al cargar los productos:", error));
 });
-
-
-
 
 // ----------------------------------------------------------------
 // Funcionalidad de Categorias que estan en el Index.html
 // ----------------------------------------------------------------
-    // Obtener los parámetros de la URL (categoría y marca seleccionada)
-    const urlParams = new URLSearchParams(window.location.search);
-    const categoriaSeleccionada = urlParams.get('categoria');
-    const marcaSeleccionada = urlParams.get('marca');
+const urlParams = new URLSearchParams(window.location.search);
+const categoriaSeleccionada = urlParams.get('categoria');
+const marcaSeleccionada = urlParams.get('marca');
 
-    // Filtrar los productos según la categoría y la marca seleccionada
-    const productos = document.querySelectorAll('.p-box');
-    productos.forEach(producto => {
-        const categoriaProducto = producto.getAttribute('data-category');
-        const marcaProducto = producto.getAttribute('data-brand');
-
-        const categoryMatch = categoriaSeleccionada ? categoriaProducto === categoriaSeleccionada : true;
-        const brandMatch = marcaSeleccionada ? marcaProducto === marcaSeleccionada : true;
-
-        if (categoryMatch && brandMatch) {
-            // Mover los productos que coinciden al principio
-            producto.style.order = 1;
-            producto.style.visibility = 'visible';
-            producto.style.opacity = 1;
-        } else {
-            // Mover los productos que no coinciden al final
-            producto.style.order = 2;
-            producto.style.visibility = 'hidden';
-            producto.style.opacity = 0;
-        }
+function filterInitialProducts() {
+    const selectedProducts = allProducts.filter(product => {
+        const categoryMatch = categoriaSeleccionada ? product.categoria === categoriaSeleccionada : true;
+        const brandMatch = marcaSeleccionada ? product.marca === marcaSeleccionada : true;
+        return categoryMatch && brandMatch;
     });
-
-
+    displayProducts(selectedProducts);
+}
 
 // ----------------------------------------------------------------
 // Funcionaldiad para icono de compartir
 // ----------------------------------------------------------------
-const productUrl = window.location.href; // Obtiene la URL actual de la página del producto
+const productUrl = window.location.href;
 
 document.getElementById('shareIcon').addEventListener('click', function() {
     if (navigator.share) {
         navigator.share({
             title: document.title,
             url: productUrl
-        }).then(() => {
-            console.log('Producto compartido con éxito!');
-        }).catch((error) => {
-            console.error('Error al compartir', error);
-        });
+        }).then(() => console.log('Producto compartido con éxito!'))
+        .catch(error => console.error('Error al compartir', error));
     } else {
         alert('El compartir no es compatible en este navegador.');
     }

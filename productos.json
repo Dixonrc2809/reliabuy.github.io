@@ -2,7 +2,7 @@
     {
         "id": 1,
         "nombre": "Auriculares Westmire A56",
-        "precio": 32995,
+        "precio": "32,995",
         "imagen": "./imagenes/Audifonos.png",
         "categoria": "Audifonos",
         "marca": "Westmire",
@@ -11,7 +11,7 @@
     {
         "id": 2,
         "nombre": "Audifonos Sony WH-CH510",
-        "precio": 52400,
+        "precio": "52,400",
         "imagen": "./imagenes/audifonosSony.png",
         "categoria": "Audifonos",
         "marca": "Sony",
@@ -20,7 +20,7 @@
     {
         "id": 3,
         "nombre": "Bose QuietComfort 45",
-        "precio": 279995,
+        "precio": "279,995",
         "imagen": "./imagenes/bose_auriculares.png",
         "categoria": "Audifonos",
         "marca": "Bose",
@@ -29,7 +29,7 @@
     {
         "id": 4,
         "nombre": "JBL Tune 750BTNC",
-        "precio": 22995,
+        "precio": "22,995",
         "imagen": "./imagenes/jbl_tune.webp",
         "categoria": "Audifonos",
         "marca": "JBL",
@@ -38,16 +38,16 @@
     {
         "id": 5,
         "nombre": "Airpods Max",
-        "precio": 89995,
+        "precio": "89,995",
         "imagen": "./imagenes/airpods.png",
         "categoria": "Audifonos",
-        "marca": "Sennheiser",
+        "marca": "Apple",
         "detalles": "<ul><li>Cancelación activa de ruido</li><li>Sonido de alta fidelidad</li><li>Conectividad Bluetooth</li></ul>"
     },
     {
         "id": 6,
         "nombre": "Teclado Mecánico Xpert-k9",
-        "precio": 43995,
+        "precio": "43,995",
         "imagen": "./imagenes/teclado2.png",
         "categoria": "Gaming",
         "marca": "Xpert",
@@ -56,7 +56,7 @@
     {
         "id": 7,
         "nombre": "Mouse Gamer Logitech G502",
-        "precio": 27495,
+        "precio": "27,495",
         "imagen": "./imagenes/mouse.png",
         "categoria": "Gaming",
         "marca": "Logitech",
@@ -64,8 +64,8 @@
     },
     {
         "id": 8,
-        "nombre": "Teclado Mecánico Razer Huntsman Elite",
-        "precio": 179995,
+        "nombre": "Teclado Mecánico Razer Elite",
+        "precio": "35,550",
         "imagen": "./imagenes/teclado-razer.png",
         "categoria": "Gaming",
         "marca": "Razer",
@@ -74,7 +74,7 @@
     {
         "id": 9,
         "nombre": "Laptop Gaming Alienware m15",
-        "precio": 259995,
+        "precio": "259,995",
         "imagen": "./imagenes/laptop_alienware.png",
         "categoria": "Gaming",
         "marca": "Alienware",
@@ -83,8 +83,8 @@
     {
         "id": 10,
         "nombre": "Samsung Galaxy S23 Ultra",
-        "precio": 979995,
-        "imagen": "./imagenes/galaxy_s23.webp",
+        "precio": "979,995",
+        "imagen": "./imagenes/galaxy_s23.png",
         "categoria": "Celulares",
         "marca": "Samsung",
         "detalles": "<ul><li>Cámara de 200MP</li><li>Pantalla Dynamic AMOLED 2X</li><li>5000mAh de batería</li></ul>"
@@ -92,7 +92,7 @@
     {
         "id": 11,
         "nombre": "Iphone 14 Pro Max 256GB",
-        "precio": 469995,
+        "precio": "469,995",
         "imagen": "./imagenes/iphone.png",
         "categoria": "Celulares",
         "marca": "Apple",
@@ -101,7 +101,7 @@
     {
         "id": 12,
         "nombre": "Xiaomi Mi 11 Ultra",
-        "precio": 74995,
+        "precio": "74,995",
         "imagen": "./imagenes/mi_11.png",
         "categoria": "Celulares",
         "marca": "Xiaomi",
@@ -110,7 +110,7 @@
     {
         "id": 13,
         "nombre": "OnePlus 10 Pro",
-        "precio": 84995,
+        "precio": "84,995",
         "imagen": "./imagenes/oneplus_10.webp",
         "categoria": "Celulares",
         "marca": "OnePlus",
@@ -119,7 +119,7 @@
     {
         "id": 14,
         "nombre": "Microfono Maono 192KHZ-24-BIT",
-        "precio": 30900,
+        "precio": "30,900",
         "imagen": "./imagenes/microfono1.png",
         "categoria": "Microfonos",
         "marca": "",
@@ -128,7 +128,7 @@
     {
         "id": 15,
         "nombre": "Blue Yeti X",
-        "precio": 19995,
+        "precio": "19,995",
         "imagen": "./imagenes/blue-yeti.webp",
         "categoria": "Microfonos",
         "marca": "Blue",
@@ -137,7 +137,7 @@
     {
         "id": 16,
         "nombre": "Audio-Technica AT2020",
-        "precio": 10995,
+        "precio": "10,995",
         "imagen": "./imagenes/audio-technica.png",
         "categoria": "Microfonos",
         "marca": "Audio-Technica",
@@ -146,7 +146,7 @@
     {
         "id": 17,
         "nombre": "Shure SM7B",
-        "precio": 24995,
+        "precio": "24,995",
         "imagen": "./imagenes/shure.avif",
         "categoria": "Microfonos",
         "marca": "Shure",
@@ -155,7 +155,7 @@
     {
         "id": 18,
         "nombre": "Microondas Whirlpool",
-        "precio": 59995,
+        "precio": "59,995",
         "imagen": "./imagenes/microondas3.png",
         "categoria": "Cocina",
         "marca": "Whirlpool",
@@ -164,7 +164,7 @@
     {
         "id": 19,
         "nombre": "Refrigeradora Samsung",
-        "precio": 299995,
+        "precio": "299,995",
         "imagen": "./imagenes/refrigeradora.png",
         "categoria": "Cocina",
         "marca": "Samsung",
@@ -173,7 +173,7 @@
     {
         "id": 20,
         "nombre": "Olla de Presión",
-        "precio": 79995,
+        "precio": "79,995",
         "imagen": "./imagenes/olla_presion.webp",
         "categoria": "Cocina",
         "marca": "Philips",
@@ -182,7 +182,7 @@
     {
         "id": 21,
         "nombre": "Batidora KitchenAid",
-        "precio": 15995,
+        "precio": "15,995",
         "imagen": "./imagenes/batidora.png",
         "categoria": "Cocina",
         "marca": "KitchenAid",
@@ -191,7 +191,7 @@
     {
         "id": 22,
         "nombre": "Televisor Samsung Tizen™ Smart TV LED 65",
-        "precio": 479900,
+        "precio": "479,900",
         "imagen": "./imagenes/pantalla.png",
         "categoria": "Pantallas",
         "marca": "Samsung",
@@ -200,7 +200,7 @@
     {
         "id": 23,
         "nombre": "Sony Bravia 55” OLED",
-        "precio": 799995,
+        "precio": "799,995",
         "imagen": "./imagenes/sony_bravia.png",
         "categoria": "Pantallas",
         "marca": "Sony",
@@ -208,8 +208,8 @@
     },
     {
         "id": 24,
-        "nombre": "LG 32UN880-B 32” 4K",
-        "precio": 55995,
+        "nombre": "Monitor LG 32UN880-B 32” 4K",
+        "precio": "281,079",
         "imagen": "./imagenes/lg_32.png",
         "categoria": "Pantallas",
         "marca": "LG",
@@ -218,7 +218,7 @@
     {
         "id": 25,
         "nombre": "Samsung QLED 75” 8K",
-        "precio": 1499995,
+        "precio": "1,499,995",
         "imagen": "./imagenes/samsung_qled.png",
         "categoria": "Pantallas",
         "marca": "Samsung",
@@ -227,7 +227,7 @@
     {
         "id": 26,
         "nombre": "Sofá Individual",
-        "precio": 75995,
+        "precio": "75,995",
         "imagen": "./imagenes/sillon2.png",
         "categoria": "Muebles",
         "marca": "",
@@ -235,8 +235,8 @@
     },
     {
         "id": 27,
-        "nombre": "Sofá de 3 Plazas",
-        "precio": 169995,
+        "nombre": "Sofá de 2 Plazas",
+        "precio": "110,995",
         "imagen": "./imagenes/sillon3.png",
         "categoria": "Muebles",
         "marca": "",
@@ -245,7 +245,7 @@
     {
         "id": 28,
         "nombre": "Mesa de Centro de Madera",
-        "precio": 34995,
+        "precio": "34,995",
         "imagen": "./imagenes/mesa.png",
         "categoria": "Muebles",
         "marca": "",
@@ -254,7 +254,7 @@
     {
         "id": 29,
         "nombre": "Librero de 5 Niveles",
-        "precio": 22.995,
+        "precio": "22,900",
         "imagen": "./imagenes/librero.png",
         "categoria": "Muebles",
         "marca": "",
