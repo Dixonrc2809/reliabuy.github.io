@@ -259,5 +259,104 @@
         "categoria": "Muebles",
         "marca": "",
         "detalles": "<ul><li>Espacio amplio para libros</li><li>Diseño vertical</li><li>Fácil de ensamblar</li></ul>"
-    }
+    },
+    {
+        "id": 30,
+        "nombre": "Lavadora LG TWINWash",
+        "precio": "649,995",
+        "imagen": "./imagenes/lg_twinwash.png",
+        "categoria": "Lavadoras",
+        "marca": "LG",
+        "detalles": "<ul><li>TWINWash™ para doble carga</li><li>Tecnología TurboWash™</li><li>Control remoto con ThinQ™</li></ul>"
+    },
+    {
+        "id": 31,
+        "nombre": "LG Lavadora Carga Frontal 22kg",
+        "precio": "599,995",
+        "imagen": "./imagenes/lg_lavadora.png",
+        "categoria": "Lavadoras",
+        "marca": "LG",
+        "detalles": "<ul><li>Tecnología AI DD</li><li>Steam para eliminar alérgenos</li><li>Conectividad Wi-Fi</li></ul>"
+    },
+    {
+        "id": 32,
+        "nombre": "Refrigeradora Whirlpool Xpert",
+        "precio": "899,995",
+        "imagen": "./imagenes/refri_whirpool.png",
+        "categoria": "Cocina",
+        "marca": "Whirlpool",
+        "detalles": "<ul><li>Puerta InstaView</li><li>Door-in-Door</li><li>Compresor Inverter Linear</li></ul>"
+    },
+    {
+        "id": 33,
+        "nombre": "Lavadora Whirlpool 18kg",
+        "precio": "489,995",
+        "imagen": "./imagenes/whirlpool_lavadora.png",
+        "categoria": "Lavadoras",
+        "marca": "Whirlpool",
+        "detalles": "<ul><li>Lavado eficiente con 6th Sense</li><li>Capacidad de 18kg</li><li>Función de lavado rápido</li></ul>"
+    },
+    {
+        "id": 34,
+        "nombre": "iPhone 15 Pro Max 512GB",
+        "precio": "1,499,995",
+        "imagen": "./imagenes/iphone_15_pro_max.png",
+        "categoria": "Celulares",
+        "marca": "Apple",
+        "detalles": "<ul><li>Pantalla Super Retina XDR</li><li>Chip A17 Pro</li><li>Cámara de 48MP</li></ul>"
+    },
+    {
+        "id": 35,
+        "nombre": "iPhone 15 Plus 256GB",
+        "precio": "1,099,995",
+        "imagen": "./imagenes/iphone_15_plus.png",
+        "categoria": "Celulares",
+        "marca": "Apple",
+        "detalles": "<ul><li>Pantalla OLED de 6.7”</li><li>Chip A16 Bionic</li><li>Cámara Dual de 48MP</li></ul>"
+    },
+    {
+        "id": 36,
+        "nombre": "iPad Pro M4 265GB",
+        "precio": "849,000",
+        "imagen": "./imagenes/ipad_pro_m4.png",
+        "categoria": "Celulares",
+        "marca": "Apple",
+        "detalles": "<ul><li>Almacenamiento de 265GB</li><li>Pantalla ProMotion de 120Hz</li><li>Cámara Triple de 48MP</li></ul>"
+    },
+    {
+        "id": 37,
+        "nombre": "iPhone 13 Mini 128GB",
+        "precio": "799,995",
+        "imagen": "./imagenes/iphone_13_mini.png",
+        "categoria": "Celulares",
+        "marca": "Apple",
+        "detalles": "<ul><li>Pantalla Super Retina XDR de 5.4”</li><li>Chip A15 Bionic</li><li>Cámara Dual de 12MP</li></ul>"
+    },
+    {
+        "id": 38,
+        "nombre": "HP Omen 16-EN1001LA",
+        "precio": "832,900",
+        "imagen": "./imagenes/omen16.png",
+        "categoria": "Gaming",
+        "marca": "HP",
+        "detalles": "<ul><li>Procesador AMD Ryzen 7</li><li>Tarjeta gráfica NVIDIA RTX 3050</li><li>Pantalla 16\" Full HD</li></ul>"
+    },
+    {
+        "id": 39,
+        "nombre": "HP Pavilion Gaming Desktop",
+        "precio": "546,900",
+        "imagen": "./imagenes/desktop_hp.png",
+        "categoria": "Gaming",
+        "marca": "HP",
+        "detalles": "<ul><li>Procesador AMD Ryzen 5 3400G</li><li>8GB RAM</li><li>Tarjeta gráfica GTX 1650</li></ul>"
+    },
+    {
+        "id": 40,
+        "nombre": "HP Victus 15-FA0010LA",
+        "precio": "591,900",
+        "imagen": "./imagenes/victus15.png",
+        "categoria": "Gaming",
+        "marca": "HP",
+        "detalles": "<ul><li>Procesador Intel Core i5 12ª gen</li><li>8GB RAM</li><li>Tarjeta gráfica NVIDIA GTX 1650</li></ul>"
+    }    
 ]
