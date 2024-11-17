@@ -75,7 +75,7 @@
         "id": 9,
         "nombre": "Laptop Gaming Alienware m15",
         "precio": 259995,
-        "imagen": "./imagenes/alienware.avif",
+        "imagen": "./imagenes/laptop_alienware.png",
         "categoria": "Gaming",
         "marca": "Alienware",
         "detalles": "<ul><li>Procesador Intel i7</li><li>16GB RAM</li><li>RTX 3070</li></ul>"
