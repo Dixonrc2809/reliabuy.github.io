@@ -161,10 +161,10 @@
 .product-link p {
     font-size: 1.3em;           
     font-weight: bold;         
-    color: #007bff;                
     margin: 10px 0;            
     text-align: center;        
     text-transform: capitalize; 
+    text-decoration: none; /* Sin subrayado */
 }
 
 
@@ -187,28 +187,34 @@
 	justify-content: center;
 	align-items: center;
 	flex-wrap: wrap;
+    gap: 20px; /* Espaciado entre las cards */
 	margin: 10px 0px;
 	width: 100%;
 }
-.p-box{
-	width:250px;
-	height: 330px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
-	border-radius: 4px;
-	position: relative;
-	margin: 10px 30px;
+.p-box {
+    width: 250px;
+    height: 330px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 10px;
+    position: relative;
+    margin: 10px 20px;
+    border: 2px solid #007bff; /* Borde azul */
+    transition: box-shadow 0.3s, transform 0.3s;
 }
+
 .p-box img{
 	height:180px;
+
 }
 .p-box p{
 	color:#4d4d4d70;
 	font-size: 0.9rem;
 	letter-spacing: 0.5;
 }
+
 .price{
 	color:#2c2c2c;
 	font-family: poppins;
@@ -223,7 +229,7 @@
 	justify-content: center;
 	align-items: center;
 	left: 50%;
-	bottom: -20px;
+	bottom: 0px;
 	transform: translateX(-50%);
 	border-radius: 15% 15% 15% 15% / 50% 50% 50% 50%;
 	background:linear-gradient(120deg,#007bff 20%,#65a8ff);
@@ -235,10 +241,7 @@
 .p-box:hover .buy-btn{
 	display: flex;
 }
-.p-box:hover{
-	box-shadow: 2px 2px 30px rgba(0,0,0,0.1);
-	background-color:#FFFFFF;
-}
+
 .p-box:hover .price{
 	color:#007bff;
 	transition: all ease 0.2s;
@@ -253,69 +256,33 @@
 	}
 }
 
-@media(max-width:1230px){
-	.m-img img{
-		height: 350px;
-	}
-	.m-text h1,h2{
-		font-size:3.5rem;
-	}
-	.buy-btn {
-        display: flex;
+/* Diseño responsivo */
+
+/* Estilo para pantallas medianas (tablets e iPads) */
+@media (min-width: 600px) and (max-width: 1024px) {
+    .product-container {
+        justify-content: center; /* Centra los productos */
+        
+    }
+
+    .product {
+        margin-left: 90px; /* Elimina margen izquierdo fijo */
+        margin-top: 20px;
+        justify-content: center;
     }
 }
-@media(max-width:1045px){
-	.main{
-		background-size: 600px;
-	}
-	.m-img{
-		display:none;
-	}
-	.m-text{
-		left:50%;
-		top:50%;
-		transform: translate(-50%,-50%);
-		
-	}
-	.buy-btn {
-        display: flex;
+
+/* Pantallas pequeñas */
+@media (max-width: 600px) {
+    .product-container {
+        justify-content: center;
     }
-}
-@media(max-width:600px){
-	.side-box{
-		right:30px;
-		top:30px;
-	}
-	.m-text{
-		overflow-wrap: break-word;
-		display: flex;
-		flex-direction: column;
-		margin:auto;
-	}
-	.m-text h1,h2{
-		font-size: 2.5rem;
-		line-height:40px;
-		margin:0px 20px;
-		letter-spacing: 10px;
-	}
-	.m-text h2{
-		font-size: 1.2rem;
-	}
-	.m-btn{
-		margin:0px 20px;
-		display: none;
-	}
-	.product{
-		width:88%;
-	}
-	.p-box{
-		margin:20px 10px;
-		padding:10px 20px;
-		width:100%;
-		text-align: center;
-	}
-	.buy-btn {
-        display: flex;
+
+    .p-box {
+        margin: 20px 10px;
+        padding: 10px 20px;
+        width: 100%;
+        text-align: center;
     }
 }
 
@@ -330,6 +297,7 @@
     align-items: flex-start;
     gap: 20px;
     margin-top: -70px;
+    flex-wrap: wrap; /* Permite que los elementos se ajusten en pantallas pequeñas */
 }
 
 .filter-menu {
@@ -337,8 +305,8 @@
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    width: 100%;
-    max-width: 280px;
+    width: 100%; /* Siempre ocupa el 100% del contenedor */
+    max-width: 280px; /* Limita el ancho en pantallas grandes */
 }
 
 .filter-menu h4 {
@@ -350,6 +318,19 @@
     border-bottom: 2px solid #e0e0e0;
     padding-bottom: 10px;
 }
+
+/* Estilo específico para pantallas pequeñas y medianas */
+@media (max-width: 1024px) {
+    .filter-menu {
+        max-width: 100%; 
+    }
+
+    .product-page {
+        justify-content: flex-start; 
+        padding: 20px; 
+    }
+}
+
 
 
 
