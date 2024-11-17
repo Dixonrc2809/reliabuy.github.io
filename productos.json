@@ -129,7 +129,7 @@
         "id": 15,
         "nombre": "Blue Yeti X",
         "precio": 19995,
-        "imagen": "./imagenes/blue_yeti.png",
+        "imagen": "./imagenes/blue-yeti.webp",
         "categoria": "Microfonos",
         "marca": "Blue",
         "detalles": "<ul><li>Sonido de alta calidad</li><li>Microfono USB</li><li>Control de ganancia</li></ul>"
@@ -138,7 +138,7 @@
         "id": 16,
         "nombre": "Audio-Technica AT2020",
         "precio": 10995,
-        "imagen": "./imagenes/audio_technica.png",
+        "imagen": "./imagenes/audio-technica.png",
         "categoria": "Microfonos",
         "marca": "Audio-Technica",
         "detalles": "<ul><li>Cardioide</li><li>Conectividad XLR</li><li>Respuesta de frecuencia amplia</li></ul>"
@@ -147,7 +147,7 @@
         "id": 17,
         "nombre": "Shure SM7B",
         "precio": 24995,
-        "imagen": "./imagenes/shure_sm7b.png",
+        "imagen": "./imagenes/shure.avif",
         "categoria": "Microfonos",
         "marca": "Shure",
         "detalles": "<ul><li>Micrófono dinámico</li><li>Excelente rechazo de ruido</li><li>Ideal para estudio</li></ul>"
@@ -172,9 +172,9 @@
     },
     {
         "id": 20,
-        "nombre": "Olla de Presión Philips",
+        "nombre": "Olla de Presión",
         "precio": 79995,
-        "imagen": "./imagenes/olla_philips.png",
+        "imagen": "./imagenes/olla_presion.webp",
         "categoria": "Cocina",
         "marca": "Philips",
         "detalles": "<ul><li>Capacidad de 6L</li><li>Modo de cocción rápido</li><li>Función de temporizador</li></ul>"
@@ -183,7 +183,7 @@
         "id": 21,
         "nombre": "Batidora KitchenAid",
         "precio": 15995,
-        "imagen": "./imagenes/batidora_kitchenaid.png",
+        "imagen": "./imagenes/batidora.png",
         "categoria": "Cocina",
         "marca": "KitchenAid",
         "detalles": "<ul><li>10 velocidades</li><li>Incluye varilla para batir</li><li>Motor potente</li></ul>"
