@@ -1260,10 +1260,11 @@ hr {
     margin: 0 10px 10px 0;
     text-align: center;
     line-height: 45px; 
-    border-radius: 100%;
+    border-radius: 50%; /* Asegura que el círculo sea perfecto */
     color: #000000;
     transition: all 0.5s ease;
 }
+
 
 .footer-col .social-links a:hover {
     color: #ffffff;
@@ -1287,152 +1288,34 @@ hr {
 
 /* Pantallas medianas */
 @media (max-width: 992px) { 
-    .footer h4 {
-        font-size: 1.25rem; 
-    }
-
     .footer-col {
-        text-align: center; 
+        text-align: left; /* Mantén a la izquierda la alineación para íconos */
     }
-
     .footer ul li {
-        text-align: center; 
-    }
-
-    .social-links {
-        display: flex; /* Asegúrate de que sea un flex container */
-        justify-content: center; 
-        gap: 10px; /* Espacio entre iconos */
-    }
-
-    .footer-col .social-links a {
-        display: flex; /* Flex para centrar contenido */
-        justify-content: center; 
-        align-items: center; 
-        height: 40px; 
-        width: 40px; 
-        border-radius: 100%; /* Redondeo completo para un círculo */
-        background-color: #007bff; /* Color de fondo de los íconos */
-        transition: background-color 0.3s; /* Transición suave al hacer hover */
-        text-decoration: none; /* Elimina el subrayado */
-    }
-
-    .footer ul li a {
-        transition: color 0.3s; /* Transición para el hover */
-    }
-
-    .footer ul li a:hover {
-        color: #000000; 
-    }
-
-    .payment-icon i {
-        color: #ffffff; 
-    }
-
-    .payment-icon:hover i {
-        color: #000000; 
+        text-align: center; /* Solo centra el texto de las listas */
     }
 }
 
 /* Pantallas pequeñas */
 @media (max-width: 768px) { 
-    .footer h4 {
-        font-size: 1.1rem; 
-    }
-
     .footer-col {
-        text-align: center; 
+        text-align: left; /* Mantén la alineación izquierda para los íconos */
     }
-
     .footer ul li {
-        text-align: center; 
-    }
-
-    .social-links {
-        display: flex; /* Asegúrate de que sea un flex container */
-        justify-content: center; 
-        gap: 10px; /* Espacio entre iconos */
-    }
-
-    .footer-col .social-links a {
-        display: flex; /* Flex para centrar contenido */
-        justify-content: center; 
-        align-items: center; 
-        height: 35px; 
-        width: 35px; 
-        border-radius: 100%; /* Redondeo completo para un círculo */
-        background-image: url('../imagenes/bannerCeleste2.png'); 
-        background-size: cover; /* Ajusta la imagen para cubrir todo el área */
-        background-position: center;
-        transition: background-color 0.3s; /* Transición suave al hacer hover */
-        text-decoration: none; /* Elimina el subrayado */
-    }
-
-    .footer ul li a {
-        transition: color 0.3s; 
-    }
-
-    .footer ul li a:hover {
-        color: #000000; 
-    }
-
-    .payment-icon i {
-        color: #ffffff; 
-    }
-
-    .payment-icon:hover i {
-        color: #000000; 
+        text-align: center; /* Centra solo el texto */
     }
 }
 
 /* Pantallas ultra pequeñas */
 @media (max-width: 576px) { 
-    .footer h4 {
-        font-size: 1rem; 
-    }
-
     .footer-col {
-        text-align: center; 
+        text-align: left; /* Mantén la alineación izquierda para íconos */
     }
-
     .footer ul li {
-        text-align: center; 
-    }
-
-    .social-links {
-        display: flex; /* Asegúrate de que sea un flex container */
-        justify-content: center; 
-        gap: 10px; /* Espacio entre iconos */
-    }
-
-    .footer-col .social-links a {
-        display: flex; /* Flex para centrar contenido */
-        justify-content: center; 
-        align-items: center; 
-        height: 30px; 
-        width: 30px; 
-        border-radius: 100%; /* Redondeo completo para un círculo */
-        background-color: #007bff; /* Color de fondo de los íconos */
-        transition: background-color 0.3s; /* Transición suave al hacer hover */
-        text-decoration: none; /* Elimina el subrayado */
-    }
-
-    .footer ul li a {
-        transition: color 0.3s; 
-    }
-
-    .footer ul li a:hover {
-        color: #000000; 
-    }
-
-    .payment-icon i {
-        color: #ffffff; 
-    }
-
-    .payment-icon:hover i {
-        color: #000000; 
+        text-align: center; /* Solo centrar las listas */
     }
 }
+
 
 
 
