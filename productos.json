@@ -66,7 +66,7 @@
         "id": 8,
         "nombre": "Teclado Mecánico Razer Huntsman Elite",
         "precio": 179995,
-        "imagen": "./imagenes/teclado_razer.png",
+        "imagen": "./imagenes/teclado-razer.png",
         "categoria": "Gaming",
         "marca": "Razer",
         "detalles": "<ul><li>Teclas ópticas</li><li>Iluminación RGB personalizable</li><li>Construcción de aluminio</li></ul>"
@@ -75,7 +75,7 @@
         "id": 9,
         "nombre": "Laptop Gaming Alienware m15",
         "precio": 259995,
-        "imagen": "./imagenes/laptop_alienware.png",
+        "imagen": "./imagenes/alienware.avif",
         "categoria": "Gaming",
         "marca": "Alienware",
         "detalles": "<ul><li>Procesador Intel i7</li><li>16GB RAM</li><li>RTX 3070</li></ul>"
