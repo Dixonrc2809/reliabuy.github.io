@@ -111,46 +111,76 @@
         </div>
     </div>
 
-<!-- Contenedor de productos -->
-<div class="container-fluid product-page">
-    <div div class="row">
-        <!-- Filtros -->
-        <div class="col-md-3 filter-menu">
-            <h4>Filtrar productos</h4>
-            <div class="filter-category">
-                <button class="accordion">Categorías</button>
-                <div class="panel">
-                    <label><input type="checkbox" class="filter-category-checkbox" value="Cocina"> Cocina</label>
-                    <label><input type="checkbox" class="filter-category-checkbox" value="Celulares"> Celulares</label>
-                    <label><input type="checkbox" class="filter-category-checkbox" value="Microfonos"> Microfonos</label>
-                    <label><input type="checkbox" class="filter-category-checkbox" value="Audifonos"> Audifonos</label>
-                    <label><input type="checkbox" class="filter-category-checkbox" value="Gaming"> Gaming</label>
-                    <label><input type="checkbox" class="filter-category-checkbox" value="Pantallas"> Pantallas</label>
-                    <label><input type="checkbox" class="filter-category-checkbox" value="Muebles"> Muebles</label>
+    <!-- Contenedor de productos -->
+    <div class="container-fluid product-page">
+        <div div class="row">
+            <!-- Filtros -->
+            <div class="col-md-3 filter-menu">
+                <h4>Filtrar productos</h4>
+                <div class="filter-category">
+                    <button class="accordion">Categorías</button>
+                    <div class="panel">
+                        <label><input type="checkbox" class="filter-category-checkbox" value="Cocina"> Cocina</label>
+                        <label><input type="checkbox" class="filter-category-checkbox" value="Celulares"> Celulares</label>
+                        <label><input type="checkbox" class="filter-category-checkbox" value="Microfonos"> Microfonos</label>
+                        <label><input type="checkbox" class="filter-category-checkbox" value="Audifonos"> Audifonos</label>
+                        <label><input type="checkbox" class="filter-category-checkbox" value="Gaming"> Gaming</label>
+                        <label><input type="checkbox" class="filter-category-checkbox" value="Pantallas"> Pantallas</label>
+                        <label><input type="checkbox" class="filter-category-checkbox" value="Muebles"> Muebles</label>
+                    </div>
+                </div>
+                <div class="filter-category">
+                    <button class="accordion">Marca</button>
+                    <div class="panel">
+                        <label><input type="checkbox" class="filter-brand-checkbox" value="Samsung"> Samsung</label>
+                        <label><input type="checkbox" class="filter-brand-checkbox" value="LG"> LG</label>
+                        <label><input type="checkbox" class="filter-brand-checkbox" value="Whirlpool"> Whirlpool</label>
+                        <label><input type="checkbox" class="filter-brand-checkbox" value="Apple"> Apple</label>
+                        <label><input type="checkbox" class="filter-brand-checkbox" value="Sony"> Sony</label>
+                        <label><input type="checkbox" class="filter-brand-checkbox" value="HP"> HP</label>
+                    </div>
                 </div>
             </div>
-            <div class="filter-category">
-                <button class="accordion">Marca</button>
-                <div class="panel">
-                    <label><input type="checkbox" class="filter-brand-checkbox" value="Samsung"> Samsung</label>
-                    <label><input type="checkbox" class="filter-brand-checkbox" value="LG"> LG</label>
-                    <label><input type="checkbox" class="filter-brand-checkbox" value="Whirlpool"> Whirlpool</label>
-                    <label><input type="checkbox" class="filter-brand-checkbox" value="Apple"> Apple</label>
-                    <label><input type="checkbox" class="filter-brand-checkbox" value="Sony"> Sony</label>
-                    <label><input type="checkbox" class="filter-brand-checkbox" value="HP"> HP</label>
-                </div>
-            </div>
-        </div>
 
-        <!-- Sección de Productos -->
-        <div class="col-md-9">
-            <section class="product">
-                <h3>Productos</h3>
-                <div class="product-container" id="product-container"></div>
-            </section>
+            <!-- Sección de Productos -->
+            <div class="col-md-9">
+                <section class="product">
+                    <h3>Productos</h3>
+                    <div class="product-container" id="product-container"></div>
+                </section>
+            </div>
         </div>
     </div>
-</div>
+
+    <!-- Esta es la funcion para obtener los prodcutos del JSON
+        y mostrarlos en el el html de productos.html -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+        fetch('productos.json') 
+            .then(response => response.json())
+            .then(productos => {
+                const contenedor = document.getElementById("product-container");
+                productos.forEach(producto => {
+                    const productBox = document.createElement("div");
+                    productBox.classList.add("p-box");
+                    productBox.setAttribute("data-category", producto.categoria);
+                    productBox.setAttribute("data-brand", producto.marca);
+                    productBox.innerHTML = `
+                        <a href="detalleProducto.html?id=${producto.id}" class="product-link">
+                            <img src="${producto.imagen}" alt="${producto.nombre}" />
+                            <p>${producto.nombre}</p>
+                            <a class="price" href="#">₡${producto.precio}</a>
+                        </a>
+                        <a class="buy-btn" href="#">Añadir al Carrito</a>
+                    `;
+                    contenedor.appendChild(productBox);
+                });
+            })
+            .catch(error => {
+                console.error("Error al cargar los productos:", error);
+            });
+        });
+    </script>
 
     <!-- Footer -->
     <footer class="footer bg-light py-4">
@@ -214,35 +244,6 @@
     <script src="js/Productos.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            fetch('productos.json') // Se asume que el archivo productos.json está en la misma carpeta que el HTML
-                .then(response => response.json())
-                .then(productos => {
-                    const contenedor = document.getElementById("product-container");
-                    productos.forEach(producto => {
-                        const productBox = document.createElement("div");
-                        productBox.classList.add("p-box");
-                        productBox.setAttribute("data-category", producto.categoria);
-                        productBox.setAttribute("data-brand", producto.marca);
-                        productBox.innerHTML = `
-                            <a href="detalleProducto.html?id=${producto.id}" class="product-link">
-                                <img src="${producto.imagen}" alt="${producto.nombre}" />
-                                <p>${producto.nombre}</p>
-                                <a class="price" href="#">₡${producto.precio}</a>
-                            </a>
-                            <a class="buy-btn" href="#">Añadir al Carrito</a>
-                        `;
-                        contenedor.appendChild(productBox);
-                    });
-                })
-                .catch(error => {
-                    console.error("Error al cargar los productos:", error);
-                });
-        });
-    </script>
 
 </body>
 </html>

@@ -60,44 +60,64 @@ function filterProducts() {
 // Funcionalidad de filtro por precios y cantidad de productos
 // ----------------------------------------------------------------
 document.addEventListener("DOMContentLoaded", () => {
+    // Obtener elementos de filtro
     const sortSelect = document.getElementById("sort-select");
     const viewSelect = document.getElementById("view-select");
     const productContainer = document.getElementById("product-container");
 
-    // Función para ordenar productos por precio
-    function sortProducts(order) {
-        let products = Array.from(productContainer.querySelectorAll(".p-box"));
-        products.sort((a, b) => {
-            const priceA = parseFloat(a.querySelector(".price").textContent.replace(/[^0-9.-]+/g, ""));
-            const priceB = parseFloat(b.querySelector(".price").textContent.replace(/[^0-9.-]+/g, ""));
-            return order === "low-to-high" ? priceA - priceB : priceB - priceA;
+    // Función para cargar productos desde el archivo JSON
+    const loadProducts = () => {
+        fetch('productos.json')
+            .then(response => response.json())
+            .then(products => {
+                // Inicialmente mostrar los productos
+                displayProducts(products);
+
+                // Filtros
+                sortSelect.addEventListener("change", () => {
+                    const sortBy = sortSelect.value;
+                    let sortedProducts = [...products];
+                    if (sortBy === "high-to-low") {
+                        sortedProducts.sort((a, b) => b.precio - a.precio);
+                    } else if (sortBy === "low-to-high") {
+                        sortedProducts.sort((a, b) => a.precio - b.precio);
+                    }
+                    displayProducts(sortedProducts);
+                });
+
+                viewSelect.addEventListener("change", () => {
+                    const viewCount = parseInt(viewSelect.value, 10);
+                    displayProducts(products, viewCount);
+                });
+            })
+            .catch(error => {
+                console.error("Error al cargar los productos:", error);
+            });
+    };
+
+    // Función para mostrar productos en el contenedor
+    const displayProducts = (products, viewCount = 9) => {
+        productContainer.innerHTML = ""; // Limpiar productos actuales
+        const displayedProducts = products.slice(0, viewCount); // Seleccionar productos a mostrar
+        displayedProducts.forEach(product => {
+            const productBox = document.createElement("div");
+            productBox.classList.add("p-box");
+            productBox.setAttribute("data-category", product.categoria);
+            productBox.setAttribute("data-brand", product.marca);
+            productBox.innerHTML = `
+                <a href="detalleProducto.html?id=${product.id}" class="product-link">
+                    <img src="${product.imagen}" alt="${product.nombre}" />
+                    <p>${product.nombre}</p>
+                    <a class="price" href="#">₡${product.precio}</a>
+                </a>
+                <a class="buy-btn" href="#">Añadir al Carrito</a>
+            `;
+            productContainer.appendChild(productBox);
         });
+    };
 
-        // Limpiar el contenedor y añadir los productos en el nuevo orden
-        productContainer.innerHTML = "";
-        products.forEach((product) => productContainer.appendChild(product));
-    }
-
-    // Función para mostrar un número específico de productos
-    function showProducts(limit) {
-        const allProducts = Array.from(productContainer.querySelectorAll(".p-box"));
-        allProducts.forEach((product, index) => {
-            product.style.display = index < limit ? "block" : "none";
-        });
-    }
-
-    // Evento para ordenar los productos cuando cambia la selección
-    sortSelect.addEventListener("change", (e) => {
-        sortProducts(e.target.value);
-    });
-
-    // Evento para mostrar la cantidad seleccionada de productos
-    viewSelect.addEventListener("change", (e) => {
-        showProducts(parseInt(e.target.value, 10));
-    });
-
-    // Inicializar la visualización predeterminada de productos
-    showProducts(parseInt(viewSelect.value, 10));
+    // Cargar productos al iniciar
+    loadProducts();
 });
 
 

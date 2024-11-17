@@ -1,6 +1,7 @@
+
 // ----------------------------------------------------------------
-// Esta es la funcion apra obtener los prodcutos del JSON
-// y mostrarlos en el el html de productos.html
+// Esta es la funcion para obtener el ID del prodcuto que seleccione
+// y enviarlo al detalleProducto, con los detalles
 // ----------------------------------------------------------------
         function getURLParameter(name) {
             const urlParams = new URLSearchParams(window.location.search);
