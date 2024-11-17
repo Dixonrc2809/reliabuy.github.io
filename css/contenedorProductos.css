@@ -293,6 +293,35 @@
 
 
 /*============================*/
+/* Estilo para el botón de "Mostrar más productos" */
+/*============================*/
+#load-more {
+    background-image: url('../imagenes/bannerCeleste2.png'); 
+    background-size: cover; /* Ajusta la imagen para cubrir todo el área */
+    background-position: center; 
+    color: #fff; 
+    border: none; 
+    padding: 12px 20px; 
+    font-size: 16px; 
+    font-weight: bold; 
+    border-radius: 5px; 
+    display: block;
+    width: 100%; /* Hace que ocupe todo el ancho disponible */
+    margin: 20px auto 0;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.3s ease; 
+    margin-top: 50px;
+}
+
+/* Efecto hover para el botón */
+#load-more:hover {
+    cursor: pointer; 
+    transform: translateY(-3px); 
+}
+
+
+
+/*============================*/
 /* Estilos del acordion */
 /*============================*/
 .filter-category {

@@ -58,19 +58,22 @@ function filterProducts() {
 
 // ----------------------------------------------------------------
 // Funcionalidad de filtro por precios y cantidad de productos
+// tambien funcionaldiad del boton para ver mas prodcutos
 // ----------------------------------------------------------------
 document.addEventListener("DOMContentLoaded", () => {
-    // Obtener elementos de filtro
     const sortSelect = document.getElementById("sort-select");
     const viewSelect = document.getElementById("view-select");
     const productContainer = document.getElementById("product-container");
+    const loadMoreButton = document.getElementById("load-more");
+
+    let currentDisplayCount = 9; // Número inicial de productos a mostrar (9 productos)
 
     // Función para cargar productos desde el archivo JSON
     const loadProducts = () => {
         fetch('productos.json')
             .then(response => response.json())
             .then(products => {
-                // Inicialmente mostrar los productos
+                // Mostrar productos iniciales al cargar la página
                 displayProducts(products);
 
                 // Filtros
@@ -87,7 +90,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 viewSelect.addEventListener("change", () => {
                     const viewCount = parseInt(viewSelect.value, 10);
-                    displayProducts(products, viewCount);
+                    currentDisplayCount = viewCount; // Actualizamos el número de productos a mostrar según la selección
+                    displayProducts(products);
+                });
+
+                // Cargar más productos al presionar el botón
+                loadMoreButton.addEventListener("click", () => {
+                    currentDisplayCount += 10; // Mostrar 10 productos más
+                    displayProducts(products);
                 });
             })
             .catch(error => {
@@ -96,9 +106,10 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     // Función para mostrar productos en el contenedor
-    const displayProducts = (products, viewCount = 9) => {
+    const displayProducts = (products) => {
         productContainer.innerHTML = ""; // Limpiar productos actuales
-        const displayedProducts = products.slice(0, viewCount); // Seleccionar productos a mostrar
+        const displayedProducts = products.slice(0, currentDisplayCount); // Seleccionar productos a mostrar según la cantidad
+
         displayedProducts.forEach(product => {
             const productBox = document.createElement("div");
             productBox.classList.add("p-box");
@@ -119,6 +130,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Cargar productos al iniciar
     loadProducts();
 });
+
 
 
 
