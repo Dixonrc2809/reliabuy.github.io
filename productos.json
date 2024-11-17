@@ -111,7 +111,7 @@
         "id": 13,
         "nombre": "OnePlus 10 Pro",
         "precio": 84995,
-        "imagen": "./imagenes/oneplus_10.png",
+        "imagen": "./imagenes/oneplus_10.webp",
         "categoria": "Celulares",
         "marca": "OnePlus",
         "detalles": "<ul><li>Cámara Hasselblad</li><li>Pantalla Fluid AMOLED</li><li>4500mAh</li></ul>"
@@ -254,7 +254,7 @@
     {
         "id": 29,
         "nombre": "Librero de 5 Niveles",
-        "precio": 22995,
+        "precio": 22.995,
         "imagen": "./imagenes/librero.png",
         "categoria": "Muebles",
         "marca": "",
