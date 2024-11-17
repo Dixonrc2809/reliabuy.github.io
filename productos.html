@@ -154,35 +154,51 @@
             </div>
         </div>
     </div>
+    
 
     <!-- Esta es la funcion para obtener los prodcutos del JSON
-        y mostrarlos en el el html de productos.html -->
+    y mostrarlos en el el html de productos.html -->
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-        fetch('productos.json') 
-            .then(response => response.json())
-            .then(productos => {
-                const contenedor = document.getElementById("product-container");
-                productos.forEach(producto => {
-                    const productBox = document.createElement("div");
-                    productBox.classList.add("p-box");
-                    productBox.setAttribute("data-category", producto.categoria);
-                    productBox.setAttribute("data-brand", producto.marca);
-                    productBox.innerHTML = `
-                        <a href="detalleProducto.html?id=${producto.id}" class="product-link">
-                            <img src="${producto.imagen}" alt="${producto.nombre}" />
-                            <p>${producto.nombre}</p>
-                            <a class="price" href="#">₡${producto.precio}</a>
-                        </a>
-                        <a class="buy-btn" href="#">Añadir al Carrito</a>
-                    `;
-                    contenedor.appendChild(productBox);
-                });
-            })
-            .catch(error => {
-                console.error("Error al cargar los productos:", error);
+    const urlParams = new URLSearchParams(window.location.search);
+    const categoriaSeleccionada = urlParams.get('categoria');  // Obtener el valor de la categoría
+
+    fetch('productos.json')  // Cargar el archivo JSON con los productos
+        .then(response => response.json())
+        .then(productos => {
+            const contenedor = document.getElementById("product-container");
+
+            // Filtrar productos por categoría si existe
+            const productosFiltrados = categoriaSeleccionada 
+                ? productos.filter(p => p.categoria.toLowerCase() === categoriaSeleccionada.toLowerCase()) 
+                : productos;
+
+            // Mostrar los productos filtrados
+            productosFiltrados.forEach(producto => {
+                const productBox = document.createElement("div");
+                productBox.classList.add("p-box");
+                productBox.setAttribute("data-category", producto.categoria);
+                productBox.setAttribute("data-brand", producto.marca);
+                productBox.innerHTML = `
+                    <a href="detalleProducto.html?id=${producto.id}" class="product-link">
+                        <img src="${producto.imagen}" alt="${producto.nombre}" />
+                        <p>${producto.nombre}</p>
+                        <a class="price" href="#">₡${producto.precio}</a>
+                    </a>
+                    <a class="buy-btn" href="#">Añadir al Carrito</a>
+                `;
+                contenedor.appendChild(productBox);
             });
+
+            if (productosFiltrados.length === 0) {
+                contenedor.innerHTML = "<p>No hay productos disponibles en esta categoría.</p>";
+            }
+        })
+        .catch(error => {
+            console.error("Error al cargar los productos:", error);
         });
+});
+
     </script>
 
     <!-- Footer -->

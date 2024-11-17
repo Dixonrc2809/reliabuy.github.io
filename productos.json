@@ -344,11 +344,11 @@
     {
         "id": 39,
         "nombre": "HP Pavilion Gaming Desktop",
-        "precio": "546,900",
+        "precio": "746,900",
         "imagen": "./imagenes/desktop_hp.png",
         "categoria": "Gaming",
         "marca": "HP",
-        "detalles": "<ul><li>Procesador AMD Ryzen 5 3400G</li><li>8GB RAM</li><li>Tarjeta gráfica GTX 1650</li></ul>"
+        "detalles": "<ul><li>Procesador AMD Ryzen 5 3400G</li><li>8GB RAM</li><li>Tarjeta gráfica GTX 3060</li></ul>"
     },
     {
         "id": 40,
