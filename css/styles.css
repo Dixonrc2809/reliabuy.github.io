@@ -501,151 +501,39 @@ a.btn.btn-outline-primary:hover .fas {
     }
 }
 
+
+
 /*============================*/
-/* Estilos para Productos */
+/* Estilos para Productos Tendencia */
 /*============================*/
-.card {
-    position: relative;
-    width: 100%;
-    max-width: 240px; /* Ancho máximo */
-    height: 320px; /* Altura */
-    background: #f5f9ff; /* Fondo azul pastel */
-    border-radius: 15px; /* Bordes redondeados */
-    margin: 10px; /* Espaciado entre tarjetas */
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    transition: transform 0.2s; /* Efecto hover */
-}
-
-.card:hover {
-    transform: scale(1.03); /* Escala al pasar el mouse */
-}
-
-.card::before {
-    content: "";
-    position: absolute;
-    top: -50%;
-    width: 100%;
-    height: 100%;
-    background: #cff1ff; /* Azul claro */
-    transform: skewY(345deg);
-    transition: 0.5s;
-}
-
-.card:hover::before {
-    top: -70%;
-    transform: skewY(390deg);
-}
-
-.card .imgBox {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 10px;
-    z-index: 1;
-}
-
-.card .contentBox {
-    padding: 15px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.product-heading{
     text-align: center;
-    z-index: 2;
+    color: #000000;
 }
 
-.card .contentBox h3 {
-    font-size: 14px; /* Tamaño de fuente */
-    color: #2C3E50; /* Color del texto */
-    font-weight: 500;
-    text-transform: uppercase;
+.popular-product-container .product-box img {
+    width: 100%;           
+    height: auto;          
+    object-fit: cover;     
+    max-height: 200px;      
 }
 
-.card .contentBox .price {
-    font-size: 18px; /* Tamaño de fuente */
-    color: #2b5279; /* Color del texto */
-    font-weight: 700;
+/* Contenedor de la imagen */
+.popular-product-container .product-box {
+    position: relative;
+    overflow: hidden;        
+    height: 360px;          
 }
 
-.card .contentBox .buy {
-    font-size: 14px; /* Tamaño de fuente */
-    opacity: 0;
-    padding: 8px 15px; /* Ajustes en padding */
-    margin-top: auto; /* Mantiene en la parte inferior */
-    color: #000000; /* Color de texto blanco */
-    background: #A7C6ED; /* Color de fondo del botón */
-    border-radius: 20px; /* Bordes redondeados */
-    text-transform: uppercase;
-    transition: 0.5s;
-    width: 100%; /* Ancho completo */
-    text-align: center; /* Centra el texto */
-    text-decoration: none;
+.add-cart-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;     
+    cursor: pointer;
+    position: absolute;      
+    bottom: 10px;            
 }
-
-.card:hover .contentBox .buy {
-    opacity: 1; /* Muestra el botón al pasar el mouse */
-}
-
-.imgBox img {
-    max-width: 80%; /* Ancho máximo */
-    transition: .5s;
-}
-
-.card:hover .imgBox img {
-    max-width: 60%; /* Ancho máximo al pasar el mouse */
-}
-
-/* Estilos para el carrusel */
-.carousel-control-prev,
-.carousel-control-next {
-    width: 5%; /* Tamaño de las flechas */
-    margin: 0 20px; /* Espaciado horizontal entre las flechas y las tarjetas */
-    height: 100%; /* Asegura que las flechas sean del tamaño del carrusel */
-    display: flex;
-    align-items: center; /* Centra verticalmente las flechas */
-}
-
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-    background-color: rgba(0, 0, 0, 0.5); /* Fondo blanco con opacidad */
-    border-radius: 50%; /* Flechas redondeadas */
-    padding: 10px; /* Padding */
-}
-
-.carousel-control-prev-icon:hover,
-.carousel-control-next-icon:hover {
-    background-color: rgba(48, 138, 255, 0.8); /* Efecto hover más claro */
-}
-
-
-
-/* Responsividad */
-@media (max-width: 768px) {
-    .card {
-        max-width: 100%; /* Ajuste para pantallas pequeñas */
-        height: 450px; /* Altura automática */
-        margin: 5px; /* Espaciado más pequeño */
-    }
-
-    /* Asegura que las flechas se vean bien en móviles */
-    .carousel-control-prev, .carousel-control-next {
-        width: 10%; /* Aumentar tamaño para mejor toque */
-        margin: 0; /* Sin margen en móviles */
-    }
-
-    .carousel-item .row {
-        display: flex; /* Asegurar que los productos se muestren en fila */
-        flex-wrap: nowrap; /* Evitar que se envuelvan */  
-    }
-
-    .carousel-item {
-        flex-direction: column; /* Coloca los elementos uno encima del otro */
-        align-items: center; /* Centra el contenido */
-    }
-}
-
 
 
 /*============================*/

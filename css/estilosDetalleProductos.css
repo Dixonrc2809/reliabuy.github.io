@@ -290,23 +290,6 @@ img {
 
 
 
-/*============================*/
-/* Estilos para Productos Similares */
-/*============================*/
-.popular-product-container .product-box img {
-    width: 100%;           
-    height: auto;          
-    object-fit: cover;     
-    max-height: 200px;      
-}
-
-/* Contenedor de la imagen */
-.popular-product-container .product-box {
-    position: relative;
-    overflow: hidden;        
-    height: 360px;          
-}
-
 
 
 
