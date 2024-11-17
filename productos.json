@@ -84,7 +84,7 @@
         "id": 10,
         "nombre": "Samsung Galaxy S23 Ultra",
         "precio": 979995,
-        "imagen": "./imagenes/galaxy_s23.webp",
+        "imagen": "./imagenes/galaxy_s23.png",
         "categoria": "Celulares",
         "marca": "Samsung",
         "detalles": "<ul><li>Cámara de 200MP</li><li>Pantalla Dynamic AMOLED 2X</li><li>5000mAh de batería</li></ul>"
