@@ -241,7 +241,7 @@ a.btn.btn-outline-primary:hover .fas {
 
 
 /*==================================================*/
-/* Estilo de Resultados de bsuqueda por Nombre */
+/* Estilo de Resultados de búsqueda por Nombre */
 /*==================================================*/
 .search-results {
     display: none;
@@ -249,33 +249,122 @@ a.btn.btn-outline-primary:hover .fas {
     background-color: #ffffff;
     border: 1px solid #ddd;
     max-width: 300px;
-    z-index: 1000;
     width: 100%;
     top: 60px;
+    z-index: 1000;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    max-height: 250px; /* Altura máxima para el scroll */
+    overflow-y: auto;
 }
 
+/* Estilo para cada elemento de resultado */
 .resultado-item {
     display: flex;
     align-items: center;
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
+    padding: 12px;
+    border-bottom: 1px solid #f0f0f0;
     cursor: pointer;
+    transition: background-color 0.3s;
 }
 
 .resultado-item:hover {
-    background-color: #f1f1f1;
+    background-color: #f9f9f9;
 }
 
+/* Estilo para la imagen en el resultado */
 .resultado-imagen {
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     object-fit: cover;
-    margin-right: 10px;
+    border-radius: 5px;
+    margin-right: 12px;
 }
 
+/* Estilo para los detalles del resultado */
 .resultado-detalles {
     display: flex;
     flex-direction: column;
+}
+
+.resultado-detalles span {
+    font-size: 14px;
+    color: #333;
+}
+
+/* Estilos adicionales */
+.search-results p {
+    padding: 10px;
+    text-align: center;
+    color: #888;
+    font-size: 14px;
+    margin: 0;
+}
+
+/*------------------------------------------*/
+/* Responsivo */
+/*------------------------------------------*/
+/* Para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .search-results {
+        max-width: 65%;
+        top: 90px;
+    }
+
+    .resultado-imagen {
+        width: 40px;
+        height: 40px;
+    }
+
+    .resultado-item {
+        padding: 10px;
+    }
+
+    .resultado-detalles {
+        font-size: 13px;
+    }
+}
+
+/* Para pantallas muy pequeñas (como móviles) */
+@media (max-width: 480px) {
+    .search-results {
+        max-width: 85%;
+        top: 140px;
+    }
+
+    .resultado-imagen {
+        width: 35px;
+        height: 35px;
+    }
+
+    .resultado-item {
+        padding: 8px;
+    }
+
+    .resultado-detalles {
+        font-size: 12px;
+    }
+}
+
+/* Para tabletas (pantallas medianas) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .search-results {
+        max-width: 38%;
+        top: 100px;
+    }
+
+    .resultado-imagen {
+        width: 45px;
+        height: 45px;
+    }
+
+    .resultado-item {
+        padding: 12px;
+    }
+
+    .resultado-detalles {
+        font-size: 14px;
+    }
 }
 
 
