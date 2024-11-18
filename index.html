@@ -105,15 +105,15 @@
             <div class="carousel-inner">
                 <div class="carousel-item active" data-title="Auriculares Westmire A56 - Blanco" data-button1="Añadir al carrito" data-button2="Ver características" data-product-id="1">
                     <img src="./imagenes/Audifonos.png" alt="Auriculares Westmire A56" class="img-fluid">
-                    <button class="btn-outline-secondary" data-button2="Ver características" data-product-id="1">Ver características</button>
+                    <button class="btn btn-outline-secondary" data-product-id="1">Ver características</button>
                 </div>
                 <div class="carousel-item" data-title="Celular iPhone 14 Pro Max 256 GB" data-button1="Añadir al carrito" data-button2="Ver características" data-product-id="4">
                     <img src="./imagenes/iphone.png" alt="Iphone 12 Pro Max" class="img-fluid">
-                    <button class="btn-outline-secondary" data-button2="Ver características" data-product-id="4">Ver características</button>
+                    <button class="btn btn-outline-secondary" data-product-id="4">Ver características</button>
                 </div>
                 <div class="carousel-item" data-title="Televisor Samsung Tizen™ Smart TV LED 65''" data-button1="Añadir al carrito" data-button2="Ver características" data-product-id="7">
                     <img src="./imagenes/pantalla.png" alt="Pantalla Smart TV 65''" class="img-fluid">
-                    <button class="btn-outline-secondary" data-button2="Ver características" data-product-id="7">Ver características</button>
+                    <button class="btn btn-outline-secondary" data-product-id="7">Ver características</button>
                 </div>                    
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -127,21 +127,6 @@
         </div>
     </div>
 </section>
-
-<script>
-    // Añadir un evento para manejar el clic en los botones con data-button2
-    document.querySelectorAll('.btn-outline-secondary').forEach(button => {
-        button.addEventListener('click', function() {
-            const productId = this.getAttribute('data-product-id'); // Obtener el ID del producto
-            viewDetails(productId); // Redirigir a la página de detalles
-        });
-    });
-
-    function viewDetails(productId) {
-        // Redirige a la página detalleProducto.html con el ID del producto en la URL
-        window.location.href = `detalleProducto.html?id=${productId}`;
-    }
-</script>
 
 
     <!-- /Slider -->

@@ -418,9 +418,9 @@ a.btn.btn-outline-primary:hover .fas {
 
 
 
-/*============================*/
-/* Estilos para la sección Hero */
-/*============================*/
+/*============================================*/
+/* Estilos para el carrusel de productos */
+/*============================================*/
 .hero {
     padding: 4rem 1rem;
     display: flex;
@@ -495,6 +495,35 @@ a.btn.btn-outline-primary:hover .fas {
         margin-top: 15px;
     }
 }
+
+
+
+/*==================================================*/
+/* Cambiar el tamaño de las flechas del carrsuel */
+/*==================================================*/
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: #000000; 
+    background-size: 2rem; 
+    border-radius: 50px;
+}
+
+/* Cambiar el tamaño al pasar el mouse (hover) */
+.carousel-control-prev-icon:hover,
+.carousel-control-next-icon:hover {
+    background-color: #685b33;
+}
+
+/* Cambiar la posición de las flechas */
+.carousel-control-prev, 
+.carousel-control-next {
+    width: 50px;
+    height: 50px; 
+    top: 50%;
+    transform: translateY(-80%);  
+}
+
+
 
 /*============================*/
 /* Barra Deslizadora */

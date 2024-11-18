@@ -39,6 +39,20 @@ document.getElementById('carouselExampleIndicators').addEventListener('slide.bs.
 // Inicializa el contenido en la primera diapositiva
 updateContent(0);
 
+// ----------------------------------------------------------------
+// Funcion para ver el prodcuto del carrusel
+// ----------------------------------------------------------------
+document.querySelectorAll('.btn-outline-secondary').forEach(button => {
+    button.addEventListener('click', function() {
+        const productId = this.getAttribute('data-product-id'); // Obtener el ID del producto
+        viewDetails(productId); // Redirigir a la página de detalles
+    });
+});
+
+function viewDetails(productId) {
+    window.location.href = `detalleProducto.html?id=${productId}`;
+}
+
 
 
 // ----------------------------------------------------------------
