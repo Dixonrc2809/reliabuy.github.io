@@ -64,17 +64,20 @@
                 </ul>
             </div>
     
-            <!-- Botón de búsqueda oculto y carrito de compras a la derecha -->
-            <div class="d-flex align-items-center">
-                <!-- Botón de búsqueda desplegable -->
-                <button class="btn btn-outline-secondary me-3" id="searchButton" onclick="toggleSearch()">
-                    <i class="fas fa-search"></i>
-                </button>
-                <form class="form-inline d-none" id="searchForm">
-                    <input class="form-control me-sm-2" type="search" aria-label="Search">
+        <!-- Botón de búsqueda oculto y carrito de compras a la derecha -->
+        <div class="d-flex align-items-center">
+            <!-- Botón de búsqueda desplegable -->
+            <button class="btn btn-secondary me-3" id="searchButton" onclick="toggleSearch()">
+                <i class="fas fa-search"></i>
+            </button>
+                <form class="form-inline d-none" id="searchForm" onsubmit="event.preventDefault();">
+                    <input class="form-control me-sm-2" type="search" placeholder="Buscar productos..." aria-label="Search" id="searchInput" oninput="searchProducts()">
                     <button class="btn btn-outline-success" type="submit">Buscar</button>
                 </form>
-    
+                
+                <!-- Contenedor para mostrar los resultados de la búsqueda -->
+                <div id="searchResults" class="search-results"></div>
+            
                 <!-- Carrito de compras -->
                 <a href="carritoCompra.html" class="btn btn-outline-primary">
                     <i class="fas fa-shopping-cart"></i>

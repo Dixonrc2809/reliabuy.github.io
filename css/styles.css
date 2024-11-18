@@ -11,9 +11,9 @@
     src: url('../fonts/Cedora-BoldStd.otf') format('opentype');
 }
 
-/*============================*/
+/*=======================================*/
 /* Estilo para el fondo degradado */
-/*============================*/
+/*=======================================*/
 body {
     font-family: 'FuentePrincipal', sans-serif; 
     background: linear-gradient(90deg, #e1f0ff, #ffe3db9c);
@@ -238,6 +238,47 @@ a.btn.btn-outline-primary:hover .fas {
     color: #000000;
 }
 
+
+
+/*==================================================*/
+/* Estilo de Resultados de bsuqueda por Nombre */
+/*==================================================*/
+.search-results {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    max-width: 300px;
+    z-index: 1000;
+    width: 100%;
+    top: 60px;
+}
+
+.resultado-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+}
+
+.resultado-item:hover {
+    background-color: #f1f1f1;
+}
+
+.resultado-imagen {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.resultado-detalles {
+    display: flex;
+    flex-direction: column;
+}
+
+
 /*============================*/
 /* Menú de hamburguesa desde la izquierda en dispositivos pequeños */
 /*============================*/
@@ -455,7 +496,7 @@ a.btn.btn-outline-primary:hover .fas {
 }
 
 
-    /*============================*/
+/*============================*/
 /* Carrusel de banners */
 /*============================*/
 #customCarousel {
@@ -503,9 +544,9 @@ a.btn.btn-outline-primary:hover .fas {
 
 
 
-/*============================*/
+/*=======================================*/
 /* Estilos para Productos Tendencia */
-/*============================*/
+/*=======================================*/
 .product-heading{
     text-align: center;
     color: #000000;
