@@ -874,6 +874,20 @@ hr {
     border-radius: 10px;
     }
 
+    /* Estilo para campos de género y fecha */
+#gender, #dob {
+    border: 2px solid #007bff2c;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+#gender:hover, #gender:focus, 
+#dob:hover, #dob:focus {
+    border-color: #ffc10733;
+}
+
+
+
     /* Color del icono */
     .icon-background {
         background-image: url('../imagenes/bannerCeleste2.png');
