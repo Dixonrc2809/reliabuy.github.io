@@ -47,14 +47,8 @@ function obtenerUbicacionYMostrarRuta() {
                 const userLat = position.coords.latitude;
                 const userLon = position.coords.longitude;
 
-                // Verificar si la ubicación es precisa
-                const precision = position.coords.accuracy;
-
-                if (precision <= 100) {  // Aumentamos el umbral de precisión a 100 metros
-                    agregarEnrutamiento(userLat, userLon);
-                } else {
-                    alert("La precisión de tu ubicación sigue siendo insuficiente. Intenta moverte a un lugar más abierto.");
-                }
+                // Llamamos a la función para agregar la ruta sin validar la proximidad
+                agregarEnrutamiento(userLat, userLon);
             },
             error => {
                 if (error.code === error.PERMISSION_DENIED) {
