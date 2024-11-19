@@ -856,25 +856,29 @@ hr {
 /*============================*/
 /*======= Contactos ======*/
 /*============================*/
-    .container.bootstrap.snippets.bootdeys {
-    margin-top: 100px; /* Ajusta el valor según tus necesidades */
-    }
-    .form-control {
+.container.bootstrap.snippets.bootdeys {
+    margin-top: 100px; 
+}
+
+.form-control {
     box-shadow: none !important;
     outline: none !important;
     border: 2px solid #007bff2c;
-    }
+}
 
-    .form-control:hover ,.form-control:focus{
+.form-control:hover ,.form-control:focus{
     border-color: #ffc10733;
-    }
+}
 
-    .contact-map {
-    background-color: #ededed;
-    border-radius: 10px;
-    }
+    
 
-    /* Estilo para campos de género y fecha */
+#map {
+    height: 400px; /* Ajusta la altura según tus necesidades */
+    width: 100%;   /* Ajusta al ancho completo del contenedor */
+    margin: 20px 0; /* Opcional, para separar del contenido */
+}
+    
+/* Estilo para campos de género y fecha */
 #gender, #dob {
     border: 2px solid #007bff2c;
     box-shadow: none !important;
