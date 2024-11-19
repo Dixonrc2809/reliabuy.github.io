@@ -1,50 +1,72 @@
-// Datos de productos con ventas (puedes actualizar estos datos con información real de tu base de datos o API)
-const productos = [
-    { nombre: "Auriculares Westmire A56", ventas: 120 },
-    { nombre: "Audifonos Sony WH-CH510", ventas: 80 },
-    { nombre: "Bose QuietComfort 45", ventas: 150 },
-    { nombre: "JBL Tune 750BTNC", ventas: 100 },
-    { nombre: "Airpods Max", ventas: 60 },
-    { nombre: "Teclado Mecánico Xpert-k9", ventas: 90 },
-    { nombre: "Mouse Gamer Logitech G502", ventas: 110 }
-];
 
-  // Ordenamos los productos por ventas de mayor a menor
-const productosOrdenados = productos.sort((a, b) => b.ventas - a.ventas);
+    $(document).ready(function() {
+      // Cargar y mostrar productos desde el archivo JSON
+      $.getJSON('productos.json', function(data) {
+        const container = $('#productos-container');
+        
+        data.forEach(producto => {
+          const card = `
+            <div class="col-md-4 mb-4">
+              <div class="card h-100">
+                <img src="${producto.imagen}" class="card-img-top" alt="${producto.nombreproducto}">
+                <div class="card-body">
+                  <h5 class="card-title">${producto.nombreproducto}</h5>
+                  <p class="card-text">${producto.descripcion.substring(0, 50)}...</p>
+                  <p class="card-text"><strong>Precio:</strong> $${producto.precio}</p>
+                  <button class="btn btn-primary btn-detalles" data-producto='${JSON.stringify(producto)}'>Ver Detalles</button>
+                </div>
+              </div>
+            </div>`;
+          
+          container.append(card);
+        });
 
-  // Seleccionamos los primeros 5 productos más vendidos (puedes cambiar este número)
-const productosMasVendidos = productosOrdenados.slice(0, 5);
+        $('.btn-detalles').on('click', function() {
+          const producto = JSON.parse($(this).attr('data-producto'));
 
-  // Extraemos los datos necesarios para el gráfico
-const labels = productosMasVendidos.map(producto => producto.nombre);
-const data = productosMasVendidos.map(producto => producto.ventas);
+          $('#modal-imagen').attr('src', producto.imagen);
+          $('#modal-nombre').text(producto.nombreproducto);
+          $('#modal-descripcion').text(producto.descripcion);
+          $('#modal-precio').text(producto.precio);
 
-  // Crear el gráfico donut
-const ctx = document.getElementById('myDonutChart').getContext('2d');
-new Chart(ctx, {
-    type: 'doughnut',
-    data: {
-      labels: labels, // Nombres de los productos más vendidos
-    datasets: [{
-        label: 'Ventas de productos',
-        data: data, // Datos de ventas de los productos más vendidos
-        backgroundColor: ['#FF5733', '#FF8D1A', '#FFBB33', '#FFDA33', '#33A0FF'], // Colores del gráfico
-        borderWidth: 1
-    }]
-    },
-    options: {
-    responsive: true,
-    plugins: {
-        legend: {
-        position: 'top',
-        },
-        tooltip: {
-        callbacks: {
-            label: function(tooltipItem) {
-            return tooltipItem.label + ': ' + tooltipItem.raw + ' ventas';
+          $('#productoModal').modal('show');
+        });
+      }).fail(function() {
+        Swal.fire({
+          title: 'Error',
+          text: 'No se pudo cargar el archivo JSON de productos.',
+          icon: 'error',
+          confirmButtonText: 'Aceptar'
+        });
+      });
+
+      
+
+      const productosVendidosData = {
+        labels: [
+            "Monitor LG 32UN880-B 32” 4K",
+            "Televisor Samsung Tizen™ Smart TV LED 65",
+            "Batidora KitchenAid",
+            "Audio-Technica AT2020",
+            "OnePlus 10 Pro"
+        ],
+        datasets: [{
+            data: [55, 27, 10, 5, 3],
+            backgroundColor: ["#4CAF50", "#8BC34A", "#FFC107", "#F44336", "#2196F3"]
+        }]
+    };
+    
+
+
+      new Chart(document.getElementById('productosVendidosData'), {
+        type: 'doughnut',
+        data: productosVendidosData,
+        options: {
+          responsive: true,
+          animation: {
+            animateScale: true
+          },
+          cutout: "50%"
         }
-        }
-        }
-    }
-    }
+      });
 });
