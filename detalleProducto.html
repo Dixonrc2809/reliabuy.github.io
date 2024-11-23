@@ -101,6 +101,7 @@
                         <i class="fa fa-share-alt" aria-hidden="true" id="shareIcon"></i>
                     </div>
                     <img id="productImage" src="" alt="Imagen del producto">
+                    <div class="zoom-box"></div>
                 </div>
                 <div class="photo-album">
                     <ul class="no-bullets">
@@ -114,6 +115,10 @@
                 <h1 id="productTitle"></h1>
                 <span>Código: <span id="productCode"></span></span>
             </div>
+            <div class="rating-summary-simple">
+                <span class="average-score" id="productRating"></span>
+                <span class="stars" id="productStars"></span>
+            </div>   
             <div class="price">
                 ₡ <span id="productPrice"></span>
             </div>
@@ -126,7 +131,6 @@
             <button class="buy--btn">Añadir al Carrito</button>
         </div>
     </section>
-    
 
     <!-- Modal -->
     <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
@@ -157,6 +161,10 @@
                     document.getElementById("productPrice").textContent = producto.precio;
                     document.getElementById("productImage").src = producto.imagen;
                     document.getElementById("productCode").textContent = producto.id;
+
+                     // Asignar la calificación y las estrellas
+                    document.getElementById("productRating").textContent = producto.calificacion;
+                    document.getElementById("productStars").innerHTML = generarEstrellas(producto.calificacion);
     
                     // Mostrar los detalles del producto
                     const productDetailsList = document.getElementById("productDetailsList");

@@ -115,16 +115,16 @@ img {
 	}
 }
 
-/*============================*/
+/*================================================*/
 /* ----- Tamaño del Modal de la Miniatura ----- */
-/*============================*/
+/*================================================*/
 .modal-dialog {
 	max-width: 450px; /* Ajusta este valor a tu preferencia */
 }
 
-/*============================*/
+/*=========================================*/
 /* ----- Informacion del producto ----- */
-/*============================*/
+/*==========================================*/
 .product__info {
 	padding: 0.8em 0;
 }
@@ -147,6 +147,7 @@ img {
 	margin: 1.5em 0;
 	color: #007bff;
 	font-size: 1.2em;
+	margin-top: 10px;
 
 	span {
 		padding-left: 0.15em;
@@ -288,12 +289,41 @@ img {
 }
 
 
+/*==============================================*/
+/* ----- Calificacion de prodcutos ----- */
+/*==============================================*/
+.average-score {
+    font-weight: bold;
+    color: #ff9900;
+}
+
+.stars {
+    color: #ff9900;
+    font-size: 1.2rem;
+}
 
 
+/*==============================================*/
+/* ----- Zoom en la foto de productos ----- */
+/*==============================================*/
+.zoom-box {
+	position: absolute;
+	width: 200px; 
+	height: 200px;
+	border: 2px solid #ccc;
+	display: none;
+	overflow: hidden;
+	pointer-events: none;
+	z-index: 10;
+}
 
-
-
-
+.zoom-box img {
+	position: absolute;
+	width: auto;
+	height: auto;
+	max-width: none;
+	transform-origin: top left;
+}
 
 
 

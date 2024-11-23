@@ -6,7 +6,8 @@
         "imagen": "./imagenes/Audifonos.png",
         "categoria": "Audifonos",
         "marca": "Westmire",
-        "detalles": "<ul><li>Cancelación de ruido</li><li>Sonido envolvente</li><li>Diseño ergonómico</li></ul>"
+        "detalles": "<ul><li>Cancelación de ruido</li><li>Sonido envolvente</li><li>Diseño ergonómico</li></ul>",
+        "calificacion": 4.5
     },
     {
         "id": 2,
@@ -15,7 +16,8 @@
         "imagen": "./imagenes/audifonosSony.png",
         "categoria": "Audifonos",
         "marca": "Sony",
-        "detalles": "<ul><li>Calidad de Sonido</li><li>Rendimiento de llamadas mejorado</li><li>50 horas de duración de batería</li></ul>"
+        "detalles": "<ul><li>Calidad de Sonido</li><li>Rendimiento de llamadas mejorado</li><li>50 horas de duración de batería</li></ul>",
+        "calificacion": 4.6
     },
     {
         "id": 3,
@@ -24,7 +26,8 @@
         "imagen": "./imagenes/bose_auriculares.png",
         "categoria": "Audifonos",
         "marca": "Bose",
-        "detalles": "<ul><li>Cancelación activa de ruido</li><li>Sonido claro y equilibrado</li><li>Hasta 24 horas de batería</li></ul>"
+        "detalles": "<ul><li>Cancelación activa de ruido</li><li>Sonido claro y equilibrado</li><li>Hasta 24 horas de batería</li></ul>",
+        "calificacion": 4.5
     },
     {
         "id": 4,
@@ -33,7 +36,8 @@
         "imagen": "./imagenes/jbl_tune.webp",
         "categoria": "Audifonos",
         "marca": "JBL",
-        "detalles": "<ul><li>Cancelación de ruido</li><li>Sonido JBL Pure Bass</li><li>Hasta 15 horas de batería</li></ul>"
+        "detalles": "<ul><li>Cancelación de ruido</li><li>Sonido JBL Pure Bass</li><li>Hasta 15 horas de batería</li></ul>",
+        "calificacion": 4.8
     },
     {
         "id": 5,
@@ -42,7 +46,8 @@
         "imagen": "./imagenes/airpods.png",
         "categoria": "Audifonos",
         "marca": "Apple",
-        "detalles": "<ul><li>Cancelación activa de ruido</li><li>Sonido de alta fidelidad</li><li>Conectividad Bluetooth</li></ul>"
+        "detalles": "<ul><li>Cancelación activa de ruido</li><li>Sonido de alta fidelidad</li><li>Conectividad Bluetooth</li></ul>",
+        "calificacion": 4.7
     },
     {
         "id": 6,
@@ -51,7 +56,8 @@
         "imagen": "./imagenes/teclado2.png",
         "categoria": "Gaming",
         "marca": "Xpert",
-        "detalles": "<ul><li>Iluminación RGB</li><li>Teclas mecánicas</li><li>Diseño robusto</li></ul>"
+        "detalles": "<ul><li>Iluminación RGB</li><li>Teclas mecánicas</li><li>Diseño robusto</li></ul>",
+        "calificacion": 4.4
     },
     {
         "id": 7,
@@ -60,7 +66,8 @@
         "imagen": "./imagenes/mouse.png",
         "categoria": "Gaming",
         "marca": "Logitech",
-        "detalles": "<ul><li>Sensor óptico</li><li>Alta precisión</li><li>Ergonomía mejorada</li></ul>"
+        "detalles": "<ul><li>Sensor óptico</li><li>Alta precisión</li><li>Ergonomía mejorada</li></ul>",
+        "calificacion": 4.5
     },
     {
         "id": 8,
@@ -69,7 +76,8 @@
         "imagen": "./imagenes/teclado-razer.png",
         "categoria": "Gaming",
         "marca": "Razer",
-        "detalles": "<ul><li>Teclas ópticas</li><li>Iluminación RGB personalizable</li><li>Construcción de aluminio</li></ul>"
+        "detalles": "<ul><li>Teclas ópticas</li><li>Iluminación RGB personalizable</li><li>Construcción de aluminio</li></ul>",
+        "calificacion": 4.3
     },
     {
         "id": 9,
@@ -78,7 +86,8 @@
         "imagen": "./imagenes/laptop_alienware.png",
         "categoria": "Gaming",
         "marca": "Alienware",
-        "detalles": "<ul><li>Procesador Intel i7</li><li>16GB RAM</li><li>RTX 3070</li></ul>"
+        "detalles": "<ul><li>Procesador Intel i7</li><li>16GB RAM</li><li>RTX 3070</li></ul>",
+        "calificacion": 4.6
     },
     {
         "id": 10,
@@ -87,7 +96,8 @@
         "imagen": "./imagenes/galaxy_s23.png",
         "categoria": "Celulares",
         "marca": "Samsung",
-        "detalles": "<ul><li>Cámara de 200MP</li><li>Pantalla Dynamic AMOLED 2X</li><li>5000mAh de batería</li></ul>"
+        "detalles": "<ul><li>Cámara de 200MP</li><li>Pantalla Dynamic AMOLED 2X</li><li>5000mAh de batería</li></ul>",
+        "calificacion": 4.9
     },
     {
         "id": 11,
@@ -96,7 +106,8 @@
         "imagen": "./imagenes/iphone.png",
         "categoria": "Celulares",
         "marca": "Apple",
-        "detalles": "<ul><li>Pantalla Super Retina</li><li>256GB Almacenamiento</li><li>Cámara avanzada</li></ul>"
+        "detalles": "<ul><li>Pantalla Super Retina</li><li>256GB Almacenamiento</li><li>Cámara avanzada</li></ul>",
+        "calificacion": 4.8
     },
     {
         "id": 12,
@@ -105,7 +116,8 @@
         "imagen": "./imagenes/mi_11.png",
         "categoria": "Celulares",
         "marca": "Xiaomi",
-        "detalles": "<ul><li>Cámara de 50MP</li><li>Pantalla AMOLED</li><li>120Hz</li></ul>"
+        "detalles": "<ul><li>Cámara de 50MP</li><li>Pantalla AMOLED</li><li>120Hz</li></ul>",
+        "calificacion": 4.4
     },
     {
         "id": 13,
@@ -114,7 +126,8 @@
         "imagen": "./imagenes/oneplus_10.webp",
         "categoria": "Celulares",
         "marca": "OnePlus",
-        "detalles": "<ul><li>Cámara Hasselblad</li><li>Pantalla Fluid AMOLED</li><li>4500mAh</li></ul>"
+        "detalles": "<ul><li>Cámara Hasselblad</li><li>Pantalla Fluid AMOLED</li><li>4500mAh</li></ul>",
+        "calificacion": 4.2
     },
     {
         "id": 14,
@@ -123,7 +136,8 @@
         "imagen": "./imagenes/microfono1.png",
         "categoria": "Microfonos",
         "marca": "",
-        "detalles": "<ul><li>Sonido cálido y suave</li><li>Frecuencia de amplio alcance</li><li>Preamplificador integrado</li></ul>"
+        "detalles": "<ul><li>Sonido cálido y suave</li><li>Frecuencia de amplio alcance</li><li>Preamplificador integrado</li></ul>",
+        "calificacion": 4.1
     },
     {
         "id": 15,
@@ -132,7 +146,8 @@
         "imagen": "./imagenes/blue-yeti.webp",
         "categoria": "Microfonos",
         "marca": "Blue",
-        "detalles": "<ul><li>Sonido de alta calidad</li><li>Microfono USB</li><li>Control de ganancia</li></ul>"
+        "detalles": "<ul><li>Sonido de alta calidad</li><li>Microfono USB</li><li>Control de ganancia</li></ul>",
+        "calificacion": 4.5
     },
     {
         "id": 16,
@@ -141,7 +156,8 @@
         "imagen": "./imagenes/audio-technica.png",
         "categoria": "Microfonos",
         "marca": "Audio-Technica",
-        "detalles": "<ul><li>Cardioide</li><li>Conectividad XLR</li><li>Respuesta de frecuencia amplia</li></ul>"
+        "detalles": "<ul><li>Cardioide</li><li>Conectividad XLR</li><li>Respuesta de frecuencia amplia</li></ul>",
+        "calificacion": 4.8
     },
     {
         "id": 17,
@@ -150,7 +166,8 @@
         "imagen": "./imagenes/shure.avif",
         "categoria": "Microfonos",
         "marca": "Shure",
-        "detalles": "<ul><li>Micrófono dinámico</li><li>Excelente rechazo de ruido</li><li>Ideal para estudio</li></ul>"
+        "detalles": "<ul><li>Micrófono dinámico</li><li>Excelente rechazo de ruido</li><li>Ideal para estudio</li></ul>",
+        "calificacion": 4.8
     },
     {
         "id": 18,
@@ -159,7 +176,8 @@
         "imagen": "./imagenes/microondas3.png",
         "categoria": "Cocina",
         "marca": "Whirlpool",
-        "detalles": "<ul><li>Calor rápido</li><li>Función de descongelado</li><li>Capacidad de 30L</li></ul>"
+        "detalles": "<ul><li>Calor rápido</li><li>Función de descongelado</li><li>Capacidad de 30L</li></ul>",
+        "calificacion": 4.6
     },
     {
         "id": 19,
@@ -168,7 +186,8 @@
         "imagen": "./imagenes/refrigeradora.png",
         "categoria": "Cocina",
         "marca": "Samsung",
-        "detalles": "<ul><li>Capacidad 400L</li><li>Frío No Frost</li><li>Energy Star</li></ul>"
+        "detalles": "<ul><li>Capacidad 400L</li><li>Frío No Frost</li><li>Energy Star</li></ul>",
+        "calificacion": 4.5
     },
     {
         "id": 20,
@@ -177,7 +196,8 @@
         "imagen": "./imagenes/olla_presion.webp",
         "categoria": "Cocina",
         "marca": "Philips",
-        "detalles": "<ul><li>Capacidad de 6L</li><li>Modo de cocción rápido</li><li>Función de temporizador</li></ul>"
+        "detalles": "<ul><li>Capacidad de 6L</li><li>Modo de cocción rápido</li><li>Función de temporizador</li></ul>",
+        "calificacion": 4.2
     },
     {
         "id": 21,
@@ -186,7 +206,8 @@
         "imagen": "./imagenes/batidora.png",
         "categoria": "Cocina",
         "marca": "KitchenAid",
-        "detalles": "<ul><li>10 velocidades</li><li>Incluye varilla para batir</li><li>Motor potente</li></ul>"
+        "detalles": "<ul><li>10 velocidades</li><li>Incluye varilla para batir</li><li>Motor potente</li></ul>",
+        "calificacion": 4.4
     },
     {
         "id": 22,
@@ -195,7 +216,8 @@
         "imagen": "./imagenes/pantalla.png",
         "categoria": "Pantallas",
         "marca": "Samsung",
-        "detalles": "<ul><li>Resolución 4K</li><li>HDR</li><li>Smart TV de 65 pulgadas</li></ul>"
+        "detalles": "<ul><li>Resolución 4K</li><li>HDR</li><li>Smart TV de 65 pulgadas</li></ul>",
+        "calificacion": 4.6
     },
     {
         "id": 23,
@@ -204,7 +226,8 @@
         "imagen": "./imagenes/sony_bravia.png",
         "categoria": "Pantallas",
         "marca": "Sony",
-        "detalles": "<ul><li>Pantalla OLED</li><li>Resolución 4K</li><li>Audio Dolby Atmos</li></ul>"
+        "detalles": "<ul><li>Pantalla OLED</li><li>Resolución 4K</li><li>Audio Dolby Atmos</li></ul>",
+        "calificacion": 4.7
     },
     {
         "id": 24,
@@ -213,7 +236,8 @@
         "imagen": "./imagenes/lg_32.png",
         "categoria": "Pantallas",
         "marca": "LG",
-        "detalles": "<ul><li>Pantalla 4K UHD</li><li>Diseño ergonómico</li><li>Conectividad USB-C</li></ul>"
+        "detalles": "<ul><li>Pantalla 4K UHD</li><li>Diseño ergonómico</li><li>Conectividad USB-C</li></ul>",
+        "calificacion": 4.1
     },
     {
         "id": 25,
@@ -222,7 +246,8 @@
         "imagen": "./imagenes/samsung_qled.png",
         "categoria": "Pantallas",
         "marca": "Samsung",
-        "detalles": "<ul><li>Resolución 8K</li><li>Panel QLED</li><li>HDR10+</li></ul>"
+        "detalles": "<ul><li>Resolución 8K</li><li>Panel QLED</li><li>HDR10+</li></ul>",
+        "calificacion": 4.9
     },
     {
         "id": 26,
@@ -231,7 +256,8 @@
         "imagen": "./imagenes/sillon2.png",
         "categoria": "Muebles",
         "marca": "",
-        "detalles": "<ul><li>Comodidad garantizada</li><li>Tapizado resistente y fácil de limpiar</li><li>Base de madera robusta y durable</li></ul>"
+        "detalles": "<ul><li>Comodidad garantizada</li><li>Tapizado resistente y fácil de limpiar</li><li>Base de madera robusta y durable</li></ul>",
+        "calificacion": 4.3
     },
     {
         "id": 27,
@@ -240,7 +266,8 @@
         "imagen": "./imagenes/sillon3.png",
         "categoria": "Muebles",
         "marca": "",
-        "detalles": "<ul><li>Tapizado de cuero sintético</li><li>Diseño moderno</li><li>Espacio amplio para 3 personas</li></ul>"
+        "detalles": "<ul><li>Tapizado de cuero sintético</li><li>Diseño moderno</li><li>Espacio amplio para 3 personas</li></ul>",
+        "calificacion": 4.6
     },
     {
         "id": 28,
@@ -249,7 +276,8 @@
         "imagen": "./imagenes/mesa.png",
         "categoria": "Muebles",
         "marca": "",
-        "detalles": "<ul><li>Hecha a mano</li><li>Diseño rústico</li><li>Dimensiones perfectas para el salón</li></ul>"
+        "detalles": "<ul><li>Hecha a mano</li><li>Diseño rústico</li><li>Dimensiones perfectas para el salón</li></ul>",
+        "calificacion": 4.7
     },
     {
         "id": 29,
@@ -258,7 +286,8 @@
         "imagen": "./imagenes/librero.png",
         "categoria": "Muebles",
         "marca": "",
-        "detalles": "<ul><li>Espacio amplio para libros</li><li>Diseño vertical</li><li>Fácil de ensamblar</li></ul>"
+        "detalles": "<ul><li>Espacio amplio para libros</li><li>Diseño vertical</li><li>Fácil de ensamblar</li></ul>",
+        "calificacion": 4.3
     },
     {
         "id": 30,
@@ -267,7 +296,8 @@
         "imagen": "./imagenes/lg_twinwash.png",
         "categoria": "Lavadoras",
         "marca": "LG",
-        "detalles": "<ul><li>TWINWash™ para doble carga</li><li>Tecnología TurboWash™</li><li>Control remoto con ThinQ™</li></ul>"
+        "detalles": "<ul><li>TWINWash™ para doble carga</li><li>Tecnología TurboWash™</li><li>Control remoto con ThinQ™</li></ul>",
+        "calificacion": 4.5
     },
     {
         "id": 31,
@@ -276,7 +306,8 @@
         "imagen": "./imagenes/lg_lavadora.png",
         "categoria": "Lavadoras",
         "marca": "LG",
-        "detalles": "<ul><li>Tecnología AI DD</li><li>Steam para eliminar alérgenos</li><li>Conectividad Wi-Fi</li></ul>"
+        "detalles": "<ul><li>Tecnología AI DD</li><li>Steam para eliminar alérgenos</li><li>Conectividad Wi-Fi</li></ul>",
+        "calificacion": 4.4
     },
     {
         "id": 32,
@@ -285,7 +316,8 @@
         "imagen": "./imagenes/refri_whirpool.png",
         "categoria": "Cocina",
         "marca": "Whirlpool",
-        "detalles": "<ul><li>Puerta InstaView</li><li>Door-in-Door</li><li>Compresor Inverter Linear</li></ul>"
+        "detalles": "<ul><li>Puerta InstaView</li><li>Door-in-Door</li><li>Compresor Inverter Linear</li></ul>",
+        "calificacion": 4.6
     },
     {
         "id": 33,
@@ -294,7 +326,8 @@
         "imagen": "./imagenes/whirlpool_lavadora.png",
         "categoria": "Lavadoras",
         "marca": "Whirlpool",
-        "detalles": "<ul><li>Lavado eficiente con 6th Sense</li><li>Capacidad de 18kg</li><li>Función de lavado rápido</li></ul>"
+        "detalles": "<ul><li>Lavado eficiente con 6th Sense</li><li>Capacidad de 18kg</li><li>Función de lavado rápido</li></ul>",
+        "calificacion": 4.8
     },
     {
         "id": 34,
@@ -303,7 +336,8 @@
         "imagen": "./imagenes/iphone_15_pro_max.png",
         "categoria": "Celulares",
         "marca": "Apple",
-        "detalles": "<ul><li>Pantalla Super Retina XDR</li><li>Chip A17 Pro</li><li>Cámara de 48MP</li></ul>"
+        "detalles": "<ul><li>Pantalla Super Retina XDR</li><li>Chip A17 Pro</li><li>Cámara de 48MP</li></ul>",
+        "calificacion": 4.7
     },
     {
         "id": 35,
@@ -312,7 +346,8 @@
         "imagen": "./imagenes/iphone_15_plus.png",
         "categoria": "Celulares",
         "marca": "Apple",
-        "detalles": "<ul><li>Pantalla OLED de 6.7”</li><li>Chip A16 Bionic</li><li>Cámara Dual de 48MP</li></ul>"
+        "detalles": "<ul><li>Pantalla OLED de 6.7”</li><li>Chip A16 Bionic</li><li>Cámara Dual de 48MP</li></ul>",
+        "calificacion": 4.6
     },
     {
         "id": 36,
@@ -321,7 +356,8 @@
         "imagen": "./imagenes/ipad_pro_m4.png",
         "categoria": "Celulares",
         "marca": "Apple",
-        "detalles": "<ul><li>Almacenamiento de 265GB</li><li>Pantalla ProMotion de 120Hz</li><li>Cámara Triple de 48MP</li></ul>"
+        "detalles": "<ul><li>Almacenamiento de 265GB</li><li>Pantalla ProMotion de 120Hz</li><li>Cámara Triple de 48MP</li></ul>",
+        "calificacion": 4.8
     },
     {
         "id": 37,
@@ -330,7 +366,8 @@
         "imagen": "./imagenes/iphone_13_mini.png",
         "categoria": "Celulares",
         "marca": "Apple",
-        "detalles": "<ul><li>Pantalla Super Retina XDR de 5.4”</li><li>Chip A15 Bionic</li><li>Cámara Dual de 12MP</li></ul>"
+        "detalles": "<ul><li>Pantalla Super Retina XDR de 5.4”</li><li>Chip A15 Bionic</li><li>Cámara Dual de 12MP</li></ul>",
+        "calificacion": 4.4
     },
     {
         "id": 38,
@@ -339,7 +376,8 @@
         "imagen": "./imagenes/omen16.png",
         "categoria": "Gaming",
         "marca": "HP",
-        "detalles": "<ul><li>Procesador AMD Ryzen 7</li><li>Tarjeta gráfica NVIDIA RTX 3050</li><li>Pantalla 16\" Full HD</li></ul>"
+        "detalles": "<ul><li>Procesador AMD Ryzen 7</li><li>Tarjeta gráfica NVIDIA RTX 3050</li><li>Pantalla 16\" Full HD</li></ul>",
+        "calificacion": 4.1
     },
     {
         "id": 39,
@@ -348,7 +386,8 @@
         "imagen": "./imagenes/desktop_hp.png",
         "categoria": "Gaming",
         "marca": "HP",
-        "detalles": "<ul><li>Procesador AMD Ryzen 5 3400G</li><li>8GB RAM</li><li>Tarjeta gráfica GTX 3060</li></ul>"
+        "detalles": "<ul><li>Procesador AMD Ryzen 5 3400G</li><li>8GB RAM</li><li>Tarjeta gráfica GTX 3060</li></ul>",
+        "calificacion": 4.2
     },
     {
         "id": 40,
@@ -357,6 +396,7 @@
         "imagen": "./imagenes/victus15.png",
         "categoria": "Gaming",
         "marca": "HP",
-        "detalles": "<ul><li>Procesador Intel Core i5 12ª gen</li><li>8GB RAM</li><li>Tarjeta gráfica NVIDIA GTX 1650</li></ul>"
+        "detalles": "<ul><li>Procesador Intel Core i5 12ª gen</li><li>8GB RAM</li><li>Tarjeta gráfica NVIDIA GTX 1650</li></ul>",
+        "calificacion": 4.6
     }    
 ]

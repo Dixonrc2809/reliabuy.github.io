@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reliabuy</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Colocar logo en la Pestaña -->
+    <link rel="icon" href="./imagenes/logoNav.png" type="image/png">
+
+    <!-- SweetAlert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+	<!-- Font Awesome Icon -->
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+    <!-- CSS de Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.css" />
+
+    <!-- CSS-->
+    <link rel="stylesheet" href="./css/styles.css">
+
+</head>
+<body>
+
+
+    <header class="header">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <!-- Logo en la izquierda -->
+
+        <!-- ***** Logo ***** -->
+        <a href="index.html" class="logo"><img src="./imagenes/logoNavBlanco.png" alt="Logo"></a>
+
+        <!-- Botón de menú hamburguesa para pantallas pequeñas -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Contenido de la barra de navegación -->
+        <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+        <!-- Menú central -->
+        <ul class="navbar-nav">
+            <li class="nav-item">
+            <a class="nav-link me-4" href="index.html">Inicio<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link me-4" href="productos.html">Productos</a>
+            </li>
+            <li class="nav-item active">
+            <a class="nav-link me-4" href="contactanos.html">Contáctanos</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link me-4" href="FAQs.html">Preguntas Frecuentes</a>
+            </li>
+            <!-- Dropdown para Productos -->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle me-4" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fas fa-bars me-2 small-icon"></i> Información
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="blog.html">Blog</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="nosotros.html">Nosotros</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="acercaDe.html">Acerca De</a></li>
+                </ul>
+            </li>
+            
+        </ul>
+        </div>
+
+        <!-- Botón de búsqueda oculto y carrito de compras a la derecha -->
+        <div class="d-flex align-items-center">
+            <!-- Botón de búsqueda desplegable -->
+            <button class="btn btn-secondary me-3" id="searchButton" onclick="toggleSearch()">
+                <i class="fas fa-search"></i>
+            </button>
+                <form class="form-inline d-none" id="searchForm" onsubmit="event.preventDefault();">
+                    <input class="form-control me-sm-2" type="search" placeholder="Buscar productos..." aria-label="Search" id="searchInput" oninput="searchProducts()" autocomplete="off">
+                </form>
+                
+                <!-- Contenedor para mostrar los resultados de la búsqueda -->
+                <div id="searchResults" class="search-results"></div>
+
+        <!-- Carrito de compras -->
+        <a href="carritoCompra.html" class="btn btn-outline-primary">
+            <i class="fas fa-shopping-cart"></i>
+        </a>
+        <a class="nav-link" href="#" id="view-cart">
+            <span class="badge badge-pill badge-danger" id="cart-indicator" style="display: none;">¡Pagar!</span>
+        </a>
+        </div>
+    </nav>
+    </header>
+
+
+<!-- Contáctanos -->
+<div class="containerMetodoPago">
+    <h1 class="h3 mb-5">Método de Pago</h1>
+    <div class="row">
+        <!-- Izquierda -->
+        <div class="col-lg-9">
+            <div class="accordion" id="accordionPayment">
+                <!-- Tarjeta de crédito -->
+                <div class="accordion-item mb-3">
+                    <h2 class="h5 px-4 py-3 accordion-header d-flex justify-content-between align-items-center">
+                        <div class="form-check w-100 collapsed" data-bs-toggle="collapse" data-bs-target="#collapseCC" aria-expanded="false">
+                            <input class="form-check-input" type="radio" name="payment" id="payment1">
+                            <label class="form-check-label pt-1" for="payment1">
+                                Tarjeta de Crédito
+                            </label>
+                        </div>
+                        <span>
+                            <i class="fas fa-credit-card" style="font-size: 30px;"></i>
+                        </span>
+                    </h2>
+                    <div id="collapseCC" class="accordion-collapse collapse show" data-bs-parent="#accordionPayment" style="">
+                        <div class="accordion-body">
+                            <div class="mb-3">
+                                <label class="form-label">Número de tarjeta</label>
+                                <input type="text" class="form-control" placeholder="">
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="mb-3">
+                                        <label class="form-label">Nombre en la tarjeta</label>
+                                        <input type="text" class="form-control" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="col-lg-3">
+                                    <div class="mb-3">
+                                        <label class="form-label">Fecha de vencimiento</label>
+                                        <input type="text" class="form-control" placeholder="MM/AA">
+                                    </div>
+                                </div>
+                                <div class="col-lg-3">
+                                    <div class="mb-3">
+                                        <label class="form-label">Código CVV</label>
+                                        <input type="password" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- PayPal -->
+                <div class="accordion-item mb-3 border">
+                    <h2 class="h5 px-4 py-3 accordion-header d-flex justify-content-between align-items-center">
+                        <div class="form-check w-100 collapsed" data-bs-toggle="collapse" data-bs-target="#collapsePP" aria-expanded="false">
+                            <input class="form-check-input" type="radio" name="payment" id="payment2">
+                            <label class="form-check-label pt-1" for="payment2">
+                                PayPal
+                            </label>
+                        </div>
+                        <span>
+                            <i class="fab fa-paypal" style="font-size: 30px;"></i>
+                        </span>
+                    </h2>
+                    <div id="collapsePP" class="accordion-collapse collapse" data-bs-parent="#accordionPayment" style="">
+                        <div class="accordion-body">
+                            <div class="px-2 col-lg-6 mb-3">
+                                <label class="form-label">Correo electrónico</label>
+                                <input type="email" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Derecha -->
+        <div class="col-lg-3">
+            <div class="card position-sticky top-0">
+                <div class="p-3 bg-light bg-opacity-10">
+                    <h6 class="card-title mb-3">Orden</h6>
+                    <div class="d-flex justify-content-between mb-1 small">
+                        <span>Subtotal</span> <span>$214.50</span>
+                    </div>
+                    <div class="d-flex justify-content-between mb-1 small">
+                        <span>Envío</span> <span>$20.00</span>
+                    </div>
+                    <hr>
+                    <div class="d-flex justify-content-between mb-4 small">
+                        <span>TOTAL</span> <strong class="text-dark">$224.50</strong>
+                    </div>
+                    <div class="form-check mb-1 small">
+                        <input class="form-check-input" type="checkbox" value="" id="tnc">
+                        <label class="form-check-label" for="tnc">
+                            Acepto los <a href="terminosyCondiciones.html">términos y condiciones</a>
+                        </label>
+                    </div>
+                    <div class="form-check mb-3 small">
+                        <input class="form-check-input" type="checkbox" value="" id="subscribe">
+                        <label class="form-check-label" for="subscribe">
+                            Deseo recibir correos sobre actualizaciones de productos y eventos</a>
+                        </label>
+                    </div>
+                    <button class="btn btn-primary w-100 mt-2">Realizar pedido</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    <!-- Footer -->
+    <footer class="footer bg-light py-4">
+        <div class="container">
+            <div class="row text-center text-md-start">
+                <div class="col-6 col-md-3 footer-col mb-4">
+                    <h4>Horario</h4>
+                    <ul class="list-unstyled">
+                        <li>De lunes a viernes</a></li>
+                        <li>8 a.m. - 5 p.m.</a></li>
+                        <hr>
+                        <li>Sábados y domingos</a></li>
+                        <li>9 a.m. - 6 p.m.</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-3 footer-col mb-4">
+                    <h4>Información</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="/index.html#categorias">Categorías</a></li>
+                        <li><a href="/index.html#productosTendencia">Productos en Tendencia</a></li>
+                        <li><a href="contactanos.html">Contáctanos</a></li>
+                        <li><a href="FAQs.html">Preguntas frecuentes</a></li>
+                        <li><a href="nosotros.html">Nosotros</a></li>
+                        <li><a href="terminosyCondiciones.html">Terminos y Condiciones</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-6 col-md-3 footer-col mb-4">
+                    <h4>Síguenos</h4>
+                    <div class="social-links d-flex justify-content-center justify-content-md-start">
+                        <a href="https://www.facebook.com/" class="me-2"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.x.com/" class="me-2"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/" class="me-2"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/"><i class="fab fa-tiktok"></i></a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            <!-- Métodos de Pago -->
+            <div class="text-center my-4">
+                <h4>Métodos de Pago</h4>
+                <div class="d-flex justify-content-center">
+                    <a class="me-5 payment-icon"><i class="fab fa-cc-visa fa-2x"></i></a>
+                    <a class="me-5 payment-icon"><i class="fab fa-cc-mastercard fa-2x"></i></a>
+                    <a class="me-5 payment-icon"><i class="fab fa-cc-paypal fa-2x"></i></a>
+                    <a class="payment-icon"><i class="fab fa-apple-pay fa-2x"></i></a>
+                </div>
+            </div>
+            <p>&copy; 2024 Copyright. Todos los derechos reservados</p>
+            <a href="#" class="btn-flotante"><i class="fa fa-arrow-up"></i></a>
+        </div>
+    </footer>
+
+    <!-- jQuery, Popper.js y JavaScript de Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+    <!-- Scripts -->
+	<script src="js/main.js"></script>
+    <script src="js/botonBusqueda.js"></script>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

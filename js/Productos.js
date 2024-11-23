@@ -135,3 +135,72 @@ document.getElementById('shareIcon').addEventListener('click', function() {
         alert('El compartir no es compatible en este navegador.');
     }
 });
+
+
+
+// ----------------------------------------------------------------
+// Funcionaldiad del zoom en productos
+// ----------------------------------------------------------------
+const photoMain = document.querySelector('.photo-main');
+const mainImage = document.querySelector('#productImage');
+const zoomBox = document.querySelector('.zoom-box');
+
+// Mostrar el cuadro de zoom solo en la sección .photo-main
+photoMain.addEventListener('mousemove', (e) => {
+    const rect = photoMain.getBoundingClientRect();
+    const x = e.clientX - rect.left; // Posición del mouse dentro de .photo-main
+    const y = e.clientY - rect.top;
+
+  // Mostrar el cuadro de zoom
+    zoomBox.style.display = 'block';
+
+  // Posicionar el cuadro de zoom relativo al mouse
+  const boxSize = 200; // Tamaño del cuadro de zoom
+    const zoomOffsetX = boxSize / 2;
+    const zoomOffsetY = boxSize / 2;
+    zoomBox.style.left = `${x - zoomOffsetX}px`;
+    zoomBox.style.top = `${y - zoomOffsetY}px`;
+
+  // Configurar la imagen dentro del cuadro de zoom
+    zoomBox.innerHTML = `<img src="${mainImage.src}" alt="Zoom">`;
+    const zoomImg = zoomBox.querySelector('img');
+
+  // Ampliar la imagen dentro del cuadro de zoom
+  const zoomFactor = 2; // Nivel de zoom
+  zoomImg.style.width = `${mainImage.offsetWidth * zoomFactor}px`;
+  zoomImg.style.height = `${mainImage.offsetHeight * zoomFactor}px`;
+
+  // Calcular la posición de la imagen ampliada dentro del cuadro de zoom
+  const zoomX = (x / mainImage.offsetWidth) * (zoomImg.offsetWidth - boxSize);
+  const zoomY = (y / mainImage.offsetHeight) * (zoomImg.offsetHeight - boxSize);
+    zoomImg.style.transform = `translate(-${zoomX}px, -${zoomY}px)`;
+});
+
+// Ocultar el cuadro de zoom al salir de la sección .photo-main
+photoMain.addEventListener('mouseleave', () => {
+    zoomBox.style.display = 'none';
+});
+
+// Asegurar que el cuadro de zoom no aparezca al pasar por otras áreas
+document.querySelector('.photo-album').addEventListener('mousemove', () => {
+    zoomBox.style.display = 'none';
+});
+
+
+
+
+// ----------------------------------------------------------------
+// Funcionaldiad apra calificacion de productos
+// ----------------------------------------------------------------
+function getURLParameter(name) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(name);
+}
+
+// Función para generar las estrellas dinámicamente
+function generarEstrellas(calificacion) {
+    const estrellasCompletas = Math.floor(calificacion);
+    const tieneMediaEstrella = calificacion % 1 >= 0.5;
+    const estrellas = '★'.repeat(estrellasCompletas) + (tieneMediaEstrella ? '★' : '☆') + '☆'.repeat(5 - estrellasCompletas - (tieneMediaEstrella ? 1 : 0));
+    return estrellas;
+}
