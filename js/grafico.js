@@ -44,29 +44,73 @@
 
       const productosVendidosData = {
         labels: [
-            "Monitor LG 32UN880-B 32” 4K",
-            "Televisor Samsung Tizen™ Smart TV LED 65",
-            "Batidora KitchenAid",
-            "Audio-Technica AT2020",
-            "OnePlus 10 Pro"
+            "Pizza Margarita", 
+            "Hamburguesa Clásica", 
+            "Sushi Roll", 
+            "Pasta Alfredo", 
+            "Ensalada César", 
+            "Taco Mexicano"
         ],
         datasets: [{
-            data: [55, 27, 10, 5, 3],
-            backgroundColor: ["#4CAF50", "#8BC34A", "#FFC107", "#F44336", "#2196F3"]
+            label: "Cantidad Vendida",
+            data: [15, 14, 13, 12, 11, 10],
+            backgroundColor: [
+                "#001F4D", // Azul marino oscuro
+                "#003080", // Azul intermedio oscuro
+                "#0040B3", // Azul intermedio
+                "#007BFF", // Azul brillante
+                "#3385CC", // Azul claro oscuro
+                "#66A3FF"  // Azul suave ajustado
+            ]
         }]
     };
     
-
-
-      new Chart(document.getElementById('productosVendidosData'), {
-        type: 'doughnut',
-        data: productosVendidosData,
-        options: {
-          responsive: true,
-          animation: {
-            animateScale: true
-          },
-          cutout: "50%"
+    // Opciones del gráfico con formato de porcentaje en los tooltips
+    const opcionesProductosVendidos = {
+        responsive: true,
+        plugins: {
+            tooltip: {
+                callbacks: {
+                    label: function(tooltipItem) {
+                        const valor = tooltipItem.raw;
+                        return `${valor}%`; // Mostrar como porcentaje
+                    }
+                }
+            }
         }
-      });
+    };
+    
+    
+    
+    
+    new Chart(document.getElementById('productosVendidosData'), {
+      type: 'bar',
+      data: productosVendidosData,
+      options: {
+          responsive: true,
+          scales: {
+              y: {
+                  beginAtZero: true,
+                  ticks: {
+                      callback: function(value) {
+                          return value + '%'; // Agrega el signo de porcentaje en el eje Y
+                      }
+                  }
+              }
+          },
+          plugins: {
+              tooltip: {
+                  callbacks: {
+                      label: function(tooltipItem) {
+                          const valor = tooltipItem.raw;
+                          return `Cantidad Vendida: ${valor}%`; // Formato del tooltip con %
+                      }
+                  }
+              },
+              legend: {
+                  display: false // Oculta la leyenda
+              }
+          }
+      }
+  });      
 });
