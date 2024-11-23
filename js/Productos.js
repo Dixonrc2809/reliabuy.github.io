@@ -139,7 +139,7 @@ document.getElementById('shareIcon').addEventListener('click', function() {
 
 
 // ----------------------------------------------------------------
-// Funcionaldiad del zoom en productos
+// Funcionalidad del zoom en productos
 // ----------------------------------------------------------------
 const photoMain = document.querySelector('.photo-main');
 const mainImage = document.querySelector('#productImage');
@@ -151,28 +151,30 @@ photoMain.addEventListener('mousemove', (e) => {
     const x = e.clientX - rect.left; // Posición del mouse dentro de .photo-main
     const y = e.clientY - rect.top;
 
-  // Mostrar el cuadro de zoom
+    // Mostrar el cuadro de zoom
     zoomBox.style.display = 'block';
 
-  // Posicionar el cuadro de zoom relativo al mouse
-  const boxSize = 200; // Tamaño del cuadro de zoom
+    // Posicionar el cuadro de zoom relativo al mouse
+    const boxSize = 200; // Tamaño del cuadro de zoom
     const zoomOffsetX = boxSize / 2;
     const zoomOffsetY = boxSize / 2;
     zoomBox.style.left = `${x - zoomOffsetX}px`;
     zoomBox.style.top = `${y - zoomOffsetY}px`;
 
-  // Configurar la imagen dentro del cuadro de zoom
+    // Configurar la imagen dentro del cuadro de zoom
     zoomBox.innerHTML = `<img src="${mainImage.src}" alt="Zoom">`;
     const zoomImg = zoomBox.querySelector('img');
 
-  // Ampliar la imagen dentro del cuadro de zoom
-  const zoomFactor = 2; // Nivel de zoom
-  zoomImg.style.width = `${mainImage.offsetWidth * zoomFactor}px`;
-  zoomImg.style.height = `${mainImage.offsetHeight * zoomFactor}px`;
+    // Establecer el nivel de zoom y la imagen estática como fondo del cuadro
+    const zoomFactor = 2; // Nivel de zoom
+    zoomImg.style.width = `${mainImage.offsetWidth * zoomFactor}px`;
+    zoomImg.style.height = `${mainImage.offsetHeight * zoomFactor}px`;
 
-  // Calcular la posición de la imagen ampliada dentro del cuadro de zoom
-  const zoomX = (x / mainImage.offsetWidth) * (zoomImg.offsetWidth - boxSize);
-  const zoomY = (y / mainImage.offsetHeight) * (zoomImg.offsetHeight - boxSize);
+    // Calcular la posición del cursor dentro de la imagen estática
+    const zoomX = (x / mainImage.offsetWidth) * (zoomImg.offsetWidth - boxSize);
+    const zoomY = (y / mainImage.offsetHeight) * (zoomImg.offsetHeight - boxSize);
+
+    // Ajustar la imagen de zoom según la posición del cursor, moviendo la imagen
     zoomImg.style.transform = `translate(-${zoomX}px, -${zoomY}px)`;
 });
 
@@ -185,6 +187,7 @@ photoMain.addEventListener('mouseleave', () => {
 document.querySelector('.photo-album').addEventListener('mousemove', () => {
     zoomBox.style.display = 'none';
 });
+
 
 
 
