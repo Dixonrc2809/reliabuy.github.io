@@ -44,12 +44,12 @@
 
       const productosVendidosData = {
         labels: [
-            "Pizza Margarita", 
-            "Hamburguesa Clásica", 
-            "Sushi Roll", 
-            "Pasta Alfredo", 
-            "Ensalada César", 
-            "Taco Mexicano"
+            "Teclado Mecánico Xpert-k9", 
+            "JBL Tune 750BTNC", 
+            "OnePlus 10 Pro", 
+            "Shure SM7B", 
+            "Mouse Gamer Logitech G502", 
+            "Batidora KitchenAid"
         ],
         datasets: [{
             label: "Cantidad Vendida",
