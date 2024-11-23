@@ -53,7 +53,7 @@
         ],
         datasets: [{
             label: "Cantidad Vendida",
-            data: [15, 14, 13, 12, 11, 10],
+            data: [12, 10, 8, 6, 5, 4],
             backgroundColor: [
                 "#001F4D", // Azul marino oscuro
                 "#003080", // Azul intermedio oscuro
