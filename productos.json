@@ -7,7 +7,20 @@
         "categoria": "Audifonos",
         "marca": "Westmire",
         "detalles": "<ul><li>Cancelación de ruido</li><li>Sonido envolvente</li><li>Diseño ergonómico</li></ul>",
-        "calificacion": 4.5
+        "calificacion": 4.5,
+        "caracteristicas": {
+            "Capacidad de potencia de audio": "Ajustable",
+            "Color": "Negro",
+            "HDR": "Si",
+            "Marca": "Westmire",
+            "Medida de altura": "7.4 pulgadas",
+            "Medida de ancho": "6.2 pulgadas",
+            "Medida de peso": "0.5 kg",
+            "Modelo o serie del producto": "A56",
+            "País de Origen - Ensamblaje": "China",
+            "Tipo de conector": "Bluetooth, AUX",
+            "Fabricante": "Westmire"
+        }
     },
     {
         "id": 2,
@@ -17,7 +30,16 @@
         "categoria": "Audifonos",
         "marca": "Sony",
         "detalles": "<ul><li>Calidad de Sonido</li><li>Rendimiento de llamadas mejorado</li><li>50 horas de duración de batería</li></ul>",
-        "calificacion": 4.6
+        "calificacion": 4.6,
+        "caracteristicas": {
+            "Tipo de batería": "Lithium-ion recargable",
+            "Tiempo de carga": "4 horas",
+            "Conectividad": "Bluetooth 5.0",
+            "Peso": "132 gramos",
+            "Colores disponibles": "Negro, Blanco",
+            "Respuesta de frecuencia": "20 Hz - 20 kHz",
+            "Micrófono incorporado": "Sí"
+        }
     },
     {
         "id": 3,
@@ -27,7 +49,17 @@
         "categoria": "Audifonos",
         "marca": "Bose",
         "detalles": "<ul><li>Cancelación activa de ruido</li><li>Sonido claro y equilibrado</li><li>Hasta 24 horas de batería</li></ul>",
-        "calificacion": 4.5
+        "calificacion": 4.5,
+        "caracteristicas": {
+            "Tipo de batería": "Lithium-ion recargable",
+            "Tiempo de carga": "2.5 horas",
+            "Conectividad": "Bluetooth, Cable de 3.5 mm",
+            "Peso": "240 gramos",
+            "Colores disponibles": "Negro, Blanco",
+            "Respuesta de frecuencia": "20 Hz - 20 kHz",
+            "Micrófono incorporado": "Sí",
+            "Comodidad": "Almohadillas de espuma viscoelástica"
+        }
     },
     {
         "id": 4,
@@ -37,7 +69,17 @@
         "categoria": "Audifonos",
         "marca": "JBL",
         "detalles": "<ul><li>Cancelación de ruido</li><li>Sonido JBL Pure Bass</li><li>Hasta 15 horas de batería</li></ul>",
-        "calificacion": 4.8
+        "calificacion": 4.8,
+        "caracteristicas": {
+            "Tipo de batería": "Lithium-ion recargable",
+            "Tiempo de carga": "2 horas",
+            "Conectividad": "Bluetooth 4.2",
+            "Peso": "220 gramos",
+            "Colores disponibles": "Negro, Blanco, Azul",
+            "Respuesta de frecuencia": "20 Hz - 20 kHz",
+            "Micrófono incorporado": "Sí",
+            "Comodidad": "Almohadillas ergonómicas"
+        }
     },
     {
         "id": 5,
@@ -47,7 +89,17 @@
         "categoria": "Audifonos",
         "marca": "Apple",
         "detalles": "<ul><li>Cancelación activa de ruido</li><li>Sonido de alta fidelidad</li><li>Conectividad Bluetooth</li></ul>",
-        "calificacion": 4.7
+        "calificacion": 4.7,
+        "caracteristicas": {
+            "Tipo de batería": "Lithium-ion recargable",
+            "Tiempo de carga": "2 horas",
+            "Conectividad": "Bluetooth 5.0, Cable Lightning",
+            "Peso": "384.8 gramos",
+            "Colores disponibles": "Plata, Gris espacial",
+            "Respuesta de frecuencia": "20 Hz - 20 kHz",
+            "Micrófono incorporado": "Sí, 9 micrófonos",
+            "Comodidad": "Almohadillas de espuma viscoelástica"
+        }
     },
     {
         "id": 6,
@@ -57,7 +109,16 @@
         "categoria": "Gaming",
         "marca": "Xpert",
         "detalles": "<ul><li>Iluminación RGB</li><li>Teclas mecánicas</li><li>Diseño robusto</li></ul>",
-        "calificacion": 4.4
+        "calificacion": 4.4,
+        "caracteristicas": {
+            "Tipo de interruptores": "Mecánicos (tipo Cherry MX)",
+            "Iluminación": "RGB personalizable",
+            "Conectividad": "USB 2.0",
+            "Peso": "1.2 kg",
+            "Colores disponibles": "Negro",
+            "Teclas adicionales": "Teclas de acceso rápido",
+            "Compatibilidad": "Windows, macOS"
+        }
     },
     {
         "id": 7,
@@ -67,7 +128,16 @@
         "categoria": "Gaming",
         "marca": "Logitech",
         "detalles": "<ul><li>Sensor óptico</li><li>Alta precisión</li><li>Ergonomía mejorada</li></ul>",
-        "calificacion": 4.5
+        "calificacion": 4.5,
+        "caracteristicas": {
+            "Sensor": "HERO 25K",
+            "DPI": "Hasta 25,600",
+            "Conectividad": "USB 2.0",
+            "Peso": "121 gramos (ajustable)",
+            "Colores disponibles": "Negro",
+            "Botones programables": "11 botones programables",
+            "Compatibilidad": "Windows, macOS, PlayStation"
+        }
     },
     {
         "id": 8,
@@ -77,7 +147,16 @@
         "categoria": "Gaming",
         "marca": "Razer",
         "detalles": "<ul><li>Teclas ópticas</li><li>Iluminación RGB personalizable</li><li>Construcción de aluminio</li></ul>",
-        "calificacion": 4.3
+        "calificacion": 4.3,
+        "caracteristicas": {
+            "Tipo de interruptores": "Ópticos",
+            "Conectividad": "USB-C",
+            "Peso": "1.1 kg",
+            "Materiales": "Aluminio y plástico de alta resistencia",
+            "Colores disponibles": "Negro, verde",
+            "Compatibilidad": "Windows, macOS",
+            "Iluminación": "RGB personalizable"
+        }
     },
     {
         "id": 9,
@@ -87,7 +166,17 @@
         "categoria": "Gaming",
         "marca": "Alienware",
         "detalles": "<ul><li>Procesador Intel i7</li><li>16GB RAM</li><li>RTX 3070</li></ul>",
-        "calificacion": 4.6
+        "calificacion": 4.6,
+        "caracteristicas": {
+            "Procesador": "Intel Core i7 11ª Generación",
+            "Tarjeta Gráfica": "NVIDIA GeForce RTX 3070",
+            "RAM": "16GB DDR4",
+            "Almacenamiento": "1TB SSD",
+            "Pantalla": "15.6” Full HD (1920x1080) 144Hz",
+            "Peso": "2.2 kg",
+            "Sistema Operativo": "Windows 11",
+            "Batería": "6 celdas, hasta 8 horas de autonomía"
+        }
     },
     {
         "id": 10,
@@ -97,7 +186,17 @@
         "categoria": "Celulares",
         "marca": "Samsung",
         "detalles": "<ul><li>Cámara de 200MP</li><li>Pantalla Dynamic AMOLED 2X</li><li>5000mAh de batería</li></ul>",
-        "calificacion": 4.9
+        "calificacion": 4.9,
+        "caracteristicas": {
+            "Pantalla": "6.8” Dynamic AMOLED 2X, 120Hz",
+            "Cámara principal": "200 MP + 12 MP + 10 MP",
+            "Cámara frontal": "12 MP",
+            "Almacenamiento": "256GB, 512GB, 1TB",
+            "Batería": "5000mAh, carga rápida 45W",
+            "Procesador": "Snapdragon 8 Gen 2",
+            "Conectividad": "5G, Wi-Fi 6",
+            "Peso": "229 gramos"
+        }
     },
     {
         "id": 11,
@@ -107,7 +206,17 @@
         "categoria": "Celulares",
         "marca": "Apple",
         "detalles": "<ul><li>Pantalla Super Retina</li><li>256GB Almacenamiento</li><li>Cámara avanzada</li></ul>",
-        "calificacion": 4.8
+        "calificacion": 4.8,
+        "caracteristicas": {
+            "Pantalla": "6.7” Super Retina XDR OLED",
+            "Cámara principal": "48 MP + 12 MP + 12 MP",
+            "Cámara frontal": "12 MP",
+            "Almacenamiento": "256GB, 512GB, 1TB",
+            "Batería": "4323mAh, carga rápida MagSafe",
+            "Chip": "A16 Bionic",
+            "Conectividad": "5G, Wi-Fi 6",
+            "Peso": "240 gramos"
+        }
     },
     {
         "id": 12,
@@ -117,7 +226,17 @@
         "categoria": "Celulares",
         "marca": "Xiaomi",
         "detalles": "<ul><li>Cámara de 50MP</li><li>Pantalla AMOLED</li><li>120Hz</li></ul>",
-        "calificacion": 4.4
+        "calificacion": 4.4,
+        "caracteristicas": {
+            "Pantalla": "6.81” AMOLED, 120Hz",
+            "Cámara principal": "50 MP + 48 MP + 48 MP",
+            "Cámara frontal": "20 MP",
+            "Almacenamiento": "256GB, 512GB",
+            "Batería": "5000mAh, carga rápida 67W",
+            "Procesador": "Snapdragon 888",
+            "Conectividad": "5G, Wi-Fi 6",
+            "Peso": "234 gramos"
+        }
     },
     {
         "id": 13,
@@ -127,7 +246,17 @@
         "categoria": "Celulares",
         "marca": "OnePlus",
         "detalles": "<ul><li>Cámara Hasselblad</li><li>Pantalla Fluid AMOLED</li><li>4500mAh</li></ul>",
-        "calificacion": 4.2
+        "calificacion": 4.2,
+        "caracteristicas": {
+            "Pantalla": "6.7” Fluid AMOLED, 120Hz",
+            "Cámara principal": "50 MP + 48 MP + 8 MP",
+            "Cámara frontal": "32 MP",
+            "Almacenamiento": "128GB, 256GB",
+            "Batería": "4500mAh, carga rápida 65W",
+            "Procesador": "Snapdragon 8 Gen 1",
+            "Conectividad": "5G, Wi-Fi 6",
+            "Peso": "200 gramos"
+        }
     },
     {
         "id": 14,
@@ -137,7 +266,17 @@
         "categoria": "Microfonos",
         "marca": "",
         "detalles": "<ul><li>Sonido cálido y suave</li><li>Frecuencia de amplio alcance</li><li>Preamplificador integrado</li></ul>",
-        "calificacion": 4.1
+        "calificacion": 4.1,
+        "caracteristicas": {
+            "Tipo": "Condensador",
+            "Frecuencia de respuesta": "20Hz - 20kHz",
+            "Conectividad": "USB",
+            "Tasa de muestreo": "192kHz/24-bit",
+            "Peso": "420 gramos",
+            "Compatibilidad": "Windows, macOS",
+            "Preamplificador": "Sí, integrado",
+            "Ideal para": "Grabación de voz, podcasts, streaming"
+        }
     },
     {
         "id": 15,
@@ -147,7 +286,17 @@
         "categoria": "Microfonos",
         "marca": "Blue",
         "detalles": "<ul><li>Sonido de alta calidad</li><li>Microfono USB</li><li>Control de ganancia</li></ul>",
-        "calificacion": 4.5
+        "calificacion": 4.5,
+        "caracteristicas": {
+            "Tipo": "USB",
+            "Patrones de captación": "Cardioide, omnidireccional, bidireccional, estéreo",
+            "Frecuencia de respuesta": "20Hz - 20kHz",
+            "Conectividad": "USB 3.0",
+            "Peso": "550 gramos",
+            "Control de ganancia": "Sí",
+            "LED de visualización": "Sí",
+            "Ideal para": "Streaming, podcasts, grabaciones de alta calidad"
+        }
     },
     {
         "id": 16,
@@ -157,7 +306,17 @@
         "categoria": "Microfonos",
         "marca": "Audio-Technica",
         "detalles": "<ul><li>Cardioide</li><li>Conectividad XLR</li><li>Respuesta de frecuencia amplia</li></ul>",
-        "calificacion": 4.8
+        "calificacion": 4.8,
+        "caracteristicas": {
+            "Tipo": "Cardioide",
+            "Frecuencia de respuesta": "20Hz - 20kHz",
+            "Conectividad": "XLR",
+            "Sensibilidad": "37 dB",
+            "Impedancia": "100 ohms",
+            "Peso": "345 gramos",
+            "Ideal para": "Grabación en estudio, voz, instrumentos",
+            "Uso": "Estudio, grabación profesional"
+        }
     },
     {
         "id": 17,
@@ -167,7 +326,18 @@
         "categoria": "Microfonos",
         "marca": "Shure",
         "detalles": "<ul><li>Micrófono dinámico</li><li>Excelente rechazo de ruido</li><li>Ideal para estudio</li></ul>",
-        "calificacion": 4.8
+        "calificacion": 4.8,
+        "caracteristicas": {
+            "Tipo": "Dinámico",
+            "Patrón de captación": "Cardioide",
+            "Frecuencia de respuesta": "50Hz - 20kHz",
+            "Conectividad": "XLR",
+            "Peso": "765 gramos",
+            "Impedancia": "150 ohms",
+            "Uso": "Podcasting, radio, grabaciones de voz, transmisiones en vivo",
+            "Ideal para": "Rechazo de ruido, ambientes ruidosos",
+            "Requiere preamplificador": "Sí"
+        }
     },
     {
         "id": 18,
@@ -177,7 +347,17 @@
         "categoria": "Cocina",
         "marca": "Whirlpool",
         "detalles": "<ul><li>Calor rápido</li><li>Función de descongelado</li><li>Capacidad de 30L</li></ul>",
-        "calificacion": 4.6
+        "calificacion": 4.6,
+        "caracteristicas": {
+            "Capacidad": "30L",
+            "Potencia": "900W",
+            "Funciones": "Descongelado, Calor rápido, Recalentar",
+            "Panel": "Digital con display LCD",
+            "Seguridad": "Bloqueo para niños",
+            "Tamaño": "40 x 30 x 25 cm",
+            "Material": "Acero inoxidable",
+            "Garantía": "1 año"
+        }
     },
     {
         "id": 19,
@@ -187,7 +367,17 @@
         "categoria": "Cocina",
         "marca": "Samsung",
         "detalles": "<ul><li>Capacidad 400L</li><li>Frío No Frost</li><li>Energy Star</li></ul>",
-        "calificacion": 4.5
+        "calificacion": 4.5,
+        "caracteristicas": {
+            "Capacidad": "400L",
+            "Tecnología de frío": "No Frost",
+            "Ahorro energético": "Energy Star",
+            "Control de temperatura": "Digital",
+            "Congelación rápida": "Sí",
+            "Dimensiones": "185 x 70 x 75 cm",
+            "Compresor": "Inverter",
+            "Garantía": "2 años"
+        }
     },
     {
         "id": 20,
@@ -197,7 +387,17 @@
         "categoria": "Cocina",
         "marca": "Philips",
         "detalles": "<ul><li>Capacidad de 6L</li><li>Modo de cocción rápido</li><li>Función de temporizador</li></ul>",
-        "calificacion": 4.2
+        "calificacion": 4.2,
+        "caracteristicas": {
+            "Capacidad": "6L",
+            "Funciones": "Cocción rápida, Cocción lenta, Sofreír",
+            "Control": "Digital",
+            "Temporizador": "Sí",
+            "Tecnología de seguridad": "Múltiples mecanismos de seguridad",
+            "Material": "Acero inoxidable",
+            "Tamaño": "35 x 35 x 40 cm",
+            "Garantía": "2 años"
+        }
     },
     {
         "id": 21,
@@ -207,7 +407,16 @@
         "categoria": "Cocina",
         "marca": "KitchenAid",
         "detalles": "<ul><li>10 velocidades</li><li>Incluye varilla para batir</li><li>Motor potente</li></ul>",
-        "calificacion": 4.4
+        "calificacion": 4.4,
+        "caracteristicas": {
+            "Velocidades": "10",
+            "Motor": "Potente de 300W",
+            "Accesorios": "Varilla, batidor de globo, gancho para amasar",
+            "Base": "Antideslizante",
+            "Material": "Aluminio fundido",
+            "Dimensiones": "30 x 25 x 20 cm",
+            "Garantía": "1 año"
+        }
     },
     {
         "id": 22,
@@ -217,7 +426,17 @@
         "categoria": "Pantallas",
         "marca": "Samsung",
         "detalles": "<ul><li>Resolución 4K</li><li>HDR</li><li>Smart TV de 65 pulgadas</li></ul>",
-        "calificacion": 4.6
+        "calificacion": 4.6,
+        "caracteristicas": {
+            "Pantalla": "LED, 65 pulgadas",
+            "Resolución": "4K UHD",
+            "HDR": "Sí",
+            "Conectividad": "Wi-Fi, Bluetooth, 3x HDMI, 2x USB",
+            "Sistema operativo": "Tizen",
+            "Sonido": "Dolby Digital Plus",
+            "Dimensiones": "145 x 85 x 35 cm",
+            "Garantía": "2 años"
+        }
     },
     {
         "id": 23,
@@ -227,7 +446,17 @@
         "categoria": "Pantallas",
         "marca": "Sony",
         "detalles": "<ul><li>Pantalla OLED</li><li>Resolución 4K</li><li>Audio Dolby Atmos</li></ul>",
-        "calificacion": 4.7
+        "calificacion": 4.7,
+        "caracteristicas": {
+            "Pantalla": "OLED, 55 pulgadas",
+            "Resolución": "4K UHD",
+            "Audio": "Dolby Atmos, DTS",
+            "Conectividad": "Wi-Fi, Bluetooth, 4x HDMI, 3x USB",
+            "Asistente virtual": "Google Assistant",
+            "Sistema operativo": "Google TV",
+            "Dimensiones": "123 x 71 x 35 cm",
+            "Garantía": "2 años"
+        }
     },
     {
         "id": 24,
@@ -237,7 +466,17 @@
         "categoria": "Pantallas",
         "marca": "LG",
         "detalles": "<ul><li>Pantalla 4K UHD</li><li>Diseño ergonómico</li><li>Conectividad USB-C</li></ul>",
-        "calificacion": 4.1
+        "calificacion": 4.1,
+        "caracteristicas": {
+            "Pantalla": "32 pulgadas 4K UHD",
+            "Resolución": "3840 x 2160 píxeles",
+            "Conectividad": "USB-C, DisplayPort, HDMI",
+            "Ajustes": "Inclinación, rotación, altura ajustable",
+            "VESA": "Sí, compatible",
+            "Tamaño": "71.2 x 48.3 x 18.1 cm",
+            "Tipo de panel": "IPS",
+            "Garantía": "2 años"
+        }
     },
     {
         "id": 25,
@@ -247,7 +486,18 @@
         "categoria": "Pantallas",
         "marca": "Samsung",
         "detalles": "<ul><li>Resolución 8K</li><li>Panel QLED</li><li>HDR10+</li></ul>",
-        "calificacion": 4.9
+        "calificacion": 4.9,
+        "caracteristicas": {
+            "Pantalla": "75 pulgadas QLED",
+            "Resolución": "7680 x 4320 píxeles (8K)",
+            "HDR": "HDR10+",
+            "Conectividad": "Wi-Fi, Bluetooth, HDMI, USB",
+            "Asistente virtual": "Alexa, Google Assistant, Bixby",
+            "Sistema operativo": "Tizen",
+            "Sonido": "Dolby Atmos",
+            "Dimensiones": "167.2 x 96.4 x 35.1 cm",
+            "Garantía": "2 años"
+        }
     },
     {
         "id": 26,
@@ -257,7 +507,16 @@
         "categoria": "Muebles",
         "marca": "",
         "detalles": "<ul><li>Comodidad garantizada</li><li>Tapizado resistente y fácil de limpiar</li><li>Base de madera robusta y durable</li></ul>",
-        "calificacion": 4.3
+        "calificacion": 4.3,
+        "caracteristicas": {
+            "Material": "Tela resistente, madera",
+            "Comodidad": "Cojines de alta densidad",
+            "Base": "Madera robusta y durable",
+            "Diseño": "Moderno y compacto",
+            "Dimensiones": "80 x 90 x 100 cm",
+            "Peso": "40 kg",
+            "Garantía": "1 año"
+        }
     },
     {
         "id": 27,
@@ -267,7 +526,16 @@
         "categoria": "Muebles",
         "marca": "",
         "detalles": "<ul><li>Tapizado de cuero sintético</li><li>Diseño moderno</li><li>Espacio amplio para 3 personas</li></ul>",
-        "calificacion": 4.6
+        "calificacion": 4.6,
+        "caracteristicas": {
+            "Material": "Cuero sintético, madera",
+            "Diseño": "Moderno, amplio",
+            "Cojines": "Almohadas decorativas incluidas",
+            "Base": "Madera sólida",
+            "Dimensiones": "140 x 80 x 90 cm",
+            "Peso": "55 kg",
+            "Garantía": "1 año"
+        }
     },
     {
         "id": 28,
@@ -277,7 +545,16 @@
         "categoria": "Muebles",
         "marca": "",
         "detalles": "<ul><li>Hecha a mano</li><li>Diseño rústico</li><li>Dimensiones perfectas para el salón</li></ul>",
-        "calificacion": 4.7
+        "calificacion": 4.7,
+        "caracteristicas": {
+            "Material": "Madera natural",
+            "Diseño": "Rústico y artesanal",
+            "Acabado": "Natural, sin tratar",
+            "Dimensiones": "120 x 60 x 45 cm",
+            "Peso": "18 kg",
+            "Ensamblaje": "Fácil, con instrucciones",
+            "Garantía": "1 año"
+        }
     },
     {
         "id": 29,
@@ -287,7 +564,16 @@
         "categoria": "Muebles",
         "marca": "",
         "detalles": "<ul><li>Espacio amplio para libros</li><li>Diseño vertical</li><li>Fácil de ensamblar</li></ul>",
-        "calificacion": 4.3
+        "calificacion": 4.3,
+        "caracteristicas": {
+            "Material": "Madera resistente",
+            "Diseño": "Vertical, moderno",
+            "Espacio": "5 niveles",
+            "Dimensiones": "80 x 25 x 180 cm",
+            "Peso": "25 kg",
+            "Ensamblaje": "Rápido y sencillo",
+            "Garantía": "1 año"
+        }
     },
     {
         "id": 30,
@@ -297,7 +583,15 @@
         "categoria": "Lavadoras",
         "marca": "LG",
         "detalles": "<ul><li>TWINWash™ para doble carga</li><li>Tecnología TurboWash™</li><li>Control remoto con ThinQ™</li></ul>",
-        "calificacion": 4.5
+        "calificacion": 4.5,
+        "caracteristicas": {
+            "Tecnología": "TurboWash™",
+            "Capacidad": "15kg (superior), 3.5kg (inferior)",
+            "Conectividad": "ThinQ™ (Control remoto)",
+            "Funciones adicionales": "Doble carga, autolimpieza",
+            "Dimensiones": "60 x 85 x 64 cm",
+            "Garantía": "2 años"
+        }
     },
     {
         "id": 31,
@@ -307,7 +601,15 @@
         "categoria": "Lavadoras",
         "marca": "LG",
         "detalles": "<ul><li>Tecnología AI DD</li><li>Steam para eliminar alérgenos</li><li>Conectividad Wi-Fi</li></ul>",
-        "calificacion": 4.4
+        "calificacion": 4.4,
+        "caracteristicas": {
+            "Tecnología": "AI DD (Inteligencia Artificial para elegir el ciclo óptimo)",
+            "Capacidad": "22kg",
+            "Conectividad": "Wi-Fi",
+            "Funciones adicionales": "Steam para eliminar alérgenos, lavado rápido",
+            "Dimensiones": "60 x 85 x 70 cm",
+            "Garantía": "2 años"
+        }
     },
     {
         "id": 32,
@@ -317,7 +619,15 @@
         "categoria": "Cocina",
         "marca": "Whirlpool",
         "detalles": "<ul><li>Puerta InstaView</li><li>Door-in-Door</li><li>Compresor Inverter Linear</li></ul>",
-        "calificacion": 4.6
+        "calificacion": 4.6,
+        "caracteristicas": {
+            "Puerta": "InstaView",
+            "Tecnología": "Compresor Inverter Linear",
+            "Capacidad": "500L",
+            "Funciones adicionales": "Door-in-Door, Control de temperatura inteligente",
+            "Dimensiones": "70 x 180 x 90 cm",
+            "Garantía": "2 años"
+        }
     },
     {
         "id": 33,
@@ -327,7 +637,14 @@
         "categoria": "Lavadoras",
         "marca": "Whirlpool",
         "detalles": "<ul><li>Lavado eficiente con 6th Sense</li><li>Capacidad de 18kg</li><li>Función de lavado rápido</li></ul>",
-        "calificacion": 4.8
+        "calificacion": 4.8,
+        "caracteristicas": {
+            "Tecnología": "6th Sense (Optimización de recursos)",
+            "Capacidad": "18kg",
+            "Funciones adicionales": "Lavado rápido, sensor de carga automático",
+            "Dimensiones": "60 x 90 x 70 cm",
+            "Garantía": "2 años"
+        }
     },
     {
         "id": 34,
@@ -337,7 +654,16 @@
         "categoria": "Celulares",
         "marca": "Apple",
         "detalles": "<ul><li>Pantalla Super Retina XDR</li><li>Chip A17 Pro</li><li>Cámara de 48MP</li></ul>",
-        "calificacion": 4.7
+        "calificacion": 4.7,
+        "caracteristicas": {
+            "Pantalla": "6.7” Super Retina XDR",
+            "Chip": "A17 Pro",
+            "Cámara": "48MP (Triple cámara)",
+            "Almacenamiento": "512GB",
+            "Resistencia": "IP68 (Resistencia al agua y polvo)",
+            "Dimensiones": "160.8 x 78.1 x 7.85 mm",
+            "Garantía": "1 año"
+        }
     },
     {
         "id": 35,
@@ -347,7 +673,16 @@
         "categoria": "Celulares",
         "marca": "Apple",
         "detalles": "<ul><li>Pantalla OLED de 6.7”</li><li>Chip A16 Bionic</li><li>Cámara Dual de 48MP</li></ul>",
-        "calificacion": 4.6
+        "calificacion": 4.6,
+        "caracteristicas": {
+            "Pantalla": "6.7” OLED",
+            "Chip": "A16 Bionic",
+            "Cámara": "48MP (Dual cámara)",
+            "Almacenamiento": "256GB",
+            "Resistencia": "IP68 (Resistencia al agua y polvo)",
+            "Dimensiones": "160.8 x 78.1 x 7.85 mm",
+            "Garantía": "1 año"
+        }
     },
     {
         "id": 36,
@@ -357,7 +692,16 @@
         "categoria": "Celulares",
         "marca": "Apple",
         "detalles": "<ul><li>Almacenamiento de 265GB</li><li>Pantalla ProMotion de 120Hz</li><li>Cámara Triple de 48MP</li></ul>",
-        "calificacion": 4.8
+        "calificacion": 4.8,
+        "caracteristicas": {
+            "Pantalla": "11” Liquid Retina ProMotion de 120Hz",
+            "Chip": "M4",
+            "Cámara": "Triple cámara 48MP",
+            "Almacenamiento": "265GB",
+            "Conectividad": "5G",
+            "Dimensiones": "247.6 x 178.5 x 5.9 mm",
+            "Garantía": "1 año"
+        }
     },
     {
         "id": 37,
@@ -367,7 +711,16 @@
         "categoria": "Celulares",
         "marca": "Apple",
         "detalles": "<ul><li>Pantalla Super Retina XDR de 5.4”</li><li>Chip A15 Bionic</li><li>Cámara Dual de 12MP</li></ul>",
-        "calificacion": 4.4
+        "calificacion": 4.4,
+        "caracteristicas": {
+            "Pantalla": "5.4” Super Retina XDR",
+            "Chip": "A15 Bionic",
+            "Cámara": "12MP (Dual cámara)",
+            "Almacenamiento": "128GB",
+            "Resistencia": "IP68 (Resistencia al agua y polvo)",
+            "Dimensiones": "131.5 x 64.2 x 7.65 mm",
+            "Garantía": "1 año"
+        }
     },
     {
         "id": 38,
@@ -377,7 +730,16 @@
         "categoria": "Gaming",
         "marca": "HP",
         "detalles": "<ul><li>Procesador AMD Ryzen 7</li><li>Tarjeta gráfica NVIDIA RTX 3050</li><li>Pantalla 16\" Full HD</li></ul>",
-        "calificacion": 4.1
+        "calificacion": 4.1,
+        "caracteristicas": {
+            "Procesador": "AMD Ryzen 7",
+            "Tarjeta gráfica": "NVIDIA RTX 3050",
+            "Pantalla": "16” Full HD",
+            "RAM": "16GB",
+            "Almacenamiento": "512GB SSD",
+            "Dimensiones": "36.3 x 25.6 x 2.1 cm",
+            "Garantía": "1 año"
+        }
     },
     {
         "id": 39,
@@ -387,7 +749,15 @@
         "categoria": "Gaming",
         "marca": "HP",
         "detalles": "<ul><li>Procesador AMD Ryzen 5 3400G</li><li>8GB RAM</li><li>Tarjeta gráfica GTX 3060</li></ul>",
-        "calificacion": 4.2
+        "calificacion": 4.2,
+        "caracteristicas": {
+            "Procesador": "AMD Ryzen 5 3400G",
+            "Tarjeta gráfica": "GTX 3060",
+            "RAM": "8GB",
+            "Almacenamiento": "1TB HDD",
+            "Dimensiones": "43.5 x 19 x 41 cm",
+            "Garantía": "1 año"
+        }
     },
     {
         "id": 40,
@@ -397,6 +767,14 @@
         "categoria": "Gaming",
         "marca": "HP",
         "detalles": "<ul><li>Procesador Intel Core i5 12ª gen</li><li>8GB RAM</li><li>Tarjeta gráfica NVIDIA GTX 1650</li></ul>",
-        "calificacion": 4.6
+        "calificacion": 4.6,
+        "caracteristicas": {
+            "Procesador": "Intel Core i5 12ª gen",
+            "Tarjeta gráfica": "NVIDIA GTX 1650",
+            "RAM": "8GB",
+            "Almacenamiento": "512GB SSD",
+            "Dimensiones": "35.7 x 24.8 x 2.3 cm",
+            "Garantía": "1 año"
+        }
     }    
 ]

@@ -44,9 +44,9 @@ function applyFilters() {
     
     // Ordenar los productos filtrados por precio
     if (sortBy === "high-to-low") {
-        filteredProducts.sort((a, b) => b.precio - a.precio);
+        filteredProducts.sort((a, b) => parseFloat(b.precio.replace(/[^0-9.-]+/g, "")) - parseFloat(a.precio.replace(/[^0-9.-]+/g, "")));
     } else if (sortBy === "low-to-high") {
-        filteredProducts.sort((a, b) => a.precio - b.precio);
+        filteredProducts.sort((a, b) => parseFloat(a.precio.replace(/[^0-9.-]+/g, "")) - parseFloat(b.precio.replace(/[^0-9.-]+/g, "")));
     }
 
     displayProducts(filteredProducts);

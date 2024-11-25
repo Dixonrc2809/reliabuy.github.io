@@ -1,38 +1,93 @@
 
 // ----------------------------------------------------------------
-// Esta es la funcion para obtener el ID del prodcuto que seleccione
-// y enviarlo al detalleProducto, con los detalles
+// Esta es la funcion para obtener el ID del producto que seleccione
+// y enviarlo al detalleProducto, con los detalles del json
 // ----------------------------------------------------------------
-        function getURLParameter(name) {
-            const urlParams = new URLSearchParams(window.location.search);
-            return urlParams.get(name);
-        }
+    fetch('productos.json')
+        .then(response => response.json())
+        .then(productos => {
+            const productId = getURLParameter('id');  // Obtener el id del producto desde la URL
+            const producto = productos.find(p => p.id === parseInt(productId)); // Buscar el producto por ID
 
-        // Obtener el id del producto desde la URL
-        const productId = getURLParameter('id');
+            if (producto) {
+                // Asignar los datos al HTML
+                document.getElementById("productTitle").textContent = producto.nombre;
+                document.getElementById("productPrice").textContent = producto.precio;
+                document.getElementById("productImage").src = producto.imagen;
+                document.getElementById("productImageThumb").src = producto.imagen;  // Miniatura
+                document.getElementById("productCode").textContent = producto.id;
 
-        // Aquí debes obtener los datos del producto desde un archivo JSON o una base de datos
-        fetch('productos.json')  // Suponiendo que productos.json está en el mismo directorio
-            .then(response => response.json())
-            .then(productos => {
-                const producto = productos.find(p => p.id === parseInt(productId));  // Buscar el producto por ID
-                if (producto) {
-                    // Asignar los datos al HTML
-                    document.getElementById("productTitle").innerText = producto.nombre;
-                    document.getElementById("productPrice").innerText = producto.precio;
-                    document.getElementById("productImage").src = producto.imagen;
-                    document.getElementById("productImageThumb").src = producto.imagen;  // Miniatura
-                    document.getElementById("productCode").innerText = producto.id;
+                // Asignar la calificación y las estrellas
+                document.getElementById("productRating").textContent = producto.calificacion;
+                document.getElementById("productStars").innerHTML = generarEstrellas(producto.calificacion);
 
-                    // Mostrar los detalles del producto como HTML
-                    const productDetailsList = document.getElementById("productDetailsList");
-                    productDetailsList.innerHTML = producto.detalles;  // Insertar directamente el HTML
-
+                // Mostrar los detalles del producto
+                const productDetailsList = document.getElementById("productDetailsList");
+                if (Array.isArray(producto.detalles)) {
+                    productDetailsList.innerHTML = producto.detalles.map(detail => `<li>${detail}</li>`).join('');
                 } else {
-                    // Si no se encuentra el producto
-                    alert("Producto no encontrado");
+                    productDetailsList.innerHTML = producto.detalles;
                 }
-            })
-            .catch(error => {
-                console.error("Error al cargar los productos:", error);
-            });    
+
+                // Cargar las características en el modal
+                const productFeaturesList = document.getElementById("productFeaturesList");
+                if (producto.caracteristicas) {
+                    productFeaturesList.innerHTML = Object.entries(producto.caracteristicas)
+                        .map(([key, value]) => `<li><strong>${key}:</strong> ${value}</li>`)
+                        .join('');
+                }
+
+                // Acción del botón "Añadir al carrito"
+                document.querySelector(".buy--btn").addEventListener("click", function() {
+                    // Obtener carrito desde localStorage
+                    let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+                    // Verificar si el producto ya está en el carrito
+                    const productoExistente = carrito.find(item => item.id === producto.id);
+                    if (productoExistente) {
+                        // Mostrar alerta si el producto ya está en el carrito
+                        Swal.fire({
+                            icon: 'info',
+                            title: 'Este producto ya está en tu carrito.',
+                            showConfirmButton: true,
+                        });
+                    } else {
+                        // Agregar el producto al carrito
+                        carrito.push(producto);
+
+                        // Guardar carrito en localStorage
+                        localStorage.setItem("carrito", JSON.stringify(carrito));
+
+                        // Mostrar notificación de éxito usando SweetAlert2
+                        Swal.fire({
+                            icon: 'success',
+                            title: '¡Producto añadido al carrito!',
+                            text: `${producto.nombre} se ha añadido correctamente a tu carrito.`,
+                            showConfirmButton: true,
+                        });
+                    }
+                });
+            } else {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Producto no encontrado.',
+                    text: 'No se pudo cargar el producto.',
+                    showConfirmButton: true,
+                });
+            }
+        })
+        .catch(error => {
+            console.error("Error al cargar los productos:", error);
+            Swal.fire({
+                icon: 'error',
+                title: 'Error al cargar el producto.',
+                text: 'Hubo un problema al intentar cargar los detalles del producto.',
+                showConfirmButton: true,
+            });
+        });
+
+    // Función para obtener el parámetro de la URL
+    function getURLParameter(name) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(name);
+    }

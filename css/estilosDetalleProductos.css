@@ -219,17 +219,38 @@ img {
     background-color: #007bff;
     box-shadow: 2px 2px 25px -7px #ffc107;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Transiciones suaves */
+    transition: background-color 0.3s ease, transform 0.3s ease; 
 }
 
 .buy--btn:hover {
-    background-color: #0056b3; /* Cambia el color de fondo al hacer hover */
-    box-shadow: 4px 4px 30px -7px #ffc107; /* Aumenta el tamaño de la sombra al hacer hover */
+    background-color: #0056b3; 
+    box-shadow: 4px 4px 30px -7px #ffc107;
 	transform: translateY(-3px); 
 }
 
 .buy--btn:active {
     transform: scale(0.97); /* Efecto de pulsar el botón */
+}
+
+.btn-info{
+	padding: 1em 2em;
+	margin-left: 20px;
+    border: none;
+    border-radius: 7px;
+	border: 2px solid #333;
+    font-size: 0.8em;
+    font-weight: 700;
+    letter-spacing: 1.3px;
+    box-shadow: 2px 2px 25px -7px #ffc107;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease; 
+}
+
+.btn-info:hover {
+	background-color: #333;
+    color: #fff;
+    box-shadow: 4px 4px 30px -7px #ffc107; 
+	transform: translateY(-3px); 
 }
 
 
@@ -271,6 +292,11 @@ img {
 	.title h1 {
 		font-size: 1.3em;
 	}
+
+	.btn-info {
+		padding: 1em 2em;
+		font-size: 0.7em;
+	}
 }
 
 @media (max-width: 480px) {
@@ -283,6 +309,11 @@ img {
 	}
 
 	.buy--btn {
+		padding: 1em 2em;
+		font-size: 0.7em;
+	}
+
+	.btn-info {
 		padding: 1em 2em;
 		font-size: 0.7em;
 	}
@@ -326,7 +357,56 @@ img {
 }
 
 
+/*=========================================*/
+/* Diseño del Modal de características */
+/*=========================================*/
+.modal-content {
+    background-color: #ffffff;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
 
+.modal-header {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 15px;
+}
+
+.modal-header h5 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+}
+
+.modal-body {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+#productFeaturesList {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#productFeaturesList li {
+    font-size: 1rem;
+    margin-bottom: 12px;
+    color: #555;
+    line-height: 1.6;
+    padding-left: 12px;
+    border-left: 4px solid #007bff;
+    transition: background-color 0.3s ease;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+    .modal-dialog {
+        max-width: 90%;
+    }
+}
 
 
 
