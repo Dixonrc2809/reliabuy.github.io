@@ -2,7 +2,10 @@ document.addEventListener("DOMContentLoaded", () => {
     actualizarCarrito();  // Llamamos a la función para cargar el carrito cuando se cargue la página
 });
 
+
+// ----------------------------------------------------------------
 // Función para actualizar el carrito en la página
+// ----------------------------------------------------------------
 function actualizarCarrito() {
     const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
     const contenedorCarrito = document.getElementById("carrito-contenido");
@@ -57,7 +60,9 @@ function actualizarCarrito() {
     console.log("Carrito desde localStorage:", carrito);
 }
 
+// ----------------------------------------------------------------
 // Función para agregar un producto al carrito
+// ----------------------------------------------------------------
 function agregarProductoAlCarrito(producto) {
     const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 
@@ -80,7 +85,9 @@ function agregarProductoAlCarrito(producto) {
     actualizarCarrito();
 }
 
+// ----------------------------------------------------------------
 // Función para actualizar la cantidad del producto en el carrito
+// ----------------------------------------------------------------
 function actualizarCantidad(index, cantidad) {
     const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
     carrito[index].cantidad = parseInt(cantidad);  // Actualizar la cantidad como un número entero
@@ -88,7 +95,9 @@ function actualizarCantidad(index, cantidad) {
     calcularSubtotal();  // Volver a calcular el subtotal sin recargar la página
 }
 
+// ----------------------------------------------------------------
 // Función para calcular el subtotal
+// ----------------------------------------------------------------
 function calcularSubtotal() {
     const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
     let subtotal = 0;
@@ -111,15 +120,22 @@ function calcularSubtotal() {
         subtotal = 0;
     }
 
+    // Guardar el subtotal en localStorage para usarlo en otras páginas
+    localStorage.setItem('subtotal', subtotal);
+
     // Formatear el subtotal con separadores de miles y 2 decimales
     const subtotalFormateado = subtotal.toLocaleString('es-CR', { style: 'currency', currency: 'CRC' });
 
     // Actualizar el subtotal en el HTML
     const subtotalElement = document.getElementById("subtotal");
-    subtotalElement.textContent = subtotalFormateado;
+    if (subtotalElement) {
+        subtotalElement.textContent = subtotalFormateado;
+    }
 }
 
+// ----------------------------------------------------------------
 // Función para eliminar un producto del carrito
+// ----------------------------------------------------------------
 function eliminarProducto(index) {
     const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
     carrito.splice(index, 1);  // Eliminar el producto de la lista
