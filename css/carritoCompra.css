@@ -19,6 +19,11 @@
     align-items: center;
 }
 
+/* Espacio entre el botón de cantidad y el botón de eliminar */
+.carrito-item .col-3 .btn-danger {
+    margin-left: 15px;
+}
+
 .carrito-item img {
     max-width: 80px;
     border-radius: 8px;
@@ -117,12 +122,12 @@
     border-top: 1px solid #ddd;
 }
 
-.btn-actualizar-carrito, .btn-finalizar-compra {
+.btn-continuar-carrito, .btn-finalizar-compra {
     background-color: #28a745;
     color: #fff;
     border: none;
 }
 
-.btn-actualizar-carrito:hover, .btn-finalizar-compra:hover {
+.btn-continuar-carrito:hover, .btn-finalizar-compra:hover {
     background-color: #218838;
 }

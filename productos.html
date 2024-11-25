@@ -157,49 +157,111 @@
     
 
     <!-- Esta es la funcion para obtener los prodcutos del JSON
-    y mostrarlos en el el html de productos.html -->
+    y mostrarlos en el el html de productos.html 
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-    const urlParams = new URLSearchParams(window.location.search);
-    const categoriaSeleccionada = urlParams.get('categoria');  // Obtener el valor de la categoría
-
-    fetch('productos.json')  // Cargar el archivo JSON con los productos
-        .then(response => response.json())
-        .then(productos => {
-            const contenedor = document.getElementById("product-container");
-
-            // Filtrar productos por categoría si existe
-            const productosFiltrados = categoriaSeleccionada 
-                ? productos.filter(p => p.categoria.toLowerCase() === categoriaSeleccionada.toLowerCase()) 
-                : productos;
-
-            // Mostrar los productos filtrados
-            productosFiltrados.forEach(producto => {
-                const productBox = document.createElement("div");
-                productBox.classList.add("p-box");
-                productBox.setAttribute("data-category", producto.categoria);
-                productBox.setAttribute("data-brand", producto.marca);
-                productBox.innerHTML = `
-                    <a href="detalleProducto.html?id=${producto.id}" class="product-link">
-                        <img src="${producto.imagen}" alt="${producto.nombre}" />
-                        <p>${producto.nombre}</p>
-                        <a class="price" href="#">₡${producto.precio}</a>
-                    </a>
-                    <a class="buy-btn" href="#">Añadir al Carrito</a>
-                `;
-                contenedor.appendChild(productBox);
-            });
-
-            if (productosFiltrados.length === 0) {
-                contenedor.innerHTML = "<p>No hay productos disponibles en esta categoría.</p>";
-            }
-        })
-        .catch(error => {
-            console.error("Error al cargar los productos:", error);
+            const urlParams = new URLSearchParams(window.location.search);
+            const categoriaSeleccionada = urlParams.get('categoria');
+    
+            // Inicializar el contador del carrito al cargar la página
+            updateCartCount();
+    
+            // Cargar productos desde el JSON
+            fetch('productos.json')
+                .then(response => response.json())
+                .then(productos => {
+                    const contenedor = document.getElementById("product-container");
+                    const productosFiltrados = categoriaSeleccionada 
+                        ? productos.filter(p => p.categoria.toLowerCase() === categoriaSeleccionada.toLowerCase()) 
+                        : productos;
+    
+                    productosFiltrados.forEach(producto => {
+                        const productBox = document.createElement("div");
+                        productBox.classList.add("p-box");
+                        productBox.setAttribute("data-category", producto.categoria);
+                        productBox.setAttribute("data-brand", producto.marca);
+                        productBox.innerHTML = `
+                            <a href="detalleProducto.html?id=${producto.id}" class="product-link">
+                                <img src="${producto.imagen}" alt="${producto.nombre}" />
+                                <p>${producto.nombre}</p>
+                                <a class="price" href="#">₡${producto.precio}</a>
+                            </a>
+                            <button class="buy-btn" data-id="${producto.id}" data-nombre="${producto.nombre}" data-precio="${producto.precio}" data-imagen="${producto.imagen}">Añadir al Carrito</button>
+                        `;
+                        contenedor.appendChild(productBox);
+                    });
+    
+                    if (productosFiltrados.length === 0) {
+                        contenedor.innerHTML = "<p>No hay productos disponibles en esta categoría.</p>";
+                    }
+    
+                    // Añadir evento a los botones "Añadir al carrito"
+                    const addToCartButtons = document.querySelectorAll(".buy-btn");
+                    addToCartButtons.forEach(button => {
+                        button.addEventListener("click", addToCart);
+                    });
+                })
+                .catch(error => {
+                    console.error("Error al cargar los productos:", error);
+                });
         });
-    });
+    
+        // Función para añadir productos al carrito
+        function addToCart(event) {
+            const button = event.target;
+            const id = button.dataset.id;
+            const nombre = button.dataset.nombre;
+            const precio = button.dataset.precio;
+            const imagen = button.dataset.imagen;
+    
+            // Obtener el carrito actual desde localStorage o inicializarlo
+            const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+    
+            // Verificar si el producto ya está en el carrito
+            const productoExistente = carrito.find(producto => producto.id === id);
+            if (productoExistente) {
+                productoExistente.cantidad++;
+            } else {
+                carrito.push({
+                    id,
+                    nombre,
+                    precio,
+                    imagen,
+                    cantidad: 1
+                });
+            }
+    
+            // Guardar el carrito actualizado en localStorage
+            localStorage.setItem("carrito", JSON.stringify(carrito));
+    
+            // Mostrar notificación de éxito
+            Swal.fire({
+                icon: 'success',
+                title: 'Producto añadido',
+                text: `${nombre} ha sido añadido al carrito.`,
+                timer: 1500,
+                showConfirmButton: false
+            });
+    
+            // Actualizar el contador del carrito
+            updateCartCount();
+        }
+    
+        // Función para actualizar el contador del carrito en el header
+        function updateCartCount() {
+            const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+            const cartCount = carrito.reduce((total, producto) => total + producto.cantidad, 0);
+            const cartCountElement = document.getElementById("cart-count");
+    
+            if (cartCount > 0) {
+                cartCountElement.textContent = cartCount;
+                cartCountElement.style.display = "inline-block";
+            } else {
+                cartCountElement.style.display = "none";
+            }
+        }
     </script>
-
+    -->
 
     <!-- Footer -->
     <footer class="footer bg-light py-4">
