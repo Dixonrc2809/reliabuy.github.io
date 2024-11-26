@@ -23,3 +23,91 @@ document.addEventListener("DOMContentLoaded", () => {
         totalElement.textContent = total.toLocaleString('es-CR', { style: 'currency', currency: 'CRC' });
     }
 });
+
+
+// ----------------------------------------------------------------
+// Funcion para simularpago y enviar datos a la factura
+// ----------------------------------------------------------------
+document.addEventListener('DOMContentLoaded', function () {
+    // Agregar evento al botón "Realizar pedido"
+    const btnRealizarPedido = document.querySelector('button.btn.btn-primary');
+    
+    btnRealizarPedido.addEventListener('click', function (event) {
+        event.preventDefault(); // Prevenir el comportamiento por defecto (enviar formulario)
+
+        // Simulación de validación del pago
+        const tncCheckbox = document.getElementById('tnc'); // Términos y condiciones
+        const subscribeCheckbox = document.getElementById('subscribe'); // Recibir correos
+        const totalPrice = document.getElementById('total').textContent; // Precio total
+        const subtotal = document.getElementById('subtotal').textContent; // Subtotal
+        
+        // Obtener productos del carrito desde localStorage
+        const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+        
+        if (tncCheckbox.checked) {
+            // Simula que el pago fue procesado exitosamente
+            Swal.fire({
+                title: '¡Gracias por tu compra!',
+                text: `Tu pago de ${totalPrice} ha sido procesado exitosamente.`,
+                icon: 'success',
+                confirmButtonText: 'Aceptar'
+            }).then(() => {
+                // Guardar los datos de la compra en el almacenamiento local
+                localStorage.setItem('factura', JSON.stringify({
+                    subtotal: subtotal,
+                    envio: '₡6000.00',
+                    total: totalPrice,
+                    productos: carrito  // Agregar los productos comprados
+                }));
+                
+                // Redirigir a la página de la factura
+                window.location.href = 'factura.html'; // Página de factura
+            });
+        } else {
+            Swal.fire({
+                title: 'Error',
+                text: 'Debes aceptar los términos y condiciones para continuar.',
+                icon: 'error',
+                confirmButtonText: 'Aceptar'
+            });
+        }
+    });
+});
+
+// ----------------------------------------------------------------
+// Funcion para mostrar los datos en la factura
+// ----------------------------------------------------------------
+document.addEventListener('DOMContentLoaded', function () {
+    const factura = JSON.parse(localStorage.getItem('factura'));
+    
+    if (factura) {
+        const invoiceDetails = document.getElementById('invoiceDetails');
+        
+        // Mostrar la información de la factura
+        invoiceDetails.innerHTML = `
+            <h4>Detalles de la compra</h4>
+            <p><strong>Subtotal:</strong> ${factura.subtotal}</p>
+            <p><strong>Envío:</strong> ${factura.envio}</p>
+            <p><strong>Total:</strong> ${factura.total}</p>
+            <hr>
+            <h5>Productos comprados:</h5>
+            <ul>
+                ${factura.productos.length > 0 ? factura.productos.map(producto => `    
+                    <li>${producto.nombre} - ${producto.precio} x ${producto.cantidad}</li>
+                `).join('') : '<li>No se encontraron productos.</li>'}
+            </ul>
+        `;
+    } else {
+        document.getElementById('invoiceDetails').innerHTML = '<p>No se encontraron detalles de la factura.</p>';
+    }
+});
+
+
+
+// ----------------------------------------------------------------
+// Limpiar el carrito cuando el usuario haga clic en "Volver al inicio"
+// ----------------------------------------------------------------
+document.getElementById('volverInicio').addEventListener('click', function() {
+    // Eliminar los productos del carrito en localStorage
+    localStorage.removeItem('carrito');
+});

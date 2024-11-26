@@ -206,57 +206,6 @@
     </div>
     
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            // Agregar evento al botón "Realizar pedido"
-            const btnRealizarPedido = document.querySelector('button.btn.btn-primary');
-            
-            btnRealizarPedido.addEventListener('click', function (event) {
-                event.preventDefault(); // Prevenir el comportamiento por defecto (enviar formulario)
-        
-                // Simulación de validación del pago
-                const tncCheckbox = document.getElementById('tnc'); // Términos y condiciones
-                const subscribeCheckbox = document.getElementById('subscribe'); // Recibir correos
-                const totalPrice = document.getElementById('total').textContent; // Precio total
-                const subtotal = document.getElementById('subtotal').textContent; // Subtotal
-                
-                // Obtener productos del carrito desde localStorage
-                const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-                
-                if (tncCheckbox.checked) {
-                    // Simula que el pago fue procesado exitosamente
-                    Swal.fire({
-                        title: '¡Gracias por tu compra!',
-                        text: `Tu pago de ${totalPrice} ha sido procesado exitosamente.`,
-                        icon: 'success',
-                        confirmButtonText: 'Aceptar'
-                    }).then(() => {
-                        // Guardar los datos de la compra en el almacenamiento local
-                        localStorage.setItem('factura', JSON.stringify({
-                            subtotal: subtotal,
-                            envio: '₡6000.00',
-                            total: totalPrice,
-                            productos: carrito  // Agregar los productos comprados
-                        }));
-                        
-                        // Redirigir a la página de la factura
-                        window.location.href = 'factura.html'; // Página de factura
-                    });
-                } else {
-                    Swal.fire({
-                        title: 'Error',
-                        text: 'Debes aceptar los términos y condiciones para continuar.',
-                        icon: 'error',
-                        confirmButtonText: 'Aceptar'
-                    });
-                }
-            });
-        });
-    </script>
-    
-    
-    
-
     <!-- Footer -->
     <footer class="footer bg-light py-4">
         <div class="container">
