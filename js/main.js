@@ -11,54 +11,45 @@ document.addEventListener("click", function(event) {
     }
 });
 
+
 // ----------------------------------------------------------------
 // Función para actualizar el texto y los botones en el carrusel
 // ----------------------------------------------------------------
 const carouselItems = document.querySelectorAll('.carousel-item');
 const titleElement = document.getElementById('hero-title');
-const buttonElement1 = document.querySelector('#hero-buttons .btn.btn-primary');
-const buttonElement2 = document.querySelector('#hero-buttons .btn.btn-outline-secondary');
+const buttonElement1 = document.querySelector('#hero-buttons .btn.btn-outline-secondary'); // Botón "Ver más productos"
+const buttonElement2 = document.querySelector('#hero-buttons .btn.btn-primary'); // Botón "Ver características"
 
+// Función para actualizar el contenido basado en el índice
 const updateContent = (index) => {
     const item = carouselItems[index];
     titleElement.innerText = item.getAttribute('data-title');
     buttonElement1.innerText = item.getAttribute('data-button1');
     buttonElement2.innerText = item.getAttribute('data-button2');
 
-    // Extraer los datos del producto y asignarlos al onclick de buttonElement2
-    const productInfo = item.getAttribute('data-product-info');
-    buttonElement2.setAttribute('onclick', `openProductPage${productInfo}`);
+    // Configurar el botón "Ver más productos" para redirigir a productos.html
+    buttonElement1.setAttribute('onclick', `window.location.href='productos.html'`);
+
+    // Extraer el ID del producto y configurar la redirección del botón "Ver características"
+    const productId = item.getAttribute('data-product-id');
+    buttonElement2.setAttribute('onclick', `window.location.href='detalleProducto.html?id=${productId}'`);
 };
 
 // Evento para actualizar el contenido al cambiar de diapositiva
 document.getElementById('carouselExampleIndicators').addEventListener('slide.bs.carousel', (event) => {
-    const nextIndex = event.to; // índice de la siguiente diapositiva
+    const nextIndex = event.to; // Índice de la siguiente diapositiva
     updateContent(nextIndex);
 });
 
 // Inicializa el contenido en la primera diapositiva
 updateContent(0);
 
-// ----------------------------------------------------------------
-// Funcion para ver el prodcuto del carrusel
-// ----------------------------------------------------------------
-document.querySelectorAll('.btn-outline-secondary').forEach(button => {
-    button.addEventListener('click', function() {
-        const productId = this.getAttribute('data-product-id'); // Obtener el ID del producto
-        viewDetails(productId); // Redirigir a la página de detalles
-    });
-});
-
-function viewDetails(productId) {
-    window.location.href = `detalleProducto.html?id=${productId}`;
-}
-
 
 
 // ----------------------------------------------------------------
 // Que aparezca el boton de subir al hacer scroll
 // ----------------------------------------------------------------
-const btnFlotante = document.querySelector('.btn-flotante');
+btnFlotante = document.querySelector('.btn-flotante');
 window.addEventListener('scroll', () => {
     if (window.scrollY > 100) { // Cambia 100 a la cantidad de píxeles que desees
         btnFlotante.classList.remove('hidden');

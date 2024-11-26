@@ -2,7 +2,6 @@ document.addEventListener("DOMContentLoaded", () => {
     actualizarCarrito();  // Llamamos a la función para cargar el carrito cuando se cargue la página
 });
 
-
 // ----------------------------------------------------------------
 // Función para actualizar el carrito en la página
 // ----------------------------------------------------------------
@@ -11,6 +10,7 @@ function actualizarCarrito() {
     const contenedorCarrito = document.getElementById("carrito-contenido");
     const carritoVacio = document.getElementById("carrito-vacio");
     const subtotalElement = document.getElementById("subtotal");
+    const btnFinalizarCompra = document.getElementById("btn-finalizar-compra");
 
     // Limpiar el contenido del carrito antes de agregar los nuevos productos
     contenedorCarrito.innerHTML = '';
@@ -20,6 +20,15 @@ function actualizarCarrito() {
         contenedorCarrito.innerHTML = "<p>No hay productos en el carrito.</p>";
         carritoVacio.style.display = "block";
         subtotalElement.textContent = '₡0.00';  // Establecer subtotal a 0 cuando el carrito está vacío
+        
+        // Desactivar el botón de finalizar compra
+        btnFinalizarCompra.setAttribute('tabindex', '-1');
+        btnFinalizarCompra.setAttribute('aria-disabled', 'true');
+        btnFinalizarCompra.style.pointerEvents = 'none';  // Desactivar clic
+        btnFinalizarCompra.disabled = true;  // Deshabilitar el botón completamente
+
+        // Asegurarnos de que el evento de clic no se dispare
+        btnFinalizarCompra.removeEventListener('click', finalizarCompra); // Si el botón tenía un listener, lo eliminamos
     } else {
         carritoVacio.style.display = "none";
         // Mostrar productos del carrito
@@ -36,7 +45,6 @@ function actualizarCarrito() {
                         <p>₡${producto.precio}</p>
                     </div>
                     <div class="col-3 d-flex align-items-center justify-content-between">
-                        <!-- Dropdown de cantidad, inicializado con el valor guardado en localStorage -->
                         <select class="form-control" onchange="actualizarCantidad(${index}, this.value)">
                             <option value="1" ${producto.cantidad === 1 ? 'selected' : ''}>1</option>
                             <option value="2" ${producto.cantidad === 2 ? 'selected' : ''}>2</option>
@@ -45,7 +53,6 @@ function actualizarCarrito() {
                             <option value="5" ${producto.cantidad === 5 ? 'selected' : ''}>5</option>
                             <option value="6" ${producto.cantidad === 6 ? 'selected' : ''}>6</option>
                         </select>
-                        <!-- Botón de eliminar -->
                         <button class="btn btn-danger" onclick="eliminarProducto(${index})">Eliminar</button>
                     </div>
                 </div>
@@ -53,8 +60,17 @@ function actualizarCarrito() {
             contenedorCarrito.appendChild(itemCarrito);
         });
 
-        // Calcular el subtotal inicial
+        // Calcular el subtotal
         calcularSubtotal();
+
+        // Habilitar el botón de finalizar compra si hay productos en el carrito
+        btnFinalizarCompra.removeAttribute('tabindex');
+        btnFinalizarCompra.removeAttribute('aria-disabled');
+        btnFinalizarCompra.style.pointerEvents = 'auto';  // Habilitar clic
+        btnFinalizarCompra.disabled = false;  // Activar el botón
+
+        // Agregar el evento de clic solo si hay productos
+        btnFinalizarCompra.addEventListener('click', finalizarCompra);
     }
 
     console.log("Carrito desde localStorage:", carrito);
