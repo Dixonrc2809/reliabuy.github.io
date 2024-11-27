@@ -1582,8 +1582,55 @@ hr {
     font-size: 1rem; 
 }
 
+
 @media (max-width: 576px) {
     .form-select {
-        max-width: 80%; /* Permite que el selector se expanda completamente */
+        max-width: 80%; 
     }
 }
+
+
+
+/*============================*/
+/* Diseño de la Factura */
+/*============================*/
+#invoiceDetails {
+    margin-top: 20px;
+    background-color: #ffffff;
+    font-size: 16px; 
+    color: #333;
+    line-height: 1.6; 
+    padding: 20px;
+    border-radius: 8px; 
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1); 
+    width: 80%; 
+    margin-left: auto; 
+    margin-right: auto; 
+}
+
+#invoiceDetails h4,
+#invoiceDetails h5 {
+    font-size: 20px; 
+    font-weight: bold;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #333; 
+    padding-bottom: 5px;
+}
+
+
+#invoiceDetails ul {
+    list-style-type: none; 
+    padding: 0;
+}
+
+#invoiceDetails ul li {
+    padding: 5px 0;
+    border-bottom: 1px solid #ddd; 
+}
+
+
+#invoiceDetails .informacion-cliente {
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
