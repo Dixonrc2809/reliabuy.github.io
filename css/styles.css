@@ -1548,8 +1548,12 @@ hr {
 /*============================*/
 /* Metodo de pago */
 /*============================*/
+.containerMetodoPago h1 {
+    margin-top: 4rem;
+}
+
 .containerMetodoPago {
-    margin-top: 150px;
+    margin-top: 250px;
     margin-bottom: 150px;
 }
 
@@ -1569,4 +1573,17 @@ hr {
     -ms-flex: 1 1 auto;
     flex: 1 1 auto;
     padding: 1.5rem 1.5rem;
+}
+
+.form-select {
+    width: 100%; 
+    max-width: 500px; 
+    padding: 10px; 
+    font-size: 1rem; 
+}
+
+@media (max-width: 576px) {
+    .form-select {
+        max-width: 80%; /* Permite que el selector se expanda completamente */
+    }
 }

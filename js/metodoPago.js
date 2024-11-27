@@ -41,6 +41,12 @@ document.addEventListener('DOMContentLoaded', function () {
         const totalPrice = document.getElementById('total').textContent; // Precio total
         const subtotal = document.getElementById('subtotal').textContent; // Subtotal
         
+        const nombreCompleto = document.getElementById('nombreCompleto').value;
+        const correoElectronico = document.getElementById('correoElectronico').value;
+        const provincia = document.getElementById('provincia').value;
+        const canton = document.getElementById('canton').value;
+
+        
         // Obtener productos del carrito desde localStorage
         const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
         
@@ -54,11 +60,15 @@ document.addEventListener('DOMContentLoaded', function () {
             }).then(() => {
                 // Guardar los datos de la compra en el almacenamiento local
                 localStorage.setItem('factura', JSON.stringify({
+                    nombre: nombreCompleto,
+                    correo: correoElectronico,
+                    provincia: provincia,
+                    canton: canton,
                     subtotal: subtotal,
                     envio: '₡6000.00',
                     total: totalPrice,
                     productos: carrito  // Agregar los productos comprados
-                }));
+                }));                
                 
                 // Redirigir a la página de la factura
                 window.location.href = 'factura.html'; // Página de factura
@@ -86,6 +96,10 @@ document.addEventListener('DOMContentLoaded', function () {
         // Mostrar la información de la factura
         invoiceDetails.innerHTML = `
             <h4>Detalles de la compra</h4>
+            <p><strong>Nombre:</strong> ${factura.nombre}</p>
+            <p><strong>Correo Electrónico:</strong> ${factura.correo}</p>
+            <p><strong>Provincia:</strong> ${factura.provincia}</p>
+            <p><strong>Cantón:</strong> ${factura.canton}</p>
             <p><strong>Subtotal:</strong> ${factura.subtotal}</p>
             <p><strong>Envío:</strong> ${factura.envio}</p>
             <p><strong>Total:</strong> ${factura.total}</p>

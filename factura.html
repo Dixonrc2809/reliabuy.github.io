@@ -19,45 +19,55 @@
         <button class="btn btn-primary mt-4" id="generatePDF">Imprimir Factura</button>
     </div>
 
-    <script>
-        // Función para generar el PDF de la factura
-        document.getElementById('generatePDF').addEventListener('click', function () {
-            const { jsPDF } = window.jspdf;
-            const doc = new jsPDF();
+<script>
+    // Función para generar el PDF de la factura
+    document.getElementById('generatePDF').addEventListener('click', function () {
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
 
-            const factura = JSON.parse(localStorage.getItem('factura'));
-            
-            if (factura) {
-                let yPosition = 20;
+    const factura = JSON.parse(localStorage.getItem('factura'));
+    
+    if (factura) {
+        let yPosition = 20;
 
-                // Título
-                doc.setFontSize(18);
-                doc.text('Factura de Compra - Reliabuy', 20, yPosition);
-                yPosition += 10;
+        // Título
+        doc.setFontSize(18);
+        doc.text('Factura de Compra - Reliabuy', 20, yPosition);
+        yPosition += 10;
 
-                // Detalles de la compra
-                doc.setFontSize(12);
-                doc.text(`Subtotal: ${factura.subtotal}`, 20, yPosition);
-                yPosition += 8;
-                doc.text(`Envío: ${factura.envio}`, 20, yPosition);
-                yPosition += 8;
-                doc.text(`Total: ${factura.total}`, 20, yPosition);
-                yPosition += 12;
+        // Información del cliente
+        doc.setFontSize(12);
+        doc.text(`Nombre: ${factura.nombre}`, 20, yPosition);
+        yPosition += 8;
+        doc.text(`Correo Electrónico: ${factura.correo}`, 20, yPosition);
+        yPosition += 8;
+        doc.text(`Provincia: ${factura.provincia}`, 20, yPosition);
+        yPosition += 8;
+        doc.text(`Cantón: ${factura.canton}`, 20, yPosition);
+        yPosition += 12;
 
-                // Productos comprados
-                doc.text('Productos comprados:', 20, yPosition);
-                yPosition += 8;
-                factura.productos.forEach(producto => {
-                    doc.text(`${producto.nombre} - ${producto.precio} x ${producto.cantidad}`, 20, yPosition);
-                    yPosition += 8;
-                });
+        // Detalles de la compra
+        doc.text(`Subtotal: ${factura.subtotal}`, 20, yPosition);
+        yPosition += 8;
+        doc.text(`Envío: ${factura.envio}`, 20, yPosition);
+        yPosition += 8;
+        doc.text(`Total: ${factura.total}`, 20, yPosition);
+        yPosition += 12;
 
-                // Guardar el PDF
-                doc.save('factura_reliabuy.pdf');
-            } else {
-                alert('No se encontraron detalles de la factura.');
-            }
+        // Productos comprados
+        doc.text('Productos comprados:', 20, yPosition);
+        yPosition += 8;
+        factura.productos.forEach(producto => {
+            doc.text(`${producto.nombre} - ${producto.precio} x ${producto.cantidad}`, 20, yPosition);
+            yPosition += 8;
         });
+
+        // Guardar el PDF
+        doc.save('factura_reliabuy.pdf');
+    } else {
+        alert('No se encontraron detalles de la factura.');
+    }
+});
     </script>
 
     <script src="js/metodoPago.js"></script>
