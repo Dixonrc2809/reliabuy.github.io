@@ -172,18 +172,16 @@ document.addEventListener("DOMContentLoaded", () => {
 // ----------------------------------------------------------------
 // Funcionalidad de Categorias que estan en el Index.html
 // ----------------------------------------------------------------
+// Obtener el parámetro de categoría desde la URL
 const urlParams = new URLSearchParams(window.location.search);
-const categoriaSeleccionada = urlParams.get('categoria');
-const marcaSeleccionada = urlParams.get('marca');
+const categoriaSeleccionada = urlParams.get("categoria");
 
-function filterInitialProducts() {
-    const selectedProducts = allProducts.filter(product => {
-        const categoryMatch = categoriaSeleccionada ? product.categoria === categoriaSeleccionada : true;
-        const brandMatch = marcaSeleccionada ? product.marca === marcaSeleccionada : true;
-        return categoryMatch && brandMatch;
-    });
-    displayProducts(selectedProducts);
+// Marcar automáticamente el checkbox correspondiente
+if (categoriaSeleccionada) {
+    const categoryCheckbox = document.querySelector(`.filter-category-checkbox[value="${categoriaSeleccionada}"]`);
+    if (categoryCheckbox) categoryCheckbox.checked = true;
 }
+
 
 // ----------------------------------------------------------------
 // Funcionalidad para icono de compartir
