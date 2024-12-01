@@ -67,17 +67,20 @@
     </div>
 
 <script>
-    // Función para generar el PDF de la factura
     document.getElementById('generatePDF').addEventListener('click', function () {
     const { jsPDF } = window.jspdf;
     const doc = new jsPDF();
 
     const factura = JSON.parse(localStorage.getItem('factura'));
-    
-    if (factura) {
+
+    // Recuperamos los datos de la provincia y el cantón desde localStorage
+    const provincia = JSON.parse(localStorage.getItem('provincia'));
+    const canton = JSON.parse(localStorage.getItem('canton'));
+
+    if (factura && provincia && canton) {
         let yPosition = 20;
 
-        // Título
+        // Título de la factura
         doc.setFontSize(18);
         doc.text('Factura de Compra - Reliabuy', 20, yPosition);
         yPosition += 10;
@@ -88,9 +91,11 @@
         yPosition += 8;
         doc.text(`Correo Electrónico: ${factura.correo}`, 20, yPosition);
         yPosition += 8;
-        doc.text(`Provincia: ${factura.provincia}`, 20, yPosition);
+
+        // Usamos los nombres de la provincia y el cantón
+        doc.text(`Provincia: ${provincia.nombre}`, 20, yPosition);  // Usamos el nombre de la provincia
         yPosition += 8;
-        doc.text(`Cantón: ${factura.canton}`, 20, yPosition);
+        doc.text(`Cantón: ${canton.nombre}`, 20, yPosition);  // Usamos el nombre del cantón
         yPosition += 12;
 
         // Detalles de la compra
@@ -115,6 +120,7 @@
         alert('No se encontraron detalles de la factura.');
     }
 });
+
     </script>
     
 

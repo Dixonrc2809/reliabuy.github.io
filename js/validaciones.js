@@ -1,4 +1,6 @@
-// Función de validación para el formulario
+// ----------------------------------------------------------------
+// Funcionalidad para validaciones de formulario de contactenos
+// ----------------------------------------------------------------
 function validarFormulario(event) {
     // Prevenir el envío del formulario si hay errores
     event.preventDefault();
@@ -60,6 +62,5 @@ function validarFormulario(event) {
 
 // Vincular la función de validación al formulario
 document.getElementById('contactForm').addEventListener('submit', validarFormulario);
-
 
 
