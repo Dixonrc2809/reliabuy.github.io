@@ -1212,20 +1212,73 @@ hr {
 /* Banner Terminos y Condiciones */
 /* ---------------------------------------------- */
 .banner {
-    width: 974px; /* Ancho fijo */
-    height: 251px; /* Alto fijo */
-    margin: 0 auto; /* Centra el banner en la página */
-    overflow: hidden; /* Asegura que la imagen no sobresalga del contenedor */
+    width: 90%; /* Ancho relativo para adaptarse al tamaño de la pantalla */
+    max-width: 974px; /* Limita el tamaño máximo en pantallas grandes */
+    height: auto; /* Ajusta la altura automáticamente */
+    margin: 0 auto; /* Centra el banner horizontalmente */
+    overflow: hidden; /* Evita que la imagen sobresalga del contenedor */
     border-radius: 20px;
-    margin-top: 130px;
+    margin-top: 130px; /* Espacio para evitar que el navbar lo cubra en pantallas grandes */
     margin-bottom: 50px;
 }
 
 .banner img {
-    width: 100%; /* Hace que la imagen ocupe todo el contenedor */
-    height: 100%; /* Ajusta la altura de la imagen para que llene el contenedor */
-    object-fit: cover; /* Ajusta la imagen para cubrir el área sin distorsionarse */
+    width: 100%; /* Imagen ocupa todo el ancho del contenedor */
+    height: auto; /* Mantiene la proporción original */
+    object-fit: cover; /* Ajusta la imagen sin distorsionarse */
 }
+
+/* ---------------------------------------------- */
+/* Ajustes Responsivos */
+/* ---------------------------------------------- */
+
+/* Pantallas ultra pequeñas (teléfonos móviles) */
+@media screen and (max-width: 576px) {
+    .banner {
+        margin-top: calc(80px + 1rem); /* Ajusta el margen considerando la altura del navbar */
+        margin-bottom: 30px; /* Ajusta el margen inferior */
+    }
+
+    .container-terminos {
+        width: 100%; /* Ocupa todo el ancho del contenedor */
+        padding: 15px; /* Reduce el padding */
+    }
+
+    .container-terminos h1 {
+        font-size: 1.6rem; /* Reduce el tamaño del título */
+    }
+
+    .container-terminos h2,
+    .container-terminos h3 {
+        font-size: 1.2rem; /* Ajusta subtítulos para teléfonos */
+    }
+
+    .container-terminos p {
+        font-size: 0.85rem; /* Texto más pequeño para pantallas pequeñas */
+    }
+}
+
+/* Pantallas medianas (entre 576px y 992px) */
+@media screen and (max-width: 992px) {
+    .banner {
+        margin-top: 120px; /* Reduce el margen superior */
+        margin-bottom: 40px; /* Reduce el margen inferior */
+    }
+
+    .container-terminos h1 {
+        font-size: 1.8rem; /* Disminuye ligeramente el tamaño del título */
+    }
+
+    .container-terminos h2,
+    .container-terminos h3 {
+        font-size: 1.4rem; /* Reduce el tamaño de subtítulos */
+    }
+
+    .container-terminos p {
+        font-size: 0.95rem; /* Ajusta el tamaño del texto del párrafo */
+    }
+}
+
 
 .terms-section {
     margin-top: 30px;
