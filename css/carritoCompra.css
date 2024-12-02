@@ -132,6 +132,42 @@
     background-color: #218838;
 }
 
+/* Estilos para pantallas pequeñas */
+@media (max-width: 768px) {
+    .carrito-item {
+        flex-direction: column; /* Cambia a columna para reorganizar los elementos */
+        align-items: flex-start;
+    }
+
+    .carrito-item .row {
+        flex-wrap: wrap; /* Permite que los elementos se ajusten a nuevas líneas */
+    }
+
+    .carrito-item img {
+        max-width: 100%;
+        margin-bottom: 10px; /* Espacio entre la imagen y el contenido */
+    }
+
+    .carrito-item .contenido {
+        margin-left: 0;
+        margin-bottom: 5px; /* Espacio debajo del contenido */
+    }
+
+    .carrito-item .col-3 {
+        display: flex;
+        justify-content: space-between;
+        width: 100%; /* Ocupa toda la fila */
+    }
+
+    .carrito-item .col-3 .btn-danger {
+        margin-left: 10px;
+        margin-top: 10px; /* Espacio entre el combo de cantidad y el botón eliminar */
+    }
+
+    .cantidad-dropdown {
+        width: 100%; /* Ajusta el ancho para ocupar el espacio disponible */
+    }
+}
 
 
 
