@@ -90,6 +90,8 @@ document.addEventListener('DOMContentLoaded', function () {
 // ----------------------------------------------------------------
 document.addEventListener('DOMContentLoaded', function () {
     const factura = JSON.parse(localStorage.getItem('factura'));
+    const provincia = JSON.parse(localStorage.getItem('provincia'));
+    const canton = JSON.parse(localStorage.getItem('canton'));
     
     if (factura) {
         const invoiceDetails = document.getElementById('invoiceDetails');
@@ -99,8 +101,8 @@ document.addEventListener('DOMContentLoaded', function () {
             <h4>Detalles de la compra</h4>
             <p><strong>Nombre:</strong> ${factura.nombre}</p>
             <p><strong>Correo Electrónico:</strong> ${factura.correo}</p>
-            <p><strong>Provincia:</strong> ${factura.provincia}</p>
-            <p><strong>Cantón:</strong> ${factura.canton}</p>
+            <p><strong>Provincia:</strong> ${provincia.nombre}</p>
+            <p><strong>Cantón:</strong> ${canton.nombre}</p>
             <p><strong>Subtotal:</strong> ${factura.subtotal}</p>
             <p><strong>Envío:</strong> ${factura.envio}</p>
             <p><strong>Total:</strong> ${factura.total}</p>
