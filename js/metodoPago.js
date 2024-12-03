@@ -50,46 +50,67 @@ document.addEventListener('DOMContentLoaded', function () {
     
     btnRealizarPedido.addEventListener('click', function (event) {
         event.preventDefault();
-        const tncCheckbox = document.getElementById('tnc');
-        const envioValue = parseFloat(document.getElementById("envio").value) || 0;
-        const totalPrice = document.getElementById('total').textContent;
-        const subtotal = document.getElementById('subtotal').textContent;
         
+        // Recuperar valores del formulario
+        const tncCheckbox = document.getElementById('tnc');
         const nombreCompleto = document.getElementById('nombreCompleto').value;
         const correoElectronico = document.getElementById('correoElectronico').value;
         const provincia = document.getElementById('provincia').value;
         const canton = document.getElementById('canton').value;
+        const envioValue = parseFloat(document.getElementById("envio").value) || 0;
+        const totalPrice = document.getElementById('total').textContent;
+        const subtotal = document.getElementById('subtotal').textContent;
         const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 
-        if (tncCheckbox.checked) {
-            Swal.fire({
-                title: '¡Gracias por tu compra!',
-                text: `Tu pago de ${totalPrice} ha sido procesado exitosamente.`,
-                icon: 'success',
-                confirmButtonText: 'Aceptar'
-            }).then(() => {
-                localStorage.setItem('factura', JSON.stringify({
-                    nombre: nombreCompleto,
-                    correo: correoElectronico,
-                    provincia: provincia,
-                    canton: canton,
-                    subtotal: subtotal,
-                    envio: envioValue.toLocaleString('es-CR', { style: 'currency', currency: 'CRC' }),
-                    total: totalPrice,
-                    productos: carrito
-                }));
-                window.location.href = 'factura.html';
-            });
-        } else {
+        // Verificación de los términos y condiciones
+        if (!tncCheckbox.checked) {
             Swal.fire({
                 title: 'Error',
                 text: 'Debes aceptar los términos y condiciones para continuar.',
                 icon: 'error',
                 confirmButtonText: 'Aceptar'
             });
+            return; // Si no acepta los términos, no se procesa el pago
         }
+
+        // Crear el token de Stripe
+        stripe.createToken(card).then(function(result) {
+            if (result.error) {
+                // Si hay un error en la tarjeta (número incorrecto, tarjeta incompleta, etc.)
+                Swal.fire({
+                    title: 'Error en el pago',
+                    text: result.error.message,
+                    icon: 'error',
+                    confirmButtonText: 'Aceptar'
+                });
+            } else {
+                // Si el token es válido, proceder con el pago
+                // Aquí puedes realizar el pago en tu servidor si lo deseas
+                Swal.fire({
+                    title: '¡Gracias por tu compra!',
+                    text: `Tu pago de ${totalPrice} ha sido procesado exitosamente.`,
+                    icon: 'success',
+                    confirmButtonText: 'Aceptar'
+                }).then(() => {
+                    // Guardar los detalles de la factura en localStorage
+                    localStorage.setItem('factura', JSON.stringify({
+                        nombre: nombreCompleto,
+                        correo: correoElectronico,
+                        provincia: provincia,
+                        canton: canton,
+                        subtotal: subtotal,
+                        envio: envioValue.toLocaleString('es-CR', { style: 'currency', currency: 'CRC' }),
+                        total: totalPrice,
+                        productos: carrito
+                    }));
+                    // Redirigir a la página de factura
+                    window.location.href = 'factura.html';
+                });
+            }
+        });
     });
 });
+
 
 // ----------------------------------------------------------------
 // Funcion para mostrar los datos en la factura

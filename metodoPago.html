@@ -23,6 +23,9 @@
     <!-- CSS-->
     <link rel="stylesheet" href="./css/styles.css">
 
+    <script src="https://js.stripe.com/v3/"></script>
+
+
 </head>
 <body>
 
@@ -154,51 +157,11 @@
                     </h2>
                     <div id="collapseCC" class="accordion-collapse collapse show" data-bs-parent="#accordionPayment">
                         <div class="accordion-body">
+                            <!-- Campo de tarjeta Stripe -->
                             <div class="mb-3">
-                                <label for="numeroTarjeta" class="form-label">Número de tarjeta</label>
-                                <input type="text" class="form-control" id="numeroTarjeta" placeholder="0000 0000 0000 0000" maxlength="19" required>
-                            </div>
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <div class="mb-3">
-                                        <label for="nombreTarjeta" class="form-label">Nombre en la tarjeta</label>
-                                        <input type="text" class="form-control" id="nombreTarjeta" placeholder="Juan Pérez" required>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3">
-                                    <div class="mb-3">
-                                        <label for="fechaVencimiento" class="form-label">Fecha de vencimiento</label>
-                                        <input type="text" class="form-control" id="fechaVencimiento" placeholder="MM/AA" maxlength="5" required>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3">
-                                    <div class="mb-3">
-                                        <label for="cvv" class="form-label">Código CVV</label>
-                                        <input type="password" class="form-control" id="cvv" placeholder="123" maxlength="3" required>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- PayPal -->
-                <div class="accordion-item mb-3 border">
-                    <h2 class="h5 px-4 py-3 accordion-header d-flex justify-content-between align-items-center">
-                        <div class="form-check w-100 collapsed" data-bs-toggle="collapse" data-bs-target="#collapsePP" aria-expanded="false">
-                            <input class="form-check-input" type="radio" name="payment" id="payment2" required>
-                            <label class="form-check-label pt-1" for="payment2">
-                                PayPal
-                            </label>
-                        </div>
-                        <span>
-                            <i class="fab fa-paypal" style="font-size: 30px;"></i>
-                        </span>
-                    </h2>
-                    <div id="collapsePP" class="accordion-collapse collapse" data-bs-parent="#accordionPayment">
-                        <div class="accordion-body">
-                            <div class="px-2 col-lg-6 mb-3">
-                                <label for="correoPayPal" class="form-label">Correo electrónico de PayPal</label>
-                                <input type="email" class="form-control" id="correoPayPal" placeholder="correo@paypal.com" required>
+                                <label for="card-element" class="form-label">Número de tarjeta</label>
+                                <div id="card-element"></div> <!-- Elemento Stripe -->
+                                <div id="card-errors" role="alert"></div> <!-- Para mostrar errores -->
                             </div>
                         </div>
                     </div>
@@ -239,6 +202,7 @@
         </div>
     </div>
 </div>
+
 
     <!-- Footer -->
     <footer class="footer bg-light py-4">
