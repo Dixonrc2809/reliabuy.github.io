@@ -401,12 +401,29 @@ img {
     transition: background-color 0.3s ease;
 }
 
-/* Ajustes responsivos */
+/* Ajustes responsivos de los modal*/
 @media (max-width: 768px) {
     .modal-dialog {
-        max-width: 90%;
+        max-width: 90%; /* Reduce el ancho máximo para pantallas pequeñas */
+        margin: 1.5rem auto; /* Centra el modal vertical y horizontalmente */
+    }
+
+    .modal-content {
+        border-radius: 8px; /* Opcional: ajusta el diseño para pantallas pequeñas */
     }
 }
+
+@media (max-width: 480px) {
+    .modal-dialog {
+        max-width: 95%; /* Ajuste adicional para pantallas muy pequeñas */
+        margin: 1rem auto;
+    }
+
+    .modal-content {
+        padding: 15px; /* Reduce el padding en pantallas muy pequeñas */
+    }
+}
+
 
 
 
