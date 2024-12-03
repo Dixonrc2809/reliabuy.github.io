@@ -4,75 +4,81 @@
 // ----------------------------------------------------------------
 document.addEventListener("DOMContentLoaded", () => {
     // Recuperar el subtotal desde localStorage
-    const subtotal = parseFloat(localStorage.getItem('subtotal')) || 0;
+    let subtotal = parseFloat(localStorage.getItem('subtotal')) || 0;
 
-    // Obtener el elemento donde mostrar el subtotal
+    // Elementos del DOM
     const subtotalElement = document.getElementById("subtotal");
+    const totalElement = document.getElementById("total");
+    const envioSelect = document.getElementById("envio");
+    const envioElement = document.querySelector(".envio-monto"); // Agrega una clase para identificar el elemento del envío
 
-    // Verificar que el elemento existe antes de actualizarlo
+    // Mostrar el subtotal inicial
     if (subtotalElement) {
         subtotalElement.textContent = subtotal.toLocaleString('es-CR', { style: 'currency', currency: 'CRC' });
     }
 
-    // Si tienes un campo de total, también puedes calcularlo (incluyendo el envío)
-    const envio = 6000; // Suponiendo que el costo de envío es 6000
-    const total = subtotal + envio;
+    // Función para actualizar el total
+    function actualizarTotal() {
+        const envio = parseFloat(envioSelect.value) || 0;
+        const total = subtotal + envio;
 
-    // Mostrar el total también
-    const totalElement = document.getElementById("total");
-    if (totalElement) {
-        totalElement.textContent = total.toLocaleString('es-CR', { style: 'currency', currency: 'CRC' });
+        // Actualizar el envío en el DOM
+        if (envioElement) {
+            envioElement.textContent = envio.toLocaleString('es-CR', { style: 'currency', currency: 'CRC' });
+        }
+
+        // Actualizar el total en el DOM
+        if (totalElement) {
+            totalElement.textContent = total.toLocaleString('es-CR', { style: 'currency', currency: 'CRC' });
+        }
     }
+
+    // Actualizar total al cambiar la opción de envío
+    envioSelect.addEventListener("change", actualizarTotal);
+
+    // Llama a la función inicialmente para establecer el total
+    actualizarTotal();
 });
+
 
 
 // ----------------------------------------------------------------
 // Funcion para simularpago y enviar datos a la factura
 // ----------------------------------------------------------------
 document.addEventListener('DOMContentLoaded', function () {
-    // Agregar evento al botón "Realizar pedido"
     const btnRealizarPedido = document.querySelector('button.btn.btn-primary');
     
     btnRealizarPedido.addEventListener('click', function (event) {
-        event.preventDefault(); // Prevenir el comportamiento por defecto (enviar formulario)
-
-        // Simulación de validación del pago
-        const tncCheckbox = document.getElementById('tnc'); // Términos y condiciones
-        const subscribeCheckbox = document.getElementById('subscribe'); // Recibir correos
-        const totalPrice = document.getElementById('total').textContent; // Precio total
-        const subtotal = document.getElementById('subtotal').textContent; // Subtotal
+        event.preventDefault();
+        const tncCheckbox = document.getElementById('tnc');
+        const envioValue = parseFloat(document.getElementById("envio").value) || 0;
+        const totalPrice = document.getElementById('total').textContent;
+        const subtotal = document.getElementById('subtotal').textContent;
         
         const nombreCompleto = document.getElementById('nombreCompleto').value;
         const correoElectronico = document.getElementById('correoElectronico').value;
         const provincia = document.getElementById('provincia').value;
         const canton = document.getElementById('canton').value;
-
-        
-        // Obtener productos del carrito desde localStorage
         const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-        
+
         if (tncCheckbox.checked) {
-            // Simula que el pago fue procesado exitosamente
             Swal.fire({
                 title: '¡Gracias por tu compra!',
                 text: `Tu pago de ${totalPrice} ha sido procesado exitosamente.`,
                 icon: 'success',
                 confirmButtonText: 'Aceptar'
             }).then(() => {
-                // Guardar los datos de la compra en el almacenamiento local
                 localStorage.setItem('factura', JSON.stringify({
                     nombre: nombreCompleto,
                     correo: correoElectronico,
                     provincia: provincia,
                     canton: canton,
                     subtotal: subtotal,
-                    envio: '₡6000.00',
+                    envio: envioValue.toLocaleString('es-CR', { style: 'currency', currency: 'CRC' }),
                     total: totalPrice,
-                    productos: carrito  // Agregar los productos comprados
-                }));                
-                
-                // Redirigir a la página de la factura
-                window.location.href = 'factura.html'; // Página de factura
+                    productos: carrito
+                }));
+                window.location.href = 'factura.html';
             });
         } else {
             Swal.fire({
@@ -90,28 +96,23 @@ document.addEventListener('DOMContentLoaded', function () {
 // ----------------------------------------------------------------
 document.addEventListener('DOMContentLoaded', function () {
     const factura = JSON.parse(localStorage.getItem('factura'));
-    const provincia = JSON.parse(localStorage.getItem('provincia'));
-    const canton = JSON.parse(localStorage.getItem('canton'));
-    
     if (factura) {
         const invoiceDetails = document.getElementById('invoiceDetails');
-        
-        // Mostrar la información de la factura
         invoiceDetails.innerHTML = `
             <h4>Detalles de la compra</h4>
             <p><strong>Nombre:</strong> ${factura.nombre}</p>
             <p><strong>Correo Electrónico:</strong> ${factura.correo}</p>
-            <p><strong>Provincia:</strong> ${provincia.nombre}</p>
-            <p><strong>Cantón:</strong> ${canton.nombre}</p>
+            <p><strong>Provincia:</strong> ${factura.provincia}</p>
+            <p><strong>Cantón:</strong> ${factura.canton}</p>
             <p><strong>Subtotal:</strong> ${factura.subtotal}</p>
             <p><strong>Envío:</strong> ${factura.envio}</p>
             <p><strong>Total:</strong> ${factura.total}</p>
             <hr>
             <h5>Productos comprados:</h5>
             <ul>
-                ${factura.productos.length > 0 ? factura.productos.map(producto => `    
+                ${factura.productos.map(producto => `
                     <li>${producto.nombre} - ${producto.precio} x ${producto.cantidad}</li>
-                `).join('') : '<li>No se encontraron productos.</li>'}
+                `).join('')}
             </ul>
         `;
     } else {
