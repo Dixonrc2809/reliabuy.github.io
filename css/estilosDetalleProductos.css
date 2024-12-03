@@ -257,6 +257,53 @@ img {
 /*============================*/
 /* ----- Media Queries ----- */
 /*============================*/
+@media (max-width: 992px) and (min-width: 769px) {
+    .product {
+        grid-template-columns: 1fr 1fr; /* Divide el espacio en dos columnas */
+        padding: 2em; /* Ajusta el relleno */
+        margin-top: 50px; /* Reduce el margen superior */
+    }
+
+    .photo-container {
+        width: 90%; /* Ocupa la mayoría del espacio */
+        margin: 0 auto; /* Centra la imagen */
+    }
+
+    .photo-main img {
+        max-width: 100%; /* Asegura que la imagen se ajuste */
+        position: static; /* Elimina posiciones relativas/absolutas innecesarias */
+    }
+
+    .photo-album ul {
+        justify-content: center; /* Centra las miniaturas */
+    }
+
+    .product__info {
+        padding: 1.5em; /* Agrega un poco más de espacio interno */
+    }
+
+    .price span {
+        font-size: 2em; /* Ajusta el tamaño de la fuente */
+    }
+
+    .title h1 {
+        font-size: 1.5em; /* Fuente más legible en tablets */
+    }
+
+    .btn-info, .buy--btn {
+        padding: 0.8em 1.5em; /* Reduce el relleno */
+        font-size: 0.9em; /* Ajusta el tamaño de la fuente */
+    }
+
+    .button-container {
+        display: flex; /* Mantén Flexbox */
+        justify-content: space-evenly; /* Espacio uniforme entre botones */
+        flex-wrap: wrap; /* Permite que los botones se ajusten si es necesario */
+        gap: 10px; /* Menor separación entre botones */
+        margin-top: 15px; /* Menor espacio superior */
+    }
+}
+
 @media (max-width: 768px) {
 	.product {
 		grid-template-columns: 1fr;
@@ -296,6 +343,13 @@ img {
 	.btn-info {
 		padding: 1em 2em;
 		font-size: 0.7em;
+	}
+
+	.button-container {
+		display: flex; /* Activa Flexbox */
+		justify-content: center; /* Centra los botones horizontalmente */
+		gap: 15px; /* Espacio entre los botones */
+		margin-top: 20px; /* Espacio superior opcional */
 	}
 }
 
