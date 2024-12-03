@@ -63,9 +63,8 @@ document.getElementById('generatePDF').addEventListener('click', function () {
             yPosition += 8;
             doc.setFont("helvetica", "normal");
             factura.productos.forEach(producto => {
-                // Eliminar el signo de exclamación y solo poner crc
                 doc.text(
-                    `${producto.nombre} - crc ${producto.precio} x ${producto.cantidad}`,
+                    `${producto.nombre} - CRC ${producto.precio} x ${producto.cantidad}`,
                     20,
                     yPosition
                 );
@@ -82,11 +81,11 @@ document.getElementById('generatePDF').addEventListener('click', function () {
             doc.text('Detalles de la Compra:', 20, yPosition);
             yPosition += 8;
             doc.setFont("helvetica", "normal");
-            doc.text(`Subtotal: crc ${factura.subtotal}`, 20, yPosition);
+            doc.text(`Subtotal: CRC ${factura.subtotal}`, 20, yPosition);
             yPosition += 8;
-            doc.text(`Envío: crc ${factura.envio}`, 20, yPosition);
+            doc.text(`Envío: CRC ${factura.envio}`, 20, yPosition);
             yPosition += 8;
-            doc.text(`Total: crc ${factura.total}`, 20, yPosition);
+            doc.text(`Total: CRC ${factura.total}`, 20, yPosition);
             yPosition += 12;
 
             // Línea de separación
