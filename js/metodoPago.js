@@ -47,10 +47,10 @@ document.addEventListener("DOMContentLoaded", () => {
 // ----------------------------------------------------------------
 document.addEventListener('DOMContentLoaded', function () {
     const btnRealizarPedido = document.querySelector('button.btn.btn-primary');
-    
+
     btnRealizarPedido.addEventListener('click', function (event) {
         event.preventDefault();
-        
+
         // Recuperar valores del formulario
         const tncCheckbox = document.getElementById('tnc');
         const nombreCompleto = document.getElementById('nombreCompleto').value;
@@ -73,6 +73,50 @@ document.addEventListener('DOMContentLoaded', function () {
             return; // Si no acepta los términos, no se procesa el pago
         }
 
+        // Validación de campos vacíos
+        if (nombreCompleto === '' || correoElectronico === '' || provincia === '' || canton === '') {
+            Swal.fire({
+                title: 'Campos requeridos',
+                text: 'Todos los campos son obligatorios',
+                icon: 'error',
+                confirmButtonText: 'Aceptar'
+            });
+            return;
+        }
+
+        // Validación para la longitud mínima de nombre y correo
+        if (nombreCompleto.length < 3) {
+            Swal.fire({
+                title: 'Nombre inválido',
+                text: 'El nombre debe tener al menos 3 caracteres',
+                icon: 'error',
+                confirmButtonText: 'Aceptar'
+            });
+            return;
+        }
+
+        if (correoElectronico.length < 5) {
+            Swal.fire({
+                title: 'Correo inválido',
+                text: 'El correo debe tener al menos 5 caracteres',
+                icon: 'error',
+                confirmButtonText: 'Aceptar'
+            });
+            return;
+        }
+
+        // Validación del correo electrónico (expresión regular)
+        var emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+        if (!emailRegex.test(correoElectronico)) {
+            Swal.fire({
+                title: 'Correo inválido',
+                text: 'Por favor ingresa un correo electrónico válido',
+                icon: 'error',
+                confirmButtonText: 'Aceptar'
+            });
+            return;
+        }
+
         // Crear el token de Stripe
         stripe.createToken(card).then(function(result) {
             if (result.error) {
@@ -85,7 +129,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 });
             } else {
                 // Si el token es válido, proceder con el pago
-                // Aquí puedes realizar el pago en tu servidor si lo deseas
                 Swal.fire({
                     title: '¡Gracias por tu compra!',
                     text: `Tu pago de ${totalPrice} ha sido procesado exitosamente.`,
@@ -110,6 +153,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
+
 
 
 // ----------------------------------------------------------------

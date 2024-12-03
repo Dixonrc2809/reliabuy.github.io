@@ -1,9 +1,8 @@
 // ----------------------------------------------------------------
 // Funcionalidad para validaciones de formulario de contactenos
 // ----------------------------------------------------------------
-function validarFormulario(event) {
-    // Prevenir el envío del formulario si hay errores
-    event.preventDefault();
+function validarFormularioContacto(event) {
+    event.preventDefault(); // Prevenir el envío del formulario si hay errores
 
     var nombre = document.getElementById('firstName').value;
     var correo = document.getElementById('email').value;
@@ -12,7 +11,7 @@ function validarFormulario(event) {
     var mensaje = document.getElementById('message').value;
     var genero = document.getElementById('gender').value;
     var fechaNacimiento = document.getElementById('birthDate').value;
-    
+
     // Validación para campos vacíos
     if (nombre === '' || correo === '' || apellido === '' || telefono === '' || mensaje === '' || genero === '' || fechaNacimiento === '') {
         Swal.fire({
@@ -91,5 +90,12 @@ function validarFormulario(event) {
     });
 }
 
-// Vincular la función de validación al formulario
-document.getElementById('contactForm').addEventListener('submit', validarFormulario);
+// Vincular la función de validación al formulario de contacto
+document.getElementById('contactForm').addEventListener('submit', validarFormularioContacto);
+
+
+
+
+
+
+
