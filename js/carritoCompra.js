@@ -150,13 +150,28 @@ function calcularSubtotal() {
 }
 
 // ----------------------------------------------------------------
-// Función para eliminar un producto del carrito
+// Función para eliminar un producto del carrito con SweetAlert
 // ----------------------------------------------------------------
 function eliminarProducto(index) {
-    const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-    carrito.splice(index, 1);  // Eliminar el producto de la lista
-    localStorage.setItem('carrito', JSON.stringify(carrito));
+    // Mostrar la confirmación con SweetAlert
+    Swal.fire({
+        title: '¿Estás seguro?',
+        text: "Este producto será eliminado del carrito.",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Eliminar',
+        cancelButtonText: 'Cancelar',
+        reverseButtons: true // Coloca el botón de cancelar a la derecha
+    }).then((result) => {
+        if (result.isConfirmed) {
+            const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+            carrito.splice(index, 1);  // Eliminar el producto de la lista
+            localStorage.setItem('carrito', JSON.stringify(carrito));
 
-    // Actualizar la vista del carrito y el subtotal sin recargar la página
-    actualizarCarrito();  // Esta función se encargará de recalcular el subtotal y actualizar la vista
+            // Actualizar la vista del carrito y el subtotal sin recargar la página
+            actualizarCarrito();  // Esta función se encargará de recalcular el subtotal y actualizar la vista
+        }
+    });
 }
+
+
