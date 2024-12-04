@@ -1412,6 +1412,10 @@ hr {
     .footer ul li {
         text-align: center; /* Solo centra el texto de las listas */
     }
+    .footer-col .social-links a {
+        color: #ffffff;
+        background-image: url('../imagenes/bannerCeleste2.png'); 
+    }
 }
 
 /* Pantallas pequeñas */
@@ -1422,6 +1426,10 @@ hr {
     .footer ul li {
         text-align: center; /* Centra solo el texto */
     }
+    .footer-col .social-links a {
+        color: #ffffff;
+        background-image: url('../imagenes/bannerCeleste2.png'); 
+    }
 }
 
 /* Pantallas ultra pequeñas */
@@ -1431,6 +1439,10 @@ hr {
     }
     .footer ul li {
         text-align: center; /* Solo centrar las listas */
+    }
+    .footer-col .social-links a {
+        color: #ffffff;
+        background-image: url('../imagenes/bannerCeleste2.png'); 
     }
 }
 
