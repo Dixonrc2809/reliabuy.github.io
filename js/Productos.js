@@ -55,6 +55,13 @@ function applyFilters() {
 // Función para mostrar productos en el contenedor
 function displayProducts(products) {
     productContainer.innerHTML = ""; // Limpiar productos actuales
+
+    // Si no hay productos después del filtrado, mostrar mensaje
+    if (products.length === 0) {
+        productContainer.innerHTML = "<p class='no-products-message'>No hay productos disponibles con los filtros seleccionados</p>";
+        return;
+    }
+
     const displayedProducts = products.slice(0, currentDisplayCount); // Seleccionar productos a mostrar según la cantidad
 
     displayedProducts.forEach(product => {
@@ -66,7 +73,7 @@ function displayProducts(products) {
             <a href="detalleProducto.html?id=${product.id}" class="product-link">
                 <img src="${product.imagen}" alt="${product.nombre}" />
                 <p>${product.nombre}</p>
-                <a class="price" href="#">₡${product.precio}</a>
+                <a class="price">₡${product.precio}</a>
             </a>
             <a class="buy-btn" href="#">Añadir al Carrito</a>
         `;

@@ -461,4 +461,21 @@
 
 
 
+/*===============================================*/
+/* texto cuando no hay prodcutos en el filtro*/
+/*===============================================*/
+.no-products-message {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #007bff;
+    font-weight: bold;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    width: 100%;        
+}
+
+
+
 

@@ -1,4 +1,7 @@
+
+/*============================*/
 /* Estilos del Carrito */
+/*============================*/
 #carrito-contenido {
     margin-top: 150px;
 }
@@ -167,6 +170,16 @@
     .cantidad-dropdown {
         width: 100%; /* Ajusta el ancho para ocupar el espacio disponible */
     }
+}
+
+
+/*========================================*/
+/* Estilos del mensaje de cantidad maxima */
+/*========================================*/
+.cantidadMax-mensaje strong{
+    font-size: 1.1rem;
+    color: #d9534f;               
+    font-weight: bold; 
 }
 
 
